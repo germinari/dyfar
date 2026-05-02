@@ -1,0 +1,2251 @@
+object frmEditItemNFEntrada: TfrmEditItemNFEntrada
+  Left = 462
+  Height = 619
+  Top = 55
+  Width = 682
+  ActiveControl = edCodProd
+  BorderStyle = bsDialog
+  Caption = 'Edição de item'
+  ClientHeight = 619
+  ClientWidth = 682
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 45
+    Width = 42
+    Caption = 'Código '
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 188
+    Height = 15
+    Top = 45
+    Width = 62
+    Caption = 'Código For.'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 408
+    Height = 15
+    Top = 45
+    Width = 74
+    Caption = 'Código barras'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 15
+    Top = 78
+    Width = 51
+    Caption = 'Descrição'
+    ParentColor = False
+  end
+  object edCodProd: TEdit
+    Left = 104
+    Height = 23
+    Top = 37
+    Width = 72
+    TabOrder = 0
+  end
+  object edCodProdFor: TEdit
+    Left = 264
+    Height = 23
+    Top = 38
+    Width = 136
+    TabOrder = 1
+  end
+  object edEan: TEdit
+    Left = 508
+    Height = 23
+    Top = 38
+    Width = 139
+    TabOrder = 2
+  end
+  object edDescricao: TEdit
+    Left = 104
+    Height = 23
+    Top = 70
+    Width = 544
+    TabOrder = 3
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 15
+    Top = 199
+    Width = 61
+    Caption = 'Nota  Fiscal'
+    ParentColor = False
+  end
+  object edQuantidade: TCurrencyEdit
+    Left = 104
+    Height = 23
+    Top = 191
+    Width = 80
+    Alignment = taRightJustify
+    DecimalPlaces = 3
+    DisplayFormat = ',0.###'
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 4
+    Value = 0
+  end
+  object edQuant_estoque: TCurrencyEdit
+    Left = 104
+    Height = 23
+    Top = 226
+    Width = 80
+    Alignment = taRightJustify
+    DecimalPlaces = 3
+    DisplayFormat = ',0.##'
+    MaxValue = 0
+    MinValue = 0
+    ReadOnly = True
+    TabOrder = 5
+    Value = 0
+  end
+  object cbxUnidadeNF: TComboBox
+    Left = 188
+    Height = 23
+    Top = 190
+    Width = 80
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'UN'
+      'CX'
+    )
+    OnChange = cbxUnidadeNFChange
+    TabOrder = 6
+    Text = 'UN'
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 651
+    Height = 24
+    Top = 67
+    Width = 25
+    OnClick = SpeedButton1Click
+  end
+  object PageControl1: TPageControl
+    Left = 7
+    Height = 315
+    Top = 256
+    Width = 664
+    ActivePage = TabSheet1
+    TabIndex = 0
+    TabOrder = 7
+    object TabSheet1: TTabSheet
+      Caption = 'ICMS'
+      ClientHeight = 287
+      ClientWidth = 656
+      object edpicms: TCurrencyEdit
+        Left = 228
+        Height = 23
+        Top = 203
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 0
+        Value = 0
+      end
+      object Label11: TLabel
+        Left = 7
+        Height = 15
+        Top = 210
+        Width = 45
+        Caption = 'Aliquota'
+        ParentColor = False
+      end
+      object Label12: TLabel
+        Left = 7
+        Height = 15
+        Top = 115
+        Width = 126
+        Caption = 'Redutor base de calculo'
+        ParentColor = False
+      end
+      object edpRedBC: TCurrencyEdit
+        Left = 228
+        Height = 23
+        Top = 108
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 1
+        Value = 0
+      end
+      object ebvBC: TCurrencyEdit
+        Left = 228
+        Height = 23
+        Top = 166
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 2
+        Value = 0
+      end
+      object Label13: TLabel
+        Left = 7
+        Height = 15
+        Top = 172
+        Width = 83
+        Caption = 'Base de Cálculo'
+        ParentColor = False
+      end
+      object Label14: TLabel
+        Left = 7
+        Height = 15
+        Top = 250
+        Width = 127
+        Caption = 'Valor do ICMS (unitário)'
+        ParentColor = False
+      end
+      object edvicms: TCurrencyEdit
+        Left = 228
+        Height = 23
+        Top = 241
+        Width = 91
+        Alignment = taRightJustify
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 3
+        Value = 0
+      end
+      object Label15: TLabel
+        Left = 338
+        Height = 15
+        Top = 215
+        Width = 119
+        Caption = 'Aliquota de subst. trib.'
+        ParentColor = False
+      end
+      object Label16: TLabel
+        Left = 340
+        Height = 15
+        Top = 145
+        Width = 126
+        Caption = 'Redutor base de calculo'
+        ParentColor = False
+      end
+      object Label17: TLabel
+        Left = 340
+        Height = 15
+        Hint = 'Percentual da Margem de Valor Adicionado ICMS ST'
+        Top = 115
+        Width = 148
+        Caption = 'M.V. Adcionado ao ICMS ST'
+        ParentColor = False
+        ParentShowHint = False
+        ShowHint = True
+      end
+      object Label18: TLabel
+        Left = 340
+        Height = 15
+        Top = 250
+        Width = 75
+        Caption = 'Valor do ICMS'
+        ParentColor = False
+      end
+      object edpicmsst: TCurrencyEdit
+        Left = 553
+        Height = 23
+        Top = 208
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 4
+        Value = 0
+      end
+      object edMVAST: TCurrencyEdit
+        Left = 553
+        Height = 23
+        Top = 108
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 5
+        Value = 0
+      end
+      object edRedBCST: TCurrencyEdit
+        Left = 553
+        Height = 23
+        Top = 139
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 6
+        Value = 0
+      end
+      object edVlrST: TCurrencyEdit
+        Left = 553
+        Height = 23
+        Top = 241
+        Width = 91
+        Alignment = taRightJustify
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 7
+        Value = 0
+      end
+      object Label21: TLabel
+        Left = 338
+        Height = 15
+        Top = 57
+        Width = 253
+        Caption = 'Modalidade de determinação da BC do ICMS ST'
+        ParentColor = False
+      end
+      object cbxmodbcst: TComboBox
+        Left = 338
+        Height = 23
+        Top = 74
+        Width = 312
+        ItemHeight = 15
+        Items.Strings = (
+          'Não sujeito'
+          '0–Preço tabelado ou máximo sugerido'
+          '1-Lista Negativa (valor)'
+          '2-Lista Positiva (valor)'
+          '3-Lista Neutra (valor)'
+          '4-Margem Valor Agregado (%)'
+          '5-Pauta (valor)'
+        )
+        TabOrder = 8
+      end
+      object Label23: TLabel
+        Left = 7
+        Height = 15
+        Top = 57
+        Width = 237
+        Caption = 'Modalidade de determinação da BC do ICMS'
+        ParentColor = False
+      end
+      object cbxModBC: TComboBox
+        Left = 7
+        Height = 23
+        Top = 74
+        Width = 312
+        ItemHeight = 15
+        Items.Strings = (
+          '0-Margem Valor Agregado (%)'
+          '1-Pauta (valor)'
+          '2-Preço Tabelado Máximo (valor)'
+          '3-Valor da Operação'
+        )
+        TabOrder = 9
+      end
+      object Shape1: TShape
+        Left = 326
+        Height = 176
+        Top = 64
+        Width = 4
+        Brush.Color = clGreen
+      end
+      object Label22: TLabel
+        Left = 7
+        Height = 15
+        Top = 17
+        Width = 40
+        Caption = 'Origem'
+        ParentColor = False
+      end
+      object cbxOrigem: TComboBox
+        Left = 60
+        Height = 23
+        Top = 8
+        Width = 208
+        ItemHeight = 15
+        Items.Strings = (
+          '0-Nacional'
+          '1-Estrangeira - importação direta'
+          '2-Estrangeira - adquirida no merc. interno'
+        )
+        ItemWidth = 300
+        TabOrder = 10
+      end
+      object Label24: TLabel
+        Left = 276
+        Height = 15
+        Top = 16
+        Width = 21
+        Caption = 'CST'
+        ParentColor = False
+      end
+      object cbxCSTICMS: TComboBox
+        Left = 316
+        Height = 23
+        Top = 7
+        Width = 334
+        ItemHeight = 15
+        Items.Strings = (
+          '00-Tributada integralmente'
+          '10-Tributada e com cobrança do ICMS por substituição tributária'
+          '20-Com redução de base de cálculo'
+          '30-Isenta ou não tributada e com cobrança do ICMS por substituição tributária'
+          '40-Isenta'
+          '41-Não tributada'
+          '50–Suspensão'
+          '51-Diferimento'
+          '60-ICMS cobrado anteriormente por substituição tributária'
+          '70-Com redução de base de cálculo e cobrança do ICMS por substituição tributária'
+          '90–Outros'
+        )
+        ItemWidth = 400
+        TabOrder = 11
+      end
+      object Label25: TLabel
+        Left = 340
+        Height = 15
+        Top = 178
+        Width = 140
+        Caption = 'Valor da BC. Calc. ST ICMS'
+        ParentColor = False
+      end
+      object edBCST: TCurrencyEdit
+        Left = 553
+        Height = 23
+        Top = 172
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 12
+        Value = 0
+      end
+      object cbxCSOSN: TComboBox
+        Left = 60
+        Height = 23
+        Top = 28
+        Width = 588
+        ItemHeight = 15
+        Items.Strings = (
+          '101-Tributada pelo Simples Nacional com permissão de crédito'
+          '102-Tributada pelo Simples Nacional sem permissão de crédito'
+          '103-Isenção do ICMS no Simples Nacional para faixa de receita bruta'
+          '201-Tributada pelo Simples Nacional com permissão de crédito e com cobrança do ICMS por substituição tributária'
+          '202-Tributada pelo Simples Nacional sem permissão de crédito e com cobrança do ICMS por substituição tributária'
+          '203-Isenção do ICMS no Simples Nacional para faixa de receita bruta e com cobrança do ICMS por substituição tributária'
+          '300-Imune'
+          '400-Não tributada pelo Simples Nacional'
+          '500-ICMS cobrado anteriormente por substituição tributária (substituído) ou por antecipação'
+          '900-Outros'
+        )
+        TabOrder = 13
+        Visible = False
+      end
+      object lbCSOSN2: TLabel
+        Left = 8
+        Height = 15
+        Top = 37
+        Width = 38
+        Caption = 'CSOSN'
+        ParentColor = False
+        Visible = False
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'PIS/COFINS/IPI'
+      ClientHeight = 287
+      ClientWidth = 656
+      object DividerBevel1: TDividerBevel
+        Left = 0
+        Height = 15
+        Top = 15
+        Width = 688
+        Caption = 'PIS'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object cbxcst_pis: TComboBox
+        Left = 87
+        Height = 23
+        Top = 32
+        Width = 569
+        ItemHeight = 15
+        Items.Strings = (
+          '01-Operação Tributável com Alíquota Básica'
+          '02-Operação Tributável com Alíquota Diferenciada'
+          '03-Operação Tributável com Alíquota por Unidade de Medida de Produto'
+          '04-Operação Tributável Monofásica - Revenda a Alíquota Zero'
+          '05-Operação Tributável por Substituição Tributária'
+          '06-Operação Tributável a Alíquota Zero'
+          '07-Operação Isenta da Contribuição'
+          '08-Operação sem Incidência da Contribuição'
+          '09-Operação com Suspensão da Contribuição'
+          '49-Outras Operações de Saída'
+          '50-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno'
+          '51-Operação com Direito a Crédito – Vinculada Exclusivamente a Receita Não Tributada no Mercado Interno'
+          '52-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação'
+          '53-Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno'
+          '54-Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação'
+          '55-Operação com Direito a Crédito - Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação'
+          '56-Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno, e de Exportação'
+          '60-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno'
+          '61-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno'
+          '62-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação'
+          '63-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno'
+          '64-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação'
+          '65-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação'
+          '66-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno, e de Exportação'
+          '67-Crédito Presumido - Outras Operações'
+          '70-Operação de Aquisição sem Direito a Crédito'
+          '71-Operação de Aquisição com Isenção'
+          '72-Operação de Aquisição com Suspensão'
+          '73-Operação de Aquisição a Alíquota Zero'
+          '74-Operação de Aquisição sem Incidência da Contribuição'
+          '75-Operação de Aquisição por Substituição Tributária'
+          '98-Outras Operações de Entrada'
+          '99-Outras Operações'
+        )
+        TabOrder = 0
+      end
+      object edVlrBCpis: TCurrencyEdit
+        Left = 96
+        Height = 23
+        Top = 64
+        Width = 96
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = 'R$ 0.00##'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 1
+        Value = 0
+      end
+      object edppis: TCurrencyEdit
+        Left = 288
+        Height = 23
+        Top = 64
+        Width = 82
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = 'R$ 0.00##'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 2
+        Value = 0
+      end
+      object Label9: TLabel
+        Left = 8
+        Height = 15
+        Top = 40
+        Width = 21
+        Caption = 'CST'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 8
+        Height = 15
+        Top = 72
+        Width = 43
+        Caption = 'Base PIS'
+        ParentColor = False
+      end
+      object Label27: TLabel
+        Left = 216
+        Height = 15
+        Top = 72
+        Width = 29
+        Caption = '% PIS'
+        ParentColor = False
+      end
+      object DividerBevel2: TDividerBevel
+        Left = 0
+        Height = 15
+        Top = 104
+        Width = 688
+        Caption = 'COFINS'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label30: TLabel
+        Left = 8
+        Height = 15
+        Top = 128
+        Width = 21
+        Caption = 'CST'
+        ParentColor = False
+      end
+      object cbxcstcofins: TComboBox
+        Left = 91
+        Height = 23
+        Top = 120
+        Width = 565
+        ItemHeight = 15
+        Items.Strings = (
+          '01-Operação Tributável com Alíquota Básica'
+          '02-Operação Tributável com Alíquota Diferenciada'
+          '03-Operação Tributável com Alíquota por Unidade de Medida de Produto'
+          '04-Operação Tributável Monofásica - Revenda a Alíquota Zero'
+          '05-Operação Tributável por Substituição Tributária'
+          '06-Operação Tributável a Alíquota Zero'
+          '07-Operação Isenta da Contribuição'
+          '08-Operação sem Incidência da Contribuição'
+          '09-Operação com Suspensão da Contribuição'
+          '49-Outras Operações de Saída'
+          '50-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno'
+          '51-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno'
+          '52-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação'
+          '53-Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno'
+          '54-Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação'
+          '55-Operação com Direito a Crédito - Vinculada a Receitas Não Tributadas no Mercado Interno e de Exportação'
+          '56-Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação'
+          '60-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno'
+          '61-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno'
+          '62-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação'
+          '63-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno'
+          '64-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação'
+          '65-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação'
+          '66-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação'
+          '67-Crédito Presumido - Outras Operações'
+          '70-Operação de Aquisição sem Direito a Crédito'
+          '71-Operação de Aquisição com Isenção'
+          '72-Operação de Aquisição com Suspensão'
+          '73-Operação de Aquisição a Alíquota Zero'
+          '74-Operação de Aquisição sem Incidência da Contribuição'
+          '75-Operação de Aquisição por Substituição Tributária'
+          '98-Outras Operações de Entrada'
+          '99-Outras Operações'
+        )
+        TabOrder = 3
+      end
+      object Label28: TLabel
+        Left = 8
+        Height = 15
+        Top = 162
+        Width = 68
+        Caption = 'Base COFINS'
+        ParentColor = False
+      end
+      object edVlrBCcofins: TCurrencyEdit
+        Left = 96
+        Height = 23
+        Top = 154
+        Width = 96
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = 'R$ 0.00##'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 4
+        Value = 0
+      end
+      object Label29: TLabel
+        Left = 216
+        Height = 15
+        Top = 162
+        Width = 54
+        Caption = '% COFINS'
+        ParentColor = False
+      end
+      object edpcofins: TCurrencyEdit
+        Left = 288
+        Height = 23
+        Top = 154
+        Width = 82
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = 'R$ 0.00##'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 5
+        Value = 0
+      end
+      object DividerBevel3: TDividerBevel
+        Left = 0
+        Height = 15
+        Top = 192
+        Width = 688
+        Caption = 'IPI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label34: TLabel
+        Left = 8
+        Height = 15
+        Top = 216
+        Width = 21
+        Caption = 'CST'
+        ParentColor = False
+      end
+      object cbxcstipi: TComboBox
+        Left = 91
+        Height = 23
+        Top = 208
+        Width = 565
+        ItemHeight = 15
+        Items.Strings = (
+          '00-Entrada com Recuperação de Crédito'
+          '01-Entrada Tributável com Alíquota Zero'
+          '02-Entrada Isenta'
+          '03-Entrada Não-Tributada'
+          '04-Entrada Imune'
+          '05-Entrada com Suspensão'
+          '49-Outras Entradas'
+          '50-Saída Tributada'
+          '51-Saída Tributável com Alíquota Zero'
+          '52-Saída Isenta'
+          '53-Saída Não-Tributada'
+          '54-Saída Imune'
+          '55-Saída com Suspensão'
+          '99-Outras Saídas'
+        )
+        TabOrder = 6
+      end
+      object Label31: TLabel
+        Left = 216
+        Height = 15
+        Top = 252
+        Width = 26
+        Caption = '% IPI'
+        ParentColor = False
+      end
+      object edAliqIPI: TCurrencyEdit
+        Left = 296
+        Height = 23
+        Top = 244
+        Width = 96
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = 'R$ 0.00##'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 7
+        Value = 0
+      end
+      object Label33: TLabel
+        Left = 8
+        Height = 15
+        Top = 252
+        Width = 31
+        Caption = 'BC IPI'
+        ParentColor = False
+      end
+      object edBCIpi: TCurrencyEdit
+        Left = 96
+        Height = 23
+        Top = 244
+        Width = 96
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = 'R$ 0.00##'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 8
+        Value = 0
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Lotes'
+      ClientHeight = 287
+      ClientWidth = 656
+      object RxDBGrid1: TRxDBGrid
+        Left = 12
+        Height = 176
+        Top = 58
+        Width = 641
+        TitleButtons = False
+        AutoSort = True
+        Columns = <        
+          item
+            Title.Alignment = taCenter
+            Title.Orientation = toHorizontal
+            Title.Caption = 'N° Lote'
+            Width = 100
+            FieldName = 'numerolote'
+            EditButtons = <>
+            Filter.Font.Style = [fsItalic]
+            Filter.DropDownRows = 0
+            Filter.EmptyValue = '(Empty)'
+            Filter.EmptyFont.Style = [fsItalic]
+            Filter.ItemIndex = -1
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Orientation = toHorizontal
+            Title.Caption = 'Quant. NF'
+            Width = 90
+            FieldName = 'quantidade'
+            DisplayFormat = ',0.###'
+            EditButtons = <>
+            Filter.Font.Style = [fsItalic]
+            Filter.DropDownRows = 0
+            Filter.EmptyValue = '(Empty)'
+            Filter.EmptyFont.Style = [fsItalic]
+            Filter.ItemIndex = -1
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Orientation = toHorizontal
+            Title.Caption = 'Quant.Estq.'
+            Width = 90
+            FieldName = 'quantidade_estoque'
+            DisplayFormat = ',0.##'
+            EditButtons = <>
+            Filter.Font.Style = [fsItalic]
+            Filter.DropDownRows = 0
+            Filter.EmptyValue = '(Empty)'
+            Filter.EmptyFont.Style = [fsItalic]
+            Filter.ItemIndex = -1
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Orientation = toHorizontal
+            Title.Caption = 'P.M.C'
+            Width = 90
+            FieldName = 'pmc'
+            DisplayFormat = ',0.00'
+            EditButtons = <>
+            Filter.Font.Style = [fsItalic]
+            Filter.DropDownRows = 0
+            Filter.EmptyValue = '(Empty)'
+            Filter.EmptyFont.Style = [fsItalic]
+            Filter.ItemIndex = -1
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Orientation = toHorizontal
+            Title.Caption = 'Dt. Fab.'
+            Width = 100
+            FieldName = 'data_frabricacao'
+            EditButtons = <>
+            Filter.Font.Style = [fsItalic]
+            Filter.DropDownRows = 0
+            Filter.EmptyValue = '(Empty)'
+            Filter.EmptyFont.Style = [fsItalic]
+            Filter.ItemIndex = -1
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Orientation = toHorizontal
+            Title.Caption = 'Vcto.'
+            Width = 100
+            FieldName = 'data_vencimento'
+            EditButtons = <>
+            Filter.Font.Style = [fsItalic]
+            Filter.DropDownRows = 0
+            Filter.EmptyValue = '(Empty)'
+            Filter.EmptyFont.Style = [fsItalic]
+            Filter.ItemIndex = -1
+          end>
+        KeyStrokes = <        
+          item
+            Command = rxgcShowFindDlg
+            ShortCut = 16454
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowColumnsDlg
+            ShortCut = 16471
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowFilterDlg
+            ShortCut = 16468
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowSortDlg
+            ShortCut = 16467
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowQuickFilter
+            ShortCut = 16465
+            Enabled = True
+          end        
+          item
+            Command = rxgcHideQuickFilter
+            ShortCut = 16456
+            Enabled = True
+          end>
+        FooterOptions.Color = clYellow
+        OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+        FooterColor = clYellow
+        Color = clWindow
+        DrawFullLine = False
+        FocusColor = clRed
+        SelectedColor = clHighlight
+        GridLineStyle = psSolid
+        DataSource = dsLotesItens
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+        ParentColor = False
+        TabOrder = 0
+      end
+      object DBNavigator1: TDBNavigator
+        Left = 12
+        Height = 39
+        Top = 8
+        Width = 305
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 39
+        ClientWidth = 305
+        DataSource = dsLotesItens
+        Options = []
+        TabOrder = 1
+      end
+    end
+    object TabSheet6: TTabSheet
+      Caption = 'Informação adcional'
+      ClientHeight = 287
+      ClientWidth = 656
+      object Memo1: TMemo
+        Left = 13
+        Height = 224
+        Top = 20
+        Width = 632
+        TabOrder = 0
+      end
+    end
+  end
+  object Label19: TLabel
+    Left = 8
+    Height = 15
+    Top = 230
+    Width = 42
+    Caption = 'Estoque'
+    ParentColor = False
+  end
+  object Label20: TLabel
+    Left = 8
+    Height = 15
+    Top = 142
+    Width = 34
+    Caption = 'N.C.M'
+    ParentColor = False
+  end
+  object edValorTotalBruto: TCurrencyEdit
+    Left = 368
+    Height = 23
+    Top = 194
+    Width = 80
+    Alignment = taRightJustify
+    DisplayFormat = '0.00'
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 8
+    Value = 0
+    ZeroEmpty = False
+    OnExit = edValorTotalBrutoExit
+  end
+  object btLancarItem: TBitBtn
+    Left = 10
+    Height = 30
+    Top = 584
+    Width = 256
+    Caption = 'Incluir Item'
+    ModalResult = 1
+    TabOrder = 9
+  end
+  object BitBtn2: TBitBtn
+    Left = 543
+    Height = 30
+    Top = 584
+    Width = 128
+    Cancel = True
+    Caption = 'Cancelar'
+    ModalResult = 2
+    TabOrder = 10
+  end
+  object HeaderControl1: THeaderControl
+    Left = 104
+    Height = 22
+    Top = 168
+    Width = 544
+    DragReorder = False
+    Sections = <    
+      item
+        Alignment = taLeftJustify
+        Text = 'Quant.'
+        Width = 80
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Unit.'
+        Width = 80
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Vlr. Unit.'
+        Width = 90
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Vlr.Total'
+        Width = 100
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Desconto R$'
+        Width = 100
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Vlr.Total'
+        Width = 100
+        Visible = True
+      end>
+  end
+  object Edit5: TEdit
+    Left = 104
+    Height = 23
+    Top = 134
+    Width = 112
+    TabOrder = 12
+  end
+  object RadioButton1: TRadioButton
+    Left = 352
+    Height = 19
+    Top = 134
+    Width = 103
+    Caption = 'Estoque normal'
+    Checked = True
+    TabOrder = 13
+    TabStop = True
+  end
+  object RadioButton2: TRadioButton
+    Left = 512
+    Height = 19
+    Top = 134
+    Width = 115
+    Caption = 'Estoque avariados'
+    TabOrder = 14
+  end
+  object Label26: TLabel
+    Left = 8
+    Height = 15
+    Top = 110
+    Width = 39
+    Caption = 'C.F.O.P'
+    ParentColor = False
+  end
+  object edcfop: TEdit
+    Left = 104
+    Height = 23
+    Top = 102
+    Width = 76
+    OnKeyDown = edcfopKeyDown
+    TabOrder = 15
+  end
+  object lbcfop: TLabel
+    Left = 224
+    Height = 15
+    Top = 110
+    Width = 34
+    Caption = 'Label5'
+    ParentColor = False
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 188
+    Height = 22
+    Top = 102
+    Width = 23
+    OnClick = SpeedButton2Click
+  end
+  object edValorunitario: TCurrencyEdit
+    Left = 272
+    Height = 23
+    Top = 194
+    Width = 80
+    Alignment = taRightJustify
+    DisplayFormat = '0.00'
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 16
+    Value = 0
+    ZeroEmpty = False
+    OnExit = edValorunitarioExit
+  end
+  object edDescontoNF: TCurrencyEdit
+    Left = 469
+    Height = 23
+    Top = 194
+    Width = 80
+    Alignment = taRightJustify
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 17
+    Value = 0
+    ZeroEmpty = False
+    OnExit = edDescontoNFExit
+  end
+  object lbTotalBrutoEstoque: TStaticText
+    Left = 371
+    Height = 22
+    Top = 226
+    Width = 74
+    Alignment = taRightJustify
+    BorderStyle = sbsSunken
+    Caption = '0,00'
+    TabOrder = 18
+  end
+  object StaticText1: TStaticText
+    Left = 192
+    Height = 22
+    Top = 226
+    Width = 74
+    BorderStyle = sbsSunken
+    Caption = 'UN'
+    TabOrder = 19
+  end
+  object lbDescontoEstoq: TStaticText
+    Left = 472
+    Height = 22
+    Top = 226
+    Width = 74
+    Alignment = taRightJustify
+    BorderStyle = sbsSunken
+    Caption = '0,00'
+    TabOrder = 20
+  end
+  object lbTotalEstoque2: TStaticText
+    Left = 574
+    Height = 22
+    Top = 223
+    Width = 72
+    Alignment = taRightJustify
+    BorderStyle = sbsSunken
+    Caption = '0,00'
+    TabOrder = 21
+  end
+  object lbVlrUnitEstq: TStaticText
+    Left = 278
+    Height = 22
+    Top = 226
+    Width = 74
+    Alignment = taRightJustify
+    BorderStyle = sbsSunken
+    Caption = '0,00'
+    TabOrder = 22
+  end
+  object lbTotalNF: TStaticText
+    Left = 574
+    Height = 22
+    Top = 192
+    Width = 72
+    Alignment = taRightJustify
+    BorderStyle = sbsSunken
+    Caption = '0,00'
+    TabOrder = 23
+  end
+  object Label8: TLabel
+    Left = 8
+    Height = 25
+    Top = 6
+    Width = 680
+    AutoSize = False
+    Caption = 'Descrição do item'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object qryItens: TZQuery
+    Connection = dbConnect.ZConnection1
+    UpdateObject = updItens
+    SQL.Strings = (
+      'Select i.*,p.quant_caixa,nf.uf,p.prazo_validade,p.quant_caixa_operacao'
+      'From nfentrada_itens i'
+      'Left Join produtos p ON p.id=i.produto'
+      'Left Join nfentrada nf ON i.nfentrada=nf.id'
+      'Where i.id=:id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    left = 200
+    top = 488
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryItensid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryItensnfentrada: TLongintField
+      FieldKind = fkData
+      FieldName = 'nfentrada'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensproduto: TLongintField
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryItensdescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryItensncm: TStringField
+      FieldKind = fkData
+      FieldName = 'ncm'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object qryItenscest: TStringField
+      FieldKind = fkData
+      FieldName = 'cest'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object qryItensunidade: TStringField
+      FieldKind = fkData
+      FieldName = 'unidade'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryItensquantidade: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantidade'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryItensquant_estoque: TFloatField
+      FieldKind = fkData
+      FieldName = 'quant_estoque'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryItenscodificacao_fornecedor: TStringField
+      FieldKind = fkData
+      FieldName = 'codificacao_fornecedor'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryItenscodigo_barras: TStringField
+      FieldKind = fkData
+      FieldName = 'codigo_barras'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryItensestoque_destino: TStringField
+      FieldKind = fkData
+      FieldName = 'estoque_destino'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      Size = 4
+    end
+    object qryItensvalorunitario: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorunitario'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryItensvalortotal: TFloatField
+      FieldKind = fkData
+      FieldName = 'valortotal'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryItensvdesconto: TFloatField
+      FieldKind = fkData
+      FieldName = 'vdesconto'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryItensvlr_unit_estoque: TFloatField
+      FieldKind = fkData
+      FieldName = 'vlr_unit_estoque'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryItensvfrete: TFloatField
+      FieldKind = fkData
+      FieldName = 'vfrete'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryItensvseguro: TFloatField
+      FieldKind = fkData
+      FieldName = 'vseguro'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryItensvoutras: TFloatField
+      FieldKind = fkData
+      FieldName = 'voutras'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryItenscfop: TStringField
+      FieldKind = fkData
+      FieldName = 'cfop'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensorig: TLongintField
+      FieldKind = fkData
+      FieldName = 'orig'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItenscst_csosn: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_csosn'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensp_icms: TFloatField
+      FieldKind = fkData
+      FieldName = 'p_icms'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryItensvlr_icms: TFloatField
+      FieldKind = fkData
+      FieldName = 'vlr_icms'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryItenspredbc: TFloatField
+      FieldKind = fkData
+      FieldName = 'predbc'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryItensvbcicms: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbcicms'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryItensmodbc: TLongintField
+      FieldKind = fkData
+      FieldName = 'modbc'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensvbcst: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbcst'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryItenspmvast: TFloatField
+      FieldKind = fkData
+      FieldName = 'pmvast'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryItenspredbcst: TFloatField
+      FieldKind = fkData
+      FieldName = 'predbcst'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryItenspicmsst: TFloatField
+      FieldKind = fkData
+      FieldName = 'picmsst'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryItensvicmsst: TFloatField
+      FieldKind = fkData
+      FieldName = 'vicmsst'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryItensmodbcst: TLongintField
+      FieldKind = fkData
+      FieldName = 'modbcst'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItenscst_pis: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_pis'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensppis: TFloatField
+      FieldKind = fkData
+      FieldName = 'ppis'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 327682
+    end
+    object qryItensvbc_pis: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbc_pis'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryItensvpis: TFloatField
+      FieldKind = fkData
+      FieldName = 'vpis'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryItenscst_cofins: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_cofins'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItenspcofins: TFloatField
+      FieldKind = fkData
+      FieldName = 'pcofins'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 327682
+    end
+    object qryItensvbc_cofins: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbc_cofins'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryItensvcofins: TFloatField
+      FieldKind = fkData
+      FieldName = 'vcofins'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryItenscst_ipi: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_ipi'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItenspipi: TFloatField
+      FieldKind = fkData
+      FieldName = 'pipi'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 327682
+    end
+    object qryItensvbcipi: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbcipi'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryItensvipi: TFloatField
+      FieldKind = fkData
+      FieldName = 'vipi'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryItensinfadprod: TMemoField
+      FieldKind = fkData
+      FieldName = 'infadprod'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryItensdescricao_xml: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao_xml'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+    object qryItensnfci_opc: TStringField
+      FieldKind = fkData
+      FieldName = 'nfci_opc'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 144
+    end
+    object qryItensquant_caixa: TFloatField
+      FieldKind = fkData
+      FieldName = 'quant_caixa'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655363
+    end
+    object qryItensuf: TStringField
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryItensprazo_validade: TLongintField
+      FieldKind = fkData
+      FieldName = 'prazo_validade'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryItensquant_caixa_operacao: TStringField
+      FieldKind = fkData
+      FieldName = 'quant_caixa_operacao'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+  end
+  object qryLotesItens: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select *'
+      'From nfentrada_itens_lotes'
+      'Where nfentrada_itens=:nfentrada_itens'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'nfentrada_itens'
+        ParamType = ptUnknown
+      end>
+    left = 592
+    top = 228
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'nfentrada_itens'
+        ParamType = ptUnknown
+      end>
+    object qryLotesItensid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryLotesItensnfentrada_itens: TLongintField
+      FieldKind = fkData
+      FieldName = 'nfentrada_itens'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLotesItensnumerolote: TStringField
+      FieldKind = fkData
+      FieldName = 'numerolote'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryLotesItensquantidade: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantidade'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryLotesItensquantidade_estoque: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantidade_estoque'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983044
+    end
+    object qryLotesItenspmc: TFloatField
+      FieldKind = fkData
+      FieldName = 'pmc'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object qryLotesItensdata_frabricacao: TDateField
+      FieldKind = fkData
+      FieldName = 'data_frabricacao'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLotesItensdata_vencimento: TDateField
+      FieldKind = fkData
+      FieldName = 'data_vencimento'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLotesItenslote: TLongintField
+      FieldKind = fkData
+      FieldName = 'lote'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsLotesItens: TDataSource
+    DataSet = MemDataset1
+    left = 496
+    top = 288
+  end
+  object MemDataset1: TMemDataset
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'itensentrada'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'numerolote'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'quantidade'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'vencimento'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'pmc'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'data_frabricacao'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'quantidade_estoque'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    BeforePost = MemDataset1BeforePost
+    OnNewRecord = MemDataset1NewRecord
+    left = 496
+    top = 236
+  end
+  object updItens: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM nfentrada_itens'
+      'WHERE'
+      '  nfentrada_itens.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO nfentrada_itens'
+      '  (id, nfentrada, produto, descricao, ncm, cest, unidade, quantidade, quant_estoque, '
+      '   codificacao_fornecedor, codigo_barras, estoque_destino, valorunitario, '
+      '   valortotal, vdesconto, vlr_unit_estoque, vfrete, vseguro, voutras, cfop, '
+      '   orig, cst_csosn, p_icms, vlr_icms, predbc, vbcicms, modbc, vbcst, pmvast, '
+      '   predbcst, picmsst, vicmsst, modbcst, cst_pis, ppis, vbc_pis, vpis, cst_cofins, '
+      '   pcofins, vbc_cofins, vcofins, cst_ipi, pipi, vbcipi, vipi, infadprod, '
+      '   descricao_xml, nfci_opc)'
+      'VALUES'
+      '  (:id, :nfentrada, :produto, :descricao, :ncm, :cest, :unidade, :quantidade, '
+      '   :quant_estoque, :codificacao_fornecedor, :codigo_barras, :estoque_destino, '
+      '   :valorunitario, :valortotal, :vdesconto, :vlr_unit_estoque, :vfrete, '
+      '   :vseguro, :voutras, :cfop, :orig, :cst_csosn, :p_icms, :vlr_icms, :predbc, '
+      '   :vbcicms, :modbc, :vbcst, :pmvast, :predbcst, :picmsst, :vicmsst, :modbcst, '
+      '   :cst_pis, :ppis, :vbc_pis, :vpis, :cst_cofins, :pcofins, :vbc_cofins, '
+      '   :vcofins, :cst_ipi, :pipi, :vbcipi, :vipi, :infadprod, :descricao_xml, '
+      '   :nfci_opc)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE nfentrada_itens SET'
+      '  id = :id,'
+      '  nfentrada = :nfentrada,'
+      '  produto = :produto,'
+      '  descricao = :descricao,'
+      '  ncm = :ncm,'
+      '  cest = :cest,'
+      '  unidade = :unidade,'
+      '  quantidade = :quantidade,'
+      '  quant_estoque = :quant_estoque,'
+      '  codificacao_fornecedor = :codificacao_fornecedor,'
+      '  codigo_barras = :codigo_barras,'
+      '  estoque_destino = :estoque_destino,'
+      '  valorunitario = :valorunitario,'
+      '  valortotal = :valortotal,'
+      '  vdesconto = :vdesconto,'
+      '  vlr_unit_estoque = :vlr_unit_estoque,'
+      '  vfrete = :vfrete,'
+      '  vseguro = :vseguro,'
+      '  voutras = :voutras,'
+      '  cfop = :cfop,'
+      '  orig = :orig,'
+      '  cst_csosn = :cst_csosn,'
+      '  p_icms = :p_icms,'
+      '  vlr_icms = :vlr_icms,'
+      '  predbc = :predbc,'
+      '  vbcicms = :vbcicms,'
+      '  modbc = :modbc,'
+      '  vbcst = :vbcst,'
+      '  pmvast = :pmvast,'
+      '  predbcst = :predbcst,'
+      '  picmsst = :picmsst,'
+      '  vicmsst = :vicmsst,'
+      '  modbcst = :modbcst,'
+      '  cst_pis = :cst_pis,'
+      '  ppis = :ppis,'
+      '  vbc_pis = :vbc_pis,'
+      '  vpis = :vpis,'
+      '  cst_cofins = :cst_cofins,'
+      '  pcofins = :pcofins,'
+      '  vbc_cofins = :vbc_cofins,'
+      '  vcofins = :vcofins,'
+      '  cst_ipi = :cst_ipi,'
+      '  pipi = :pipi,'
+      '  vbcipi = :vbcipi,'
+      '  vipi = :vipi,'
+      '  infadprod = :infadprod,'
+      '  descricao_xml = :descricao_xml,'
+      '  nfci_opc = :nfci_opc'
+      'WHERE'
+      '  nfentrada_itens.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 275
+    top = 488
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nfentrada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'descricao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ncm'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cest'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'unidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quant_estoque'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codificacao_fornecedor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codigo_barras'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'estoque_destino'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorunitario'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valortotal'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vdesconto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlr_unit_estoque'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vfrete'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vseguro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'voutras'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cfop'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'orig'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst_csosn'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'p_icms'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlr_icms'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'predbc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbcicms'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'modbc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbcst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pmvast'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'predbcst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'picmsst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vicmsst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'modbcst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst_pis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ppis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbc_pis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vpis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst_cofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pcofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbc_cofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vcofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst_ipi'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pipi'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbcipi'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vipi'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'infadprod'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'descricao_xml'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nfci_opc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+end

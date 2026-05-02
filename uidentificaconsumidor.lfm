@@ -1,0 +1,205 @@
+object frmIdentificaConsumidor: TfrmIdentificaConsumidor
+  Left = 457
+  Height = 413
+  Top = 153
+  Width = 607
+  BorderStyle = bsDialog
+  Caption = 'Identificação do consumidor'
+  ClientHeight = 413
+  ClientWidth = 607
+  Position = poScreenCenter
+  LCLVersion = '1.4.4.0'
+  object Label1: TLabel
+    Left = 13
+    Height = 15
+    Top = 9
+    Width = 33
+    Caption = 'Nome'
+    ParentColor = False
+  end
+  object edNome: TEdit
+    Left = 13
+    Height = 23
+    Top = 30
+    Width = 552
+    CharCase = ecUppercase
+    MaxLength = 40
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    Left = 13
+    Height = 15
+    Top = 58
+    Width = 54
+    Caption = 'CPF/CNPJ'
+    ParentColor = False
+  end
+  object edCPF: TEdit
+    Left = 13
+    Height = 23
+    Top = 79
+    Width = 175
+    MaxLength = 20
+    TabOrder = 1
+  end
+  object Label3: TLabel
+    Left = 13
+    Height = 15
+    Top = 107
+    Width = 21
+    Caption = 'CEP'
+    ParentColor = False
+  end
+  object edCep: TEdit
+    Left = 13
+    Height = 23
+    Top = 128
+    Width = 112
+    MaxLength = 15
+    OnKeyDown = edCepKeyDown
+    TabOrder = 2
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 128
+    Height = 22
+    Top = 129
+    Width = 23
+    Caption = '...'
+    OnClick = SpeedButton1Click
+  end
+  object Label4: TLabel
+    Left = 13
+    Height = 15
+    Top = 156
+    Width = 49
+    Caption = 'Endereço'
+    ParentColor = False
+  end
+  object edEndereco: TEdit
+    Left = 13
+    Height = 23
+    Top = 177
+    Width = 480
+    MaxLength = 40
+    TabOrder = 3
+  end
+  object Label5: TLabel
+    Left = 520
+    Height = 15
+    Top = 156
+    Width = 44
+    Caption = 'Número'
+    ParentColor = False
+  end
+  object edNumero: TEdit
+    Left = 520
+    Height = 23
+    Top = 177
+    Width = 72
+    MaxLength = 10
+    TabOrder = 4
+  end
+  object Label6: TLabel
+    Left = 13
+    Height = 15
+    Top = 205
+    Width = 31
+    Caption = 'Bairro'
+    ParentColor = False
+  end
+  object edbairro: TEdit
+    Left = 13
+    Height = 23
+    Top = 226
+    Width = 478
+    MaxLength = 20
+    TabOrder = 5
+  end
+  object Label7: TLabel
+    Left = 13
+    Height = 15
+    Top = 254
+    Width = 37
+    Caption = 'Cidade'
+    ParentColor = False
+  end
+  object edCidade: TEdit
+    Left = 13
+    Height = 23
+    Top = 275
+    Width = 473
+    MaxLength = 20
+    TabOrder = 6
+  end
+  object Label8: TLabel
+    Left = 520
+    Height = 15
+    Top = 254
+    Width = 35
+    Caption = 'Estado'
+    ParentColor = False
+  end
+  object edUF: TEdit
+    Left = 520
+    Height = 23
+    Top = 275
+    Width = 72
+    MaxLength = 2
+    TabOrder = 7
+  end
+  object BitBtn1: TBitBtn
+    Left = 13
+    Height = 30
+    Top = 360
+    Width = 75
+    DefaultCaption = True
+    Kind = bkOK
+    ModalResult = 1
+    TabOrder = 8
+  end
+  object BitBtn2: TBitBtn
+    Left = 504
+    Height = 30
+    Top = 360
+    Width = 88
+    Cancel = True
+    Caption = 'Cancelar'
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 9
+  end
+  object edComplemento: TEdit
+    Left = 13
+    Height = 23
+    Top = 324
+    Width = 577
+    MaxLength = 40
+    TabOrder = 10
+  end
+  object Label9: TLabel
+    Left = 13
+    Height = 15
+    Top = 303
+    Width = 77
+    Caption = 'Complemento'
+    ParentColor = False
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 569
+    Height = 22
+    Hint = 'Seleciona um cliente do cadastro'
+    Top = 30
+    Width = 23
+    Caption = '...'
+    OnClick = SpeedButton2Click
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object ACBrCEP1: TACBrCEP
+    ProxyPort = '8080'
+    WebService = wsRepublicaVirtual
+    PesquisarIBGE = True
+    left = 256
+    top = 128
+  end
+end

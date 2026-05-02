@@ -1,0 +1,1131 @@
+object fCadTran: TfCadTran
+  Left = 447
+  Height = 554
+  Top = 201
+  Width = 894
+  Caption = 'Cadastro de transportadora'
+  ClientHeight = 554
+  ClientWidth = 894
+  OnCreate = FormCreate
+  OnResize = FormResize
+  OnShortCut = FormShortCut
+  Position = poScreenCenter
+  LCLVersion = '1.6.4.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 894
+    AutoSize = True
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = ' '
+    Flat = False
+    Images = dbConnect.ImageList1
+    Indent = 3
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 3
+      Hint = 'Fechar Janela Atual'
+      Top = 2
+      Caption = 'Fechar'
+      ImageIndex = 8
+      OnClick = acFecharExecute
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton2: TToolButton
+      Left = 51
+      Height = 48
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton2'
+      ImageIndex = 11
+      Style = tbsSeparator
+    end
+    object ToolButton4: TToolButton
+      Left = 368
+      Height = 48
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton4'
+      ImageIndex = 12
+      Style = tbsSeparator
+    end
+    object ToolButton6: TToolButton
+      Left = 378
+      Hint = 'Deletar'
+      Top = 2
+      Caption = '&Delete'
+      ImageIndex = 5
+      OnClick = ToolButton6Click
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton12: TToolButton
+      Left = 426
+      Height = 48
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton12'
+      ImageIndex = 14
+      Style = tbsSeparator
+    end
+    object ToolButton13: TToolButton
+      Left = 61
+      Top = 2
+      Caption = 'ToolButton13'
+      DropdownMenu = PopupMenu1
+      ImageIndex = 6
+      OnClick = ToolButton13Click
+      Style = tbsDropDown
+    end
+    object ToolButton14: TToolButton
+      Left = 121
+      Height = 48
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton14'
+      ImageIndex = 14
+      Style = tbsSeparator
+    end
+    object WAGDBNavigator1: TWAGDBNavigator
+      Left = 436
+      Height = 48
+      Top = 2
+      Width = 365
+      Caption = 'Ordem'
+      OrdersDisplay.Strings = (
+        'Código'
+        'Nome'
+      )
+      OrdersFields.Strings = (
+        'id'
+        'nome'
+      )
+      TableName = 'transportadora'
+      KeyField = 'id'
+      Where = '0=0'
+      Connection = dbConnect.ZConnection1
+      OnAfterScroll = WAGDBNavigator1AfterScroll
+      ButtonsWidth = 48
+    end
+    object DBNavigator3: TDBNavigator
+      Left = 131
+      Height = 48
+      Top = 2
+      Width = 237
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 48
+      ClientWidth = 237
+      DataSource = dsTransportatora
+      Options = []
+      TabOrder = 1
+      VisibleButtons = [nbInsert, nbEdit, nbPost, nbCancel]
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 504
+    Top = 50
+    Width = 894
+    ActivePage = TabSheet1
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Transportadoras'
+      ClientHeight = 476
+      ClientWidth = 886
+      object GroupBox1: TGroupBox
+        Left = 14
+        Height = 457
+        Top = 15
+        Width = 863
+        ClientHeight = 437
+        ClientWidth = 859
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 12
+          Height = 15
+          Top = 17
+          Width = 42
+          Caption = 'Código:'
+          ParentColor = False
+        end
+        object Label2: TLabel
+          Left = 12
+          Height = 15
+          Top = 52
+          Width = 68
+          Caption = 'Razão Social:'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 12
+          Height = 15
+          Top = 90
+          Width = 43
+          Caption = 'C.N.P.J.:'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 236
+          Height = 15
+          Top = 127
+          Width = 52
+          Caption = 'Endereco:'
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 12
+          Height = 15
+          Top = 130
+          Width = 33
+          Caption = 'C.E.P.:'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 743
+          Height = 15
+          Top = 167
+          Width = 23
+          Caption = 'U.F.:'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 388
+          Height = 15
+          Top = 207
+          Width = 57
+          Caption = 'Telefone 1:'
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 620
+          Height = 15
+          Top = 207
+          Width = 57
+          Caption = 'Telefone 2:'
+          ParentColor = False
+        end
+        object Label9: TLabel
+          Left = 608
+          Height = 15
+          Top = 14
+          Width = 77
+          Caption = 'Data Cadastro:'
+          ParentColor = False
+        end
+        object Label10: TLabel
+          Left = 433
+          Height = 15
+          Top = 48
+          Width = 40
+          Caption = 'Label10'
+          ParentColor = False
+        end
+        object Label11: TLabel
+          Left = 12
+          Height = 15
+          Top = 210
+          Width = 42
+          Caption = 'Compl.:'
+          ParentColor = False
+        end
+        object Label12: TLabel
+          Left = 12
+          Height = 15
+          Top = 171
+          Width = 34
+          Caption = 'Bairro:'
+          ParentColor = False
+        end
+        object Label13: TLabel
+          Left = 12
+          Height = 15
+          Top = 245
+          Width = 37
+          Caption = 'E-mail:'
+          ParentColor = False
+        end
+        object Label14: TLabel
+          Left = 388
+          Height = 15
+          Top = 245
+          Width = 46
+          Caption = 'Contato:'
+          ParentColor = False
+        end
+        object Label15: TLabel
+          Left = 620
+          Height = 15
+          Top = 245
+          Width = 42
+          Caption = 'Funcao:'
+          ParentColor = False
+        end
+        object Label16: TLabel
+          Left = 532
+          Height = 15
+          Top = 82
+          Width = 97
+          Caption = 'Inscricao Estadual:'
+          ParentColor = False
+        end
+        object Label17: TLabel
+          Left = 388
+          Height = 15
+          Top = 167
+          Width = 40
+          Caption = 'Cidade:'
+          ParentColor = False
+        end
+        object DBEdit1: TDBEdit
+          Left = 95
+          Height = 23
+          Top = 11
+          Width = 97
+          DataField = 'id'
+          DataSource = dsTransportatora
+          ReadOnly = True
+          CharCase = ecNormal
+          Color = clSilver
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object DBEdit3: TDBEdit
+          Left = 95
+          Height = 23
+          Top = 46
+          Width = 734
+          DataField = 'nome'
+          DataSource = dsTransportatora
+          CharCase = ecUppercase
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object DBEdit4: TDBEdit
+          Left = 95
+          Height = 23
+          Top = 82
+          Width = 177
+          DataField = 'cnpj'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object DBEdit5: TDBEdit
+          Left = 654
+          Height = 23
+          Top = 78
+          Width = 175
+          DataField = 'ie'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object DBEdit6: TDBEdit
+          Left = 325
+          Height = 23
+          Top = 122
+          Width = 504
+          DataField = 'endereco'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object DBEdit7: TDBEdit
+          Left = 95
+          Height = 23
+          Top = 202
+          Width = 285
+          DataField = 'complemento'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
+        end
+        object DBEdit8: TDBEdit
+          Left = 95
+          Height = 23
+          Top = 122
+          Width = 100
+          DataField = 'cep'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 6
+        end
+        object DBEdit9: TDBEdit
+          Left = 95
+          Height = 23
+          Top = 162
+          Width = 254
+          DataField = 'bairro'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 7
+        end
+        object DBEdit10: TDBEdit
+          Left = 452
+          Height = 23
+          Top = 162
+          Width = 265
+          DataField = 'cidade'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 8
+        end
+        object DBEdit11: TDBEdit
+          Left = 791
+          Height = 23
+          Top = 162
+          Width = 38
+          DataField = 'uf'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 9
+        end
+        object DBEdit12: TDBEdit
+          Left = 95
+          Height = 23
+          Top = 241
+          Width = 285
+          DataField = 'email'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 10
+        end
+        object DBEdit13: TDBEdit
+          Left = 452
+          Height = 23
+          Top = 202
+          Width = 145
+          DataField = 'telefone1'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 11
+        end
+        object DBEdit14: TDBEdit
+          Left = 694
+          Height = 23
+          Top = 202
+          Width = 135
+          DataField = 'telefone2'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 12
+        end
+        object DBEdit15: TDBEdit
+          Left = 452
+          Height = 23
+          Top = 241
+          Width = 167
+          DataField = 'contato'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 13
+        end
+        object DBEdit16: TDBEdit
+          Left = 664
+          Height = 23
+          Top = 241
+          Width = 165
+          DataField = 'funccontato'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 14
+        end
+        object Label18: TLabel
+          Left = 388
+          Height = 15
+          Top = 300
+          Width = 65
+          Caption = 'Observacao:'
+          ParentColor = False
+        end
+        object DBMemo1: TDBMemo
+          Left = 380
+          Height = 112
+          Top = 319
+          Width = 469
+          DataField = 'obstransp'
+          DataSource = dsTransportatora
+          TabOrder = 15
+        end
+        object DBDateEdit1: TRxDBDateEdit
+          Left = 712
+          Height = 23
+          Top = 6
+          Width = 117
+          ButtonWidth = 23
+          CancelCaption = 'Cancel'
+          DialogTitle = 'Select a Date'
+          Enabled = False
+          Glyph.Data = {
+            36010000424D360100000000000076000000280000001C0000000C0000000100
+            040000000000C000000000000000000000000000000000000000000000000000
+            8000008000000080800080000000800080008080000080808000C0C0C0000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+            77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+            47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+            47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+            47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+            47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+            47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+          }
+          MaxLength = 10
+          NumGlyphs = 2
+          OKCaption = 'OK'
+          PasswordChar = #0
+          PopupColor = clWindow
+          TabOrder = 16
+          Text = '  /  /    '
+          DataField = 'datacadastro'
+          DataSource = dsTransportatora
+        end
+        object SpeedButton1: TSpeedButton
+          Left = 196
+          Height = 27
+          Top = 118
+          Width = 32
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            1800000000000003000064000000640000000000000000000000915921804000
+            824200824200824200804000803F00803F00803F008242008141008242008242
+            00824200803F00A06F42915920804000824200814100803F00A5764E9E7052A3
+            785AA57E5C7F3F00824200824200824200824200803F00A07043915920804000
+            824200824200804101C8A692F0E5E3F4E9E99F6F457F3E008141008242008242
+            00824200803F00A07043915920804000824200814100905722DBC2BBEFE5E2E4
+            D3CE743000824200824200824200824200824200803F00A07043915920803F00
+            8140007E3D00A97A53EFE5E3E6D4D09964358040008140008141008141008141
+            00814100803F00A07043925C2987491E894A1D78370BF0E4E3E4D1CCE0CDC692
+            593389491D8B4C247A3B0079431881471A7F4000803F00A070439E6B3AF9F6F3
+            FFFFFFF0E6E1D4BCADE8D8D2E1CDC7F2E9E6FFFFFFFFFFFFDCC5BFF4E9E8F5EA
+            EAAF83637C3B00A170438E551DDDCDC0FEFFFFFFFFFFD9C2B8E6D6D1E5D4CFB9
+            8E7BFFFFFFFFFFFFECE1DCDCC5BDE8DAD5F2E6E86E2A00A1704390561F8A4F1B
+            FFFFFFFFFFFFEDE3DED7BDB5EBDDD9E7D8D3DECCC1FFFFFFF7F4F3D9C0B7E7D7
+            D3E6D6D1B8907A9D6C40915920773300DCC6BCFFFFFFFFFFFFEADCDAF1E4E6F6
+            ECF0DFCAC5F9F6F4FFFFFFC3A18DF7EEF0F1E5E7E4D2CCA6774D915920814100
+            7A37007630007631007834007834007732008D5721FAF8F6FFFFFFCBAC9C6F27
+            00783300773200A06F4291592080400082420082420082420082420082420078
+            3400D6BEB3FFFFFFFBF9F8976330814100824200803F00A07043915920804000
+            82420082420082420081410080400085460BFFFFFFFEFFFFE7DBD18344088242
+            00824200803F00A070439159208040008242008242008242008242007E3D00D9
+            C3B6FFFFFFFFFFFFC1A18A7E3C00824200824200803F00A0704390581F803F00
+            814000814000814000814100824404A27445A77C4FAF875D7B36008140008140
+            008140007F3E00A070429F6D41935C24945D26945D26945D26945D26945D2693
+            5C23925B23925B23945D26945D26945D26945D26925B23B08561
+          }
+          OnClick = SpeedButton1Click
+        end
+        object GroupBox6: TGroupBox
+          Left = 12
+          Height = 126
+          Top = 306
+          Width = 360
+          ClientHeight = 106
+          ClientWidth = 356
+          TabOrder = 17
+          object Label19: TLabel
+            Left = 14
+            Height = 15
+            Top = 12
+            Width = 126
+            Caption = 'N° Aut. Funcionamento'
+            ParentColor = False
+          end
+          object DBEdit18: TDBEdit
+            Left = 208
+            Height = 23
+            Top = 7
+            Width = 136
+            DataField = 'licenca_autorizacao'
+            DataSource = dsTransportatora
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object Label20: TLabel
+            Left = 14
+            Height = 15
+            Top = 52
+            Width = 57
+            Caption = 'N° Licença'
+            ParentColor = False
+          end
+          object DBEdit19: TDBEdit
+            Left = 208
+            Height = 23
+            Top = 40
+            Width = 136
+            DataField = 'licenca_numero'
+            DataSource = dsTransportatora
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object Label21: TLabel
+            Left = 14
+            Height = 15
+            Top = 78
+            Width = 44
+            Caption = 'Validade'
+            ParentColor = False
+          end
+          object DBDateEdit2: TRxDBDateEdit
+            Left = 208
+            Height = 23
+            Top = 73
+            Width = 136
+            ButtonWidth = 23
+            CancelCaption = 'Cancel'
+            DialogTitle = 'Select a Date'
+            Enabled = False
+            Glyph.Data = {
+              36010000424D360100000000000076000000280000001C0000000C0000000100
+              040000000000C000000000000000000000000000000000000000000000000000
+              8000008000000080800080000000800080008080000080808000C0C0C0000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+              77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+              47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+              47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+              47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+              47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+              47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+            }
+            MaxLength = 10
+            NumGlyphs = 2
+            OKCaption = 'OK'
+            PasswordChar = #0
+            PopupColor = clWindow
+            TabOrder = 2
+            Text = '  /  /    '
+            OnAcceptDate = DBDateEdit2AcceptDate
+            DataField = 'licenca_validade'
+            DataSource = dsTransportatora
+          end
+        end
+        object DBCheckBox1: TDBCheckBox
+          Left = 388
+          Height = 23
+          Top = 274
+          Width = 292
+          Caption = 'Enviar XML das NF-e junto com o romaneio'
+          DataField = 'emviarxml'
+          DataSource = dsTransportatora
+          ParentBiDiMode = False
+          TabOrder = 18
+          ValueChecked = 'True'
+          ValueUnchecked = 'False'
+        end
+        object Label22: TLabel
+          Left = 12
+          Height = 15
+          Top = 278
+          Width = 65
+          Caption = 'E-mail/NF-e'
+          ParentColor = False
+        end
+        object DBEdit17: TDBEdit
+          Left = 95
+          Height = 23
+          Top = 274
+          Width = 285
+          DataField = 'email_nfe'
+          DataSource = dsTransportatora
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 19
+        end
+        object DBCheckBox2: TDBCheckBox
+          Left = 688
+          Height = 23
+          Top = 274
+          Width = 161
+          Caption = 'Enviar XML ao faturar'
+          DataField = 'emviarxml_faturar'
+          DataSource = dsTransportatora
+          ParentBiDiMode = False
+          TabOrder = 20
+          ValueChecked = 'True'
+          ValueUnchecked = 'False'
+        end
+      end
+    end
+  end
+  object dsTransportatora: TDataSource
+    DataSet = qryTransportadora
+    left = 640
+    top = 48
+  end
+  object PopupMenu1: TPopupMenu
+    left = 80
+    top = 56
+    object PorCdigo1: TMenuItem
+      Caption = 'Por Código'
+      ShortCut = 113
+      OnClick = PorCdigo1Click
+    end
+    object PorNome1: TMenuItem
+      Caption = 'Por Nome'
+      ShortCut = 114
+      OnClick = PorNome1Click
+    end
+  end
+  object qryTransportadora: TZQuery
+    Connection = dbConnect.ZConnection1
+    UpdateObject = updTransportadora
+    BeforePost = qryTransportadoraBeforePost
+    AfterPost = qryTransportadoraAfterPost
+    BeforeDelete = tbTransportadoraBeforeDelete
+    SQL.Strings = (
+      'Select *'
+      'From transportadora'
+      'Where id=:id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    left = 640
+    top = 8
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryTransportadoraid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryTransportadoranome: TStringField
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryTransportadoradatacadastro: TDateField
+      FieldKind = fkData
+      FieldName = 'datacadastro'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTransportadoraendereco: TStringField
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryTransportadoracidade: TStringField
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryTransportadorabairro: TStringField
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryTransportadoracep: TStringField
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryTransportadoracomplemento: TStringField
+      FieldKind = fkData
+      FieldName = 'complemento'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryTransportadoraemail: TStringField
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+    object qryTransportadorauf: TStringField
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryTransportadoratelefone1: TStringField
+      FieldKind = fkData
+      FieldName = 'telefone1'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryTransportadoratelefone2: TStringField
+      FieldKind = fkData
+      FieldName = 'telefone2'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryTransportadoracontato: TStringField
+      FieldKind = fkData
+      FieldName = 'contato'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryTransportadorafunccontato: TStringField
+      FieldKind = fkData
+      FieldName = 'funccontato'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryTransportadoraie: TStringField
+      FieldKind = fkData
+      FieldName = 'ie'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryTransportadoracnpj: TStringField
+      FieldKind = fkData
+      FieldName = 'cnpj'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object qryTransportadoraobstransp: TMemoField
+      FieldKind = fkData
+      FieldName = 'obstransp'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryTransportadoralicenca_autorizacao: TStringField
+      FieldKind = fkData
+      FieldName = 'licenca_autorizacao'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryTransportadoralicenca_numero: TStringField
+      FieldKind = fkData
+      FieldName = 'licenca_numero'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryTransportadoralicenca_validade: TDateField
+      FieldKind = fkData
+      FieldName = 'licenca_validade'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTransportadoraemviarxml: TBooleanField
+      FieldKind = fkData
+      FieldName = 'emviarxml'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      DisplayValues = 'True;False'
+    end
+    object qryTransportadoraemail_nfe: TStringField
+      FieldKind = fkData
+      FieldName = 'email_nfe'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qryTransportadoraemviarxml_faturar: TBooleanField
+      FieldKind = fkData
+      FieldName = 'emviarxml_faturar'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+  end
+  object updTransportadora: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM transportadora'
+      'WHERE'
+      '  transportadora.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO transportadora'
+      '  (id, nome, datacadastro, endereco, cidade, bairro, cep, complemento, '
+      '   email, uf, telefone1, telefone2, contato, funccontato, ie, cnpj, obstransp, '
+      '   licenca_autorizacao, licenca_numero, licenca_validade, emviarxml, email_nfe, '
+      '   emviarxml_faturar)'
+      'VALUES'
+      '  (:id, :nome, :datacadastro, :endereco, :cidade, :bairro, :cep, :complemento, '
+      '   :email, :uf, :telefone1, :telefone2, :contato, :funccontato, :ie, :cnpj, '
+      '   :obstransp, :licenca_autorizacao, :licenca_numero, :licenca_validade, '
+      '   :emviarxml, :email_nfe, :emviarxml_faturar)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE transportadora SET'
+      '  id = :id,'
+      '  nome = :nome,'
+      '  datacadastro = :datacadastro,'
+      '  endereco = :endereco,'
+      '  cidade = :cidade,'
+      '  bairro = :bairro,'
+      '  cep = :cep,'
+      '  complemento = :complemento,'
+      '  email = :email,'
+      '  uf = :uf,'
+      '  telefone1 = :telefone1,'
+      '  telefone2 = :telefone2,'
+      '  contato = :contato,'
+      '  funccontato = :funccontato,'
+      '  ie = :ie,'
+      '  cnpj = :cnpj,'
+      '  obstransp = :obstransp,'
+      '  licenca_autorizacao = :licenca_autorizacao,'
+      '  licenca_numero = :licenca_numero,'
+      '  licenca_validade = :licenca_validade,'
+      '  emviarxml = :emviarxml,'
+      '  email_nfe = :email_nfe,'
+      '  emviarxml_faturar = :emviarxml_faturar'
+      'WHERE'
+      '  transportadora.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 696
+    top = 8
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nome'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datacadastro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'endereco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'bairro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cep'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'complemento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'email'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'uf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telefone1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telefone2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'funccontato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ie'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cnpj'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'obstransp'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'licenca_autorizacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'licenca_numero'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'licenca_validade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'emviarxml'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'email_nfe'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'emviarxml_faturar'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object ACBrValidador1: TACBrValidador
+    IgnorarChar = './-'
+    left = 776
+    top = 16
+  end
+  object ACBrCEP1: TACBrCEP
+    ProxyPort = '8080'
+    WebService = wsRepublicaVirtual
+    PesquisarIBGE = True
+    left = 332
+    top = 186
+  end
+end

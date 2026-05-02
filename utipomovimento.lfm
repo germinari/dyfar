@@ -1,0 +1,501 @@
+object frmTipoMovimento: TfrmTipoMovimento
+  Left = 569
+  Height = 525
+  Top = 145
+  Width = 570
+  BorderStyle = bsDialog
+  Caption = 'Tabela de tipos de movimentos'
+  ClientHeight = 525
+  ClientWidth = 570
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object Label1: TLabel
+    Left = 7
+    Height = 15
+    Top = 272
+    Width = 51
+    Caption = 'Descrição'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 7
+    Height = 15
+    Top = 240
+    Width = 39
+    Caption = 'Código'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 109
+    Height = 23
+    Top = 263
+    Width = 451
+    DataField = 'descricao'
+    DataSource = dsTipoMovimento
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 7
+    Height = 185
+    Top = 5
+    Width = 556
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Código'
+        Width = 60
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'Descrição'
+        Width = 450
+        FieldName = 'descricao'
+      end>
+    DataSource = dsTipoMovimento
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 109
+    Height = 23
+    Top = 233
+    Width = 72
+    DataField = 'id'
+    DataSource = dsTipoMovimento
+    ReadOnly = True
+    CharCase = ecNormal
+    Color = clSilver
+    Font.Style = [fsBold]
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 7
+    Height = 15
+    Top = 301
+    Width = 69
+    Caption = 'Busca preços'
+    ParentColor = False
+  end
+  object RxDBComboBox1: TRxDBComboBox
+    Left = 164
+    Height = 23
+    Top = 294
+    Width = 204
+    Style = csDropDownList
+    DataField = 'origem_preco'
+    DataSource = dsTipoMovimento
+    EnableValues = True
+    ItemHeight = 15
+    Items.Strings = (
+      'Lista de Preços'
+      'Custo Atual'
+      'Custo Médio'
+      'Preço Margem de Lucro'
+      'Digitado'
+    )
+    MaxLength = 0
+    TabOrder = 3
+    Values.Strings = (
+      '0'
+      '1'
+      '2'
+      '3'
+      '4'
+    )
+  end
+  object Label4: TLabel
+    Left = 7
+    Height = 15
+    Top = 378
+    Width = 84
+    Caption = 'Produto normal'
+    ParentColor = False
+  end
+  object DBEdit3: TDBEdit
+    Left = 248
+    Height = 23
+    Top = 371
+    Width = 66
+    DataField = 'cfop_normal_estado'
+    DataSource = dsTipoMovimento
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 4
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 7
+    Height = 36
+    Top = 192
+    Width = 223
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 36
+    ClientWidth = 223
+    DataSource = dsTipoMovimento
+    Options = []
+    TabOrder = 5
+    VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel, nbRefresh]
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 320
+    Height = 22
+    Top = 371
+    Width = 23
+    Caption = '...'
+    OnClick = SpeedButton1Click
+  end
+  object Label5: TLabel
+    Left = 248
+    Height = 15
+    Top = 349
+    Width = 112
+    Caption = 'CFOP - para o estado'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 384
+    Height = 15
+    Top = 349
+    Width = 143
+    Caption = 'CFOP - para fora do estado'
+    ParentColor = False
+  end
+  object DBEdit4: TDBEdit
+    Left = 384
+    Height = 23
+    Top = 371
+    Width = 66
+    DataField = 'cfop_normal_outro_estado'
+    DataSource = dsTipoMovimento
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 6
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 456
+    Height = 22
+    Top = 371
+    Width = 23
+    Caption = '...'
+    OnClick = SpeedButton2Click
+  end
+  object Label7: TLabel
+    Left = 8
+    Height = 15
+    Top = 406
+    Width = 196
+    Caption = 'Produto com subst. tributária normal'
+    ParentColor = False
+  end
+  object DBEdit5: TDBEdit
+    Left = 248
+    Height = 23
+    Top = 399
+    Width = 66
+    DataField = 'cfop_st_estado'
+    DataSource = dsTipoMovimento
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 7
+  end
+  object SpeedButton3: TSpeedButton
+    Left = 320
+    Height = 22
+    Top = 399
+    Width = 23
+    Caption = '...'
+    OnClick = SpeedButton3Click
+  end
+  object DBEdit6: TDBEdit
+    Left = 384
+    Height = 23
+    Top = 399
+    Width = 66
+    DataField = 'cfop_st_outro_estado'
+    DataSource = dsTipoMovimento
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 8
+  end
+  object SpeedButton4: TSpeedButton
+    Left = 456
+    Height = 22
+    Top = 399
+    Width = 23
+    Caption = '...'
+    OnClick = SpeedButton4Click
+  end
+  object DBCheckBox1: TDBCheckBox
+    Left = 8
+    Height = 19
+    Top = 443
+    Width = 90
+    AutoSize = True
+    Caption = 'Calcula ICMS'
+    DataField = 'calcula_icms'
+    DataSource = dsTipoMovimento
+    TabOrder = 9
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+  end
+  object DBCheckBox2: TDBCheckBox
+    Left = 152
+    Height = 19
+    Top = 443
+    Width = 177
+    AutoSize = True
+    Caption = 'Calcula substituição tributária'
+    DataField = 'calcula_st'
+    DataSource = dsTipoMovimento
+    TabOrder = 10
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+  end
+  object DBRadioGroup1: TDBRadioGroup
+    Left = 320
+    Height = 43
+    Top = 216
+    Width = 185
+    Columns = 2
+    DataField = 'entrada_saida'
+    DataSource = dsTipoMovimento
+    Items.Strings = (
+      'Entrada'
+      'Saida'
+    )
+    TabOrder = 11
+    Values.Strings = (
+      'E'
+      'S'
+    )
+  end
+  object DBCheckBox3: TDBCheckBox
+    Left = 152
+    Height = 19
+    Top = 478
+    Width = 192
+    AutoSize = True
+    Caption = 'Gera contas a receber ou a pagar'
+    DataField = 'gera_faturamento'
+    DataSource = dsTipoMovimento
+    TabOrder = 12
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+  end
+  object DBCheckBox4: TDBCheckBox
+    Left = 8
+    Height = 19
+    Top = 478
+    Width = 107
+    AutoSize = True
+    Caption = 'Atualiza estoque'
+    DataField = 'atualiza_estoque'
+    DataSource = dsTipoMovimento
+    TabOrder = 13
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+  end
+  object Label8: TLabel
+    Left = 8
+    Height = 15
+    Top = 327
+    Width = 130
+    Caption = 'Origem/Destino estoque'
+    ParentColor = False
+  end
+  object RxDBComboBox2: TRxDBComboBox
+    Left = 164
+    Height = 23
+    Top = 319
+    Width = 204
+    Style = csDropDownList
+    DataField = 'destino_estoque'
+    DataSource = dsTipoMovimento
+    EnableValues = True
+    ItemHeight = 15
+    Items.Strings = (
+      'Principal'
+      'Quarentena/Avariados'
+      'Sem movimento'
+    )
+    MaxLength = 0
+    TabOrder = 14
+    Values.Strings = (
+      '0'
+      '1'
+      '2'
+    )
+  end
+  object qryTipoMovimento: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select *'
+      'From tipo_movimento'
+      'Order by id'
+    )
+    Params = <>
+    left = 406
+    top = 83
+    object qryTipoMovimentoid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTipoMovimentocfop_normal_estado: TStringField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'cfop_normal_estado'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 5
+    end
+    object qryTipoMovimentocfop_normal_outro_estado: TStringField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'cfop_normal_outro_estado'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 5
+    end
+    object qryTipoMovimentocfop_st_estado: TStringField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'cfop_st_estado'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 5
+    end
+    object qryTipoMovimentocfop_st_outro_estado: TStringField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'cfop_st_outro_estado'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 5
+    end
+    object qryTipoMovimentogera_faturamento: TBooleanField
+      DefaultExpression = 'False'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'gera_faturamento'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryTipoMovimentoatualiza_estoque: TBooleanField
+      DefaultExpression = 'True'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'atualiza_estoque'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryTipoMovimentocalcula_icms: TBooleanField
+      DefaultExpression = 'True'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'calcula_icms'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryTipoMovimentocalcula_st: TBooleanField
+      DefaultExpression = 'False'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'calcula_st'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryTipoMovimentoentrada_saida: TStringField
+      DisplayWidth = 1
+      FieldKind = fkData
+      FieldName = 'entrada_saida'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryTipoMovimentodescricao: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryTipoMovimentoorigem_preco: TLongintField
+      DefaultExpression = '0'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'origem_preco'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTipoMovimentodestino_estoque: TLongintField
+      DefaultExpression = '0'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'destino_estoque'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsTipoMovimento: TDataSource
+    DataSet = qryTipoMovimento
+    left = 410
+    top = 139
+  end
+end

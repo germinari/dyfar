@@ -1,0 +1,441 @@
+object frmConsultaCadastro: TfrmConsultaCadastro
+  Left = 338
+  Height = 492
+  Top = 113
+  Width = 667
+  Caption = 'Consulta de cadastro'
+  ClientHeight = 492
+  ClientWidth = 667
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object Label1: TLabel
+    Left = 24
+    Height = 15
+    Top = 11
+    Width = 27
+    Caption = 'CNPJ'
+    ParentColor = False
+  end
+  object ScrollBox1: TScrollBox
+    Left = 8
+    Height = 424
+    Top = 32
+    Width = 653
+    HorzScrollBar.Page = 627
+    VertScrollBar.Page = 187
+    ClientHeight = 420
+    ClientWidth = 649
+    TabOrder = 0
+    object Panel1: TPanel
+      Left = 9
+      Height = 181
+      Top = 6
+      Width = 618
+      BevelInner = bvLowered
+      BevelOuter = bvNone
+      ClientHeight = 181
+      ClientWidth = 618
+      TabOrder = 0
+      OnClick = Panel1Click
+      object Label3: TLabel
+        Left = 8
+        Height = 15
+        Top = 42
+        Width = 94
+        Caption = 'Inscrição Estadual'
+        ParentColor = False
+        OnClick = Label3Click
+      end
+      object Label4: TLabel
+        Left = 8
+        Height = 15
+        Top = 102
+        Width = 49
+        Caption = 'Endereço'
+        ParentColor = False
+        OnClick = Label3Click
+      end
+      object Label5: TLabel
+        Left = 477
+        Height = 15
+        Top = 102
+        Width = 44
+        Caption = 'Número'
+        ParentColor = False
+      end
+      object Label6: TLabel
+        Left = 477
+        Height = 15
+        Top = 42
+        Width = 14
+        Caption = 'UF'
+        ParentColor = False
+        OnClick = Label3Click
+      end
+      object Label7: TLabel
+        Left = 8
+        Height = 15
+        Top = 62
+        Width = 139
+        Caption = 'Regime de apuração ICMS'
+        ParentColor = False
+        OnClick = Label3Click
+      end
+      object Label8: TLabel
+        Left = 477
+        Height = 15
+        Top = 62
+        Width = 31
+        Caption = 'CNAE'
+        ParentColor = False
+        OnClick = Label3Click
+      end
+      object Label9: TLabel
+        Left = 8
+        Height = 15
+        Top = 82
+        Width = 81
+        Caption = 'Dt.Ini.Atividade'
+        ParentColor = False
+        OnClick = Label3Click
+      end
+      object Label10: TLabel
+        Left = 205
+        Height = 15
+        Top = 82
+        Width = 98
+        Caption = 'Dt.Ultima Situação'
+        ParentColor = False
+        OnClick = Label3Click
+      end
+      object Label11: TLabel
+        Left = 477
+        Height = 15
+        Top = 82
+        Width = 43
+        Caption = 'Dt.Baixa'
+        ParentColor = False
+        OnClick = Label3Click
+      end
+      object Label12: TLabel
+        Left = 8
+        Height = 15
+        Top = 122
+        Width = 37
+        Caption = 'Cidade'
+        ParentColor = False
+      end
+      object Label13: TLabel
+        Left = 341
+        Height = 15
+        Top = 122
+        Width = 31
+        Caption = 'Bairro'
+        ParentColor = False
+      end
+      object Label14: TLabel
+        Left = 8
+        Height = 15
+        Top = 142
+        Width = 77
+        Caption = 'Complemento'
+        ParentColor = False
+      end
+      object Label15: TLabel
+        Left = 9
+        Height = 15
+        Top = 162
+        Width = 21
+        Caption = 'CEP'
+        ParentColor = False
+      end
+      object lbField1: TLabel
+        Left = 167
+        Height = 15
+        Top = 42
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField2: TLabel
+        Left = 533
+        Height = 15
+        Top = 44
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField3: TLabel
+        Left = 167
+        Height = 15
+        Top = 62
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField4: TLabel
+        Left = 533
+        Height = 15
+        Top = 62
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object Button201: TButton
+        Left = 437
+        Height = 25
+        Top = 153
+        Width = 171
+        Caption = 'Transportar para o cadastro'
+        Enabled = False
+        OnClick = Button201Click
+        TabOrder = 0
+      end
+      object lbField5: TLabel
+        Left = 109
+        Height = 15
+        Top = 82
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField6: TLabel
+        Left = 341
+        Height = 15
+        Top = 82
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField7: TLabel
+        Left = 533
+        Height = 15
+        Top = 82
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField8: TLabel
+        Left = 109
+        Height = 15
+        Top = 102
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField9: TLabel
+        Left = 533
+        Height = 15
+        Top = 102
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField10: TLabel
+        Left = 77
+        Height = 15
+        Top = 122
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField11: TLabel
+        Left = 389
+        Height = 15
+        Top = 122
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField12: TLabel
+        Left = 101
+        Height = 15
+        Top = 142
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object lbField13: TLabel
+        Left = 101
+        Height = 15
+        Top = 162
+        Width = 63
+        Caption = '123456789'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label3Click
+      end
+      object Panel2: TPanel
+        Left = 8
+        Height = 5
+        Top = 2
+        Width = 600
+        Color = clRed
+        ParentColor = False
+        TabOrder = 1
+        Visible = False
+      end
+      object Label18: TLabel
+        Left = 9
+        Height = 15
+        Top = 25
+        Width = 43
+        Caption = 'Fantasia'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 9
+        Height = 15
+        Top = 8
+        Width = 65
+        Caption = 'Razão Social'
+        ParentColor = False
+      end
+      object Label16: TLabel
+        Left = 94
+        Height = 15
+        Top = 8
+        Width = 43
+        Caption = 'Label16'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label19: TLabel
+        Left = 94
+        Height = 15
+        Top = 25
+        Width = 43
+        Caption = 'Label19'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+  object Button1: TButton
+    Left = 464
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 1
+    Visible = False
+  end
+  object btConsultar: TButton
+    Left = 576
+    Height = 25
+    Top = 1
+    Width = 83
+    Caption = 'Consultar'
+    OnClick = btConsultarClick
+    TabOrder = 2
+  end
+  object edCNPJ: TEdit
+    Left = 104
+    Height = 23
+    Top = 6
+    Width = 171
+    TabOrder = 3
+    Text = '81.744.021/0001-13'
+  end
+  object edUF: TEdit
+    Left = 392
+    Height = 23
+    Top = 6
+    Width = 63
+    CharCase = ecUppercase
+    TabOrder = 4
+    Text = 'PR'
+  end
+  object Label17: TLabel
+    Left = 300
+    Height = 15
+    Top = 11
+    Width = 69
+    Caption = 'UF do cliente'
+    ParentColor = False
+  end
+  object Button4: TButton
+    Left = 8
+    Height = 25
+    Top = 463
+    Width = 75
+    Caption = 'Fechar'
+    OnClick = Button4Click
+    TabOrder = 5
+  end
+  object ACBrNFe1: TACBrNFe
+    Configuracoes.Geral.SSLLib = libOpenSSL
+    Configuracoes.Geral.SSLCryptLib = cryOpenSSL
+    Configuracoes.Geral.SSLHttpLib = httpOpenSSL
+    Configuracoes.Geral.SSLXmlSignLib = xsLibXml2
+    Configuracoes.Geral.FormatoAlerta = 'TAG:%TAGNIVEL% ID:%ID%/%TAG%(%DESCRICAO%) - %MSG%.'
+    Configuracoes.Geral.VersaoQRCode = veqr000
+    Configuracoes.Arquivos.OrdenacaoPath = <>
+    Configuracoes.WebServices.UF = 'SP'
+    Configuracoes.WebServices.Ambiente = taProducao
+    Configuracoes.WebServices.AguardarConsultaRet = 0
+    Configuracoes.WebServices.QuebradeLinha = '|'
+    Configuracoes.RespTec.IdCSRT = 0
+    DANFE = ACBrNFeDANFeRL1
+    left = 568
+    top = 262
+  end
+  object ACBrNFeDANFeRL1: TACBrNFeDANFeRL
+    Sistema = 'Projeto ACBr - www.projetoacbr.com.br'
+    MargemInferior = 0.7
+    MargemSuperior = 0.7
+    MargemEsquerda = 0.7
+    MargemDireita = 0.7
+    CasasDecimais.Formato = tdetInteger
+    CasasDecimais.qCom = 2
+    CasasDecimais.vUnCom = 2
+    CasasDecimais.MaskqCom = ',0.00'
+    CasasDecimais.MaskvUnCom = ',0.00'
+    ACBrNFe = ACBrNFe1
+    ExibeCampoFatura = False
+    TributosPercentualPersonalizado = 0
+    left = 571
+    top = 328
+  end
+end

@@ -1,0 +1,8 @@
+object frmConsignado: TfrmConsignado
+  Left = 337
+  Height = 618
+  Top = 145
+  Width = 1034
+  Caption = 'Consignado'
+  LCLVersion = '1.0.14.0'
+end

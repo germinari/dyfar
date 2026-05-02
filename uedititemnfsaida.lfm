@@ -1,0 +1,1980 @@
+object frmEditItemNFSaida: TfrmEditItemNFSaida
+  Left = 471
+  Height = 612
+  Top = 85
+  Width = 719
+  ActiveControl = edCodProd
+  BorderStyle = bsDialog
+  Caption = 'Edição de item'
+  ClientHeight = 612
+  ClientWidth = 719
+  Position = poScreenCenter
+  LCLVersion = '3.8.0.0'
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 45
+    Width = 42
+    Caption = 'Código '
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 408
+    Height = 15
+    Top = 45
+    Width = 74
+    Caption = 'Código barras'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 15
+    Top = 77
+    Width = 51
+    Caption = 'Descrição'
+    ParentColor = False
+  end
+  object edCodProd: TEdit
+    Left = 104
+    Height = 23
+    Top = 37
+    Width = 72
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 0
+  end
+  object edCodBarras: TEdit
+    Left = 508
+    Height = 23
+    Top = 38
+    Width = 139
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 1
+  end
+  object edDescricao: TEdit
+    Left = 104
+    Height = 23
+    Top = 70
+    Width = 544
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 2
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 15
+    Top = 200
+    Width = 61
+    Caption = 'Nota  Fiscal'
+    ParentColor = False
+  end
+  object edQuantidade: TCurrencyEdit
+    Left = 104
+    Height = 23
+    Top = 192
+    Width = 80
+    Alignment = taRightJustify
+    DecimalPlaces = 3
+    DisplayFormat = ',0.###'
+    TabOrder = 3
+    OnChange = edQuantidadeChange
+  end
+  object cbxUnidadeNF: TComboBox
+    Left = 188
+    Height = 23
+    Top = 192
+    Width = 80
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'UN'
+      'CX'
+    )
+    TabOrder = 4
+    Text = 'UN'
+    OnChange = cbxUnidadeNFChange
+  end
+  object btSelectProduto: TSpeedButton
+    Left = 651
+    Height = 24
+    Top = 67
+    Width = 25
+    Caption = '...'
+    OnClick = btSelectProdutoClick
+  end
+  object PageControl1: TPageControl
+    Left = 8
+    Height = 315
+    Top = 253
+    Width = 705
+    ActivePage = TabSheet1
+    TabIndex = 0
+    TabOrder = 5
+    Options = [nboDoChangeOnSetIndex]
+    object TabSheet1: TTabSheet
+      Caption = 'ICMS'
+      ClientHeight = 287
+      ClientWidth = 697
+      object edPICMS: TCurrencyEdit
+        Left = 210
+        Height = 23
+        Top = 213
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        TabOrder = 0
+      end
+      object Label11: TLabel
+        Left = 7
+        Height = 15
+        Top = 220
+        Width = 45
+        Caption = 'Aliquota'
+        ParentColor = False
+      end
+      object Label12: TLabel
+        Left = 8
+        Height = 15
+        Top = 176
+        Width = 126
+        Caption = 'Redutor base de calculo'
+        ParentColor = False
+      end
+      object edpRedBC: TCurrencyEdit
+        Left = 210
+        Height = 23
+        Top = 168
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        TabOrder = 1
+      end
+      object edBaseCalc: TCurrencyEdit
+        Left = 210
+        Height = 23
+        Top = 118
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        TabOrder = 2
+      end
+      object Label13: TLabel
+        Left = 8
+        Height = 15
+        Top = 126
+        Width = 83
+        Caption = 'Base de Cálculo'
+        ParentColor = False
+      end
+      object Label14: TLabel
+        Left = 7
+        Height = 15
+        Top = 260
+        Width = 126
+        Caption = 'Valor do ICMS (unitário)'
+        ParentColor = False
+      end
+      object edVICMS: TCurrencyEdit
+        Left = 210
+        Height = 23
+        Top = 251
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        TabOrder = 3
+      end
+      object Label15: TLabel
+        Left = 356
+        Height = 15
+        Top = 225
+        Width = 119
+        Caption = 'Aliquota de subst. trib.'
+        ParentColor = False
+      end
+      object Label16: TLabel
+        Left = 356
+        Height = 15
+        Top = 157
+        Width = 126
+        Caption = 'Redutor base de calculo'
+        ParentColor = False
+      end
+      object Label17: TLabel
+        Left = 356
+        Height = 15
+        Hint = 'Percentual da Margem de Valor Adicionado ICMS ST'
+        Top = 126
+        Width = 147
+        Caption = 'M.V. Adcionado ao ICMS ST'
+        ParentColor = False
+        ParentShowHint = False
+        ShowHint = True
+      end
+      object Label18: TLabel
+        Left = 356
+        Height = 15
+        Top = 260
+        Width = 74
+        Caption = 'Valor do ICMS'
+        ParentColor = False
+      end
+      object edpicmsst: TCurrencyEdit
+        Left = 568
+        Height = 23
+        Top = 218
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        TabOrder = 4
+      end
+      object edMVAST: TCurrencyEdit
+        Left = 568
+        Height = 23
+        Top = 118
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        TabOrder = 5
+      end
+      object edRedBCST: TCurrencyEdit
+        Left = 567
+        Height = 23
+        Top = 149
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        TabOrder = 6
+      end
+      object edVlrST: TCurrencyEdit
+        Left = 568
+        Height = 23
+        Top = 251
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        TabOrder = 7
+      end
+      object Label21: TLabel
+        Left = 356
+        Height = 15
+        Top = 67
+        Width = 252
+        Caption = 'Modalidade de determinação da BC do ICMS ST'
+        ParentColor = False
+      end
+      object cbxmodbcst: TComboBox
+        Left = 356
+        Height = 23
+        Top = 84
+        Width = 312
+        ItemHeight = 15
+        Items.Strings = (
+          'Não sujeito'
+          '0–Preço tabelado ou máximo sugerido'
+          '1-Lista Negativa (valor)'
+          '2-Lista Positiva (valor)'
+          '3-Lista Neutra (valor)'
+          '4-Margem Valor Agregado (%)'
+          '5-Pauta (valor)'
+        )
+        TabOrder = 8
+      end
+      object Label23: TLabel
+        Left = 7
+        Height = 15
+        Top = 67
+        Width = 237
+        Caption = 'Modalidade de determinação da BC do ICMS'
+        ParentColor = False
+      end
+      object cbxModBC: TComboBox
+        Left = 7
+        Height = 23
+        Top = 84
+        Width = 312
+        ItemHeight = 15
+        Items.Strings = (
+          '0-Margem Valor Agregado (%)'
+          '1-Pauta (valor)'
+          '2-Preço Tabelado Máximo (valor)'
+          '3-Valor da Operação'
+        )
+        TabOrder = 9
+      end
+      object Shape1: TShape
+        Left = 342
+        Height = 208
+        Top = 74
+        Width = 3
+        Brush.Color = clGreen
+      end
+      object Label22: TLabel
+        Left = 7
+        Height = 15
+        Top = 13
+        Width = 40
+        Caption = 'Origem'
+        ParentColor = False
+      end
+      object cbxOrigem: TComboBox
+        Left = 85
+        Height = 23
+        Top = 4
+        Width = 581
+        ItemHeight = 15
+        Items.Strings = (
+          '0- Nacional, exceto as indicadas nos códigos 3, 4, 5 e 8; '
+          '1- Estrangeira - Importação direta, exceto a indicada no código 6; '
+          '2- Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7; '
+          '3- Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40% e inferior ou igual a 70%; '
+          '4- Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes; '
+          '5- Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%; '
+          '6- Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX e gás natural; '
+          '7- Estrangeira - Adquirida no mercado interno, sem similar nacional, constante em lista da CAMEX e gás natural. '
+          '8- Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%; '
+        )
+        ItemWidth = 300
+        TabOrder = 10
+      end
+      object Label24: TLabel
+        Left = 8
+        Height = 15
+        Top = 41
+        Width = 63
+        Caption = 'CST/CSOSN'
+        ParentColor = False
+      end
+      object cbxCSTICMS: TComboBox
+        Left = 85
+        Height = 23
+        Top = 33
+        Width = 581
+        ItemHeight = 15
+        Items.Strings = (
+          '00–Tributada integralmente'
+          '10-Tributada e com cobrança do ICMS por substituição tributária'
+          '20-Com redução de base de cálculo'
+          '30-Isenta ou não tributada e com cobrança do ICMS por substituição tributária'
+          '40-Isenta'
+          '41-Não tributada'
+          '50–Suspensão'
+          '51-Diferimento'
+          '60-ICMS cobrado anteriormente por substituição tributária'
+          '70-Com redução de base de cálculo e cobrança do ICMS por substituição tributária'
+          '90–Outros'
+        )
+        ItemWidth = 400
+        TabOrder = 11
+      end
+      object Label25: TLabel
+        Left = 356
+        Height = 15
+        Top = 190
+        Width = 138
+        Caption = 'Valor da BC. Calc. ST ICMS'
+        ParentColor = False
+        WordWrap = True
+      end
+      object edBCST: TCurrencyEdit
+        Left = 568
+        Height = 23
+        Top = 182
+        Width = 91
+        Alignment = taRightJustify
+        DisplayFormat = ',0.00'
+        TabOrder = 12
+      end
+      object cbxCSOSN: TComboBox
+        Left = 85
+        Height = 23
+        Top = 33
+        Width = 581
+        ItemHeight = 15
+        Items.Strings = (
+          '101-Tributada pelo Simples Nacional com permissão de crédito'
+          '102-Tributada pelo Simples Nacional sem permissão de crédito'
+          '103-Isenção do ICMS no Simples Nacional para faixa de receita bruta'
+          '201-Tributada pelo Simples Nacional com permissão de crédito e com cobrança do ICMS por substituição tributária'
+          '202-Tributada pelo Simples Nacional sem permissão de crédito e com cobrança do ICMS por substituição tributária'
+          '203-Isenção do ICMS no Simples Nacional para faixa de receita bruta e com cobrança do ICMS por substituição tributária'
+          '300-Imune'
+          '400-Não tributada pelo Simples Nacional'
+          '500-ICMS cobrado anteriormente por substituição tributária (substituído) ou por antecipação'
+          '900-Outros'
+        )
+        TabOrder = 13
+        Visible = False
+      end
+      object btCalculaICMS: TSpeedButton
+        Left = 303
+        Height = 32
+        Top = 247
+        Width = 32
+        Glyph.Data = {
+          36090000424D3609000000000000360000002800000018000000180000000100
+          2000000000000009000064000000640000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000137343152373731613735326037353260373532603735
+          3260373532603735326037353260373532603735326037353260373532603735
+          3260373731613835325100000001000000000000000000000000000000000000
+          0000000000003737315334343422000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000003838312438353251000000000000000000000000000000000000
+          0000000000003737316100000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000037343049000000000000
+          0000000000000000000037373161000000000000000000000000000000000000
+          000000000000373532600000000000000000555555033F3F3F083F3F3F083F3F
+          3F08333333050000000000000000333333053F3F3F08363630593F3F3F085555
+          5503000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000003B33331E3935324C3935324C3935
+          324C3A352F300000000000000000393434313935324C383631873935324C3434
+          341D000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000036363054000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000000000000000000000000000000000
+          000000000000000000000000000000000000000000003F3F2A0C000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          000000000000373532600000000000000000373737173636323D000000003434
+          341D373732370000000000000000000000000000000039363350000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000000000000036363054373734533735
+          327300000002000000000000000000000000000000003A323223000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          000000000000373532600000000000000000000000003434341D373431A13434
+          303F000000000000000000000000383333363636305436363054363630543939
+          311F000000000000000037353260000000000000000000000000000000000000
+          00000000000037353260000000000000000039392E1637353273000000023636
+          3054383333360000000000000000000000000000000037353172000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000005555550300000001000000000000
+          00003F3F3F040000000000000000000000000000000000000000000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000383531483735326037353260373532603735
+          3260373532603735326037353260373532603735326037353260373532603735
+          3260383531480000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000373532600000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000373532600000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000373532600000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000373532600000000037353260000000000000000000000000000000000000
+          00000000000037373161000000003737326F3735326037353260373532603735
+          3260373532603735326037353260373532603735326037353260373532603735
+          32603737326F0000000037373161000000000000000000000000000000000000
+          0000000000003737315334343422000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000003434342237343152000000000000000000000000000000000000
+          0000000000000000000137373153373731613735326037353260373532603735
+          3260373532603735326037353260373532603735326037353260373532603735
+          3260373731613737315300000001000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000
+        }
+        OnClick = btCalculaICMSClick
+      end
+      object btCalcICMSST: TSpeedButton
+        Left = 662
+        Height = 32
+        Top = 248
+        Width = 32
+        Glyph.Data = {
+          36090000424D3609000000000000360000002800000018000000180000000100
+          2000000000000009000064000000640000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000137343152373731613735326037353260373532603735
+          3260373532603735326037353260373532603735326037353260373532603735
+          3260373731613835325100000001000000000000000000000000000000000000
+          0000000000003737315334343422000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000003838312438353251000000000000000000000000000000000000
+          0000000000003737316100000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000037343049000000000000
+          0000000000000000000037373161000000000000000000000000000000000000
+          000000000000373532600000000000000000555555033F3F3F083F3F3F083F3F
+          3F08333333050000000000000000333333053F3F3F08363630593F3F3F085555
+          5503000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000003B33331E3935324C3935324C3935
+          324C3A352F300000000000000000393434313935324C383631873935324C3434
+          341D000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000036363054000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000000000000000000000000000000000
+          000000000000000000000000000000000000000000003F3F2A0C000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          000000000000373532600000000000000000373737173636323D000000003434
+          341D373732370000000000000000000000000000000039363350000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000000000000036363054373734533735
+          327300000002000000000000000000000000000000003A323223000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          000000000000373532600000000000000000000000003434341D373431A13434
+          303F000000000000000000000000383333363636305436363054363630543939
+          311F000000000000000037353260000000000000000000000000000000000000
+          00000000000037353260000000000000000039392E1637353273000000023636
+          3054383333360000000000000000000000000000000037353172000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000000000005555550300000001000000000000
+          00003F3F3F040000000000000000000000000000000000000000000000000000
+          0000000000000000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000383531483735326037353260373532603735
+          3260373532603735326037353260373532603735326037353260373532603735
+          3260383531480000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000373532600000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000373532600000000037353260000000000000000000000000000000000000
+          0000000000003735326000000000373532600000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000373532600000000037353260000000000000000000000000000000000000
+          00000000000037373161000000003737326F3735326037353260373532603735
+          3260373532603735326037353260373532603735326037353260373532603735
+          32603737326F0000000037373161000000000000000000000000000000000000
+          0000000000003737315334343422000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000003434342237343152000000000000000000000000000000000000
+          0000000000000000000137373153373731613735326037353260373532603735
+          3260373532603735326037353260373532603735326037353260373532603735
+          3260373731613737315300000001000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000
+        }
+        OnClick = btCalcICMSSTClick
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'PIS/COFINS/IPI'
+      ClientHeight = 287
+      ClientWidth = 697
+      object cbxcst_pis: TComboBox
+        Left = 96
+        Height = 23
+        Top = 32
+        Width = 569
+        ItemHeight = 15
+        Items.Strings = (
+          ''
+          '01-Operação Tributável com Alíquota Básica'
+          '02-Operação Tributável com Alíquota Diferenciada'
+          '03-Operação Tributável com Alíquota por Unidade de Medida de Produto'
+          '04-Operação Tributável Monofásica - Revenda a Alíquota Zero'
+          '05-Operação Tributável por Substituição Tributária'
+          '06-Operação Tributável a Alíquota Zero'
+          '07-Operação Isenta da Contribuição'
+          '08-Operação sem Incidência da Contribuição'
+          '09-Operação com Suspensão da Contribuição'
+          '49-Outras Operações de Saída'
+          '50-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno'
+          '51-Operação com Direito a Crédito – Vinculada Exclusivamente a Receita Não Tributada no Mercado Interno'
+          '52-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação'
+          '53-Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno'
+          '54-Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação'
+          '55-Operação com Direito a Crédito - Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação'
+          '56-Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno, e de Exportação'
+          '60-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno'
+          '61-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno'
+          '62-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação'
+          '63-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno'
+          '64-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação'
+          '65-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação'
+          '66-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno, e de Exportação'
+          '67-Crédito Presumido - Outras Operações'
+          '70-Operação de Aquisição sem Direito a Crédito'
+          '71-Operação de Aquisição com Isenção'
+          '72-Operação de Aquisição com Suspensão'
+          '73-Operação de Aquisição a Alíquota Zero'
+          '74-Operação de Aquisição sem Incidência da Contribuição'
+          '75-Operação de Aquisição por Substituição Tributária'
+          '98-Outras Operações de Entrada'
+          '99-Outras Operações'
+        )
+        TabOrder = 0
+      end
+      object edVlrBCpis: TCurrencyEdit
+        Left = 96
+        Height = 23
+        Top = 64
+        Width = 96
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = 'R$ 0.00##'
+        TabOrder = 1
+      end
+      object edppis: TCurrencyEdit
+        Left = 304
+        Height = 23
+        Top = 64
+        Width = 82
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = '0.00##'
+        TabOrder = 2
+      end
+      object Label9: TLabel
+        Left = 8
+        Height = 15
+        Top = 40
+        Width = 20
+        Caption = 'CST'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 8
+        Height = 15
+        Top = 72
+        Width = 43
+        Caption = 'Base PIS'
+        ParentColor = False
+      end
+      object Label27: TLabel
+        Left = 216
+        Height = 15
+        Top = 72
+        Width = 29
+        Caption = '% PIS'
+        ParentColor = False
+      end
+      object DividerBevel1: TDividerBevel
+        Left = 0
+        Height = 15
+        Top = 15
+        Width = 688
+        Caption = 'PIS'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object DividerBevel2: TDividerBevel
+        Left = 0
+        Height = 15
+        Top = 104
+        Width = 688
+        Caption = 'COFINS'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label30: TLabel
+        Left = 8
+        Height = 15
+        Top = 128
+        Width = 20
+        Caption = 'CST'
+        ParentColor = False
+      end
+      object cbxcstcofins: TComboBox
+        Left = 96
+        Height = 23
+        Top = 120
+        Width = 565
+        ItemHeight = 15
+        Items.Strings = (
+          ''
+          '01-Operação Tributável com Alíquota Básica'
+          '02-Operação Tributável com Alíquota Diferenciada'
+          '03-Operação Tributável com Alíquota por Unidade de Medida de Produto'
+          '04-Operação Tributável Monofásica - Revenda a Alíquota Zero'
+          '05-Operação Tributável por Substituição Tributária'
+          '06-Operação Tributável a Alíquota Zero'
+          '07-Operação Isenta da Contribuição'
+          '08-Operação sem Incidência da Contribuição'
+          '09-Operação com Suspensão da Contribuição'
+          '49-Outras Operações de Saída'
+          '50-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno'
+          '51-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno'
+          '52-Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação'
+          '53-Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno'
+          '54-Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação'
+          '55-Operação com Direito a Crédito - Vinculada a Receitas Não Tributadas no Mercado Interno e de Exportação'
+          '56-Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação'
+          '60-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno'
+          '61-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno'
+          '62-Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação'
+          '63-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno'
+          '64-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação'
+          '65-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação'
+          '66-Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação'
+          '67-Crédito Presumido - Outras Operações'
+          '70-Operação de Aquisição sem Direito a Crédito'
+          '71-Operação de Aquisição com Isenção'
+          '72-Operação de Aquisição com Suspensão'
+          '73-Operação de Aquisição a Alíquota Zero'
+          '74-Operação de Aquisição sem Incidência da Contribuição'
+          '75-Operação de Aquisição por Substituição Tributária'
+          '98-Outras Operações de Entrada'
+          '99-Outras Operações'
+        )
+        TabOrder = 3
+      end
+      object Label28: TLabel
+        Left = 8
+        Height = 15
+        Top = 162
+        Width = 68
+        Caption = 'Base COFINS'
+        ParentColor = False
+      end
+      object edVlrBCcofins: TCurrencyEdit
+        Left = 96
+        Height = 23
+        Top = 154
+        Width = 96
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = 'R$ 0.00##'
+        TabOrder = 4
+      end
+      object Label29: TLabel
+        Left = 216
+        Height = 15
+        Top = 162
+        Width = 54
+        Caption = '% COFINS'
+        ParentColor = False
+      end
+      object edpcofins: TCurrencyEdit
+        Left = 304
+        Height = 23
+        Top = 154
+        Width = 82
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = '0.00##'
+        TabOrder = 5
+      end
+      object DividerBevel3: TDividerBevel
+        Left = 0
+        Height = 15
+        Top = 192
+        Width = 688
+        Caption = 'IPI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label34: TLabel
+        Left = 8
+        Height = 15
+        Top = 216
+        Width = 20
+        Caption = 'CST'
+        ParentColor = False
+      end
+      object cbxcstipi: TComboBox
+        Left = 96
+        Height = 23
+        Top = 208
+        Width = 565
+        ItemHeight = 15
+        Items.Strings = (
+          ''
+          '00-Entrada com Recuperação de Crédito'
+          '01-Entrada Tributável com Alíquota Zero'
+          '02-Entrada Isenta'
+          '03-Entrada Não-Tributada'
+          '04-Entrada Imune'
+          '05-Entrada com Suspensão'
+          '49-Outras Entradas'
+          '50-Saída Tributada'
+          '51-Saída Tributável com Alíquota Zero'
+          '52-Saída Isenta'
+          '53-Saída Não-Tributada'
+          '54-Saída Imune'
+          '55-Saída com Suspensão'
+          '99-Outras Saídas'
+        )
+        TabOrder = 6
+      end
+      object Label31: TLabel
+        Left = 216
+        Height = 15
+        Top = 252
+        Width = 61
+        Caption = 'Aliquora IPI'
+        ParentColor = False
+      end
+      object edAliqIPI: TCurrencyEdit
+        Left = 304
+        Height = 23
+        Top = 244
+        Width = 82
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = '0.00##'
+        TabOrder = 7
+      end
+      object Label33: TLabel
+        Left = 8
+        Height = 15
+        Top = 252
+        Width = 31
+        Caption = 'BC IPI'
+        ParentColor = False
+      end
+      object edBCIpi: TCurrencyEdit
+        Left = 96
+        Height = 23
+        Top = 244
+        Width = 96
+        Alignment = taRightJustify
+        DecimalPlaces = 4
+        DisplayFormat = 'R$ 0.00##'
+        TabOrder = 8
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Lote'
+      ClientHeight = 287
+      ClientWidth = 697
+      object edNumLote: TEdit
+        Left = 224
+        Height = 23
+        Top = 53
+        Width = 152
+        MaxLength = 20
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object Label2: TLabel
+        Left = 24
+        Height = 15
+        Top = 62
+        Width = 84
+        Caption = 'Número do lote'
+        ParentColor = False
+      end
+      object RxDateEdit1: TRxDateEdit
+        Left = 224
+        Height = 23
+        Top = 96
+        Width = 152
+        ButtonWidth = 23
+        DialogTitle = 'Select a Date'
+        MaxLength = 10
+        PasswordChar = #0
+        PopupColor = clWindow
+        TabOrder = 1
+        Text = '  /  /    '
+      end
+      object RxDateEdit2: TRxDateEdit
+        Left = 224
+        Height = 23
+        Top = 145
+        Width = 152
+        ButtonWidth = 23
+        DialogTitle = 'Select a Date'
+        MaxLength = 10
+        PasswordChar = #0
+        PopupColor = clWindow
+        TabOrder = 2
+        Text = '  /  /    '
+      end
+      object Label7: TLabel
+        Left = 24
+        Height = 15
+        Top = 104
+        Width = 84
+        Caption = 'Data Fabricação'
+        ParentColor = False
+      end
+      object Label35: TLabel
+        Left = 24
+        Height = 15
+        Top = 153
+        Width = 106
+        Caption = 'Data de vencimento'
+        ParentColor = False
+      end
+      object edPrecoMax: TCurrencyEdit
+        Left = 224
+        Height = 23
+        Top = 192
+        Width = 152
+        Alignment = taRightJustify
+        TabOrder = 3
+      end
+      object Label36: TLabel
+        Left = 24
+        Height = 15
+        Top = 200
+        Width = 160
+        Caption = 'Preço máximo ao consumidor'
+        ParentColor = False
+      end
+    end
+    object TabSheet6: TTabSheet
+      Caption = 'Informação adcional'
+      ClientHeight = 287
+      ClientWidth = 697
+      object Memo1: TMemo
+        Left = 13
+        Height = 144
+        Top = 128
+        Width = 675
+        TabOrder = 0
+      end
+      object cbxIndTotal: TCheckBox
+        Left = 13
+        Height = 19
+        Top = 8
+        Width = 132
+        Caption = 'Entra no total da nota'
+        TabOrder = 1
+      end
+      object Label32: TLabel
+        Left = 13
+        Height = 15
+        Top = 46
+        Width = 70
+        Caption = 'Valor do frete'
+        ParentColor = False
+      end
+      object edVFrete: TCurrencyEdit
+        Left = 234
+        Height = 23
+        Top = 40
+        Width = 91
+        Alignment = taRightJustify
+        TabOrder = 2
+      end
+      object Label37: TLabel
+        Left = 13
+        Height = 15
+        Top = 80
+        Width = 128
+        Caption = 'Valor de outras despesas'
+        ParentColor = False
+      end
+      object edVOutras: TCurrencyEdit
+        Left = 234
+        Height = 23
+        Top = 72
+        Width = 91
+        Alignment = taRightJustify
+        TabOrder = 3
+      end
+    end
+  end
+  object Label20: TLabel
+    Left = 8
+    Height = 15
+    Top = 140
+    Width = 34
+    Caption = 'N.C.M'
+    ParentColor = False
+  end
+  object edValorTotalBruto: TCurrencyEdit
+    Left = 368
+    Height = 23
+    Top = 192
+    Width = 80
+    Alignment = taRightJustify
+    DisplayFormat = '0.00'
+    TabOrder = 6
+    ZeroEmpty = False
+  end
+  object btLancarItem: TBitBtn
+    Left = 8
+    Height = 30
+    Top = 573
+    Width = 256
+    Caption = 'Incluir Item'
+    ModalResult = 1
+    TabOrder = 7
+  end
+  object BitBtn2: TBitBtn
+    Left = 560
+    Height = 30
+    Top = 573
+    Width = 128
+    Cancel = True
+    Caption = 'Cancelar'
+    ModalResult = 2
+    TabOrder = 8
+  end
+  object HeaderControl1: THeaderControl
+    Left = 104
+    Height = 22
+    Top = 166
+    Width = 600
+    DragReorder = False
+    Sections = <    
+      item
+        Alignment = taLeftJustify
+        Text = 'Quant.'
+        Width = 80
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Unit.'
+        Width = 80
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Vlr. Unit.'
+        Width = 90
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Vlr.Total'
+        Width = 100
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Desconto R$'
+        Width = 100
+        Visible = True
+      end    
+      item
+        Alignment = taLeftJustify
+        Text = 'Vlr.Total'
+        Width = 100
+        Visible = True
+      end>
+  end
+  object edNCM: TEdit
+    Left = 104
+    Height = 23
+    Top = 132
+    Width = 88
+    TabOrder = 10
+  end
+  object RadioButton1: TRadioButton
+    Left = 352
+    Height = 19
+    Top = 136
+    Width = 101
+    Caption = 'Estoque normal'
+    Checked = True
+    TabOrder = 11
+    TabStop = True
+  end
+  object RadioButton2: TRadioButton
+    Left = 512
+    Height = 19
+    Top = 136
+    Width = 113
+    Caption = 'Estoque avariados'
+    TabOrder = 12
+  end
+  object Label26: TLabel
+    Left = 8
+    Height = 15
+    Top = 108
+    Width = 39
+    Caption = 'C.F.O.P'
+    ParentColor = False
+  end
+  object edcfop: TEdit
+    Left = 104
+    Height = 23
+    Top = 102
+    Width = 76
+    TabOrder = 13
+    OnKeyDown = edcfopKeyDown
+  end
+  object lbcfop: TLabel
+    Left = 219
+    Height = 30
+    Top = 99
+    Width = 485
+    AutoSize = False
+    Caption = 'Label5'
+    ParentColor = False
+    WordWrap = True
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 188
+    Height = 22
+    Top = 102
+    Width = 23
+    Caption = '...'
+    OnClick = SpeedButton2Click
+  end
+  object edValorunitario: TCurrencyEdit
+    Left = 272
+    Height = 23
+    Top = 192
+    Width = 80
+    Alignment = taRightJustify
+    DecimalPlaces = 4
+    DisplayFormat = '0.00##'
+    TabOrder = 14
+    ZeroEmpty = False
+  end
+  object edDescontoNF: TCurrencyEdit
+    Left = 469
+    Height = 23
+    Top = 192
+    Width = 80
+    Alignment = taRightJustify
+    DisplayFormat = ',0.00'
+    TabOrder = 15
+    ZeroEmpty = False
+  end
+  object lbTotalNF: TStaticText
+    Left = 574
+    Height = 22
+    Top = 224
+    Width = 98
+    Alignment = taRightJustify
+    BorderStyle = sbsSunken
+    Caption = '0,00'
+    TabOrder = 16
+    Visible = False
+  end
+  object Label8: TLabel
+    Left = 8
+    Height = 25
+    Top = 6
+    Width = 680
+    AutoSize = False
+    Caption = 'Descrição do item'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object edTotalItem: TCurrencyEdit
+    Left = 560
+    Height = 23
+    Top = 192
+    Width = 94
+    Alignment = taRightJustify
+    DisplayFormat = ',0.00'
+    TabOrder = 17
+    ZeroEmpty = False
+  end
+  object qryItens: TZQuery
+    Connection = dbConnect.ZConnection1
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'Select i.*,p.quant_caixa,p.codigo_barras,p.ncm,nf.tipo_nota,nf.uf'
+      'From nfsaida_itens i'
+      'Left Join produtos p ON p.id=i.produto'
+      'Left Join nfsaida nf ON i.nfsaida=nf.id'
+      'Where i.id=:id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    Left = 600
+    Top = 32
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryItensid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryItensnfsaida: TLongintField
+      FieldKind = fkData
+      FieldName = 'nfsaida'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryItensproduto: TLongintField
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensdescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryItensquantidade: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantidade'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983043
+    end
+    object qryItensunidade: TStringField
+      FieldKind = fkData
+      FieldName = 'unidade'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryItenscst: TStringField
+      FieldKind = fkData
+      FieldName = 'cst'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object qryItensncm: TStringField
+      FieldKind = fkData
+      FieldName = 'ncm'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryItensorigem: TStringField
+      FieldKind = fkData
+      FieldName = 'origem'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qryItensvalorunitario: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorunitario'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryItensvalortotal: TFloatField
+      FieldKind = fkData
+      FieldName = 'valortotal'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryItenspicms: TFloatField
+      FieldKind = fkData
+      FieldName = 'picms'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItenslote: TLongintField
+      FieldKind = fkData
+      FieldName = 'lote'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItenspdesconto: TFloatField
+      FieldKind = fkData
+      FieldName = 'pdesconto'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItenspmva: TFloatField
+      FieldKind = fkData
+      FieldName = 'pmva'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItenspredst: TFloatField
+      FieldKind = fkData
+      FieldName = 'predst'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryItensbaseicms: TFloatField
+      FieldKind = fkData
+      FieldName = 'baseicms'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryItensvlricms: TFloatField
+      FieldKind = fkData
+      FieldName = 'vlricms'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryItensbasesubst: TFloatField
+      FieldKind = fkData
+      FieldName = 'basesubst'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryItensvlrsubst: TFloatField
+      FieldKind = fkData
+      FieldName = 'vlrsubst'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryItenspcomissao: TFloatField
+      FieldKind = fkData
+      FieldName = 'pcomissao'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryItenspicmsst: TFloatField
+      FieldKind = fkData
+      FieldName = 'picmsst'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItensredbase: TFloatField
+      FieldKind = fkData
+      FieldName = 'redbase'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItenspeso: TFloatField
+      FieldKind = fkData
+      FieldName = 'peso'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655363
+    end
+    object qryItenscfop: TStringField
+      FieldKind = fkData
+      FieldName = 'cfop'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensmodbc: TLongintField
+      FieldKind = fkData
+      FieldName = 'modbc'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensmodbcst: TLongintField
+      FieldKind = fkData
+      FieldName = 'modbcst'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensquant_caixa: TFloatField
+      FieldKind = fkData
+      FieldName = 'quant_caixa'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655363
+    end
+    object qryItenscodigo_barras: TStringField
+      FieldKind = fkData
+      FieldName = 'codigo_barras'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryItensncm_1: TStringField
+      FieldKind = fkData
+      FieldName = 'ncm_1'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 52
+    end
+    object qryItenstipo_nota: TLongintField
+      FieldKind = fkData
+      FieldName = 'tipo_nota'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryItensuf: TStringField
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryItenscst_pis: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_pis'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensppis: TFloatField
+      FieldKind = fkData
+      FieldName = 'ppis'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItensvbc_pis: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbc_pis'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655362
+    end
+    object qryItenscst_cofins: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_cofins'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItenspcofins: TFloatField
+      FieldKind = fkData
+      FieldName = 'pcofins'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItensvbc_cofins: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbc_cofins'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655362
+    end
+    object qryItensinfadprod: TMemoField
+      FieldKind = fkData
+      FieldName = 'infadprod'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryItensestoque_origem: TStringField
+      FieldKind = fkData
+      FieldName = 'estoque_origem'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qryItenspipi: TFloatField
+      FieldKind = fkData
+      FieldName = 'pipi'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItensvbc_ipi: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbc_ipi'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItenscst_ipi: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_ipi'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryItensvfrete: TFloatField
+      FieldKind = fkData
+      FieldName = 'vfrete'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItensvoutras: TFloatField
+      FieldKind = fkData
+      FieldName = 'voutras'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object qryItensindtot: TLongintField
+      FieldKind = fkData
+      FieldName = 'indtot'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM nfsaida_itens'
+      'WHERE'
+      '  nfsaida_itens.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO nfsaida_itens'
+      '  (id, nfsaida, produto, descricao, quantidade, unidade, cst, ncm, origem, '
+      '   valorunitario, valortotal, picms, lote, pdesconto, pmva, predst, baseicms, '
+      '   vlricms, basesubst, vlrsubst, pcomissao, picmsst, redbase, peso, cfop, '
+      '   modbc, modbcst, cst_pis, ppis, vbc_pis, cst_cofins, pcofins, vbc_cofins, '
+      '   infadprod, estoque_origem, pipi, vbc_ipi, cst_ipi, vfrete, voutras, '
+      '   indtot)'
+      'VALUES'
+      '  (:id, :nfsaida, :produto, :descricao, :quantidade, :unidade, :cst, :ncm, '
+      '   :origem, :valorunitario, :valortotal, :picms, :lote, :pdesconto, :pmva, '
+      '   :predst, :baseicms, :vlricms, :basesubst, :vlrsubst, :pcomissao, :picmsst, '
+      '   :redbase, :peso, :cfop, :modbc, :modbcst, :cst_pis, :ppis, :vbc_pis, '
+      '   :cst_cofins, :pcofins, :vbc_cofins, :infadprod, :estoque_origem, :pipi, '
+      '   :vbc_ipi, :cst_ipi, :vfrete, :voutras, :indtot)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE nfsaida_itens SET'
+      '  id = :id,'
+      '  nfsaida = :nfsaida,'
+      '  produto = :produto,'
+      '  descricao = :descricao,'
+      '  quantidade = :quantidade,'
+      '  unidade = :unidade,'
+      '  cst = :cst,'
+      '  ncm = :ncm,'
+      '  origem = :origem,'
+      '  valorunitario = :valorunitario,'
+      '  valortotal = :valortotal,'
+      '  picms = :picms,'
+      '  lote = :lote,'
+      '  pdesconto = :pdesconto,'
+      '  pmva = :pmva,'
+      '  predst = :predst,'
+      '  baseicms = :baseicms,'
+      '  vlricms = :vlricms,'
+      '  basesubst = :basesubst,'
+      '  vlrsubst = :vlrsubst,'
+      '  pcomissao = :pcomissao,'
+      '  picmsst = :picmsst,'
+      '  redbase = :redbase,'
+      '  peso = :peso,'
+      '  cfop = :cfop,'
+      '  modbc = :modbc,'
+      '  modbcst = :modbcst,'
+      '  cst_pis = :cst_pis,'
+      '  ppis = :ppis,'
+      '  vbc_pis = :vbc_pis,'
+      '  cst_cofins = :cst_cofins,'
+      '  pcofins = :pcofins,'
+      '  vbc_cofins = :vbc_cofins,'
+      '  infadprod = :infadprod,'
+      '  estoque_origem = :estoque_origem,'
+      '  pipi = :pipi,'
+      '  vbc_ipi = :vbc_ipi,'
+      '  cst_ipi = :cst_ipi,'
+      '  vfrete = :vfrete,'
+      '  voutras = :voutras,'
+      '  indtot = :indtot'
+      'WHERE'
+      '  nfsaida_itens.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 664
+    Top = 32
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nfsaida'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'descricao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'unidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ncm'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'origem'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorunitario'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valortotal'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'picms'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'lote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pdesconto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pmva'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'predst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'baseicms'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlricms'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'basesubst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrsubst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pcomissao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'picmsst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'redbase'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'peso'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cfop'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'modbc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'modbcst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst_pis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ppis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbc_pis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst_cofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pcofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbc_cofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'infadprod'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'estoque_origem'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pipi'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbc_ipi'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst_ipi'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vfrete'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'voutras'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'indtot'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryProduto: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select p.*,pit.*,pe.lote as slote'
+      'from produtos p'
+      'Left Join produto_icms_template pit on pit.produto=p.id and pit.uf_destino= :uf'
+      'Left Join produtos_estoque pe on pe.id= :lote'
+      'Where p.id = :id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'uf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'lote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    Left = 607
+    Top = 108
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'uf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'lote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+  end
+end

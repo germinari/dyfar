@@ -1,0 +1,449 @@
+object frmConfig: TfrmConfig
+  Left = 502
+  Height = 329
+  Top = 196
+  Width = 538
+  BorderStyle = bsDialog
+  Caption = 'Configurações'
+  ClientHeight = 329
+  ClientWidth = 538
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  SessionProperties = 'cbxTipoImpressao.ItemIndex;ckbNaoImprimeTicket.Checked;edEmpresaPadrao.Text;edImpressoraTicket.Text;speMargemDireita.Value;speMargemEsquerda.Value;speMargemInferior.Value;speMargemSuperior.Value'
+  LCLVersion = '3.8.0.0'
+  object Bevel1: TBevel
+    Left = 0
+    Height = 50
+    Top = 279
+    Width = 538
+    Align = alBottom
+    Shape = bsSpacer
+  end
+  object BitBtn1: TBitBtn
+    Left = 8
+    Height = 30
+    Top = 287
+    Width = 75
+    Caption = '&OK'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = BitBtn1Click
+    TabOrder = 0
+  end
+  object BitBtn2: TBitBtn
+    Left = 452
+    Height = 30
+    Top = 287
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 1
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 279
+    Top = 0
+    Width = 538
+    ActivePage = TabSheet1
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 2
+    Options = [nboDoChangeOnSetIndex]
+    object TabSheet1: TTabSheet
+      Caption = 'Configurações'
+      ClientHeight = 251
+      ClientWidth = 530
+      object GroupBox1: TGroupBox
+        Left = 2
+        Height = 243
+        Top = 2
+        Width = 521
+        ClientHeight = 223
+        ClientWidth = 517
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 12
+          Height = 15
+          Top = 33
+          Width = 113
+          Caption = 'Empresa padrão local'
+          ParentColor = False
+        end
+        object edEmpresaPadrao: TEditButton
+          Left = 149
+          Height = 23
+          Top = 26
+          Width = 354
+          ButtonWidth = 23
+          MaxLength = 0
+          NumGlyphs = 1
+          OnButtonClick = edEmpresaPadraoButtonClick
+          PasswordChar = #0
+          TabOrder = 0
+        end
+        object Label2: TLabel
+          Left = 12
+          Height = 15
+          Top = 64
+          Width = 95
+          Caption = 'Impressora NFC-e'
+          ParentColor = False
+        end
+        object edImpressoraTicket: TEditButton
+          Left = 149
+          Height = 23
+          Top = 57
+          Width = 354
+          ButtonWidth = 23
+          MaxLength = 0
+          NumGlyphs = 1
+          OnButtonClick = edImpressoraTicketButtonClick
+          PasswordChar = #0
+          TabOrder = 1
+        end
+        object ckbNaoImprimeTicket: TCheckBox
+          Left = 14
+          Height = 19
+          Top = 118
+          Width = 489
+          AutoSize = False
+          BidiMode = bdRightToLeft
+          Caption = '                                                                  Não imprimir comprovante ao final do recebimento'
+          ParentBidiMode = False
+          TabOrder = 2
+        end
+        object cbxTipoImpressao: TComboBox
+          Left = 147
+          Height = 21
+          Top = 87
+          Width = 229
+          ItemHeight = 15
+          Items.Strings = (
+            'Papel continuo (rolo)'
+            'Papel A4'
+          )
+          Style = csOwnerDrawFixed
+          TabOrder = 3
+        end
+        object Label3: TLabel
+          Left = 12
+          Height = 15
+          Top = 93
+          Width = 96
+          Caption = 'Tipo de impressão'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 12
+          Height = 15
+          Top = 1
+          Width = 34
+          Caption = 'Label4'
+          ParentColor = False
+          OnDblClick = Label4DblClick
+        end
+        object ckbPermitirVendaSemEstq: TCheckBox
+          Left = 14
+          Height = 19
+          Top = 178
+          Width = 489
+          AutoSize = False
+          BidiMode = bdRightToLeft
+          Caption = '                                                                                                            Permitir venda sem estoque'
+          ParentBidiMode = False
+          TabOrder = 4
+        end
+        object ckbPermitirEstoqueNeg: TCheckBox
+          Left = 14
+          Height = 19
+          Top = 149
+          Width = 489
+          AutoSize = False
+          BidiMode = bdRightToLeft
+          Caption = '                                                                                                                Permitir estoque negativo'
+          ParentBidiMode = False
+          TabOrder = 5
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Contingência'
+      ClientHeight = 251
+      ClientWidth = 530
+      object GroupBox2: TGroupBox
+        Left = 8
+        Height = 240
+        Top = 8
+        Width = 512
+        ClientHeight = 220
+        ClientWidth = 508
+        TabOrder = 0
+        object btIniciacontingencia: TButton
+          Left = 8
+          Height = 25
+          Top = 8
+          Width = 227
+          Caption = 'Iniciar contingência NF-e'
+          TabOrder = 0
+          OnClick = btIniciacontingenciaClick
+        end
+        object btFinalContingencia: TButton
+          Left = 272
+          Height = 25
+          Top = 8
+          Width = 227
+          Caption = 'Encerrar contingência NF-e'
+          TabOrder = 1
+          OnClick = btFinalContingenciaClick
+        end
+        object Label5: TLabel
+          Left = 8
+          Height = 15
+          Top = 64
+          Width = 152
+          Caption = 'Estado atual de contingência'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 8
+          Height = 15
+          Top = 96
+          Width = 126
+          Caption = 'Motivo da contingência'
+          ParentColor = False
+        end
+        object DBText1: TDBText
+          Left = 232
+          Height = 15
+          Top = 64
+          Width = 267
+          AutoSize = False
+          DataField = 'descricao'
+          DataSource = DataSource1
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBText2: TDBText
+          Left = 232
+          Height = 15
+          Top = 92
+          Width = 267
+          AutoSize = False
+          DataField = 'motivo'
+          DataSource = DataSource1
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 8
+          Height = 15
+          Top = 124
+          Width = 126
+          Caption = 'Motivo da contingência'
+          ParentColor = False
+        end
+        object DBText3: TDBText
+          Left = 232
+          Height = 15
+          Top = 120
+          Width = 267
+          AutoSize = False
+          DataField = 'datahora'
+          DataSource = DataSource1
+          ParentColor = False
+        end
+      end
+    end
+    object TabSheet3: TTabSheet
+      BorderWidth = 10
+      Caption = 'NF-e'
+      ClientHeight = 251
+      ClientWidth = 530
+      object GroupBox3: TGroupBox
+        Left = 7
+        Height = 229
+        Top = 4
+        Width = 515
+        ClientHeight = 209
+        ClientWidth = 511
+        TabOrder = 0
+        object DividerBevel2: TDividerBevel
+          Left = 0
+          Height = 15
+          Top = 0
+          Width = 503
+          Caption = 'Margens NF-e'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label6: TLabel
+          Left = 10
+          Height = 15
+          Top = 21
+          Width = 91
+          Caption = 'Margem superior'
+          ParentColor = False
+        end
+        object Label21: TLabel
+          Left = 10
+          Height = 15
+          Top = 47
+          Width = 96
+          Caption = 'Margem esquerda'
+          ParentColor = False
+        end
+        object Label22: TLabel
+          Left = 10
+          Height = 15
+          Top = 73
+          Width = 81
+          Caption = 'Margem direita'
+          ParentColor = False
+        end
+        object Label23: TLabel
+          Left = 10
+          Height = 15
+          Top = 100
+          Width = 86
+          Caption = 'Margem inferior'
+          ParentColor = False
+        end
+        object speMargemSuperior: TSpinEditEx
+          Left = 396
+          Height = 23
+          Top = 13
+          Width = 95
+          MaxLength = 0
+          NumbersOnly = True
+          TabOrder = 0
+          MinRepeatValue = 1
+          NullValue = 0
+          Value = 0
+        end
+        object speMargemEsquerda: TSpinEditEx
+          Left = 396
+          Height = 23
+          Top = 39
+          Width = 95
+          MaxLength = 0
+          NumbersOnly = True
+          TabOrder = 1
+          MinRepeatValue = 1
+          NullValue = 0
+          Value = 0
+        end
+        object speMargemDireita: TSpinEditEx
+          Left = 396
+          Height = 23
+          Top = 65
+          Width = 95
+          MaxLength = 0
+          NumbersOnly = True
+          TabOrder = 2
+          MinRepeatValue = 1
+          NullValue = 0
+          Value = 0
+        end
+        object speMargemInferior: TSpinEditEx
+          Left = 396
+          Height = 23
+          Top = 92
+          Width = 95
+          MaxLength = 0
+          NumbersOnly = True
+          TabOrder = 3
+          MinRepeatValue = 1
+          NullValue = 0
+          Value = 0
+        end
+      end
+    end
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'configuracoes'
+    Active = False
+    Left = 120
+    Top = 240
+  end
+  object qryContingencia: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'SELECT id, datahora, regime, motivo, usuario,'
+      '(case when regime=1 then ''1-Normal'''
+      '        when regime = 4 then ''4-Contingência DPEC'''
+      'end )::::varchar(30) as descricao'
+      ' FROM nfe_contingencia'
+      'Order by id desc'
+      'Limit 1'
+    )
+    Params = <>
+    Left = 312
+    Top = 200
+    object qryContingenciaid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryContingenciadatahora: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'datahora'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryContingenciaregime: TLongintField
+      FieldKind = fkData
+      FieldName = 'regime'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContingenciamotivo: TStringField
+      FieldKind = fkData
+      FieldName = 'motivo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qryContingenciausuario: TStringField
+      FieldKind = fkData
+      FieldName = 'usuario'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      Size = 80
+    end
+    object qryContingenciadescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 120
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = qryContingencia
+    Left = 320
+    Top = 249
+  end
+end

@@ -1,0 +1,784 @@
+object frmCaixa: TfrmCaixa
+  Left = 376
+  Height = 651
+  Top = 243
+  Width = 989
+  Caption = 'Caixa'
+  ClientHeight = 651
+  ClientWidth = 989
+  OnCreate = FormCreate
+  OnResize = FormResize
+  LCLVersion = '1.6.0.4'
+  object ExtendedNotebook1: TExtendedNotebook
+    Left = 0
+    Height = 601
+    Top = 50
+    Width = 989
+    ActivePage = TabSheet1
+    Align = alClient
+    MultiLine = True
+    TabIndex = 0
+    TabOrder = 0
+    OnChange = ExtendedNotebook1Change
+    Options = [nboShowCloseButtons, nboMultiLine]
+    object TabSheet1: TTabSheet
+      Caption = 'Cadastro'
+      ClientHeight = 573
+      ClientWidth = 981
+      object GroupBox2: TGroupBox
+        Left = 4
+        Height = 512
+        Top = 16
+        Width = 864
+        ClientHeight = 492
+        ClientWidth = 860
+        TabOrder = 0
+        object RxDBGrid1: TRxDBGrid
+          Left = 0
+          Height = 391
+          Top = 47
+          Width = 860
+          TitleButtons = True
+          AutoSort = True
+          OnGetCellProps = RxDBGrid1GetCellProps
+          Columns = <          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Data/Hora'
+              Width = 150
+              FieldName = 'data'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Histórico'
+              Width = 350
+              FieldName = 'historico'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Valor'
+              Width = 100
+              FieldName = 'valor'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end>
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end>
+          FooterOptions.Color = clYellow
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          FooterColor = clYellow
+          Align = alClient
+          AlternateColor = 16777111
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = dsCaixa
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiselect, dgHeaderPushedLook]
+          ParentColor = False
+          ReadOnly = True
+          TabOrder = 0
+          TitleStyle = tsNative
+          OnDblClick = RxDBGrid1DblClick
+          OnTitleClick = RxDBGrid1TitleClick
+        end
+        object Panel1: TPanel
+          Left = 0
+          Height = 47
+          Top = 0
+          Width = 860
+          Align = alTop
+          ClientHeight = 47
+          ClientWidth = 860
+          TabOrder = 1
+          object edEmpresa: TEdit
+            Left = 38
+            Height = 23
+            Top = 4
+            Width = 184
+            CharCase = ecUppercase
+            ReadOnly = True
+            TabOrder = 0
+          end
+          object SpeedButton3: TSpeedButton
+            Left = 226
+            Height = 22
+            Hint = 'Selecionar fornecedor'
+            Top = 3
+            Width = 23
+            Caption = '...'
+            OnClick = SpeedButton3Click
+            ShowHint = True
+            ParentShowHint = False
+          end
+          object BitBtn2: TBitBtn
+            Left = 774
+            Height = 23
+            Top = 2
+            Width = 75
+            Caption = 'Aplicar Filtro'
+            OnClick = BitBtn2Click
+            TabOrder = 1
+          end
+          object DateEdit1: TDateEdit
+            Left = 382
+            Height = 23
+            Top = 4
+            Width = 80
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            OKCaption = 'OK'
+            CancelCaption = 'Cancel'
+            DateOrder = doNone
+            ButtonWidth = 23
+            NumGlyphs = 1
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object Label17: TLabel
+            Left = 3
+            Height = 15
+            Top = 9
+            Width = 22
+            Caption = 'Loja'
+            ParentColor = False
+          end
+          object Label18: TLabel
+            Left = 502
+            Height = 15
+            Top = 9
+            Width = 32
+            Caption = 'Conta'
+            ParentColor = False
+          end
+          object Label19: TLabel
+            Left = 278
+            Height = 15
+            Top = 9
+            Width = 106
+            Caption = 'Data do movimento'
+            ParentColor = False
+          end
+          object cbxTipo: TComboBox
+            Left = 562
+            Height = 23
+            Top = 4
+            Width = 140
+            ItemHeight = 15
+            ItemIndex = 0
+            Items.Strings = (
+              'Todos'
+              'Dinheiro'
+              'Cartão de Credito'
+              'Cartão de Débito'
+              'Conta Corrente'
+            )
+            Style = csDropDownList
+            TabOrder = 3
+            Text = 'Todos'
+          end
+        end
+        object Panel2: TPanel
+          Left = 0
+          Height = 54
+          Top = 438
+          Width = 860
+          Align = alBottom
+          ClientHeight = 54
+          ClientWidth = 860
+          TabOrder = 2
+          object CurrencyEdit1: TCurrencyEdit
+            Left = 86
+            Height = 23
+            Top = 24
+            Width = 80
+            Alignment = taRightJustify
+            Color = clSilver
+            Font.Style = [fsBold]
+            MaxValue = 0
+            MinValue = 0
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 5
+            TabStop = False
+            Value = 0
+          end
+          object CurrencyEdit2: TCurrencyEdit
+            Left = 187
+            Height = 23
+            Top = 24
+            Width = 80
+            Alignment = taRightJustify
+            Color = clSilver
+            Font.Style = [fsBold]
+            MaxValue = 0
+            MinValue = 0
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 0
+            TabStop = False
+            Value = 0
+          end
+          object Label14: TLabel
+            Left = 6
+            Height = 15
+            Top = 31
+            Width = 65
+            Caption = 'Totalizações'
+            ParentColor = False
+          end
+          object edDinheiro: TCurrencyEdit
+            Left = 318
+            Height = 23
+            Top = 24
+            Width = 80
+            Alignment = taRightJustify
+            Color = clSilver
+            Font.Style = [fsBold]
+            MaxValue = 0
+            MinValue = 0
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 6
+            TabStop = False
+            Value = 0
+          end
+          object Label15: TLabel
+            Left = 318
+            Height = 15
+            Top = 5
+            Width = 45
+            Caption = 'Dinheiro'
+            ParentColor = False
+          end
+          object Label16: TLabel
+            Left = 414
+            Height = 15
+            Top = 5
+            Width = 91
+            Caption = 'Cartão de credito'
+            ParentColor = False
+          end
+          object CurrencyEdit4: TCurrencyEdit
+            Left = 414
+            Height = 23
+            Top = 24
+            Width = 80
+            Alignment = taRightJustify
+            Color = clSilver
+            Font.Style = [fsBold]
+            MaxValue = 0
+            MinValue = 0
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 4
+            TabStop = False
+            Value = 0
+          end
+          object CurrencyEdit5: TCurrencyEdit
+            Left = 510
+            Height = 23
+            Top = 24
+            Width = 80
+            Alignment = taRightJustify
+            Color = clSilver
+            Font.Style = [fsBold]
+            MaxValue = 0
+            MinValue = 0
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 3
+            TabStop = False
+            Value = 0
+          end
+          object Label20: TLabel
+            Left = 511
+            Height = 15
+            Top = 5
+            Width = 88
+            Caption = 'Cartão de débito'
+            ParentColor = False
+          end
+          object CurrencyEdit6: TCurrencyEdit
+            Left = 606
+            Height = 23
+            Top = 24
+            Width = 80
+            Alignment = taRightJustify
+            Color = clSilver
+            Font.Style = [fsBold]
+            MaxValue = 0
+            MinValue = 0
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 2
+            TabStop = False
+            Value = 0
+          end
+          object Label21: TLabel
+            Left = 606
+            Height = 15
+            Top = 5
+            Width = 79
+            Caption = 'Conta corrente'
+            ParentColor = False
+          end
+          object Label22: TLabel
+            Left = 187
+            Height = 15
+            Top = 5
+            Width = 33
+            Caption = 'Saídas'
+            ParentColor = False
+          end
+          object Label23: TLabel
+            Left = 86
+            Height = 15
+            Top = 5
+            Width = 45
+            Caption = 'Entradas'
+            ParentColor = False
+          end
+          object Label24: TLabel
+            Left = 806
+            Height = 15
+            Top = 5
+            Width = 30
+            Caption = 'Soma'
+            ParentColor = False
+          end
+          object edSoma: TCurrencyEdit
+            Left = 742
+            Height = 23
+            Top = 24
+            Width = 96
+            Alignment = taRightJustify
+            Color = clSilver
+            Font.Style = [fsBold]
+            MaxValue = 0
+            MinValue = 0
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 1
+            TabStop = False
+            Value = 0
+          end
+        end
+      end
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 989
+    AutoSize = True
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBar1'
+    DisabledImages = dbConnect.ImageList1
+    Flat = False
+    HotImages = dbConnect.ImageList1
+    Images = dbConnect.ImageList1
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'ToolButton1'
+      ImageIndex = 8
+      OnClick = ToolButton1Click
+    end
+    object ToolButton2: TToolButton
+      Left = 49
+      Height = 48
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton2'
+      Style = tbsSeparator
+    end
+    object ToolButton13: TToolButton
+      Left = 59
+      Height = 48
+      Top = 2
+      Width = 5
+      Caption = 'ToolButton13'
+      Style = tbsDivider
+    end
+    object ToolButton3: TToolButton
+      Left = 64
+      Top = 2
+      Caption = 'ToolButton3'
+      ImageIndex = 7
+      OnClick = ToolButton3Click
+    end
+  end
+  object Label12: TLabel
+    Left = 7
+    Height = 15
+    Top = 82
+    Width = 51
+    Caption = 'Descrição'
+    ParentColor = False
+  end
+  object RLReport1: TRLReport
+    Left = 880
+    Height = 1123
+    Top = 392
+    Width = 794
+    DataSource = dsCaixa
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    RealBounds.Left = 0
+    RealBounds.Top = 0
+    RealBounds.Width = 0
+    RealBounds.Height = 0
+    Title = 'Listagem do caixa'
+    Visible = False
+    object RLBand1: TRLBand
+      Left = 38
+      Height = 58
+      Top = 38
+      Width = 718
+      BandType = btHeader
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLSystemInfo3: TRLSystemInfo
+        Left = 632
+        Height = 16
+        Top = 0
+        Width = 86
+        Align = faRightTop
+        Alignment = taRightJustify
+        Info = itTitle
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = '#-REL004'
+      end
+      object RLLabel1: TRLLabel
+        Left = 0
+        Height = 18
+        Top = 0
+        Width = 72
+        Align = faLeftTop
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw2: TRLDraw
+        Left = 34
+        Height = 7
+        Top = 50
+        Width = 650
+        Angle = 0
+        DrawKind = dkLine
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 38
+      Height = 20
+      Top = 96
+      Width = 718
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLDBText1: TRLDBText
+        Left = 2
+        Height = 16
+        Top = 1
+        Width = 29
+        DataField = 'data'
+        DataSource = dsCaixa
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText2: TRLDBText
+        Left = 154
+        Height = 16
+        Top = 1
+        Width = 53
+        DataField = 'historico'
+        DataSource = dsCaixa
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText3: TRLDBText
+        Left = 682
+        Height = 16
+        Top = 0
+        Width = 30
+        Alignment = taRightJustify
+        DataField = 'valor'
+        DataSource = dsCaixa
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 38
+      Height = 40
+      Top = 116
+      Width = 718
+      BandType = btFooter
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLSystemInfo1: TRLSystemInfo
+        Left = 0
+        Height = 14
+        Top = 6
+        Width = 123
+        Align = faLeftOnly
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        Info = itFullDate
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = 'Impresso em  '
+      end
+      object RLSystemInfo2: TRLSystemInfo
+        Left = 508
+        Height = 14
+        Top = 6
+        Width = 210
+        Align = faRightOnly
+        Alignment = taRightJustify
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsItalic]
+        Info = itPagePreview
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = 'Página #/#'
+      end
+      object RLDraw1: TRLDraw
+        Left = 34
+        Height = 7
+        Top = 0
+        Width = 650
+        Angle = 0
+        DrawKind = dkLine
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = dbConnect.ImageList1
+    left = 552
+    object acLocalizar: TAction
+      Caption = 'acLocalizar'
+      ImageIndex = 4
+    end
+    object Action1: TAction
+      Caption = 'Action1'
+      ImageIndex = 0
+    end
+    object Action3: TAction
+      Caption = 'Action3'
+      ImageIndex = 1
+    end
+    object Action4: TAction
+      Caption = 'Action4'
+      ImageIndex = 2
+    end
+    object DataSetPost1: TDataSetPost
+      Category = 'Database'
+      Caption = 'Gravar alteraçoes'
+      Hint = 'Post'
+      ImageIndex = 3
+      DataSource = dsCaixa
+    end
+  end
+  object qryCaixa: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select *'
+      'From balcao_caixa'
+      'Limit 0'
+    )
+    Params = <>
+    left = 416
+    top = 16
+    object qryCaixaid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryCaixadata: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryCaixahistorico: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'historico'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryCaixavalor: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryCaixaloja: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'loja'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCaixaconta: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'conta'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCaixatipo_lancamento: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'tipo_lancamento'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCaixabalcao_venda: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'balcao_venda'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCaixaempregado: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'empregado'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsCaixa: TDataSource
+    DataSet = qryCaixa
+    left = 456
+    top = 16
+  end
+end

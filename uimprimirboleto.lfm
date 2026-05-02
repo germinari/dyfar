@@ -1,0 +1,423 @@
+object frmImprimirBoleto: TfrmImprimirBoleto
+  Left = 459
+  Height = 500
+  Top = 85
+  Width = 769
+  BorderStyle = bsDialog
+  Caption = 'Imprimir Boleto'
+  ClientHeight = 500
+  ClientWidth = 769
+  Position = poScreenCenter
+  LCLVersion = '1.6.4.0'
+  object GroupBox2: TGroupBox
+    Left = 312
+    Height = 201
+    Top = 8
+    Width = 440
+    Caption = 'Informações Sobre a Cobrança'
+    ClientHeight = 181
+    ClientWidth = 436
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 202
+      Caption = 'Mensagem  para Local  de Pagamento'
+      ParentColor = False
+    end
+    object edtLocalPag: TEdit
+      Left = 8
+      Height = 23
+      Top = 34
+      Width = 412
+      TabOrder = 0
+      Text = 'Pagar preferêncialmente nas agências do '
+    end
+    object memMensagem: TMemo
+      Left = 8
+      Height = 84
+      Top = 85
+      Width = 412
+      TabOrder = 1
+    end
+    object Label5: TLabel
+      Left = 8
+      Height = 15
+      Top = 66
+      Width = 63
+      Caption = 'Orientações'
+      ParentColor = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 57
+    Top = 443
+    Width = 769
+    Align = alBottom
+    ClientHeight = 57
+    ClientWidth = 769
+    TabOrder = 3
+    object btnImprimir: TButton
+      Left = 8
+      Height = 33
+      Top = 0
+      Width = 88
+      Caption = 'Imprimir'
+      OnClick = btnImprimirClick
+      TabOrder = 0
+    end
+    object Button1: TButton
+      Left = 104
+      Height = 33
+      Top = 0
+      Width = 88
+      Caption = 'Gerar PDF'
+      OnClick = btnImprimirClick
+      TabOrder = 1
+    end
+    object Button4: TButton
+      Left = 200
+      Height = 33
+      Top = 0
+      Width = 80
+      Caption = 'Enviar Email'
+      OnClick = btnImprimirClick
+      TabOrder = 2
+    end
+    object cbxSomenteAtual: TCheckBox
+      Left = 296
+      Height = 19
+      Top = 8
+      Width = 241
+      Caption = 'Imprimir somente a duplicata selecionada'
+      TabOrder = 3
+    end
+    object Fechar: TButton
+      Left = 656
+      Height = 33
+      Top = 0
+      Width = 99
+      Caption = 'Fechar'
+      ModalResult = 2
+      TabOrder = 4
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 201
+    Top = 8
+    Width = 278
+    Caption = 'Informações Sobre a Duplicata '
+    ClientHeight = 181
+    ClientWidth = 274
+    TabOrder = 1
+    object edtNumeroDoc: TEdit
+      Left = 4
+      Height = 23
+      Top = 34
+      Width = 106
+      TabOrder = 0
+      Text = '00000001'
+    end
+    object Label4: TLabel
+      Left = 4
+      Height = 15
+      Top = 8
+      Width = 109
+      Caption = 'Número documento'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 151
+      Height = 15
+      Top = 66
+      Width = 63
+      Caption = 'Vencimento'
+      ParentColor = False
+    end
+    object edtVencimento: TDateEdit
+      Left = 151
+      Height = 23
+      Top = 90
+      Width = 112
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Label11: TLabel
+      Left = 4
+      Height = 15
+      Top = 120
+      Width = 26
+      Caption = 'Valor'
+      ParentColor = False
+    end
+    object edtValorDoc: TCurrencyEdit
+      Left = 4
+      Height = 23
+      Top = 146
+      Width = 106
+      Alignment = taRightJustify
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 2
+      Value = 0
+    end
+    object Label31: TLabel
+      Left = 151
+      Height = 15
+      Top = 120
+      Width = 96
+      Caption = '% Multa por mora'
+      ParentColor = False
+    end
+    object edtMulta: TCurrencyEdit
+      Left = 151
+      Height = 23
+      Top = 146
+      Width = 112
+      Alignment = taRightJustify
+      DisplayFormat = ',0.##'
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 3
+      Value = 0
+    end
+    object cbxDuplicatas: TComboBox
+      Left = 4
+      Height = 23
+      Top = 90
+      Width = 106
+      ItemHeight = 15
+      OnChange = cbxDuplicatasChange
+      TabOrder = 4
+    end
+    object Label6: TLabel
+      Left = 4
+      Height = 15
+      Top = 66
+      Width = 55
+      Caption = 'Duplicatas'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 151
+      Height = 15
+      Top = 8
+      Width = 106
+      Caption = 'Data do documento'
+      ParentColor = False
+    end
+    object edtDataDoc: TDateEdit
+      Left = 151
+      Height = 23
+      Top = 34
+      Width = 112
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 5
+    end
+  end
+  object GroupBox4: TGroupBox
+    Left = 8
+    Height = 216
+    Top = 216
+    Width = 746
+    Caption = 'Informações do Sacado'
+    ClientHeight = 196
+    ClientWidth = 742
+    TabOrder = 2
+    object Label13: TLabel
+      Left = 6
+      Height = 15
+      Top = 9
+      Width = 33
+      Caption = 'Nome'
+      ParentColor = False
+    end
+    object edtNome: TEdit
+      Left = 7
+      Height = 23
+      Top = 24
+      Width = 316
+      TabOrder = 0
+      Text = 'Joao Roberto Pirea'
+    end
+    object Label14: TLabel
+      Left = 336
+      Height = 15
+      Top = 9
+      Width = 59
+      Caption = 'CPF / CNPJ'
+      ParentColor = False
+    end
+    object Label16: TLabel
+      Left = 6
+      Height = 15
+      Top = 56
+      Width = 49
+      Caption = 'Endereço'
+      ParentColor = False
+    end
+    object edtEndereco: TEdit
+      Left = 6
+      Height = 23
+      Top = 72
+      Width = 317
+      TabOrder = 3
+      Text = 'Rua XI de Agosto'
+    end
+    object Label17: TLabel
+      Left = 336
+      Height = 15
+      Top = 56
+      Width = 44
+      Caption = 'Número'
+      ParentColor = False
+    end
+    object edtNumero: TEdit
+      Left = 336
+      Height = 23
+      Top = 72
+      Width = 72
+      TabOrder = 4
+      Text = '100'
+    end
+    object Label18: TLabel
+      Left = 424
+      Height = 15
+      Top = 98
+      Width = 77
+      Caption = 'Complemento'
+      ParentColor = False
+    end
+    object edtComplemento: TEdit
+      Left = 424
+      Height = 23
+      Top = 114
+      Width = 280
+      TabOrder = 5
+    end
+    object Label19: TLabel
+      Left = 424
+      Height = 15
+      Top = 56
+      Width = 31
+      Caption = 'Bairro'
+      ParentColor = False
+    end
+    object edtBairro: TEdit
+      Left = 424
+      Height = 23
+      Top = 72
+      Width = 280
+      TabOrder = 6
+      Text = 'Centro'
+    end
+    object Label20: TLabel
+      Left = 6
+      Height = 15
+      Top = 100
+      Width = 37
+      Caption = 'Cidade'
+      ParentColor = False
+    end
+    object edtCidade: TEdit
+      Left = 6
+      Height = 23
+      Top = 114
+      Width = 216
+      TabOrder = 7
+      Text = 'Tatui'
+    end
+    object Label21: TLabel
+      Left = 244
+      Height = 15
+      Top = 100
+      Width = 21
+      Caption = 'CEP'
+      ParentColor = False
+    end
+    object Label22: TLabel
+      Left = 336
+      Height = 15
+      Top = 98
+      Width = 14
+      Caption = 'UF'
+      ParentColor = False
+    end
+    object edtUF: TEdit
+      Left = 334
+      Height = 23
+      Top = 114
+      Width = 55
+      TabOrder = 9
+      Text = 'SP'
+    end
+    object Label23: TLabel
+      Left = 7
+      Height = 15
+      Top = 144
+      Width = 34
+      Caption = 'E-Mail'
+      ParentColor = False
+    end
+    object edtEmail: TEdit
+      Left = 7
+      Height = 23
+      Top = 159
+      Width = 277
+      TabOrder = 2
+      Text = 'joao@gmail.com'
+    end
+    object edtCEP: TMaskEdit
+      Left = 244
+      Height = 23
+      Top = 114
+      Width = 80
+      CharCase = ecNormal
+      MaxLength = 9
+      TabOrder = 8
+      EditMask = '99999-999;0;_'
+      SpaceChar = '_'
+    end
+    object edtCPFCNPJ: TEdit
+      Left = 336
+      Height = 23
+      Top = 24
+      Width = 152
+      TabOrder = 1
+      Text = '87.854.233-78'
+    end
+  end
+  object ACBrBoletoFCFortes1: TACBrBoletoFCFortes
+    OnObterLogo = ACBrBoletoFCFortes1ObterLogo
+    ACBrBoleto = ACBrBoleto1
+    DirLogo = '..\..\..\Fontes\ACBrBoleto\Logos\Colorido'
+    NomeArquivo = 'teste2.pdf'
+    SoftwareHouse = 'WALG Software - http://www.walg.com.br'
+    left = 552
+    top = 248
+  end
+  object ACBrBoleto1: TACBrBoleto
+    MAIL = dbConnect.ACBrMail1
+    Banco.TamanhoMaximoNossoNum = 10
+    Banco.TipoCobranca = cobNenhum
+    Cedente.TipoDocumento = Tradicional
+    Cedente.TipoInscricao = pJuridica
+    NumeroArquivo = 0
+    DataArquivo = 0
+    DataCreditoLanc = 0
+    ACBrBoletoFC = ACBrBoletoFCFortes1
+    left = 648
+    top = 248
+  end
+end

@@ -1,0 +1,1107 @@
+object frmRelClientes: TfrmRelClientes
+  Left = 316
+  Height = 276
+  Top = 96
+  Width = 478
+  Caption = 'Relatório de clientes'
+  ClientHeight = 276
+  ClientWidth = 478
+  Position = poScreenCenter
+  LCLVersion = '1.8.4.0'
+  object Label21: TLabel
+    Left = 10
+    Height = 15
+    Top = 93
+    Width = 75
+    Caption = 'Representante'
+    ParentColor = False
+  end
+  object BitBtn1: TBitBtn
+    Left = 8
+    Height = 30
+    Top = 234
+    Width = 128
+    Caption = 'Visualizar Relatório'
+    OnClick = BitBtn1Click
+    TabOrder = 0
+  end
+  object BitBtn2: TBitBtn
+    Left = 374
+    Height = 30
+    Top = 234
+    Width = 90
+    Cancel = True
+    DefaultCaption = True
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 1
+  end
+  object edRepresentante: TEditButton
+    Left = 118
+    Height = 23
+    Top = 85
+    Width = 345
+    ButtonWidth = 23
+    MaxLength = 0
+    NumGlyphs = 1
+    OnButtonClick = edRepresentanteButtonClick
+    PasswordChar = #0
+    TabOrder = 2
+    TextHint = 'Em branco lista todos os representantes'
+  end
+  object RLReport1: TRLReport
+    Left = 24
+    Height = 1123
+    Top = 328
+    Width = 794
+    DataSource = DataSource1
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    RealBounds.Left = 0
+    RealBounds.Top = 0
+    RealBounds.Width = 0
+    RealBounds.Height = 0
+    Title = 'Listagem de clientes'
+    ExpressionParser = RLExpressionParser1
+    Visible = False
+    object RLBand1: TRLBand
+      Left = 38
+      Height = 58
+      Top = 38
+      Width = 718
+      BandType = btHeader
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLSystemInfo3: TRLSystemInfo
+        Left = 632
+        Height = 16
+        Top = 0
+        Width = 86
+        Align = faRightTop
+        Alignment = taRightJustify
+        Info = itTitle
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = '#-REL006'
+      end
+      object RLLabel1: TRLLabel
+        Left = 0
+        Height = 18
+        Top = 0
+        Width = 148
+        Align = faLeftTop
+        Caption = 'Listagem de clientes'
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw2: TRLDraw
+        Left = 34
+        Height = 7
+        Top = 50
+        Width = 650
+        Angle = 0
+        DrawKind = dkLine
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 38
+      Height = 40
+      Top = 272
+      Width = 718
+      BandType = btFooter
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLSystemInfo1: TRLSystemInfo
+        Left = 0
+        Height = 14
+        Top = 6
+        Width = 123
+        Align = faLeftOnly
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        Info = itFullDate
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = 'Impresso em  '
+      end
+      object RLSystemInfo2: TRLSystemInfo
+        Left = 508
+        Height = 14
+        Top = 6
+        Width = 210
+        Align = faRightOnly
+        Alignment = taRightJustify
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsItalic]
+        Info = itPagePreview
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = 'Página #/#'
+      end
+      object RLDraw1: TRLDraw
+        Left = 34
+        Height = 7
+        Top = 0
+        Width = 650
+        Angle = 0
+        DrawKind = dkLine
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLGroup1: TRLGroup
+      Left = 38
+      Height = 176
+      Top = 96
+      Width = 718
+      DataFields = 'representante'
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLBand4: TRLBand
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 718
+        BandType = btTitle
+        Color = 14803425
+        ParentColor = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Transparent = False
+        object RLDBText15: TRLDBText
+          Left = 2
+          Height = 14
+          Top = 0
+          Width = 39
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'representante'
+          DataSource = DataSource1
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+          Transparent = False
+        end
+        object RLDBText16: TRLDBText
+          Left = 50
+          Height = 16
+          Top = 0
+          Width = 406
+          AutoSize = False
+          DataField = 'vrepresentante'
+          DataSource = DataSource1
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+          Transparent = False
+        end
+      end
+      object RLBand2: TRLBand
+        Left = 0
+        Height = 112
+        Top = 15
+        Width = 718
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        object RLLabel2: TRLLabel
+          Left = 0
+          Height = 14
+          Top = 0
+          Width = 36
+          Caption = 'Código'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText1: TRLDBText
+          Left = 64
+          Height = 14
+          Top = 0
+          Width = 11
+          Alignment = taRightJustify
+          DataField = 'id'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText2: TRLDBText
+          Left = 144
+          Height = 14
+          Top = 0
+          Width = 572
+          AutoSize = False
+          DataField = 'nome'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText3: TRLDBText
+          Left = 64
+          Height = 14
+          Top = 35
+          Width = 344
+          AutoSize = False
+          DataField = 'endereco'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText4: TRLDBText
+          Left = 464
+          Height = 14
+          Top = 35
+          Width = 250
+          AutoSize = False
+          DataField = 'bairro'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel3: TRLLabel
+          Left = 0
+          Height = 14
+          Top = 35
+          Width = 49
+          Caption = 'Endereço'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel4: TRLLabel
+          Left = 416
+          Height = 14
+          Top = 35
+          Width = 32
+          Caption = 'Bairro'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel5: TRLLabel
+          Left = 0
+          Height = 14
+          Top = 52
+          Width = 36
+          Caption = 'Cidade'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText5: TRLDBText
+          Left = 64
+          Height = 14
+          Top = 52
+          Width = 344
+          AutoSize = False
+          DataField = 'cidade'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel6: TRLLabel
+          Left = 416
+          Height = 14
+          Top = 52
+          Width = 19
+          Caption = 'U.F'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText6: TRLDBText
+          Left = 464
+          Height = 14
+          Top = 52
+          Width = 60
+          AutoSize = False
+          DataField = 'uf'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel7: TRLLabel
+          Left = 592
+          Height = 14
+          Top = 52
+          Width = 22
+          Caption = 'CEP'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText7: TRLDBText
+          Left = 640
+          Height = 14
+          Top = 52
+          Width = 76
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'cep'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel8: TRLLabel
+          Left = 0
+          Height = 14
+          Top = 70
+          Width = 45
+          Caption = 'Telefone'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText8: TRLDBText
+          Left = 64
+          Height = 14
+          Top = 70
+          Width = 344
+          AutoSize = False
+          DataFormula = 'telefone1 + '' ''+ telefone2'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel9: TRLLabel
+          Left = 416
+          Height = 14
+          Top = 70
+          Width = 40
+          Caption = 'Contato'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText9: TRLDBText
+          Left = 464
+          Height = 14
+          Top = 70
+          Width = 250
+          AutoSize = False
+          DataField = 'contato'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel10: TRLLabel
+          Left = 0
+          Height = 14
+          Top = 86
+          Width = 46
+          Caption = 'Vcto.Lic.'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText10: TRLDBText
+          Left = 64
+          Height = 14
+          Top = 86
+          Width = 88
+          AutoSize = False
+          DataField = 'data_lic_sanitaria'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel11: TRLLabel
+          Left = 416
+          Height = 14
+          Top = 88
+          Width = 31
+          Caption = 'E-mail'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText11: TRLDBText
+          Left = 464
+          Height = 14
+          Top = 88
+          Width = 250
+          AutoSize = False
+          DataField = 'email'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText12: TRLDBText
+          Left = 64
+          Height = 14
+          Top = 17
+          Width = 345
+          AutoSize = False
+          DataField = 'fantasia'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel12: TRLLabel
+          Left = 0
+          Height = 14
+          Top = 17
+          Width = 44
+          Caption = 'Fantasia'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel13: TRLLabel
+          Left = 416
+          Height = 14
+          Top = 17
+          Width = 28
+          Caption = 'CNPJ'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText13: TRLDBText
+          Left = 464
+          Height = 14
+          Top = 17
+          Width = 120
+          AutoSize = False
+          DataField = 'cnpj'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel14: TRLLabel
+          Left = 592
+          Height = 14
+          Top = 17
+          Width = 14
+          Caption = 'I.E'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText14: TRLDBText
+          Left = 612
+          Height = 14
+          Top = 17
+          Width = 104
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'inscestadual'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDraw3: TRLDraw
+          Left = 34
+          Height = 7
+          Top = 102
+          Width = 650
+          Angle = 0
+          DrawKind = dkLine
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText17: TRLDBText
+          Left = 84
+          Height = 14
+          Top = 0
+          Width = 47
+          AutoSize = False
+          DataField = 'status'
+          DataSource = DataSource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+      end
+      object RLBand5: TRLBand
+        Left = 0
+        Height = 32
+        Top = 127
+        Width = 718
+        BandType = btSummary
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        object RLSystemInfo4: TRLSystemInfo
+          Left = 2
+          Height = 15
+          Top = 7
+          Width = 216
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Info = itDetailCount
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+          Text = 'Total de clientes listados #'
+        end
+      end
+    end
+  end
+  object Label22: TLabel
+    Left = 10
+    Height = 15
+    Top = 152
+    Width = 37
+    Caption = 'Cidade'
+    ParentColor = False
+  end
+  object edCidade: TEditButton
+    Left = 118
+    Height = 23
+    Top = 144
+    Width = 345
+    ButtonWidth = 23
+    MaxLength = 0
+    NumGlyphs = 1
+    OnButtonClick = edCidadeButtonClick
+    PasswordChar = #0
+    TabOrder = 4
+    TextHint = 'Selecione uma cidade'
+  end
+  object Label23: TLabel
+    Left = 10
+    Height = 15
+    Top = 184
+    Width = 31
+    Caption = 'Bairro'
+    ParentColor = False
+  end
+  object edBairro: TEditButton
+    Left = 118
+    Height = 23
+    Top = 176
+    Width = 345
+    ButtonWidth = 23
+    MaxLength = 0
+    NumGlyphs = 1
+    OnButtonClick = edBairroButtonClick
+    PasswordChar = #0
+    TabOrder = 5
+    TextHint = 'Selecione um bairro'
+  end
+  object ckbIncluirInativos: TCheckBox
+    Left = 118
+    Height = 19
+    Top = 208
+    Width = 142
+    Caption = 'Incluir Clientes inativos'
+    TabOrder = 6
+  end
+  object Label24: TLabel
+    Left = 11
+    Height = 15
+    Top = 121
+    Width = 17
+    Caption = 'U.F'
+    ParentColor = False
+  end
+  object edUF: TEditButton
+    Left = 118
+    Height = 23
+    Top = 113
+    Width = 345
+    ButtonWidth = 23
+    MaxLength = 0
+    NumGlyphs = 1
+    OnButtonClick = edUFButtonClick
+    PasswordChar = #0
+    TabOrder = 7
+    Text = 'PR-Paraná'
+    TextHint = 'Selecione um estado'
+  end
+  object Label25: TLabel
+    Left = 10
+    Height = 15
+    Top = 38
+    Width = 37
+    Caption = 'Cliente'
+    Enabled = False
+    ParentColor = False
+  end
+  object edCliente: TEditButton
+    Left = 118
+    Height = 23
+    Top = 30
+    Width = 345
+    ButtonWidth = 23
+    Enabled = False
+    MaxLength = 0
+    NumGlyphs = 1
+    OnButtonClick = edClienteButtonClick
+    PasswordChar = #0
+    TabOrder = 8
+    TextHint = 'Em branco lista todos os representantes'
+  end
+  object RLReport2: TRLReport
+    Left = 216
+    Height = 1123
+    Top = 272
+    Width = 794
+    AllowedBands = [btDetail]
+    DataSource = DataSource1
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Margins.LeftMargin = 5
+    Margins.TopMargin = 5
+    Margins.RightMargin = 5
+    Margins.BottomMargin = 5
+    RealBounds.Left = 0
+    RealBounds.Top = 0
+    RealBounds.Width = 0
+    RealBounds.Height = 0
+    Title = 'Listagem de clientes'
+    JobTitle = 'EtiqueListagem de clientes'
+    ExpressionParser = RLExpressionParser2
+    Visible = False
+    object RLDetailGrid1: TRLDetailGrid
+      Left = 19
+      Height = 108
+      Top = 19
+      Width = 756
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = True
+      Borders.DrawRight = False
+      Borders.DrawBottom = False
+      Borders.Style = bsVertical
+      ColCount = 2
+      ColSpacing = 0
+      ColWidth = 0
+      Font.Color = clBlack
+      Font.Height = -9
+      Font.Name = 'Arial'
+      ParentFont = False
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLLabel29: TRLLabel
+        Left = 0
+        Height = 12
+        Top = 74
+        Width = 39
+        Caption = 'Telefone'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText35: TRLDBText
+        Left = 48
+        Height = 14
+        Top = 72
+        Width = 147
+        AutoSize = False
+        DataField = 'telefone1'
+        DataSource = DataSource1
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        BeforePrint = RLDBText35BeforePrint
+      end
+      object RLLabel30: TRLLabel
+        Left = 0
+        Height = 12
+        Top = 52
+        Width = 32
+        Caption = 'Cidade'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText36: TRLDBText
+        Left = 48
+        Height = 14
+        Top = 50
+        Width = 324
+        AutoSize = False
+        DataFormula = 'cidade +''-'' + uf'
+        DataSource = DataSource1
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel33: TRLLabel
+        Left = 3
+        Height = 12
+        Top = 94
+        Width = 36
+        Caption = 'Contato'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText39: TRLDBText
+        Left = 48
+        Height = 14
+        Top = 92
+        Width = 186
+        AutoSize = False
+        DataField = 'contato'
+        DataSource = DataSource1
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel36: TRLLabel
+        Left = 277
+        Height = 12
+        Top = 74
+        Width = 22
+        Caption = 'CEP'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText41: TRLDBText
+        Left = 312
+        Height = 14
+        Top = 72
+        Width = 60
+        Alignment = taRightJustify
+        AutoSize = False
+        DataField = 'cep'
+        DataSource = DataSource1
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        BeforePrint = RLDBText41BeforePrint
+      end
+      object RLLabel37: TRLLabel
+        Left = 243
+        Height = 12
+        Top = 94
+        Width = 28
+        Caption = 'CNPJ'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText42: TRLDBText
+        Left = 277
+        Height = 14
+        Top = 92
+        Width = 95
+        Alignment = taRightJustify
+        AutoSize = False
+        DataField = 'cnpj'
+        DataSource = DataSource1
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        BeforePrint = RLDBText42BeforePrint
+      end
+      object RLDBMemo1: TRLDBMemo
+        Left = 1
+        Height = 14
+        Top = 1
+        Width = 371
+        Behavior = [beSiteExpander]
+        DataField = 'nome'
+        DataSource = DataSource1
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText18: TRLDBText
+        Left = 1
+        Height = 12
+        Top = 25
+        Width = 371
+        AutoSize = False
+        DataFormula = '''End ''+endereco+''- Bairro ''+bairro'
+        DataSource = DataSource1
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+  end
+  object RadioButton1: TRadioButton
+    Left = 72
+    Height = 19
+    Top = 8
+    Width = 127
+    Caption = 'Listagem de clientes'
+    Checked = True
+    TabOrder = 11
+    TabStop = True
+  end
+  object RadioButton2: TRadioButton
+    Left = 280
+    Height = 19
+    Top = 8
+    Width = 117
+    Caption = 'Etiqueta de cliente'
+    OnChange = RadioButton2Change
+    TabOrder = 10
+  end
+  object SpinEdit1: TSpinEdit
+    Left = 118
+    Height = 23
+    Top = 56
+    Width = 66
+    Enabled = False
+    Increment = 2
+    MinValue = 2
+    TabOrder = 12
+    Value = 10
+  end
+  object Label26: TLabel
+    Left = 11
+    Height = 15
+    Top = 64
+    Width = 94
+    Caption = 'Quant. etitiquetas'
+    Enabled = False
+    ParentColor = False
+  end
+  object ZQuery1: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select c.*,'
+      'a.nome as vatividade,'
+      'g.nome as vcliente_grupo,'
+      't.nome as vtipo_estabelecimento,'
+      'tp.nome as vtransportadora'
+      'From clientes c'
+      'left join atividade a      on a.id=c.atividade'
+      'left join clientes_grupo g on g.id=c.cliente_grupo'
+      'left join tipo_estabelecimento t on t.id=c.tipo_estabelecimento'
+      'left join transportadora tp on tp.id=c.transportadora'
+      ''
+    )
+    Params = <>
+    left = 480
+    top = 16
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    left = 480
+    top = 56
+  end
+  object RLExpressionParser1: TRLExpressionParser
+    left = 544
+    top = 8
+  end
+  object RLExpressionParser2: TRLExpressionParser
+    left = 563
+    top = 117
+  end
+  object RxMemoryData1: TRxMemoryData
+    FieldDefs = <>
+    PacketRecords = 0
+    left = 480
+    top = 120
+    object RxMemoryData1nome: TStringField
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object RxMemoryData1endereco: TStringField
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object RxMemoryData1bairro: TStringField
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object RxMemoryData1cidade: TStringField
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object RxMemoryData1uf: TStringField
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object RxMemoryData1telefone1: TStringField
+      FieldKind = fkData
+      FieldName = 'telefone1'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object RxMemoryData1cep: TStringField
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object RxMemoryData1contato: TStringField
+      FieldKind = fkData
+      FieldName = 'contato'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object RxMemoryData1cnpj: TStringField
+      FieldKind = fkData
+      FieldName = 'cnpj'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 18
+    end
+  end
+end

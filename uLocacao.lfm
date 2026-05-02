@@ -1,0 +1,1493 @@
+object frmLocacao: TfrmLocacao
+  Left = 507
+  Height = 667
+  Top = 96
+  Width = 754
+  Caption = 'Locação'
+  ClientHeight = 667
+  ClientWidth = 754
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.0.14.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 754
+    AutoSize = True
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBar1'
+    Flat = False
+    Images = dbConnect.ImageList1
+    Indent = 10
+    TabOrder = 0
+    object ToolButton2: TToolButton
+      Left = 10
+      Hint = 'Fechar janela'
+      Top = 2
+      Caption = 'ToolButton2'
+      ImageIndex = 8
+      OnClick = ToolButton2Click
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton3: TToolButton
+      Left = 58
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton3'
+      Style = tbsSeparator
+    end
+    object ToolButton1: TToolButton
+      Left = 68
+      Hint = 'Cria uma nova locação'
+      Top = 2
+      Caption = 'ToolButton1'
+      ImageIndex = 0
+      OnClick = ToolButton1Click
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton4: TToolButton
+      Left = 164
+      Hint = 'Imprimir contrato'
+      Top = 2
+      Caption = 'ToolButton4'
+      ImageIndex = 7
+    end
+    object ToolButton5: TToolButton
+      Left = 116
+      Hint = 'Salvar as informações do contrato'
+      Top = 2
+      Caption = 'ToolButton5'
+      ImageIndex = 2
+      OnClick = ToolButton5Click
+      ParentShowHint = False
+      ShowHint = True
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 617
+    Top = 50
+    Width = 754
+    ActivePage = TabSheet2
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 1
+    OnChange = PageControl1Change
+    object TabSheet1: TTabSheet
+      Caption = 'Lista de locações'
+      ClientHeight = 589
+      ClientWidth = 746
+      object DBGrid1: TDBGrid
+        Left = 0
+        Height = 551
+        Top = 38
+        Width = 746
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            ReadOnly = True
+            Title.Caption = 'Locatário'
+            Width = 600
+            FieldName = 'nome'
+          end>
+        DataSource = dsLocacao
+        TabOrder = 0
+        OnDblClick = DBGrid1DblClick
+      end
+      object Panel1: TPanel
+        Left = 0
+        Height = 38
+        Top = 0
+        Width = 746
+        Align = alTop
+        TabOrder = 1
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Contrato'
+      ClientHeight = 589
+      ClientWidth = 746
+      object GroupBox1: TGroupBox
+        Left = 4
+        Height = 569
+        Top = 8
+        Width = 736
+        ClientHeight = 551
+        ClientWidth = 732
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 14
+          Height = 16
+          Top = 43
+          Width = 80
+          Caption = 'N° do contrato'
+          ParentColor = False
+        end
+        object Label2: TLabel
+          Left = 14
+          Height = 16
+          Top = 75
+          Width = 100
+          Caption = 'Nome do locatário'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 14
+          Height = 16
+          Top = 101
+          Width = 22
+          Caption = 'CEP'
+          ParentColor = False
+        end
+        object DBEdit1: TDBEdit
+          Left = 150
+          Height = 23
+          Top = 94
+          Width = 99
+          DataField = 'cep'
+          DataSource = dsLocacao
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object SpeedButton1: TSpeedButton
+          Left = 253
+          Height = 27
+          Top = 93
+          Width = 27
+          Caption = '...'
+          NumGlyphs = 0
+          OnClick = SpeedButton1Click
+        end
+        object DBEdit2: TDBEdit
+          Left = 150
+          Height = 23
+          Top = 36
+          Width = 80
+          DataField = 'id'
+          DataSource = dsLocacao
+          ReadOnly = True
+          CharCase = ecNormal
+          Color = clSilver
+          Font.Style = [fsBold]
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 1
+        end
+        object DBEdit3: TDBEdit
+          Left = 150
+          Height = 23
+          Top = 64
+          Width = 556
+          DataField = 'nome'
+          DataSource = dsLocacao
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label4: TLabel
+          Left = 14
+          Height = 16
+          Top = 130
+          Width = 50
+          Caption = 'Endereço'
+          ParentColor = False
+        end
+        object DBEdit4: TDBEdit
+          Left = 150
+          Height = 23
+          Top = 123
+          Width = 556
+          DataField = 'endereco'
+          DataSource = dsLocacao
+          CharCase = ecUppercase
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object Label5: TLabel
+          Left = 14
+          Height = 16
+          Top = 158
+          Width = 32
+          Caption = 'Bairro'
+          ParentColor = False
+        end
+        object DBEdit5: TDBEdit
+          Left = 150
+          Height = 23
+          Top = 151
+          Width = 388
+          DataField = 'bairro'
+          DataSource = dsLocacao
+          CharCase = ecUppercase
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object Label6: TLabel
+          Left = 14
+          Height = 16
+          Top = 187
+          Width = 38
+          Caption = 'Cidade'
+          ParentColor = False
+        end
+        object DBEdit6: TDBEdit
+          Left = 150
+          Height = 23
+          Top = 180
+          Width = 388
+          DataField = 'cidade'
+          DataSource = dsLocacao
+          CharCase = ecUppercase
+          MaxLength = 0
+          TabOrder = 5
+        end
+        object Label7: TLabel
+          Left = 555
+          Height = 16
+          Top = 187
+          Width = 15
+          Caption = 'UF'
+          ParentColor = False
+        end
+        object DBEdit7: TDBEdit
+          Left = 654
+          Height = 23
+          Top = 180
+          Width = 52
+          DataField = 'uf'
+          DataSource = dsLocacao
+          CharCase = ecUppercase
+          MaxLength = 0
+          TabOrder = 6
+        end
+        object Label8: TLabel
+          Left = 14
+          Height = 16
+          Top = 216
+          Width = 52
+          Caption = 'Telefones'
+          ParentColor = False
+        end
+        object DBEdit8: TDBEdit
+          Left = 150
+          Height = 23
+          Top = 209
+          Width = 116
+          DataField = 'telefone1'
+          DataSource = dsLocacao
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 7
+        end
+        object DBEdit9: TDBEdit
+          Left = 422
+          Height = 23
+          Top = 209
+          Width = 116
+          DataField = 'telefone2'
+          DataSource = dsLocacao
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 8
+        end
+        object Label9: TLabel
+          Left = 342
+          Height = 16
+          Top = 244
+          Width = 28
+          Caption = 'C.P.F'
+          ParentColor = False
+        end
+        object DBEdit10: TDBEdit
+          Left = 398
+          Height = 23
+          Top = 237
+          Width = 140
+          DataField = 'cpf'
+          DataSource = dsLocacao
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 9
+        end
+        object Label10: TLabel
+          Left = 555
+          Height = 16
+          Top = 241
+          Width = 19
+          Caption = 'R.G'
+          ParentColor = False
+        end
+        object DBEdit11: TDBEdit
+          Left = 590
+          Height = 23
+          Top = 237
+          Width = 116
+          DataField = 'reg'
+          DataSource = dsLocacao
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 10
+        end
+        object DBDateEdit1: TRXDBDateEdit
+          Left = 618
+          Height = 23
+          Top = 33
+          Width = 88
+          ButtonWidth = 23
+          CharCase = ecNormal
+          DialogTitle = 'Select a Date'
+          Enabled = False
+          Glyph.Data = {
+            36010000424D360100000000000076000000280000001C0000000C0000000100
+            040000000000C000000000000000000000000000000000000000000000000000
+            8000008000000080800080000000800080008080000080808000C0C0C0000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+            77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+            47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+            47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+            47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+            47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+            47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+          }
+          MaxLength = 10
+          NumGlyphs = 2
+          PopupColor = clWindow
+          TabOrder = 11
+          Text = '  /  /    '
+          DataField = 'data'
+          DataSource = dsLocacao
+        end
+        object Label11: TLabel
+          Left = 518
+          Height = 16
+          Top = 41
+          Width = 85
+          Caption = 'Data da locação'
+          ParentColor = False
+        end
+        object RxDBGrid1: TRxDBGrid
+          Left = 3
+          Height = 134
+          Top = 270
+          Width = 715
+          TitleButtons = False
+          AutoSort = True
+          Columns = <          
+            item
+              Title.Alignment = taCenter
+              Title.Caption = 'Dt.Inicio'
+              Title.Orientation = toHorizontal
+              Width = 85
+              FieldName = 'data_inicio'
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Caption = 'Dt.Fim'
+              Title.Orientation = toHorizontal
+              Width = 85
+              FieldName = 'data_termino'
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Caption = 'Nome/Descrição'
+              Title.Orientation = toHorizontal
+              Width = 350
+              FieldName = 'descricao'
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Caption = 'Quant.'
+              Title.Orientation = toHorizontal
+              Width = 50
+              FieldName = 'quantidade'
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Caption = 'Sit.'
+              Title.Orientation = toHorizontal
+              Width = 35
+              FieldName = 'situacao'
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Caption = 'valor'
+              Title.Orientation = toHorizontal
+              Width = 70
+              FieldName = 'valor'
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end>
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end>
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = dsLocacaoItens
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          ParentColor = False
+          TabOrder = 12
+        end
+        object Label12: TLabel
+          Left = 14
+          Height = 16
+          Top = 248
+          Width = 70
+          Caption = 'Itens locados'
+          ParentColor = False
+        end
+        object DBNavigator1: TDBNavigator
+          Left = 122
+          Height = 25
+          Top = 239
+          Width = 144
+          BeforeAction = DBNavigator1BeforeAction
+          BevelOuter = bvNone
+          ChildSizing.EnlargeHorizontal = crsScaleChilds
+          ChildSizing.EnlargeVertical = crsScaleChilds
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 100
+          ClientHeight = 25
+          ClientWidth = 144
+          DataSource = dsLocacaoItens
+          Options = []
+          TabOrder = 13
+          VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel, nbRefresh]
+        end
+        object btAddComprovante: TBitBtn
+          Left = 174
+          Height = 26
+          Top = 409
+          Width = 121
+          Caption = 'Add Comprovante'
+          OnClick = btAddComprovanteClick
+          TabOrder = 14
+        end
+        object btDelComprovante: TBitBtn
+          Left = 302
+          Height = 26
+          Top = 409
+          Width = 120
+          Caption = 'Del Comprovante'
+          OnClick = btDelComprovanteClick
+          TabOrder = 15
+        end
+        object Label13: TLabel
+          Left = 6
+          Height = 16
+          Top = 409
+          Width = 158
+          Caption = 'Comprovantes e documentos'
+          ParentColor = False
+        end
+        object RxDBGrid2: TRxDBGrid
+          Left = 6
+          Height = 102
+          Top = 437
+          Width = 715
+          TitleButtons = False
+          AutoSort = True
+          Columns = <          
+            item
+              Title.Alignment = taCenter
+              Title.Caption = 'Descrição'
+              Title.Orientation = toHorizontal
+              Width = 550
+              FieldName = 'descricao'
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Caption = 'T.Arq.'
+              Title.Orientation = toHorizontal
+              Width = 90
+              FieldName = 'tipo_arquivo'
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end>
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end>
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = dsLocacaoComprovantes
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          ParentColor = False
+          TabOrder = 16
+          OnDblClick = RxDBGrid2DblClick
+        end
+        object Label14: TLabel
+          Left = 287
+          Height = 16
+          Top = 102
+          Width = 317
+          Caption = '<- Digite o CEP e pressione o botão para retornar o endereço'
+          Font.Style = [fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object btLancamentos: TBitBtn
+          Left = 14
+          Height = 25
+          Top = -3
+          Width = 227
+          Caption = 'Gravar Locação e efetuar lancamentos'
+          Enabled = False
+          OnClick = btLancamentosClick
+          TabOrder = 17
+        end
+        object Label16: TLabel
+          Left = 628
+          Height = 18
+          Top = 410
+          Width = 70
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0,00'
+          Font.Height = -13
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label17: TLabel
+          Left = 517
+          Height = 16
+          Top = 412
+          Width = 88
+          Caption = 'Valor da locação'
+          ParentColor = False
+        end
+        object btLancamentos1: TBitBtn
+          Left = 262
+          Height = 25
+          Top = -2
+          Width = 142
+          Caption = 'Encerrar Locação'
+          OnClick = btLancamentos1Click
+          TabOrder = 18
+        end
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Estoque de produtos para locação'
+      ClientHeight = 589
+      ClientWidth = 746
+      object GroupBox2: TGroupBox
+        Left = 5
+        Height = 554
+        Top = 1
+        Width = 730
+        ClientHeight = 536
+        ClientWidth = 726
+        TabOrder = 0
+        object Panel2: TPanel
+          Left = 0
+          Height = 29
+          Top = 0
+          Width = 726
+          Align = alTop
+          ClientHeight = 29
+          ClientWidth = 726
+          TabOrder = 0
+          object Label15: TLabel
+            Left = 5
+            Height = 16
+            Top = 5
+            Width = 422
+            Caption = '* Clique com o botão direito sobre um item para devolve-lo ao estoque de origem'
+            Font.Color = clRed
+            Font.Style = [fsItalic]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object DBGrid2: TDBGrid
+          Left = 0
+          Height = 507
+          Top = 29
+          Width = 726
+          Align = alClient
+          Color = clWindow
+          Columns = <          
+            item
+              Title.Caption = 'Código'
+              Width = 50
+              FieldName = 'produto'
+            end          
+            item
+              Title.Caption = 'Nome/Descricao'
+              Width = 400
+              FieldName = 'descricao'
+            end          
+            item
+              Title.Caption = 'Lote'
+              Width = 60
+              FieldName = 'lote'
+            end          
+            item
+              Title.Caption = 'Quant.'
+              Width = 50
+              FieldName = 'quantidade'
+            end          
+            item
+              Title.Caption = 'Q.Locado'
+              Width = 60
+              FieldName = 'locado'
+            end          
+            item
+              Title.Caption = 'Preço'
+              Width = 70
+              FieldName = 'preco'
+            end>
+          DataSource = dsEstqLocacao
+          PopupMenu = PopupMenu1
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object qryLocacao: TZQuery
+    Connection = dbConnect.ZConnection1
+    AutoCalcFields = False
+    AfterOpen = qryLocacaoAfterOpen
+    AfterScroll = qryLocacaoAfterScroll
+    SQL.Strings = (
+      'Select l.*'
+      'From locacao l'
+      'Where (Select count(*) From locacao_itens Where locacao=l.id and situacao=0) > 0'
+    )
+    Params = <>
+    left = 248
+    top = 416
+    object qryLocacaoid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryLocacaodata: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLocacaodata_termino: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_termino'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLocacaonome: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryLocacaoendereco: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryLocacaocidade: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryLocacaobairro: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryLocacaocep: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryLocacaocomplemento: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'complemento'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryLocacaouf: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryLocacaoemail: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryLocacaotelefone1: TStringField
+      DisplayWidth = 64
+      FieldKind = fkData
+      FieldName = 'telefone1'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryLocacaotelefone2: TStringField
+      DisplayWidth = 64
+      FieldKind = fkData
+      FieldName = 'telefone2'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryLocacaocpf: TStringField
+      DisplayWidth = 72
+      FieldKind = fkData
+      FieldName = 'cpf'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object qryLocacaoreg: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'reg'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryLocacaoobservacao: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'observacao'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsLocacao: TDatasource
+    DataSet = qryLocacao
+    left = 248
+    top = 464
+  end
+  object qryLocacaoItens: TZQuery
+    Connection = dbConnect.ZConnection1
+    UpdateObject = updLocacaoItens
+    AfterPost = qryLocacaoItensAfterPost
+    BeforeDelete = qryLocacaoItensBeforeDelete
+    SQL.Strings = (
+      'Select li.*,p.descricao'
+      'From locacao_itens li'
+      'Left Join produtos p ON p.id=li.produto'
+      'Where locacao = :id'
+      'Order by id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    DataSource = dsLocacao
+    left = 360
+    top = 432
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryLocacaoItensid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryLocacaoItenslocacao: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'locacao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLocacaoItensproduto: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLocacaoItensdata_inicio: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_inicio'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLocacaoItensdata_termino: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_termino'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLocacaoItensdescricao: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryLocacaoItensquantidade: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'quantidade'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655363
+    end
+    object qryLocacaoItenssituacao: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'situacao'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryLocacaoItensvalor: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryLocacaoItenspgto_antecipado: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'pgto_antecipado'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryLocacaoItenslancado: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'lancado'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      DisplayValues = 'True;False'
+    end
+  end
+  object dsLocacaoItens: TDatasource
+    DataSet = qryLocacaoItens
+    left = 360
+    top = 480
+  end
+  object qryEstqLocacao: TZQuery
+    Connection = dbConnect.ZConnection1
+    UpdateObject = updEstqLocacao
+    SQL.Strings = (
+      'Select pl.*,p.descricao,'
+      'coalesce((Select sum(quantidade) From locacao_itens Where situacao=0 and produto=p.id),0) as locado,'
+      '(Select lote From produtos_estoque Where id=pl.produto_estoque) as lote'
+      'From produtos_locacao pl'
+      'Left Join produtos p ON p.id=pl.produto'
+    )
+    Params = <>
+    left = 96
+    top = 432
+    object qryEstqLocacaoid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryEstqLocacaoproduto: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryEstqLocacaoproduto_estoque: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'produto_estoque'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryEstqLocacaoquantidade: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'quantidade'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983043
+    end
+    object qryEstqLocacaodata_entrada: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_entrada'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryEstqLocacaoempresa: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'empresa'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryEstqLocacaolocalizacao: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'localizacao'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryEstqLocacaodescricao: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryEstqLocacaolocado: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'locado'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qryEstqLocacaopreco: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'preco'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryEstqLocacaolote: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'lote'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 80
+    end
+  end
+  object dsEstqLocacao: TDatasource
+    DataSet = qryEstqLocacao
+    left = 96
+    top = 480
+  end
+  object OpenDialog1: TOpenDialog
+    left = 686
+    top = 290
+  end
+  object qryLocacaoComprovantes: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select *'
+      'From locacao_comprovantes'
+      'Where locacao=:id'
+      'Order by id desc'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    DataSource = dsLocacao
+    left = 544
+    top = 400
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryLocacaoComprovantesid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryLocacaoComprovanteslocacao: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'locacao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLocacaoComprovantesdescricao: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryLocacaoComprovantesitem: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'item'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryLocacaoComprovantestipo_arquivo: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'tipo_arquivo'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsLocacaoComprovantes: TDatasource
+    DataSet = qryLocacaoComprovantes
+    left = 544
+    top = 496
+  end
+  object updLocacaoItens: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM locacao_itens'
+      'WHERE'
+      '  locacao_itens.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO locacao_itens'
+      '  (id, locacao, produto, data_inicio, data_termino, quantidade, situacao, '
+      '   valor, pgto_antecipado, lancado)'
+      'VALUES'
+      '  (:id, :locacao, :produto, :data_inicio, :data_termino, :quantidade, :situacao, '
+      '   :valor, :pgto_antecipado, :lancado)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE locacao_itens SET'
+      '  id = :id,'
+      '  locacao = :locacao,'
+      '  produto = :produto,'
+      '  data_inicio = :data_inicio,'
+      '  data_termino = :data_termino,'
+      '  quantidade = :quantidade,'
+      '  situacao = :situacao,'
+      '  valor = :valor,'
+      '  pgto_antecipado = :pgto_antecipado,'
+      '  lancado = :lancado'
+      'WHERE'
+      '  locacao_itens.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 456
+    top = 432
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'locacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_inicio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_termino'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'situacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pgto_antecipado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'lancado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object PopupMenu1: TPopupMenu
+    left = 296
+    top = 233
+    object MenuItem1: TMenuItem
+      Caption = 'Devolver quantidade não locada para estoque'
+      OnClick = MenuItem1Click
+    end
+  end
+  object updEstqLocacao: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM produtos_locacao'
+      'WHERE'
+      '  produtos_locacao.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO produtos_locacao'
+      '  (id, produto, produto_estoque, quantidade, data_entrada, empresa, localizacao, '
+      '   preco)'
+      'VALUES'
+      '  (:id, :produto, :produto_estoque, :quantidade, :data_entrada, :empresa, '
+      '   :localizacao, :preco)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE produtos_locacao SET'
+      '  id = :id,'
+      '  produto = :produto,'
+      '  produto_estoque = :produto_estoque,'
+      '  quantidade = :quantidade,'
+      '  data_entrada = :data_entrada,'
+      '  empresa = :empresa,'
+      '  localizacao = :localizacao,'
+      '  preco = :preco'
+      'WHERE'
+      '  produtos_locacao.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 148
+    top = 454
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto_estoque'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_entrada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'empresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'localizacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'preco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+end

@@ -1,0 +1,205 @@
+object frmLocacaoAddItem: TfrmLocacaoAddItem
+  Left = 533
+  Height = 234
+  Top = 239
+  Width = 689
+  BorderStyle = bsDialog
+  Caption = 'Locação'
+  ClientHeight = 234
+  ClientWidth = 689
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.0.14.0'
+  object EditButton1: TEditButton
+    Left = 176
+    Height = 23
+    Top = 27
+    Width = 480
+    ButtonWidth = 23
+    CharCase = ecNormal
+    DirectInput = False
+    MaxLength = 0
+    NumGlyphs = 0
+    OnButtonClick = EditButton1ButtonClick
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 16
+    Top = 34
+    Width = 148
+    Caption = 'Selecione o item de locação'
+    ParentColor = False
+  end
+  object RxDateEdit1: TRxDateEdit
+    Left = 176
+    Height = 23
+    Top = 71
+    Width = 120
+    ButtonWidth = 23
+    CharCase = ecNormal
+    DialogTitle = 'Select a Date'
+    Glyph.Data = {
+      36010000424D360100000000000076000000280000001C0000000C0000000100
+      040000000000C000000000000000000000000000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+      77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+      47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+      47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+      47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+      47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+      47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+    }
+    MaxLength = 10
+    NumGlyphs = 2
+    PopupColor = clWindow
+    TabOrder = 1
+    Text = '  /  /    '
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 16
+    Top = 78
+    Width = 117
+    Caption = 'Data início da locação'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 368
+    Height = 16
+    Top = 120
+    Width = 147
+    Caption = 'Data do término da locação'
+    ParentColor = False
+  end
+  object RxDateEdit2: TRxDateEdit
+    Left = 536
+    Height = 23
+    Top = 115
+    Width = 120
+    ButtonWidth = 23
+    CharCase = ecNormal
+    DialogTitle = 'Select a Date'
+    Glyph.Data = {
+      36010000424D360100000000000076000000280000001C0000000C0000000100
+      040000000000C000000000000000000000000000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+      77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+      47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+      47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+      47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+      47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+      47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+    }
+    MaxLength = 10
+    NumGlyphs = 2
+    PopupColor = clWindow
+    TabOrder = 4
+    Text = '  /  /    '
+  end
+  object BitBtn1: TBitBtn
+    Left = 8
+    Height = 30
+    Top = 192
+    Width = 128
+    DefaultCaption = True
+    Kind = bkOK
+    ModalResult = 1
+    TabOrder = 5
+  end
+  object BitBtn2: TBitBtn
+    Left = 552
+    Height = 30
+    Top = 192
+    Width = 123
+    DefaultCaption = True
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 6
+  end
+  object spDias: TSpinEdit
+    Left = 176
+    Height = 23
+    Top = 115
+    Width = 80
+    MaxValue = 400
+    OnChange = spDiasChange
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 16
+    Top = 120
+    Width = 83
+    Caption = 'Dias de locação'
+    ParentColor = False
+  end
+  object FloatSpinEdit1: TFloatSpinEdit
+    Left = 536
+    Height = 23
+    Top = 71
+    Width = 78
+    DecimalPlaces = 3
+    Increment = 1
+    MaxValue = 100
+    MinValue = 1
+    TabOrder = 2
+    Value = 1
+  end
+  object Label5: TLabel
+    Left = 368
+    Height = 16
+    Top = 78
+    Width = 101
+    Caption = 'Quantidade locada'
+    ParentColor = False
+  end
+  object CheckBox1: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 155
+    Width = 152
+    Caption = 'Recebimento antecipado'
+    TabOrder = 7
+  end
+  object edTotal: TCurrencyEdit
+    Left = 536
+    Height = 23
+    Top = 151
+    Width = 120
+    Alignment = taRightJustify
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 8
+    Value = 0
+  end
+  object Label6: TLabel
+    Left = 368
+    Height = 16
+    Top = 158
+    Width = 88
+    Caption = 'Valor da locação'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 176
+    Height = 16
+    Top = 158
+    Width = 37
+    Caption = 'Vlr/Dia'
+    ParentColor = False
+  end
+  object edDiaria: TCurrencyEdit
+    Left = 240
+    Height = 23
+    Top = 151
+    Width = 100
+    Alignment = taRightJustify
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 9
+    Value = 0
+  end
+end

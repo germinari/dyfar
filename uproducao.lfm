@@ -1,0 +1,1216 @@
+object frmProducao: TfrmProducao
+  Left = 330
+  Height = 680
+  Top = 185
+  Width = 1020
+  BorderStyle = bsDialog
+  Caption = 'Lançamento de produção'
+  ClientHeight = 680
+  ClientWidth = 1020
+  OnResize = FormResize
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 52
+    Top = 0
+    Width = 1020
+    AutoSize = True
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBar1'
+    EdgeBorders = [ebTop, ebBottom]
+    EdgeOuter = esRaised
+    Flat = False
+    Images = dbConnect.ImageList1
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 1
+      Height = 48
+      Top = 2
+      Width = 8
+      Caption = 'ToolButton1'
+      Style = tbsSeparator
+    end
+    object ToolButton2: TToolButton
+      Left = 9
+      Top = 2
+      Caption = 'ToolButton2'
+      ImageIndex = 8
+      OnClick = ToolButton2Click
+    end
+    object ToolButton3: TToolButton
+      Left = 57
+      Height = 48
+      Top = 2
+      Width = 24
+      Caption = 'ToolButton3'
+      Style = tbsDivider
+    end
+    object ToolButton4: TToolButton
+      Left = 81
+      Top = 2
+      Caption = 'ToolButton4'
+      ImageIndex = 0
+      OnClick = ToolButton4Click
+    end
+    object ToolButton5: TToolButton
+      Left = 129
+      Height = 48
+      Top = 2
+      Width = 4
+      Caption = 'ToolButton5'
+      Style = tbsDivider
+    end
+    object ToolButton6: TToolButton
+      Left = 133
+      Top = 2
+      Caption = 'ToolButton6'
+      DropdownMenu = PopupMenu1
+      ImageIndex = 12
+      Style = tbsDropDown
+    end
+    object ToolButton7: TToolButton
+      Left = 193
+      Height = 48
+      Top = 2
+      Width = 8
+      Caption = 'ToolButton7'
+      Style = tbsSeparator
+    end
+    object SpeedButton1: TSpeedButton
+      Left = 972
+      Height = 48
+      Hint = 'Remover Ordem de produção'
+      Top = 2
+      Width = 48
+      Align = alRight
+      Glyph.Data = {
+        36100000424D3610000000000000360000002800000020000000200000000100
+        2000000000000010000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000001C00000051000000810000
+        009D000000C6000000D0000000D0000000D0000000C80000009D0000008A0000
+        005C00000027FFFFFF00FFFFFF00717171098E8E90AE737373FF777778E1A0A0
+        A0DCB2B2B2FFBABABAE2C3C3C35DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF000000001E050505964E4E4ED9929292ECB2B1B1F7C4C4
+        C4FFB9B9B9FFA4A4A4FF909090FF7F7F7FFF747474FF717171FF717171FC7272
+        72F0636363E11B1B1BA30000002A7F7F82B75B5B5DFF6F6F6FF8A7A7A7F9A5A5
+        A5FFAEAEAEFFBDBDBDFFC4C4C4FFBEBEBE4BFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF000000000E454545D0A3A3A3FAD6D6D6FFEFEFEFFFE9E9E9FFD7D8
+        D8FFC1C1C1FFA8A8A8FF909090FF7C7C7CFF6F6F6FFF6C6C6CFF767676FF9494
+        94FFC0C0C0FFBBBBBBFE6C6C6CEF626264FF5C5C5EFFACACACF9A3A3A3FFA1A1
+        A1FFADADADFFBEBEBEFFC2C2C2FFBFBFBFE7AAAAAA09FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF007676769AACACACFFC1C1C1FFDEDEDEFFE7E7E7FFD6D6D6FFDADA
+        DAFFC1C1C1FF8F8F8FFF8C8C8CFF7C7C7CFF6E6E6EFF666666FF6B6B6BFF7A7A
+        7AFFABABABFFBABABAFF7A7A7CFF444446FFA2A2A3FEACACACFFA2A2A2FFA0A0
+        A0FFB0B0B0FFC1C1C1FFC1C1C1FFBBBBBBFFBFBFBF57FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00868686F9B2B2B2FFA8A8A8FFE1E1E1FF8D8D8DFFADADADFFDBDB
+        DBFFC1C1C1FF676767FFB5B5B5FF7C7C7CFF6C6C6CFF646464FF7C7C7CFF6565
+        65FF909090FF8A8A8AFF606062FF6E6E70FFBEBEBEFFA9A9A9FFA0A0A0FF9F9F
+        9FFFB2B2B2FFC2C2C2FFBEBEBEFFBABABAFFC1C1C19CFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00909090FFB5B5B5FF7F7F7FFFE3E3E3FF828282FFB0B0B0FFDEDE
+        DEFFC4C4C4FF656565FFB8B8B8FF7C7C7CFF6B6B6BFF636363FF7B7B7BFF5D5D
+        5DFF7E7E7EFF868687FF515152FFBABABBFFBCBCBCFFADADADFFA3A3A3FFA2A2
+        A2FFA6A6A6FFCBCBCBFFC2C2C2FFC0C0C0FFCACACAC6FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00979797FFB6B6B6FF7F7F7FFFE7E7E7FF828282FFAEAEAEFFE1E1
+        E1FFC6C6C6FF656565FFB8B8B8FF7C7C7CFF6A6A6AFF636363FF7E7E7EFF5858
+        58FF787879FF8F8F91FF696969FFD8D8D8FFBEBEBEFFB1B1B1FFA6A6A6FF9E9E
+        9EFF888888FFD9D9D9FFC9C9C9FFCFCFCFFFDADADAE4FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF009B9B9BFFB9B9B9FF808080FFE9E9E9FF7C7C7CFFB1B1B1FFE5E5
+        E4FFC9C9C9FF656565FFB8B8B8FF7C7C7CFF6A6A6AFF636363FF7F7F7FFF5656
+        56FF888888FF909090FFABABACFFD7D7D7FFC4C4C4FFB9B9B9FFADADADFF9898
+        98FF999999FF9C9C9CFFEAEAEAFFE3E3E3FFE7E7E7F0FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00A0A0A0FFBABABAFF808080FFEDEDEDFF7A7A7AFFB2B2B2FFE8E8
+        E8FFCDCDCDFF656565FFB8B8B8FF7C7C7CFF6A6A6AFF636363FF818181FF5252
+        52FFA0A0A1FF989899FFCECECEFFD8D8D8FFCBCBCBFFC3C3C3FFB8B8B8FF8D8D
+        8DFFC1C1C1FF929292FFDDDDDDFFEFEFEFFFEFEFEFEAFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00A6A6A6FFBCBCBCFF818181FFEFEFEFFF7B7B7BFFB3B3B3FFECEC
+        ECFFCFCFCFFF656565FFB8B8B8FF7C7C7CFF6A6A6AFF636363FF838383FF4D4D
+        4DFFC6C6C6FFABABABFFE4E4E4FFD9D9D9FFD0D0D0FFCCCCCCFFC7C7C7FF8484
+        84FFC8C8C8FF888888FFF0F0F0FFF3F3F3FFF1F1F1DBFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00ACACACFFBEBEBEFF818181FFF1F1F1FF7B7B7BFFB3B3B3FFEFEF
+        EFFFD3D2D3FF656565FFB8B8B8FF7C7C7CFF696969FF636363FF858585FF4848
+        48FFE9E9E9FFC4C4C4FFEDEDEDFFD9D9D9FFD2D2D2FFCFCFCFFFCECECEFF7272
+        72FFC1C1C1FF878787FFFDFDFDFFF4F4F4FFF6F6F6BDFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B0B0B0FFBFBFBFFF828282FFF2F2F2FF7B7B7BFFB2B3B3FFF1F1
+        F1FFD5D5D5FF656565FFB8B8B8FF7C7C7CFF696969FF636363FF8B8B8BFF4545
+        45FFFDFDFDFFD6D6D6FFEDEDEDFFDADADAFFD4D4D4FFD2D2D2FFCACACAFF4E4E
+        4EFF9F9F9FFF9A9A9AFFFDFDFDFFF3F3F3FFF5F5F593FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B2B2B2FFC0C0C0FF838383FFF3F3F3FF7C7C7CFFB2B2B2FFF2F2
+        F2FFD7D7D7FF656565FFB8B8B8FF7D7D7DFF6A6A6AFF636363FF8E8E8EFF4747
+        47FFFBFBFBFFDADADAFFECECECFFDCDCDCFFD7D7D7FFCFCFCFFFC4C4C4FF4F4F
+        4FFF898989FFDFDFDFFFF9F9F9FFF1F1F1FFF4F4F45AFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B2B2B2FFC2C2C2FF838383FFF4F4F4FF7C7C7CFFB3B3B3FFF3F3
+        F3FFD8D8D8FF656565FFB8B8B8FF7F7F7FFF6B6B6BFF646464FF959595FF3E3E
+        3EFFF6F6F6FFD5D5D5FFEBEBEBFFDDDDDDFFD5D5D5FFC8C8C8FFC1C1C1FF9696
+        96FFF6F6F6FFD6D6D6FFE1E1E1FFEEEEEEFCECECEC1BFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B4B4B4FFC2C2C2FF848484FFF4F4F4FF7C7C7CFFB3B3B3FFF4F4
+        F4FFDBDBDBFF656565FFB8B8B8FF818181FF707070FF646464FF9C9C9CFF4040
+        40FFDCDCDCFFC7C7C7FFEBEBEBFFDDDDDDFFD3D3D3FFC9C9C9FFD4D4D4FFD3D3
+        D3FFD5D5D5FFD8D8D8FFE2E2E2FFECECECC0FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B4B4B4FFC4C4C4FF838383FFF5F5F5FF7C7C7BFFB3B3B3FFF5F5
+        F5FFDDDDDDFF656565FFB8B8B8FF878787FF757575FF656565FFA7A7A7FF4747
+        47FFADADADFFAAAAAAFFE5E5E5FFDDDDDDFFD4D4D4FFD1D1D1FFDDDDDDFFE0E0
+        E0FFDADADAFFDEDEDEFFE5E5E5FFEBEBEB5AFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B5B5B5FFC5C5C5FF838383FFF6F6F6FF7B7B7BFFB3B3B3FFF5F5
+        F5FFE0E0E0FF656565FFB9B9B9FF909090FF7D7D7DFF666666FFB1B1B1FF5555
+        55FF8C8C8CFFAFAFAFFFD5D5D5FFDFDFDFFFD8D8D8FFDBDBDBFFE3E3E3FFE4E4
+        E4FFDFDFDFFFE1E1E1FFE7E7E7DB55555503FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B6B6B6FFC6C6C6FF848484FFF7F7F7FF7C7C7CFFB3B3B3FFF6F6
+        F6FFE2E2E2FF656565FFB9B9B9FF9D9D9DFF888888FF666666FFB4B4B4FF6B6B
+        6BFF717171FFC7C7C7FFC0C0C0FFE3E3E3FFDFDFDFFFE3E3E3FFE8E8E8FFE7E7
+        E7FFE5E5E5FFE7E7E7FFEBEBEB4BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B7B7B7FFC7C7C7FF848484FFF8F8F8FF7B7B7BFFB3B3B3FFF6F6
+        F6FFE5E5E5FF656565FFBABABAFFAAAAAAFF979797FF676767FFB5B5B5FF8383
+        83FF828282FFAFAFAFFFB5B5B5FFDADADAFFE6E6E6FFEAEAEAFFECECECFFEBEB
+        EBFFEAEAEAFFE8E8E893FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B7B7B7FFC8C8C8FF858585FFF9F9F9FF7B7B7BFFB3B3B3FFF7F7
+        F7FFE8E8E8FF656565FFBBBBBBFFB4B4B4FFA4A4A4FF686868FFB5B5B5FF9696
+        96FFA2A2A2FF6D6D6DFFCBCBCBFFC1C1C1FFEBEBEBF9EEEEEEFFF0F0F0FFEFEF
+        EFFFECECEC9355555503FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B8B8B8FFCACACAFF868686FFFAFAFAFF7C7C7CFFB4B4B4FFF8F7
+        F7FFE8E8E8FF696969FFB9B9B9FFBABABAFFAEAEAEFF6E6E6EFFADADADFFA4A4
+        A4FFBABABAFF6C6C6CFFB4B4B4FFA1A1A1FFC9C9C97BE5E5E5A4E9E9E995EEEE
+        EE3CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00B9B9B9FFCCCCCCFF8D8D8DFFFAFAFAFFAFAFAFFFCDCDCDFFF7F6
+        F7FFE8E8E8FFC0C0C0FFBDBDBDFFBFBFBFFFB5B5B5FFA1A1A1FF9E9E9EFFAFAF
+        AFFFC3C3C3FFA7A7A7FFA8A8A8FFA6A6A6FFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00BABABAFFCDCDCDFFD0D0D0FFFBFBFBFFFDFDFDFFFCFCFCFFF6F6
+        F6FFE6E6E6FFD5D5D5FFCACACAFFC0C0C0FFB8B8B8FFB1B1B1FFB1B1B1FFB8B8
+        B8FFC9C9C9FFDFDFDFFFD3D3D3FFAAAAAAFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00BABABAFFC3C3C3FFC1C1C1FFB5B5B5FFA8A8A8FFA0A0A0FF9999
+        9AFF909090FF888888FF828283FF7D7D7EFF777778FF757575FF757576FF7C7C
+        7DFF8E8E8FFFACACACFFBDBDBDFFADADADFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF008C8C8CFF787879FF9B9B9AFFC5C5C5FFE0DFDFFFE7E7E7FFEDED
+        EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFECECECFFE3E2E2FFCBCB
+        CBFFB0B0B1FFA1A1A2FF828282FF717172FFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF006666660F7D7D80FEAAAAAAFFACACACFFB6B3B1FFDAD4D0FFE3DBD8FFEBE7
+        E4FFCCC6C4FFBFBFBDFFFFFDFBFFEBEAEAFFA4A2A1FFFBFBFAFFC5C4C4FFF6F5
+        F3FFC5C4C4FFADADADFFCACACAFFABABABFE92929215FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00858585A5585858F6252528FF464545FF91908EFFB3AFACFFEDE6E0FFDED8
+        D4FF94918EFFE2E0DEFFB7B6B4FFFFFEFDFFFFFFFFFFCACAC9FFFFFFFEFFFFFF
+        FFFFFFFFFFFF6D6D6EFF3A3A3CFF6B6B6BFF9E9E9EC700000003FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0057575B92353536FA2D2D31FF464648FFF0EBE9FFFFFEFDFFEBE6E3FF5C5A
+        58FFA5A3A0FFFEFAF8FFADACACFFFEFDFCFFCECECEFFF3F2F1FFE6E5E4FFE0DF
+        DFFFDEDDDDFF4E4E50FF464648FF3F3F41FF5D5D60A5FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF001515150C353536BC38383AF9444446FF717171FF999796FF747374FFCBCA
+        C9FFFCFAF9FFDDDBDAFF818182FF959496FFFFFEFEFFB7B6B7FFB3B3B3FFFFFF
+        FFFFBCBCBDFF49494CFF3A3A3DF5343438BB18181815FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF001C1C1C093E3E4067434346B7414143E0434345EC4949
+        4CFE505054FF4D4D4FFF545456FF525254FF6B6B6CFDFDFDFDFFFCFCFCFFFBFB
+        FBFF727275C73E3E407700000009FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00EFEFEF3FD6D6D6DEC7C7
+        C7D7FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object ToolButton8: TToolButton
+      Left = 201
+      Top = 2
+      Caption = 'ToolButton8'
+      ImageIndex = 7
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 628
+    Top = 52
+    Width = 1020
+    ActivePage = TabSheet2
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 1
+    OnChange = PageControl1Change
+    object TabSheet1: TTabSheet
+      Caption = 'Listagem de ordens de produção'
+      ClientHeight = 600
+      ClientWidth = 1012
+      object GroupBox2: TGroupBox
+        Left = 8
+        Height = 568
+        Top = 16
+        Width = 985
+        ClientHeight = 548
+        ClientWidth = 981
+        TabOrder = 0
+        object RxDBGrid2: TRxDBGrid
+          Left = 8
+          Height = 480
+          Top = 40
+          Width = 968
+          TitleButtons = False
+          AutoSort = True
+          Columns = <          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'id'
+              Width = 60
+              FieldName = 'id'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'status'
+              Width = 80
+              FieldName = 'status'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'data_emissao'
+              Width = 90
+              FieldName = 'data_emissao'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'data_finalizacao'
+              Width = 90
+              FieldName = 'data_finalizacao'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'lote_producao'
+              Width = 80
+              FieldName = 'lote_producao'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'produto'
+              Width = 60
+              FieldName = 'produto'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'descricao'
+              Width = 250
+              FieldName = 'descricao'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'quant_prevista'
+              Width = 70
+              FieldName = 'quant_prevista'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'quant_realizada'
+              Width = 70
+              FieldName = 'quant_realizada'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+            end>
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end          
+            item
+              Command = rxgcSelectAll
+              ShortCut = 16449
+              Enabled = True
+            end          
+            item
+              Command = rxgcDeSelectAll
+              ShortCut = 16429
+              Enabled = True
+            end          
+            item
+              Command = rxgcInvertSelection
+              ShortCut = 16426
+              Enabled = True
+            end          
+            item
+              Command = rxgcOptimizeColumnsWidth
+              ShortCut = 16427
+              Enabled = True
+            end          
+            item
+              Command = rxgcCopyCellValue
+              ShortCut = 16451
+              Enabled = True
+            end>
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          AlternateColor = clMoneyGreen
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = dsListaOrdem
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          ParentColor = False
+          TabOrder = 0
+          OnDblClick = RxDBGrid2DblClick
+        end
+        object DateEdit1: TDateEdit
+          Left = 119
+          Height = 23
+          Top = 7
+          Width = 110
+          CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+          OKCaption = 'OK'
+          CancelCaption = 'Cancel'
+          DateOrder = doNone
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object DateEdit2: TDateEdit
+          Left = 263
+          Height = 23
+          Top = 7
+          Width = 110
+          CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+          OKCaption = 'OK'
+          CancelCaption = 'Cancel'
+          DateOrder = doNone
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object btAplicar: TBitBtn
+          Left = 872
+          Height = 30
+          Top = 0
+          Width = 95
+          Caption = 'Aplicar'
+          OnClick = btAplicarClick
+          TabOrder = 3
+        end
+        object Label12: TLabel
+          Left = 8
+          Height = 15
+          Top = 15
+          Width = 41
+          Caption = 'Periodo'
+          ParentColor = False
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Ordem de produção'
+      ClientHeight = 600
+      ClientWidth = 1012
+      object PageControl2: TPageControl
+        Left = 0
+        Height = 600
+        Top = 0
+        Width = 1012
+        ActivePage = TabSheet3
+        Align = alClient
+        TabIndex = 0
+        TabOrder = 0
+        OnChange = PageControl2Change
+        object TabSheet3: TTabSheet
+          Caption = 'Ordem'
+          ClientHeight = 572
+          ClientWidth = 1004
+          object GroupBox1: TGroupBox
+            Left = 16
+            Height = 560
+            Top = 4
+            Width = 985
+            ClientHeight = 540
+            ClientWidth = 981
+            TabOrder = 0
+            object Label1: TLabel
+              Left = 5
+              Height = 21
+              Top = -7
+              Width = 152
+              Caption = 'Ordem de produção'
+              Font.Height = -16
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object RxDBGrid1: TRxDBGrid
+              Left = 5
+              Height = 264
+              Top = 168
+              Width = 971
+              TitleButtons = False
+              AutoSort = True
+              Columns = <              
+                item
+                  Title.Alignment = taCenter
+                  Title.Orientation = toHorizontal
+                  Title.Caption = 'Item'
+                  Width = 40
+                  EditButtons = <>
+                  Filter.DropDownRows = 0
+                  Filter.EmptyValue = '(Empty)'
+                  Filter.EmptyFont.Style = [fsItalic]
+                  Filter.ItemIndex = -1
+                end              
+                item
+                  Title.Alignment = taCenter
+                  Title.Orientation = toHorizontal
+                  Title.Caption = 'Código'
+                  Width = 70
+                  EditButtons = <>
+                  Filter.DropDownRows = 0
+                  Filter.EmptyValue = '(Empty)'
+                  Filter.EmptyFont.Style = [fsItalic]
+                  Filter.ItemIndex = -1
+                end              
+                item
+                  Title.Alignment = taCenter
+                  Title.Orientation = toHorizontal
+                  Title.Caption = 'Descrição'
+                  Width = 400
+                  EditButtons = <>
+                  Filter.DropDownRows = 0
+                  Filter.EmptyValue = '(Empty)'
+                  Filter.EmptyFont.Style = [fsItalic]
+                  Filter.ItemIndex = -1
+                end              
+                item
+                  Title.Alignment = taCenter
+                  Title.Orientation = toHorizontal
+                  Title.Caption = 'Nº Lote'
+                  EditButtons = <>
+                  Filter.DropDownRows = 0
+                  Filter.EmptyValue = '(Empty)'
+                  Filter.EmptyFont.Style = [fsItalic]
+                  Filter.ItemIndex = -1
+                end              
+                item
+                  Title.Alignment = taCenter
+                  Title.Orientation = toHorizontal
+                  Title.Caption = 'Quant. Prevista'
+                  Width = 70
+                  EditButtons = <>
+                  Filter.DropDownRows = 0
+                  Filter.EmptyValue = '(Empty)'
+                  Filter.EmptyFont.Style = [fsItalic]
+                  Filter.ItemIndex = -1
+                end              
+                item
+                  Title.Alignment = taCenter
+                  Title.Orientation = toHorizontal
+                  Title.Caption = 'Quant. Utilizada'
+                  EditButtons = <>
+                  Filter.DropDownRows = 0
+                  Filter.EmptyValue = '(Empty)'
+                  Filter.EmptyFont.Style = [fsItalic]
+                  Filter.ItemIndex = -1
+                end>
+              KeyStrokes = <              
+                item
+                  Command = rxgcShowFindDlg
+                  ShortCut = 16454
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowColumnsDlg
+                  ShortCut = 16471
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowFilterDlg
+                  ShortCut = 16468
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowSortDlg
+                  ShortCut = 16467
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowQuickFilter
+                  ShortCut = 16465
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcHideQuickFilter
+                  ShortCut = 16456
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcSelectAll
+                  ShortCut = 16449
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcDeSelectAll
+                  ShortCut = 16429
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcInvertSelection
+                  ShortCut = 16426
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcOptimizeColumnsWidth
+                  ShortCut = 16427
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcCopyCellValue
+                  ShortCut = 16451
+                  Enabled = True
+                end>
+              OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+              Color = clWindow
+              DrawFullLine = False
+              FocusColor = clRed
+              SelectedColor = clHighlight
+              GridLineStyle = psSolid
+              Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+              ParentColor = False
+              TabOrder = 0
+            end
+            object Label2: TLabel
+              Left = 720
+              Height = 15
+              Top = 3
+              Width = 36
+              Caption = 'O.P Nº'
+              ParentColor = False
+            end
+            object Label3: TLabel
+              Left = 5
+              Height = 15
+              Top = 32
+              Width = 86
+              Caption = 'Data de emissão'
+              ParentColor = False
+            end
+            object Label5: TLabel
+              Left = 720
+              Height = 15
+              Top = 32
+              Width = 93
+              Caption = 'Lote de produção'
+              ParentColor = False
+            end
+            object Label6: TLabel
+              Left = 328
+              Height = 15
+              Top = 32
+              Width = 90
+              Caption = 'Prazo de término'
+              ParentColor = False
+            end
+            object RxDBDateEdit1: TRxDBDateEdit
+              Left = 136
+              Height = 23
+              Top = 24
+              Width = 128
+              ButtonWidth = 23
+              DialogTitle = 'Select a Date'
+              Enabled = False
+              MaxLength = 10
+              NumGlyphs = 2
+              PasswordChar = #0
+              PopupColor = clWindow
+              TabOrder = 1
+              Text = '  /  /    '
+              DataSource = dsOrdemProducao
+            end
+            object RxDBDateEdit2: TRxDBDateEdit
+              Left = 440
+              Height = 23
+              Top = 24
+              Width = 128
+              ButtonWidth = 23
+              DialogTitle = 'Select a Date'
+              Enabled = False
+              MaxLength = 10
+              NumGlyphs = 2
+              PasswordChar = #0
+              PopupColor = clWindow
+              TabOrder = 2
+              Text = '  /  /    '
+              DataSource = dsOrdemProducao
+            end
+            object DBEdit1: TDBEdit
+              Left = 832
+              Height = 23
+              Top = 24
+              Width = 136
+              DataSource = dsOrdemProducao
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 3
+            end
+            object Label7: TLabel
+              Left = 5
+              Height = 15
+              Top = 72
+              Width = 43
+              Caption = 'Produto'
+              ParentColor = False
+            end
+            object DBText1: TDBText
+              Left = 136
+              Height = 15
+              Top = 72
+              Width = 580
+              AutoSize = False
+              DataSource = dsOrdemProducao
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object Label8: TLabel
+              Left = 5
+              Height = 15
+              Top = 112
+              Width = 106
+              Caption = 'Quantidade prevista'
+              ParentColor = False
+            end
+            object DBEdit2: TDBEdit
+              Left = 136
+              Height = 23
+              Top = 104
+              Width = 88
+              DataSource = dsOrdemProducao
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 4
+            end
+            object DBEdit3: TDBEdit
+              Left = 440
+              Height = 23
+              Top = 104
+              Width = 88
+              DataSource = dsOrdemProducao
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 5
+            end
+            object Label9: TLabel
+              Left = 307
+              Height = 15
+              Top = 112
+              Width = 111
+              Caption = 'Quantidade realizada'
+              ParentColor = False
+            end
+            object Label10: TLabel
+              Left = 5
+              Height = 15
+              Top = 151
+              Width = 74
+              Caption = 'Materia prima'
+              ParentColor = False
+            end
+            object DBMemo1: TDBMemo
+              Left = 5
+              Height = 74
+              Top = 456
+              Width = 523
+              DataSource = dsOrdemProducao
+              TabOrder = 6
+            end
+            object Label11: TLabel
+              Left = 5
+              Height = 15
+              Top = 438
+              Width = 67
+              Caption = 'Observações'
+              ParentColor = False
+            end
+            object Label13: TLabel
+              Left = 208
+              Height = 21
+              Top = -7
+              Width = 73
+              Caption = 'Pendente'
+              Font.Height = -16
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object DBText2: TDBText
+              Left = 888
+              Height = 15
+              Top = -1
+              Width = 80
+              Alignment = taRightJustify
+              AutoSize = False
+              DataSource = dsOrdemProducao
+              Font.Height = -13
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+        end
+        object TabSheet4: TTabSheet
+          Caption = 'Histórico'
+          ClientHeight = 572
+          ClientWidth = 1004
+          object GroupBox3: TGroupBox
+            Left = 8
+            Height = 544
+            Top = 16
+            Width = 984
+            ClientHeight = 524
+            ClientWidth = 980
+            TabOrder = 0
+            object RxDBGrid3: TRxDBGrid
+              Left = 8
+              Height = 514
+              Top = 4
+              Width = 964
+              TitleButtons = False
+              AutoSort = True
+              Columns = <              
+                item
+                  Title.Alignment = taCenter
+                  Title.Orientation = toHorizontal
+                  Title.Caption = 'Data/Hora'
+                  Width = 100
+                  EditButtons = <>
+                  Filter.DropDownRows = 0
+                  Filter.EmptyValue = '(Empty)'
+                  Filter.EmptyFont.Style = [fsItalic]
+                  Filter.ItemIndex = -1
+                end              
+                item
+                  Title.Alignment = taCenter
+                  Title.Orientation = toHorizontal
+                  Title.Caption = 'Evento'
+                  Width = 700
+                  EditButtons = <>
+                  Filter.DropDownRows = 0
+                  Filter.EmptyValue = '(Empty)'
+                  Filter.EmptyFont.Style = [fsItalic]
+                  Filter.ItemIndex = -1
+                end>
+              KeyStrokes = <              
+                item
+                  Command = rxgcShowFindDlg
+                  ShortCut = 16454
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowColumnsDlg
+                  ShortCut = 16471
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowFilterDlg
+                  ShortCut = 16468
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowSortDlg
+                  ShortCut = 16467
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowQuickFilter
+                  ShortCut = 16465
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcHideQuickFilter
+                  ShortCut = 16456
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcSelectAll
+                  ShortCut = 16449
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcDeSelectAll
+                  ShortCut = 16429
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcInvertSelection
+                  ShortCut = 16426
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcOptimizeColumnsWidth
+                  ShortCut = 16427
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcCopyCellValue
+                  ShortCut = 16451
+                  Enabled = True
+                end>
+              OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+              Color = clWindow
+              DrawFullLine = False
+              FocusColor = clRed
+              SelectedColor = clHighlight
+              GridLineStyle = psSolid
+              Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+              ParentColor = False
+              TabOrder = 0
+            end
+          end
+        end
+      end
+    end
+  end
+  object qryListaOrdem: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'SELECT op.id, data_emissao, lote_producao, data_finalizacao,'
+      '              produto, quant_prevista, quant_realizada, status,'
+      '              p.descricao'
+      '  FROM ordem_producao op'
+      'LEFT JOIN produtos p ON p.id=op.produto'
+      'Where data_emissao Between :dtini and :dtfim'
+      'Order by data_emissao '
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'dtini'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dtfim'
+        ParamType = ptUnknown
+      end>
+    left = 32
+    top = 576
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'dtini'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dtfim'
+        ParamType = ptUnknown
+      end>
+    object qryListaOrdemid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryListaOrdemdata_emissao: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'data_emissao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryListaOrdemlote_producao: TStringField
+      FieldKind = fkData
+      FieldName = 'lote_producao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryListaOrdemdata_finalizacao: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'data_finalizacao'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryListaOrdemproduto: TLongintField
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryListaOrdemquant_prevista: TFloatField
+      FieldKind = fkData
+      FieldName = 'quant_prevista'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      MaxValue = 0
+      MinValue = 0
+      Precision = 8
+    end
+    object qryListaOrdemquant_realizada: TFloatField
+      FieldKind = fkData
+      FieldName = 'quant_realizada'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 8
+    end
+    object qryListaOrdemstatus: TLongintField
+      FieldKind = fkData
+      FieldName = 'status'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryListaOrdemdescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+  end
+  object dsListaOrdem: TDataSource
+    DataSet = qryListaOrdem
+    left = 32
+    top = 632
+  end
+  object PopupMenu1: TPopupMenu
+    left = 272
+    top = 16
+    object MenuItem1: TMenuItem
+      Caption = 'Autorizar produção'
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Iniciar Produção'
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Concluír produção'
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Disponibilizar no estoque'
+    end
+  end
+  object qryOrdemProducao: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'SELECT op.id, data_emissao, lote_producao, data_finalizacao,'
+      '              produto, quant_prevista, quant_realizada, status,'
+      '              p.descricao'
+      '  FROM ordem_producao op'
+      'LEFT JOIN produtos p ON p.id=op.produto'
+      'Where op.id = :id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    left = 112
+    top = 576
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryOrdemProducaoid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryOrdemProducaodata_emissao: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'data_emissao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryOrdemProducaolote_producao: TStringField
+      FieldKind = fkData
+      FieldName = 'lote_producao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryOrdemProducaodata_finalizacao: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'data_finalizacao'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryOrdemProducaoproduto: TLongintField
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryOrdemProducaoquant_prevista: TFloatField
+      FieldKind = fkData
+      FieldName = 'quant_prevista'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      MaxValue = 0
+      MinValue = 0
+      Precision = 8
+    end
+    object qryOrdemProducaoquant_realizada: TFloatField
+      FieldKind = fkData
+      FieldName = 'quant_realizada'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 8
+    end
+    object qryOrdemProducaostatus: TLongintField
+      FieldKind = fkData
+      FieldName = 'status'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryOrdemProducaodescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+  end
+  object dsOrdemProducao: TDataSource
+    DataSet = qryOrdemProducao
+    left = 112
+    top = 624
+  end
+end

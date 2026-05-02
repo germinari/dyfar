@@ -1,0 +1,1027 @@
+object frmRelComissoes: TfrmRelComissoes
+  Left = 459
+  Height = 221
+  Top = 102
+  Width = 478
+  BorderStyle = bsDialog
+  Caption = 'Relatório de comissões'
+  ClientHeight = 221
+  ClientWidth = 478
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object Label1: TLabel
+    Left = 11
+    Height = 15
+    Top = 52
+    Width = 41
+    Caption = 'Periodo'
+    ParentColor = False
+  end
+  object Label21: TLabel
+    Left = 11
+    Height = 15
+    Top = 93
+    Width = 75
+    Caption = 'Representante'
+    ParentColor = False
+  end
+  object BitBtn1: TBitBtn
+    Left = 8
+    Height = 30
+    Top = 176
+    Width = 128
+    Caption = 'Visualizar Relatório'
+    OnClick = BitBtn1Click
+    TabOrder = 0
+  end
+  object BitBtn2: TBitBtn
+    Left = 374
+    Height = 30
+    Top = 176
+    Width = 90
+    Cancel = True
+    DefaultCaption = True
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 1
+  end
+  object edRepresentante: TEditButton
+    Left = 119
+    Height = 23
+    Top = 85
+    Width = 345
+    ButtonWidth = 23
+    MaxLength = 0
+    NumGlyphs = 1
+    OnButtonClick = edRepresentanteButtonClick
+    PasswordChar = #0
+    TabOrder = 2
+    TextHint = 'Em branco lista todos os representantes'
+  end
+  object RLReport1: TRLReport
+    Left = 8
+    Height = 1123
+    Top = 248
+    Width = 794
+    DataSource = Datasource1
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Margins.LeftMargin = 7
+    Margins.TopMargin = 7
+    Margins.RightMargin = 7
+    Margins.BottomMargin = 7
+    RealBounds.Left = 0
+    RealBounds.Top = 0
+    RealBounds.Width = 0
+    RealBounds.Height = 0
+    Title = 'Relatório de vendas'
+    JobTitle = 'Relatório de comissões'
+    Visible = False
+    object RLBand1: TRLBand
+      Left = 26
+      Height = 82
+      Top = 26
+      Width = 742
+      BandType = btHeader
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLSystemInfo3: TRLSystemInfo
+        Left = 656
+        Height = 16
+        Top = 0
+        Width = 86
+        Align = faRightTop
+        Alignment = taRightJustify
+        Info = itTitle
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = '#-REL004'
+      end
+      object RLLabel1: TRLLabel
+        Left = 0
+        Height = 18
+        Top = 0
+        Width = 72
+        Align = faLeftTop
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel2: TRLLabel
+        Left = 2
+        Height = 15
+        Top = 25
+        Width = 57
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel3: TRLLabel
+        Left = 2
+        Height = 15
+        Top = 43
+        Width = 57
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel4: TRLLabel
+        Left = 2
+        Height = 15
+        Top = 61
+        Width = 57
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 26
+      Height = 40
+      Top = 282
+      Width = 742
+      BandType = btFooter
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLSystemInfo1: TRLSystemInfo
+        Left = 0
+        Height = 14
+        Top = 6
+        Width = 123
+        Align = faLeftOnly
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        Info = itFullDate
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = 'Impresso em  '
+      end
+      object RLSystemInfo2: TRLSystemInfo
+        Left = 532
+        Height = 14
+        Top = 6
+        Width = 210
+        Align = faRightOnly
+        Alignment = taRightJustify
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsItalic]
+        Info = itPagePreview
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Text = 'Página #/#'
+      end
+      object RLDraw1: TRLDraw
+        Left = 34
+        Height = 7
+        Top = 0
+        Width = 650
+        Angle = 0
+        DrawKind = dkLine
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLBand4: TRLBand
+      Left = 26
+      Height = 49
+      Top = 233
+      Width = 742
+      BandType = btSummary
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLLabel12: TRLLabel
+        Left = 290
+        Height = 15
+        Top = 9
+        Width = 61
+        Caption = 'Total geral'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBResult1: TRLDBResult
+        Left = 612
+        Height = 16
+        Top = 22
+        Width = 127
+        Alignment = taRightJustify
+        DataField = 'vlr_comissao'
+        DataSource = Datasource1
+        DisplayMask = ',0.00'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Info = riSum
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBResult4: TRLDBResult
+        Left = 514
+        Height = 16
+        Top = 8
+        Width = 110
+        Alignment = taRightJustify
+        DataField = 'vlr_faturar'
+        DataSource = Datasource1
+        DisplayMask = ',0.00'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Info = riSum
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBResult7: TRLDBResult
+        Left = 461
+        Height = 16
+        Top = 22
+        Width = 96
+        Alignment = taRightJustify
+        DataField = 'vlr_nota'
+        DataSource = Datasource1
+        DisplayMask = ',0.00'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Info = riSum
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBResult8: TRLDBResult
+        Left = 367
+        Height = 16
+        Top = 8
+        Width = 112
+        Alignment = taRightJustify
+        DataField = 'vlr_pedido'
+        DataSource = Datasource1
+        DisplayMask = ',0.00'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Info = riSum
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLGroup1: TRLGroup
+      Left = 26
+      Height = 125
+      Top = 108
+      Width = 742
+      DataFields = 'representante'
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLBand2: TRLBand
+        Left = 0
+        Height = 19
+        Top = 52
+        Width = 742
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        BeforePrint = RLBand2BeforePrint
+        object RLDBText2: TRLDBText
+          Left = 175
+          Height = 14
+          Top = 1
+          Width = 263
+          AutoSize = False
+          DataField = 'destinatario'
+          DataSource = Datasource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText3: TRLDBText
+          Left = 509
+          Height = 14
+          Top = 3
+          Width = 48
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'vlr_nota'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText4: TRLDBText
+          Left = 692
+          Height = 14
+          Top = 3
+          Width = 48
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'vlr_comissao'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText5: TRLDBText
+          Left = 633
+          Height = 14
+          Top = 3
+          Width = 48
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'perc_comissao'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText6: TRLDBText
+          Left = 45
+          Height = 14
+          Top = 3
+          Width = 63
+          AutoSize = False
+          DataField = 'data'
+          DataSource = Datasource1
+          DisplayMask = 'dd/mm/yyyy'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText7: TRLDBText
+          Left = 0
+          Height = 14
+          Top = 3
+          Width = 40
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'id'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText9: TRLDBText
+          Left = 442
+          Height = 14
+          Top = 3
+          Width = 48
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'vlr_pedido'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText10: TRLDBText
+          Left = 577
+          Height = 14
+          Top = 3
+          Width = 48
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'vlr_faturar'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText11: TRLDBText
+          Left = 111
+          Height = 14
+          Top = 1
+          Width = 60
+          AutoSize = False
+          DataField = 'dtfaturamento'
+          DataSource = Datasource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+      end
+      object RLBand5: TRLBand
+        Left = 0
+        Height = 52
+        Top = 0
+        Width = 742
+        BandType = btTitle
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        object RLDBText1: TRLDBText
+          Left = 88
+          Height = 16
+          Top = 0
+          Width = 56
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'representante'
+          DataSource = Datasource1
+          DisplayMask = '0000'
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText8: TRLDBText
+          Left = 152
+          Height = 16
+          Top = 0
+          Width = 36
+          DataField = 'nome'
+          DataSource = Datasource1
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel5: TRLLabel
+          Left = 6
+          Height = 14
+          Top = 34
+          Width = 40
+          Caption = 'Nº PED.'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel6: TRLLabel
+          Left = 45
+          Height = 14
+          Top = 34
+          Width = 48
+          Caption = 'Dt.Pedido'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel10: TRLLabel
+          Left = 641
+          Height = 14
+          Top = 20
+          Width = 40
+          Alignment = taRightJustify
+          Caption = '% Com.'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel11: TRLLabel
+          Left = 689
+          Height = 14
+          Top = 20
+          Width = 50
+          Alignment = taRightJustify
+          Caption = 'Comissão'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel7: TRLLabel
+          Left = 175
+          Height = 14
+          Top = 34
+          Width = 60
+          Caption = 'Destinatário'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel8: TRLLabel
+          Left = 0
+          Height = 14
+          Top = 2
+          Width = 83
+          Caption = 'Representante.: '
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLMemo1: TRLMemo
+          Left = 512
+          Height = 28
+          Top = 20
+          Width = 45
+          Behavior = [beSiteExpander]
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Lines.Strings = (
+            'Valor da'
+            '   Nota'
+          )
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLMemo2: TRLMemo
+          Left = 449
+          Height = 28
+          Top = 20
+          Width = 41
+          Behavior = [beSiteExpander]
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Lines.Strings = (
+            'Valor do'
+            ' Pedido'
+          )
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLMemo3: TRLMemo
+          Left = 581
+          Height = 28
+          Top = 20
+          Width = 45
+          Behavior = [beSiteExpander]
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Lines.Strings = (
+            'Valor a'
+            'Faturar'
+          )
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel9: TRLLabel
+          Left = 112
+          Height = 14
+          Top = 34
+          Width = 37
+          Caption = 'Dt. Fat.'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+      end
+      object RLBand6: TRLBand
+        Left = 0
+        Height = 36
+        Top = 71
+        Width = 742
+        BandType = btSummary
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        object RLLabel13: TRLLabel
+          Left = 288
+          Height = 15
+          Top = 5
+          Width = 70
+          Caption = 'Total parcial'
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBResult2: TRLDBResult
+          Left = 626
+          Height = 14
+          Top = 6
+          Width = 113
+          Alignment = taRightJustify
+          DataField = 'vlr_comissao'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Info = riSum
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDraw2: TRLDraw
+          Left = 41
+          Height = 7
+          Top = 25
+          Width = 657
+          Angle = 0
+          DrawKind = dkLine
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBResult3: TRLDBResult
+          Left = 530
+          Height = 14
+          Top = 6
+          Width = 96
+          Alignment = taRightJustify
+          DataField = 'vlr_faturar'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Info = riSum
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBResult5: TRLDBResult
+          Left = 382
+          Height = 14
+          Top = 6
+          Width = 97
+          Alignment = taRightJustify
+          DataField = 'vlr_pedido'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Info = riSum
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBResult6: TRLDBResult
+          Left = 474
+          Height = 14
+          Top = 6
+          Width = 83
+          Alignment = taRightJustify
+          DataField = 'vlr_nota'
+          DataSource = Datasource1
+          DisplayMask = '0.00'
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Info = riSum
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+      end
+    end
+  end
+  object RxDateEdit1: TRxDateEdit
+    Left = 119
+    Height = 23
+    Top = 45
+    Width = 112
+    ButtonWidth = 23
+    DialogTitle = 'Select a Date'
+    Glyph.Data = {
+      36010000424D360100000000000076000000280000001C0000000C0000000100
+      040000000000C000000000000000000000000000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+      77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+      47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+      47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+      47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+      47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+      47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+    }
+    MaxLength = 10
+    NumGlyphs = 2
+    PasswordChar = #0
+    PopupColor = clWindow
+    TabOrder = 4
+    Text = '  /  /    '
+  end
+  object RxDateEdit2: TRxDateEdit
+    Left = 351
+    Height = 23
+    Top = 45
+    Width = 113
+    ButtonWidth = 23
+    DialogTitle = 'Select a Date'
+    Glyph.Data = {
+      36010000424D360100000000000076000000280000001C0000000C0000000100
+      040000000000C000000000000000000000000000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+      77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+      47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+      47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+      47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+      47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+      47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+    }
+    MaxLength = 10
+    NumGlyphs = 2
+    PasswordChar = #0
+    PopupColor = clWindow
+    TabOrder = 5
+    Text = '  /  /    '
+  end
+  object RadioButton1: TRadioButton
+    Left = 232
+    Height = 19
+    Top = 10
+    Width = 169
+    Caption = 'Período pela data do pedido'
+    TabOrder = 7
+  end
+  object RadioButton2: TRadioButton
+    Left = 11
+    Height = 19
+    Top = 10
+    Width = 198
+    Caption = 'Período pela data do faturamento'
+    Checked = True
+    TabOrder = 6
+    TabStop = True
+  end
+  object Datasource1: TDataSource
+    DataSet = ZReadOnlyQuery1
+    left = 232
+    top = 152
+  end
+  object ZReadOnlyQuery1: TZQuery
+    Connection = dbConnect.ZConnection1
+    OnCalcFields = ZReadOnlyQuery1CalcFields
+    SQL.Strings = (
+      'Select pv.representante,e.nome,pv.id,pv.data,c.nome as destinatario,'
+      ' (select sum((preco_unitario*abs(desconto/100 - 1) + vlr_subst)*quantidade) from pedido_venda_itens Where pedido_venda=pv.id)::::numeric(15,2) as vlr_pedido , '
+      'sum(i.valortotal) as vlr_nota, (Select sum( ((preco_unitario*abs(desconto/100 - 1) + vlr_subst)*quantidade) * p.comissao/100 )'
+      ' From pedido_venda_itens pvi Left join produtos p on p.id=pvi.produto '
+      'Where pvi.pedido_venda=pv.id)::::numeric(15,2) as vlr_comissao, '
+      '(Select (sum( ((preco_unitario*abs(desconto/100 - 1) + vlr_subst)*quantidade) * p.comissao/100 )/ sum( ((preco_unitario*abs(desconto/100 - 1) + vlr_subst)*quantidade))) * 100 '
+      'From pedido_venda_itens pvi Left join produtos p on p.id=pvi.produto Where pvi.pedido_venda=pv.id)::::numeric(15,2) as perc_comissao'
+      ''
+      'from pedido_venda pv'
+      'Left Join nfsaida nf on pv.id=nf.numero_pedio_online and (nf.tipo_nota=0 and nf.status_nfe in (4,5,8)) left join nfsaida_itens i on i.nfsaida=nf.id'
+      'left join empregados e on e.id=pv.representante'
+      'left join clientes c on c.id=pv.cliente'
+      ' Where ((cast(pv.data as date) >= cast(''01/10/2016'' as date) and cast(pv.data as date) <= cast(''24/10/2016'' as date)))'
+      'Group by pv.id,pv.representante,pv.data,c.nome,e.nome,nf.numero_pedio_online '
+      'Order by e.nome,pv.data'
+    )
+    Params = <>
+    left = 232
+    top = 96
+    object ZReadOnlyQuery1representante: TLongintField
+      FieldKind = fkData
+      FieldName = 'representante'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZReadOnlyQuery1nome: TStringField
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object ZReadOnlyQuery1id: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object ZReadOnlyQuery1data: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object ZReadOnlyQuery1destinatario: TStringField
+      FieldKind = fkData
+      FieldName = 'destinatario'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object ZReadOnlyQuery1vlr_pedido: TFloatField
+      FieldKind = fkData
+      FieldName = 'vlr_pedido'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object ZReadOnlyQuery1vlr_nota: TFloatField
+      FieldKind = fkData
+      FieldName = 'vlr_nota'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZReadOnlyQuery1vlr_comissao: TFloatField
+      FieldKind = fkData
+      FieldName = 'vlr_comissao'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object ZReadOnlyQuery1perc_comissao: TFloatField
+      FieldKind = fkData
+      FieldName = 'perc_comissao'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object ZReadOnlyQuery1vlr_faturar: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'vlr_faturar'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZReadOnlyQuery1dtfaturamento: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'dtfaturamento'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+  end
+end

@@ -1,0 +1,2438 @@
+object frmImportarNFe: TfrmImportarNFe
+  Left = 487
+  Height = 473
+  Top = 136
+  Width = 640
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Importação de NFe'
+  ClientHeight = 473
+  ClientWidth = 640
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.2.6.0'
+  object Image1: TImage
+    Left = 8
+    Height = 74
+    Top = 8
+    Width = 127
+    AutoSize = True
+    Picture.Data = {
+      0A544A706567496D616765AB080000FFD8FFE000104A46494600010100000100
+      010000FFDB004300080606070605080707070909080A0C140D0C0B0B0C191213
+      0F141D1A1F1E1D1A1C1C20242E2720222C231C1C2837292C30313434341F2739
+      3D38323C2E333432FFDB0043010909090C0B0C180D0D1832211C213232323232
+      3232323232323232323232323232323232323232323232323232323232323232
+      32323232323232323232323232FFC0001108004A007F03012200021101031101
+      FFC4001F0000010501010101010100000000000000000102030405060708090A
+      0BFFC400B5100002010303020403050504040000017D01020300041105122131
+      410613516107227114328191A1082342B1C11552D1F02433627282090A161718
+      191A25262728292A3435363738393A434445464748494A535455565758595A63
+      6465666768696A737475767778797A838485868788898A92939495969798999A
+      A2A3A4A5A6A7A8A9AAB2B3B4B5B6B7B8B9BAC2C3C4C5C6C7C8C9CAD2D3D4D5D6
+      D7D8D9DAE1E2E3E4E5E6E7E8E9EAF1F2F3F4F5F6F7F8F9FAFFC4001F01000301
+      01010101010101010000000000000102030405060708090A0BFFC400B5110002
+      0102040403040705040400010277000102031104052131061241510761711322
+      328108144291A1B1C109233352F0156272D10A162434E125F11718191A262728
+      292A35363738393A434445464748494A535455565758595A636465666768696A
+      737475767778797A82838485868788898A92939495969798999AA2A3A4A5A6A7
+      A8A9AAB2B3B4B5B6B7B8B9BAC2C3C4C5C6C7C8C9CAD2D3D4D5D6D7D8D9DAE2E3
+      E4E5E6E7E8E9EAF2F3F4F5F6F7F8F9FAFFDA000C03010002110311003F00F68A
+      28A2B8CD028A28A007246D2361064F5A471B2428DC30ED562D99628E699CE151
+      724FB0E4D64C971FDA2DA46AB6B9F22F1423AFF773C8FCBE615A285E3715F52F
+      CA86140F26154F424D49F659BFB9FA8AC4D7AEA4B8F17693A546C426D32CA077
+      04FF00829FCEADF88AC754BFB8B75B0D612C23453BD7710CE4FD3E954A926C4E
+      44777F6C86F0C2D20895C65380C48EFF004FC6A3B6985B5C4C935C36C0A08F35
+      B39F523FC2B1EDAD2FD75575B9D49AF0C2766E2C4D696A377058C0B34CA1DF38
+      8D3192C7D056D2A7150D7430751A772CCBAC5942A5E490AC63F8F69C561BF886
+      FEE6522D6348617FF572CC3031EDEB55D9249E6173A88F326FF9676C3EEC7F5F
+      534E7D2F55BB944D35A4DB01FDD80A481EF583A2DA6F6FCC6A729BEC849357D4
+      E21FF2158C91FF004C140AB7A778AD27FDDDC80B20EEBC86F7A61D13C9F9EE23
+      DD819650D82BF85666B36F61672DA5C5A30218E1874ED5CD5284A0936D95CCA3
+      EF2676F1DC472852AC086190477A9AB9C59845A724913640604107F3ADDB59BC
+      FB757F514536DA69F4D0DCBDF6997FBFFA0A3ED32FF7FF004151515E81812FDA
+      65FEFF00E828FB4CBFDFFD0545450050F136AB1DAF866F14DC47F6996331AC7B
+      86E3B8EDE07D0E6ABF856E60D3742486FA78A18D0EF4699C28E7A8E7DFF9D4D7
+      DA3DBDFCAAF30C95E9525CE996F73682DE450500C503B983A3EA906A3F10354D
+      41EEE05B2B75F2A272E36B9000C86EE3EF1E2B16EEC63F12F8CB51BB5943421C
+      471BA1C821401907D38CD6E3786D74F867582212C2F96C67057D7EB52E9B6296
+      B94B2818B3724B8DA16AE36DC8937B05A5941A25AC92BC9F220C926B3D0CB737
+      0B7D3A133C9F2DBC5FF3CD4F43F534B7D74751BB4B77E21B71BE603A16ECB5B9
+      E1BB437376D7B282427DD07D6A2FCF2BF45F99925CCCB31DB58F8734D7D4B537
+      5DEA32CC79C1EC147AD6668DE3C9757D623B61A5BC76B2B6D4977648F42455AF
+      116A5E15BBBA5D3F58BA5325BB6EF2B2C002477C532D35BF07D8EC36F750A6CE
+      9806AB7DCDF6D8BBE29B98EC22B49CA8DD2CE2127D41563FD2B94D78A5D6A165
+      6E00D888D230C76ED51F8835A5F11F88ED61B194C9A7DAA872C06017E727F014
+      C84B5DCD35E1FF0096A7CB887FB03FC4D44FDEB43BBFC11954D5D8D1D3AC4B5B
+      13136CC9FBA7A1FF000AE8B46BB94D995DD828C50F03A8ACF888B4B68D42EE91
+      B8551DCD69585A9B5B7DACDB9DD8BB1F73572496C5C5B65AA28A2A4A0A28A280
+      0A28A2800A86EEE16D6D26B86E91A16A9AB9DF185E35BE9A908381392A7F4FF1
+      A8AB3E48391327CAAE62C76A24B58E472C2E27632BBA9C1E7A0AEB3C317B1A89
+      2C9E4FDE6772678DC2B9C0C0C65D7A2A8515764B159F4191F2C920C147538653
+      9EA08A8A17D576D0A515148B97BE06B6BCD7A7D45A40567219D58720FB555D74
+      785F40B44B46B3827BB6E1100CBFD588E82B225D0F5D663B75ED4769EDF6A7C7
+      F3AA4DA2C3A4C82498B5D5F487F7684E599BD4D744BDD5796C439A5A9398A131
+      4767669E5CD38CC8D8FB89DCD6A58C0B24E8A8BB62886D51F4AAD6D6C60568F2
+      1EEA63999C7F21EC2B68462CECC85FBE781EE4D14E2F59CB77F82335DC7E996E
+      D2CCD71212704819ED5B350DAC02DED9231D8727DEA6A93725F247FCF58BFEFA
+      A3C91FF3D62FFBEAABD1587B57D8D391163C91FF003D62FF00BEA8F247FCF58B
+      FEFAAAF451ED5F60E4458F247FCF58BFEFAA3C91FF003D62FF00BEAABD147B57
+      D8391163C91FF3D62FFBEAB07C5BA49BED19DA37469611BD006E4F4FF0AD6A46
+      019483DEA653E68B8B4274D35638FD27CBBBD28B874E4618679535D2E9F0C526
+      9C61965882E30D96C715CFEA3E1E58AF1AE6DDE6877FDE10B601FC3159775A5C
+      D8CF99752AFF0071DF8FD0564A55232BC6DA93EF5ACD1AF7DABA5ADD35A69922
+      DE3B0001DC4AC67DDBD2AA471FD99DE5797CFBC7FF005929E8A3D07A0AAFA7D8
+      DCDEC6115160B707EEA0C648ADC1631C6BF6750249DF1C7A7B9AED84656E7A9B
+      98B8FBC374BB59666DD0845CF59253FC856E41A6389D669EE61729F7029C01EF
+      F5A7C71AC4A15400053EB375DB3A15348B1E48FF009EB17FDF547923FE7AC5FF
+      007D557A2A7DABEC3E4414514564505145140051451400514514008403D4669B
+      E547FDC1F953E8A00A37165B034D68BB66FEE8380FF5FF001A96CEDBC88B7381
+      E7372EDDF3E95668AA736D728B955EE14514548C28A28A00FFD9
+    }
+  end
+  object btImportar: TButton
+    Left = 8
+    Height = 35
+    Top = 426
+    Width = 184
+    Caption = 'OK - Importar XML'
+    Enabled = False
+    OnClick = btImportarClick
+    TabOrder = 0
+  end
+  object ProgressBar1: TProgressBar
+    Left = 17
+    Height = 20
+    Top = 400
+    Width = 608
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 520
+    Height = 31
+    Top = 430
+    Width = 99
+    Caption = 'Fechar'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object FileNameEdit1: TFileNameEdit
+    Left = 147
+    Height = 23
+    Top = 48
+    Width = 456
+    OnAcceptFileName = FileNameEdit1AcceptFileName
+    DialogTitle = 'Selecione o arquivo'
+    Filter = 'xml (*.xml)|*.xml'
+    FilterIndex = 0
+    HideDirectories = False
+    ButtonWidth = 23
+    DirectInput = False
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object Label2: TLabel
+    Left = 147
+    Height = 15
+    Top = 28
+    Width = 103
+    Caption = 'Selecione o arquivo'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 17
+    Height = 15
+    Top = 122
+    Width = 73
+    Caption = 'N° Nota fiscal'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 17
+    Height = 15
+    Top = 180
+    Width = 47
+    Caption = 'Emitente'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 17
+    Height = 15
+    Top = 209
+    Width = 63
+    Caption = 'Destinatário'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 17
+    Height = 15
+    Top = 238
+    Width = 68
+    Caption = 'Total da nota'
+    ParentColor = False
+  end
+  object RxDateEdit1: TRxDateEdit
+    Left = 368
+    Height = 23
+    Top = 288
+    Width = 116
+    ButtonWidth = 23
+    DialogTitle = 'Select a Date'
+    Glyph.Data = {
+      36010000424D360100000000000076000000280000001C0000000C0000000100
+      040000000000C000000000000000000000000000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+      77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+      47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+      47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+      47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+      47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+      47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+    }
+    MaxLength = 10
+    PasswordChar = #0
+    PopupColor = clWindow
+    TabOrder = 4
+    Text = '  /  /    '
+  end
+  object Label7: TLabel
+    Left = 280
+    Height = 15
+    Top = 238
+    Width = 70
+    Caption = 'Data emissão'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 17
+    Height = 15
+    Top = 296
+    Width = 143
+    Caption = 'Data de entrada no sistema'
+    ParentColor = False
+  end
+  object Label9: TLabel
+    Left = 17
+    Height = 15
+    Top = 269
+    Width = 64
+    Caption = 'Quant. itens'
+    ParentColor = False
+  end
+  object lbNumero: TLabel
+    Left = 176
+    Height = 15
+    Top = 124
+    Width = 56
+    Alignment = taRightJustify
+    Caption = 'lbNumero'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbEmitente: TLabel
+    Left = 120
+    Height = 15
+    Top = 180
+    Width = 51
+    Caption = 'Emitente'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbDestinatario: TLabel
+    Left = 120
+    Height = 15
+    Top = 209
+    Width = 51
+    Caption = 'Emitente'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbVlrTotal: TLabel
+    Left = 176
+    Height = 15
+    Top = 238
+    Width = 56
+    Alignment = taRightJustify
+    Caption = 'lbNumero'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbDataEmissao: TLabel
+    Left = 368
+    Height = 15
+    Top = 238
+    Width = 51
+    Caption = 'Emitente'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbQuantItens: TLabel
+    Left = 176
+    Height = 15
+    Top = 269
+    Width = 56
+    Alignment = taRightJustify
+    Caption = 'lbNumero'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbChavenfe: TLabel
+    Left = 120
+    Height = 15
+    Top = 93
+    Width = 51
+    Caption = 'Emitente'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 17
+    Height = 15
+    Top = 93
+    Width = 87
+    Caption = 'Chave de acesso'
+    ParentColor = False
+  end
+  object lbErro: TLabel
+    Left = 8
+    Height = 32
+    Top = 368
+    Width = 625
+    AutoSize = False
+    Caption = 'lbErro'
+    Font.Color = clRed
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+    WordWrap = True
+  end
+  object Label18: TLabel
+    Left = 294
+    Height = 15
+    Top = 124
+    Width = 25
+    Caption = 'Série'
+    ParentColor = False
+  end
+  object lbSerie: TLabel
+    Left = 368
+    Height = 15
+    Top = 124
+    Width = 56
+    Alignment = taRightJustify
+    Caption = 'lbNumero'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 17
+    Height = 15
+    Top = 151
+    Width = 47
+    Caption = 'Natureza'
+    ParentColor = False
+  end
+  object lbNatureza: TLabel
+    Left = 120
+    Height = 15
+    Top = 151
+    Width = 51
+    Caption = 'Emitente'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 601
+    Height = 22
+    Top = 19
+    Width = 23
+    Visible = False
+  end
+  object Edit1: TEdit
+    Left = 440
+    Height = 23
+    Top = 16
+    Width = 80
+    TabOrder = 5
+    Text = 'Edit1'
+    Visible = False
+  end
+  object OpenDialog1: TOpenDialog
+    Title = 'Abrir arquivo de NFe'
+    DefaultExt = '.xml'
+    Filter = 'Arquivo NFE (*.xml)|*.xml|Todos os arquivos (*.*)|*'
+    Left = 528
+    Top = 8
+  end
+  object tbItensEntrada: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select *'
+      'from nfentrada_itens'
+      'Where nfentrada=:id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    UpdateMode = umUpdateAll
+    Left = 288
+    Top = 288
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object tbItensEntradaid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object tbItensEntradanfentrada: TLongintField
+      FieldKind = fkData
+      FieldName = 'nfentrada'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbItensEntradaproduto: TLongintField
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object tbItensEntradadescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object tbItensEntradancm: TStringField
+      FieldKind = fkData
+      FieldName = 'ncm'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object tbItensEntradacest: TStringField
+      FieldKind = fkData
+      FieldName = 'cest'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object tbItensEntradaunidade: TStringField
+      FieldKind = fkData
+      FieldName = 'unidade'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object tbItensEntradaquantidade: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantidade'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983044
+    end
+    object tbItensEntradaquant_estoque: TFloatField
+      FieldKind = fkData
+      FieldName = 'quant_estoque'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983044
+    end
+    object tbItensEntradacodificacao_fornecedor: TStringField
+      FieldKind = fkData
+      FieldName = 'codificacao_fornecedor'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object tbItensEntradacodigo_barras: TStringField
+      FieldKind = fkData
+      FieldName = 'codigo_barras'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object tbItensEntradaestoque_destino: TStringField
+      FieldKind = fkData
+      FieldName = 'estoque_destino'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      Size = 4
+    end
+    object tbItensEntradavalorunitario: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorunitario'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      Precision = 983044
+    end
+    object tbItensEntradavalortotal: TFloatField
+      FieldKind = fkData
+      FieldName = 'valortotal'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983044
+    end
+    object tbItensEntradavdesconto: TFloatField
+      FieldKind = fkData
+      FieldName = 'vdesconto'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983044
+    end
+    object tbItensEntradavlr_unit_estoque: TFloatField
+      FieldKind = fkData
+      FieldName = 'vlr_unit_estoque'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983044
+    end
+    object tbItensEntradavfrete: TFloatField
+      FieldKind = fkData
+      FieldName = 'vfrete'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983044
+    end
+    object tbItensEntradavseguro: TFloatField
+      FieldKind = fkData
+      FieldName = 'vseguro'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983044
+    end
+    object tbItensEntradavoutras: TFloatField
+      FieldKind = fkData
+      FieldName = 'voutras'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983044
+    end
+    object tbItensEntradacfop: TStringField
+      FieldKind = fkData
+      FieldName = 'cfop'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbItensEntradaorig: TLongintField
+      FieldKind = fkData
+      FieldName = 'orig'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbItensEntradacst_csosn: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_csosn'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbItensEntradap_icms: TFloatField
+      FieldKind = fkData
+      FieldName = 'p_icms'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655362
+    end
+    object tbItensEntradavlr_icms: TFloatField
+      FieldKind = fkData
+      FieldName = 'vlr_icms'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object tbItensEntradapredbc: TFloatField
+      FieldKind = fkData
+      FieldName = 'predbc'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655362
+    end
+    object tbItensEntradavbcicms: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbcicms'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object tbItensEntradamodbc: TLongintField
+      FieldKind = fkData
+      FieldName = 'modbc'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbItensEntradavbcst: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbcst'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object tbItensEntradapmvast: TFloatField
+      FieldKind = fkData
+      FieldName = 'pmvast'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655362
+    end
+    object tbItensEntradapredbcst: TFloatField
+      FieldKind = fkData
+      FieldName = 'predbcst'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655362
+    end
+    object tbItensEntradapicmsst: TFloatField
+      FieldKind = fkData
+      FieldName = 'picmsst'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655362
+    end
+    object tbItensEntradavicmsst: TFloatField
+      FieldKind = fkData
+      FieldName = 'vicmsst'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655362
+    end
+    object tbItensEntradamodbcst: TLongintField
+      FieldKind = fkData
+      FieldName = 'modbcst'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbItensEntradacst_pis: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_pis'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbItensEntradappis: TFloatField
+      FieldKind = fkData
+      FieldName = 'ppis'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object tbItensEntradavbc_pis: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbc_pis'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object tbItensEntradavpis: TFloatField
+      FieldKind = fkData
+      FieldName = 'vpis'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object tbItensEntradacst_cofins: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_cofins'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbItensEntradapcofins: TFloatField
+      FieldKind = fkData
+      FieldName = 'pcofins'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object tbItensEntradavbc_cofins: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbc_cofins'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object tbItensEntradavcofins: TFloatField
+      FieldKind = fkData
+      FieldName = 'vcofins'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object tbItensEntradacst_ipi: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst_ipi'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbItensEntradapipi: TFloatField
+      FieldKind = fkData
+      FieldName = 'pipi'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327682
+    end
+    object tbItensEntradavbcipi: TFloatField
+      FieldKind = fkData
+      FieldName = 'vbcipi'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object tbItensEntradavipi: TFloatField
+      FieldKind = fkData
+      FieldName = 'vipi'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object tbItensEntradainfadprod: TMemoField
+      FieldKind = fkData
+      FieldName = 'infadprod'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object tbItensEntradadescricao_xml: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao_xml'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+    object tbItensEntradanfci_opc: TStringField
+      FieldKind = fkData
+      FieldName = 'nfci_opc'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 144
+    end
+  end
+  object QueProduto: TZQuery
+    Connection = dbConnect.ZConnection1
+    AutoCalcFields = False
+    SQL.Strings = (
+      'Select id,descricao, prazo_validade'
+      'From produtos'
+      'where id = :id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    Left = 560
+    Top = 104
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryPreCtaPagar: TZQuery
+    Connection = dbConnect.ZConnection1
+    AutoCalcFields = False
+    SQL.Strings = (
+      'Select *'
+      'From pre_contas_pagar'
+      'Where id_nf=:id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    Left = 560
+    Top = 176
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryPreCtaPagarid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryPreCtaPagarid_nf: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_nf'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryPreCtaPagardocumento: TStringField
+      FieldKind = fkData
+      FieldName = 'documento'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryPreCtaPagardescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryPreCtaPagardataconta: TDateField
+      FieldKind = fkData
+      FieldName = 'dataconta'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryPreCtaPagardata_vencimento: TDateField
+      FieldKind = fkData
+      FieldName = 'data_vencimento'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryPreCtaPagardata_pagamento: TDateField
+      FieldKind = fkData
+      FieldName = 'data_pagamento'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryPreCtaPagarvalor_devido: TFloatField
+      FieldKind = fkData
+      FieldName = 'valor_devido'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 720898
+    end
+    object qryPreCtaPagardesconto: TFloatField
+      FieldKind = fkData
+      FieldName = 'desconto'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 720898
+    end
+    object qryPreCtaPagarjuros: TFloatField
+      FieldKind = fkData
+      FieldName = 'juros'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 720898
+    end
+    object qryPreCtaPagarvalor_pago: TFloatField
+      FieldKind = fkData
+      FieldName = 'valor_pago'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 720898
+    end
+    object qryPreCtaPagarobservacao: TMemoField
+      FieldKind = fkData
+      FieldName = 'observacao'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryPreCtaPagarconta_credito: TLongintField
+      FieldKind = fkData
+      FieldName = 'conta_credito'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryPreCtaPagarconta_debito: TLongintField
+      FieldKind = fkData
+      FieldName = 'conta_debito'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryPreCtaPagarbanco_negociado: TStringField
+      FieldKind = fkData
+      FieldName = 'banco_negociado'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryPreCtaPagarparcela: TLongintField
+      FieldKind = fkData
+      FieldName = 'parcela'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryPreCtaPagartotal_parcelas: TLongintField
+      FieldKind = fkData
+      FieldName = 'total_parcelas'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryPreCtaPagarfornecedor: TLongintField
+      FieldKind = fkData
+      FieldName = 'fornecedor'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qryFornecedor: TZReadOnlyQuery
+    Connection = dbConnect.ZConnection1
+    AutoCalcFields = False
+    SQL.Strings = (
+      'Select *'
+      'from fornecedores'
+      'Where limpa_cnpj(cnpj)=limpa_cnpj(:cnpj)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'cnpj'
+        ParamType = ptUnknown
+      end>
+    Left = 560
+    Top = 240
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'cnpj'
+        ParamType = ptUnknown
+      end>
+    object qryFornecedorid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryFornecedornome: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryFornecedorfantasia: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'fantasia'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryFornecedorendereco: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryFornecedorcidade: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryFornecedorbairro: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryFornecedorcep: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryFornecedorcomplemento: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'complemento'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryFornecedoruf: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryFornecedoremail: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryFornecedortelefone1: TStringField
+      DisplayWidth = 64
+      FieldKind = fkData
+      FieldName = 'telefone1'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryFornecedortelefone2: TStringField
+      DisplayWidth = 64
+      FieldKind = fkData
+      FieldName = 'telefone2'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryFornecedorfax: TStringField
+      DisplayWidth = 64
+      FieldKind = fkData
+      FieldName = 'fax'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryFornecedorcontato: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'contato'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryFornecedorcnpj: TStringField
+      DisplayWidth = 72
+      FieldKind = fkData
+      FieldName = 'cnpj'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object qryFornecedorinscestadual: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'inscestadual'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryFornecedorobservacao: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'observacao'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryFornecedorstatus: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'status'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryFornecedordatacadastro: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'datacadastro'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFornecedorplano_contas: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'plano_contas'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFornecedorwebpage: TStringField
+      DisplayWidth = 800
+      FieldKind = fkData
+      FieldName = 'webpage'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+  end
+  object qryTransportadora: TZReadOnlyQuery
+    Connection = dbConnect.ZConnection1
+    AutoCalcFields = False
+    SQL.Strings = (
+      'Select *'
+      'from transportadora'
+      'Where limpa_cnpj(cnpj)=limpa_cnpj(:cnpj)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'cnpj'
+        ParamType = ptUnknown
+      end>
+    Left = 560
+    Top = 304
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'cnpj'
+        ParamType = ptUnknown
+      end>
+    object qryTransportadoracodtransp: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'codtransp'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTransportadoranometransp: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'nometransp'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryTransportadoradatacadastro: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'datacadastro'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTransportadoraendereco: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryTransportadoracidade: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryTransportadorabairro: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryTransportadoracep: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryTransportadoracomplemento: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'complemento'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryTransportadoraemail: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qryTransportadorauf: TStringField
+      DisplayWidth = 2
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryTransportadoratelefone1: TStringField
+      DisplayWidth = 16
+      FieldKind = fkData
+      FieldName = 'telefone1'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object qryTransportadoratelefone2: TStringField
+      DisplayWidth = 16
+      FieldKind = fkData
+      FieldName = 'telefone2'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object qryTransportadoracontato: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'contato'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryTransportadorafunccontato: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'funccontato'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryTransportadoraie: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'ie'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryTransportadoracnpj: TStringField
+      DisplayWidth = 18
+      FieldKind = fkData
+      FieldName = 'cnpj'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 18
+    end
+    object qryTransportadoraobstransp: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'obstransp'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+  end
+  object updItensEntrada: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM nfentrada_itens'
+      'WHERE'
+      '  nfentrada_itens.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO nfentrada_itens'
+      '  (seqnf, produto, descricao, numlote, sittribprod, unidprod, quantidade, '
+      '   descprod, valorunitario, valortotal, aliquotaicms, alt, vlr_icms, vlr_unit, '
+      '   quant_estoque, aliq_ipi, vlr_ipi, vlr_unit_liq, vencimento, oidlote, '
+      '   cmv, estoque_destino, cfop_item, cst, data_fabricacao, baseicms, basesubst, '
+      '   cst_pis, ppis, vbc_pis, cst_cofins, pcofins, vbc_cofins, vicmsst, ncm, '
+      '   picmsst, pmvast, predbcst, orig, predbc, vdesconto, modbcst, modbc, '
+      '   infadprod, motivo_avariado, cfop_oper, descricao_xml, codificacao_fornecedor, '
+      '   codigo_barras)'
+      'VALUES'
+      '  (:seqnf, :produto, :descricao, :numlote, :sittribprod, :unidprod, :quantidade, '
+      '   :descprod, :valorunitario, :valortotal, :aliquotaicms, :alt, :vlr_icms, '
+      '   :vlr_unit, :quant_estoque, :aliq_ipi, :vlr_ipi, :vlr_unit_liq, :vencimento, '
+      '   :oidlote, :cmv, :estoque_destino, :cfop_item, :cst, :data_fabricacao, '
+      '   :baseicms, :basesubst, :cst_pis, :ppis, :vbc_pis, :cst_cofins, :pcofins, '
+      '   :vbc_cofins, :vicmsst, :ncm, :picmsst, :pmvast, :predbcst, :orig, :predbc, '
+      '   :vdesconto, :modbcst, :modbc, :infadprod, :motivo_avariado, :cfop_oper, '
+      '   :descricao_xml, :codificacao_fornecedor, :codigo_barras)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE nfentrada_itens SET'
+      '  seqnf = :seqnf,'
+      '  produto = :produto,'
+      '  descricao = :descricao,'
+      '  numlote = :numlote,'
+      '  sittribprod = :sittribprod,'
+      '  unidprod = :unidprod,'
+      '  quantidade = :quantidade,'
+      '  descprod = :descprod,'
+      '  valorunitario = :valorunitario,'
+      '  valortotal = :valortotal,'
+      '  aliquotaicms = :aliquotaicms,'
+      '  alt = :alt,'
+      '  vlr_icms = :vlr_icms,'
+      '  vlr_unit = :vlr_unit,'
+      '  quant_estoque = :quant_estoque,'
+      '  aliq_ipi = :aliq_ipi,'
+      '  vlr_ipi = :vlr_ipi,'
+      '  vlr_unit_liq = :vlr_unit_liq,'
+      '  vencimento = :vencimento,'
+      '  oidlote = :oidlote,'
+      '  cmv = :cmv,'
+      '  estoque_destino = :estoque_destino,'
+      '  cfop_item = :cfop_item,'
+      '  cst = :cst,'
+      '  data_fabricacao = :data_fabricacao,'
+      '  baseicms = :baseicms,'
+      '  basesubst = :basesubst,'
+      '  cst_pis = :cst_pis,'
+      '  ppis = :ppis,'
+      '  vbc_pis = :vbc_pis,'
+      '  cst_cofins = :cst_cofins,'
+      '  pcofins = :pcofins,'
+      '  vbc_cofins = :vbc_cofins,'
+      '  vicmsst = :vicmsst,'
+      '  ncm = :ncm,'
+      '  picmsst = :picmsst,'
+      '  pmvast = :pmvast,'
+      '  predbcst = :predbcst,'
+      '  orig = :orig,'
+      '  predbc = :predbc,'
+      '  vdesconto = :vdesconto,'
+      '  modbcst = :modbcst,'
+      '  modbc = :modbc,'
+      '  infadprod = :infadprod,'
+      '  motivo_avariado = :motivo_avariado,'
+      '  cfop_oper = :cfop_oper,'
+      '  descricao_xml = :descricao_xml,'
+      '  codificacao_fornecedor = :codificacao_fornecedor,'
+      '  codigo_barras = :codigo_barras'
+      'WHERE'
+      '  nfentrada_itens.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 280
+    Top = 8
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'seqnf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'descricao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numlote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'sittribprod'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'unidprod'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'descprod'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorunitario'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valortotal'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'aliquotaicms'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'alt'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlr_icms'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlr_unit'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quant_estoque'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'aliq_ipi'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlr_ipi'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlr_unit_liq'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vencimento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'oidlote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cmv'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'estoque_destino'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cfop_item'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_fabricacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'baseicms'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'basesubst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst_pis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ppis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbc_pis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cst_cofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pcofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vbc_cofins'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vicmsst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ncm'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'picmsst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pmvast'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'predbcst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'orig'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'predbc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vdesconto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'modbcst'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'modbc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'infadprod'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'motivo_avariado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cfop_oper'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'descricao_xml'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codificacao_fornecedor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codigo_barras'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryNFEntrada: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select *'
+      'from nfentrada'
+      'Where id= :id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    Left = 192
+    Top = 288
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryNFEntradaid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryNFEntradanumeronf: TLongintField
+      FieldKind = fkData
+      FieldName = 'numeronf'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryNFEntradachave_nfe: TStringField
+      FieldKind = fkData
+      FieldName = 'chave_nfe'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 176
+    end
+    object qryNFEntradaserie: TLongintField
+      FieldKind = fkData
+      FieldName = 'serie'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryNFEntradafinalidade_nf: TLongintField
+      FieldKind = fkData
+      FieldName = 'finalidade_nf'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryNFEntradadatahoraentrada: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'datahoraentrada'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryNFEntradadataemissao: TDateField
+      FieldKind = fkData
+      FieldName = 'dataemissao'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryNFEntradadataentrada: TDateField
+      FieldKind = fkData
+      FieldName = 'dataentrada'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryNFEntradanatop: TStringField
+      FieldKind = fkData
+      FieldName = 'natop'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryNFEntradacliente_forn: TLongintField
+      FieldKind = fkData
+      FieldName = 'cliente_forn'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryNFEntradafornecedor: TStringField
+      FieldKind = fkData
+      FieldName = 'fornecedor'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryNFEntradacnpjcpf: TStringField
+      FieldKind = fkData
+      FieldName = 'cnpjcpf'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object qryNFEntradaendereco: TStringField
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryNFEntradacidade: TStringField
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryNFEntradabairro: TStringField
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryNFEntradacep: TStringField
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryNFEntradacomplemento: TStringField
+      FieldKind = fkData
+      FieldName = 'complemento'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryNFEntradauf: TStringField
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryNFEntradatelefone1: TStringField
+      FieldKind = fkData
+      FieldName = 'telefone1'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryNFEntradainscrestadual: TStringField
+      FieldKind = fkData
+      FieldName = 'inscrestadual'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryNFEntradainscrestsubtrib: TStringField
+      FieldKind = fkData
+      FieldName = 'inscrestsubtrib'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryNFEntradabaseicms: TFloatField
+      FieldKind = fkData
+      FieldName = 'baseicms'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavaloricms: TFloatField
+      FieldKind = fkData
+      FieldName = 'valoricms'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradabaseicmssub: TFloatField
+      FieldKind = fkData
+      FieldName = 'baseicmssub'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavaloricmssub: TFloatField
+      FieldKind = fkData
+      FieldName = 'valoricmssub'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavalortotalprodutos: TFloatField
+      FieldKind = fkData
+      FieldName = 'valortotalprodutos'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavalorfrete: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorfrete'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavalorseguro: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorseguro'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavaloroutradesp: TFloatField
+      FieldKind = fkData
+      FieldName = 'valoroutradesp'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavaloripi: TFloatField
+      FieldKind = fkData
+      FieldName = 'valoripi'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavalortotalnota: TFloatField
+      FieldKind = fkData
+      FieldName = 'valortotalnota'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradadesconto: TFloatField
+      FieldKind = fkData
+      FieldName = 'desconto'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavalorpis: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorpis'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradavalorcofins: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorcofins'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 983042
+    end
+    object qryNFEntradacodtransp: TLongintField
+      FieldKind = fkData
+      FieldName = 'codtransp'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryNFEntradanometransp: TStringField
+      FieldKind = fkData
+      FieldName = 'nometransp'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryNFEntradafreteconta: TStringField
+      FieldKind = fkData
+      FieldName = 'freteconta'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qryNFEntradaplacaveiculo: TStringField
+      FieldKind = fkData
+      FieldName = 'placaveiculo'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object qryNFEntradaufveiculo: TStringField
+      FieldKind = fkData
+      FieldName = 'ufveiculo'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryNFEntradacnpjtransp: TStringField
+      FieldKind = fkData
+      FieldName = 'cnpjtransp'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object qryNFEntradaendtransp: TStringField
+      FieldKind = fkData
+      FieldName = 'endtransp'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryNFEntradacidadetransp: TStringField
+      FieldKind = fkData
+      FieldName = 'cidadetransp'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryNFEntradauftransp: TStringField
+      FieldKind = fkData
+      FieldName = 'uftransp'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryNFEntradaietransp: TStringField
+      FieldKind = fkData
+      FieldName = 'ietransp'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryNFEntradaquantvolumes: TLongintField
+      FieldKind = fkData
+      FieldName = 'quantvolumes'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryNFEntradaespecievol: TStringField
+      FieldKind = fkData
+      FieldName = 'especievol'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryNFEntradamarcavol: TStringField
+      FieldKind = fkData
+      FieldName = 'marcavol'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryNFEntradanumerovol: TStringField
+      FieldKind = fkData
+      FieldName = 'numerovol'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryNFEntradapesobrutovol: TFloatField
+      FieldKind = fkData
+      FieldName = 'pesobrutovol'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655363
+    end
+    object qryNFEntradapesoliquidovol: TFloatField
+      FieldKind = fkData
+      FieldName = 'pesoliquidovol'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655363
+    end
+    object qryNFEntradadadosadicionais: TMemoField
+      FieldKind = fkData
+      FieldName = 'dadosadicionais'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryNFEntradareservadofisco: TMemoField
+      FieldKind = fkData
+      FieldName = 'reservadofisco'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryNFEntradalancada: TBooleanField
+      FieldKind = fkData
+      FieldName = 'lancada'
+      Index = 52
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryNFEntradacrt: TLongintField
+      FieldKind = fkData
+      FieldName = 'crt'
+      Index = 53
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

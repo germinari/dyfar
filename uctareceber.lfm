@@ -1,0 +1,2687 @@
+object frmCtaReceber: TfrmCtaReceber
+  Left = 410
+  Height = 630
+  Top = 131
+  Width = 1107
+  Caption = 'Contas a Receber'
+  ClientHeight = 630
+  ClientWidth = 1107
+  LCLVersion = '4.0.0.4'
+  OnCreate = FormCreate
+  OnResize = FormResize
+  object ExtendedNotebook1: TExtendedNotebook
+    Left = 0
+    Height = 580
+    Top = 50
+    Width = 1107
+    ActivePage = TabSheet1
+    Align = alClient
+    MultiLine = True
+    Options = [nboShowCloseButtons, nboMultiLine]
+    TabIndex = 0
+    TabOrder = 0
+    OnChange = ExtendedNotebook1Change
+    object TabSheet1: TTabSheet
+      Caption = 'Lista de contas'
+      ClientHeight = 552
+      ClientWidth = 1099
+      object GroupBox2: TGroupBox
+        Left = 12
+        Height = 484
+        Top = 22
+        Width = 1084
+        ClientHeight = 464
+        ClientWidth = 1080
+        TabOrder = 0
+        object RxDBGrid1: TRxDBGrid
+          Left = 0
+          Height = 362
+          Top = 67
+          Width = 1080
+          ColumnDefValues.BlobText = '(blob)'
+          TitleButtons = True
+          AutoSort = True
+          OnGetCellProps = RxDBGrid1GetCellProps
+          Columns = <          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Sel.'
+              Width = 25
+              FieldName = 'selecionado'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              ReadOnly = True
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Conta/Credito'
+              Width = 130
+              FieldName = 'vdescricao_credito'
+              EditButtons = <>
+              Filter.Font.Style = [fsItalic]
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              ReadOnly = True
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'N° Doc'
+              Width = 90
+              FieldName = 'documento'
+              EditButtons = <>
+              Filter.Font.Style = [fsItalic]
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Nosso numero'
+              Width = 90
+              FieldName = 'nosso_numero'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Remessa'
+              Width = 60
+              FieldName = 'remessa'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              ReadOnly = True
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Beneficiario'
+              Width = 300
+              FieldName = 'descricao'
+              EditButtons = <>
+              Filter.Font.Style = [fsItalic]
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              ReadOnly = True
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Dt.Conta'
+              Width = 75
+              FieldName = 'dataconta'
+              EditButtons = <>
+              Filter.Font.Style = [fsItalic]
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              ReadOnly = True
+              Title.Alignment = taCenter
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Atz'
+              Width = 30
+              FieldName = 'atrazo'
+              EditButtons = <>
+              Filter.Font.Style = [fsItalic]
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              ReadOnly = True
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Dt.Vcto'
+              Width = 75
+              FieldName = 'data_vencimento'
+              EditButtons = <>
+              Filter.Font.Style = [fsItalic]
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              ReadOnly = True
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Dt.Pgto'
+              Width = 75
+              FieldName = 'data_pagamento'
+              EditButtons = <>
+              Filter.Font.Style = [fsItalic]
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              ReadOnly = True
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Vlr.Devido'
+              Width = 75
+              FieldName = 'valor_devido'
+              EditButtons = <>
+              Filter.Font.Style = [fsItalic]
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              ReadOnly = True
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Vlr.Pgto'
+              Width = 75
+              FieldName = 'valor_pago'
+              EditButtons = <>
+              Filter.Font.Style = [fsItalic]
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Não está vazio)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end>
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end>
+          FooterOptions.Color = clYellow
+          FooterOptions.DrawFullLine = False
+          SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+          SearchOptions.FromStart = False
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          FooterColor = clYellow
+          Align = alClient
+          AlternateColor = 16777111
+          Color = clWindow
+          DrawFullLine = False
+          SelectedColor = clHighlight
+          DataSource = dsCtaReceber
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgHeaderPushedLook]
+          TabOrder = 0
+          TitleStyle = tsNative
+          OnDblClick = RxDBGrid1DblClick
+          OnTitleClick = RxDBGrid1TitleClick
+        end
+        object Panel1: TPanel
+          Left = 0
+          Height = 67
+          Top = 0
+          Width = 1080
+          Align = alTop
+          ClientHeight = 67
+          ClientWidth = 1080
+          TabOrder = 1
+          object edCliente: TEdit
+            Left = 83
+            Height = 23
+            Top = -4
+            Width = 348
+            CharCase = ecUppercase
+            TabOrder = 0
+          end
+          object SpeedButton3: TSpeedButton
+            Left = 435
+            Height = 22
+            Hint = 'Selecionar fornecedor'
+            Top = -4
+            Width = 23
+            Caption = '...'
+            ShowHint = True
+            ParentShowHint = False
+            OnClick = SpeedButton3Click
+          end
+          object btAplicar: TBitBtn
+            Left = 999
+            Height = 40
+            Top = 16
+            Width = 75
+            Caption = 'Aplicar Filtro'
+            TabOrder = 1
+            OnClick = btAplicarClick
+          end
+          object rbEmissao: TRadioButton
+            Left = 63
+            Height = 19
+            Top = 37
+            Width = 61
+            Caption = 'Emissão'
+            TabOrder = 2
+          end
+          object rbVencto: TRadioButton
+            Left = 129
+            Height = 19
+            Top = 37
+            Width = 82
+            Caption = 'Vencimento'
+            Checked = True
+            TabOrder = 3
+            TabStop = True
+          end
+          object rbPagamento: TRadioButton
+            Left = 219
+            Height = 19
+            Top = 37
+            Width = 79
+            Caption = 'Pagamento'
+            TabOrder = 4
+          end
+          object DateEdit1: TDateEdit
+            Left = 307
+            Height = 23
+            Top = 33
+            Width = 124
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            OnAcceptDate = DateEdit1AcceptDate
+            DateOrder = doNone
+            ButtonWidth = 23
+            NumGlyphs = 1
+            MaxLength = 0
+            TabOrder = 5
+          end
+          object DateEdit2: TDateEdit
+            Left = 435
+            Height = 23
+            Top = 33
+            Width = 115
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            DateOrder = doNone
+            ButtonWidth = 23
+            NumGlyphs = 1
+            MaxLength = 0
+            TabOrder = 6
+          end
+          object edConta: TEditButton
+            Left = 609
+            Height = 23
+            Top = 0
+            Width = 382
+            ButtonCaption = '...'
+            ButtonWidth = 23
+            MaxLength = 0
+            NumGlyphs = 1
+            PasswordChar = #0
+            TabOrder = 7
+            OnButtonClick = edContaButtonClick
+          end
+          object Label17: TLabel
+            Left = 3
+            Height = 15
+            Top = 3
+            Width = 51
+            Caption = 'Descrição'
+            ParentColor = False
+          end
+          object Label18: TLabel
+            Left = 557
+            Height = 15
+            Top = 4
+            Width = 32
+            Caption = 'Conta'
+            ParentColor = False
+          end
+          object rgSituacao: TRadioGroup
+            Left = 787
+            Height = 45
+            Top = 19
+            Width = 204
+            AutoFill = True
+            ChildSizing.LeftRightSpacing = 6
+            ChildSizing.TopBottomSpacing = 6
+            ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+            ChildSizing.EnlargeVertical = crsHomogenousChildResize
+            ChildSizing.ShrinkHorizontal = crsScaleChilds
+            ChildSizing.ShrinkVertical = crsScaleChilds
+            ChildSizing.Layout = cclLeftToRightThenTopToBottom
+            ChildSizing.ControlsPerLine = 3
+            ClientHeight = 25
+            ClientWidth = 200
+            Columns = 3
+            ItemIndex = 0
+            Items.Strings = (
+              'Tudo'
+              'Vencidos'
+              'Pagos'
+            )
+            TabOrder = 8
+          end
+          object rbTodas: TRadioButton
+            Left = 6
+            Height = 19
+            Top = 37
+            Width = 49
+            Caption = 'Todas'
+            TabOrder = 9
+          end
+          object Label19: TLabel
+            Left = 557
+            Height = 15
+            Top = 41
+            Width = 46
+            Caption = 'Remessa'
+            ParentColor = False
+          end
+          object edRemessa: TEdit
+            Left = 609
+            Height = 23
+            Top = 33
+            Width = 66
+            NumbersOnly = True
+            TabOrder = 10
+          end
+        end
+        object Panel2: TPanel
+          Left = 0
+          Height = 35
+          Top = 429
+          Width = 1080
+          Align = alBottom
+          ClientHeight = 35
+          ClientWidth = 1080
+          TabOrder = 2
+          object CurrencyEdit1: TCurrencyEdit
+            Left = 816
+            Height = 23
+            Top = 5
+            Width = 104
+            Alignment = taRightJustify
+            Color = clSilver
+            Font.Style = [fsBold]
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 1
+            TabStop = False
+          end
+          object CurrencyEdit2: TCurrencyEdit
+            Left = 955
+            Height = 23
+            Top = 5
+            Width = 109
+            Alignment = taRightJustify
+            Color = clSilver
+            Font.Style = [fsBold]
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 0
+            TabStop = False
+          end
+          object Label14: TLabel
+            Left = 534
+            Height = 15
+            Top = 12
+            Width = 63
+            Caption = 'Totalizações'
+            ParentColor = False
+          end
+        end
+      end
+      object RLReport1: TRLReport
+        Left = 48
+        Height = 794
+        Top = 512
+        Width = 1123
+        DataSource = dsCtaReceber
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        PageSetup.Orientation = poLandscape
+        Title = 'Listagem de contas a receber'
+        Visible = False
+        object RLBand1: TRLBand
+          Left = 38
+          Height = 82
+          Top = 38
+          Width = 1047
+          BandType = btHeader
+          object RLLabel1: TRLLabel
+            Left = 2
+            Height = 16
+            Top = 2
+            Width = 64
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object RLSystemInfo3: TRLSystemInfo
+            Left = 961
+            Height = 16
+            Top = 0
+            Width = 86
+            Align = faRightTop
+            Alignment = taRightJustify
+            Info = itTitle
+            Text = '#-REL005'
+          end
+          object RLLabel2: TRLLabel
+            Left = 2
+            Height = 16
+            Top = 40
+            Width = 58
+          end
+          object RLLabel3: TRLLabel
+            Left = 2
+            Height = 16
+            Top = 61
+            Width = 38
+            Caption = 'Conta'
+          end
+          object RLLabel4: TRLLabel
+            Left = 194
+            Height = 16
+            Top = 61
+            Width = 88
+            Caption = 'N° Documento'
+          end
+          object RLLabel5: TRLLabel
+            Left = 306
+            Height = 16
+            Top = 61
+            Width = 133
+            Caption = 'Beneficiario/Descrição'
+          end
+          object RLLabel6: TRLLabel
+            Left = 647
+            Height = 16
+            Top = 61
+            Width = 55
+            Caption = 'Dt.Conta'
+          end
+          object RLLabel7: TRLLabel
+            Left = 719
+            Height = 16
+            Top = 61
+            Width = 48
+            Caption = 'Dt.Vcto'
+          end
+          object RLLabel8: TRLLabel
+            Left = 795
+            Height = 16
+            Top = 61
+            Width = 48
+            Caption = 'Dt.Pgto'
+          end
+          object RLLabel9: TRLLabel
+            Left = 916
+            Height = 16
+            Top = 61
+            Width = 49
+            Caption = 'Vlr.Dev.'
+          end
+          object RLLabel10: TRLLabel
+            Left = 994
+            Height = 16
+            Top = 61
+            Width = 51
+            Caption = 'Vlr.Pgto'
+          end
+        end
+        object RLBand2: TRLBand
+          Left = 38
+          Height = 16
+          Top = 120
+          Width = 1047
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          ParentFont = False
+          BeforePrint = RLBand2BeforePrint
+          object RLDBText1: TRLDBText
+            Left = 2
+            Height = 15
+            Top = 0
+            Width = 188
+            AutoSize = False
+            DataField = 'vdescricao_credito'
+            DataSource = dsCtaReceber
+          end
+          object RLDBText2: TRLDBText
+            Left = 194
+            Height = 15
+            Top = 0
+            Width = 108
+            AutoSize = False
+            DataField = 'documento'
+            DataSource = dsCtaReceber
+          end
+          object RLDBText3: TRLDBText
+            Left = 306
+            Height = 15
+            Top = 0
+            Width = 337
+            AutoSize = False
+            DataField = 'descricao'
+            DataSource = dsCtaReceber
+          end
+          object RLDBText4: TRLDBText
+            Left = 648
+            Height = 15
+            Top = 0
+            Width = 57
+            DataField = 'dataconta'
+            DataSource = dsCtaReceber
+          end
+          object RLDBText5: TRLDBText
+            Left = 719
+            Height = 15
+            Top = 0
+            Width = 97
+            DataField = 'data_vencimento'
+            DataSource = dsCtaReceber
+          end
+          object RLDBText6: TRLDBText
+            Left = 795
+            Height = 15
+            Top = 0
+            Width = 97
+            DataField = 'data_pagamento'
+            DataSource = dsCtaReceber
+          end
+          object RLDBText7: TRLDBText
+            Left = 893
+            Height = 15
+            Top = 0
+            Width = 72
+            Alignment = taRightJustify
+            DataField = 'valor_devido'
+            DataSource = dsCtaReceber
+          end
+          object RLDBText8: TRLDBText
+            Left = 981
+            Height = 15
+            Top = 0
+            Width = 64
+            Alignment = taRightJustify
+            DataField = 'valor_pago'
+            DataSource = dsCtaReceber
+          end
+        end
+        object RLBand3: TRLBand
+          Left = 38
+          Height = 32
+          Top = 168
+          Width = 1047
+          BandType = btFooter
+          object RLSystemInfo1: TRLSystemInfo
+            Left = 0
+            Height = 14
+            Top = 0
+            Width = 113
+            Align = faLeftTop
+            Font.Color = clBlack
+            Font.Height = -11
+            Font.Name = 'Arial'
+            Info = itFullDate
+            ParentFont = False
+            Text = 'Impresso em '
+          end
+          object RLSystemInfo2: TRLSystemInfo
+            Left = 832
+            Height = 14
+            Top = 0
+            Width = 215
+            Align = faRightTop
+            Font.Color = clBlack
+            Font.Height = -11
+            Font.Name = 'Arial'
+            Info = itPagePreview
+            ParentFont = False
+            Text = 'Página # de #'
+          end
+        end
+        object RLBand4: TRLBand
+          Left = 38
+          Height = 32
+          Top = 136
+          Width = 1047
+          BandType = btSummary
+          object RLDBResult1: TRLDBResult
+            Left = 840
+            Height = 16
+            Top = 11
+            Width = 125
+            Alignment = taRightJustify
+            DataField = 'valor_devido'
+            DataSource = dsCtaReceber
+          end
+          object RLDBResult2: TRLDBResult
+            Left = 928
+            Height = 16
+            Top = 11
+            Width = 117
+            Alignment = taRightJustify
+            DataField = 'valor_pago'
+            DataSource = dsCtaReceber
+          end
+          object RLLabel11: TRLLabel
+            Left = 647
+            Height = 16
+            Top = 11
+            Width = 39
+            Caption = 'Totais'
+          end
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Detalhamento da conta'
+      ClientHeight = 552
+      ClientWidth = 1099
+      object GroupBox3: TGroupBox
+        Left = 11
+        Height = 449
+        Top = 16
+        Width = 793
+        ClientHeight = 429
+        ClientWidth = 789
+        TabOrder = 0
+        object DBEdit1: TDBEdit
+          Left = 103
+          Height = 23
+          Top = 5
+          Width = 80
+          DataField = 'id'
+          DataSource = dsCtaReceber
+          ReadOnly = True
+          Color = clSilver
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object DBEdit2: TDBEdit
+          Left = 103
+          Height = 23
+          Top = 41
+          Width = 104
+          DataField = 'documento'
+          DataSource = dsCtaReceber
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object DBEdit3: TDBEdit
+          Left = 103
+          Height = 23
+          Top = 75
+          Width = 456
+          DataField = 'descricao'
+          DataSource = dsCtaReceber
+          CharCase = ecUppercase
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object DBEdit4: TDBEdit
+          Left = 287
+          Height = 23
+          Top = 42
+          Width = 48
+          DataField = 'parcela'
+          DataSource = dsCtaReceber
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object DBEdit5: TDBEdit
+          Left = 360
+          Height = 23
+          Top = 42
+          Width = 45
+          DataField = 'total_parcelas'
+          DataSource = dsCtaReceber
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object Label1: TLabel
+          Left = 7
+          Height = 15
+          Top = 13
+          Width = 91
+          Caption = 'N° Conta a pagar'
+          ParentColor = False
+        end
+        object Label2: TLabel
+          Left = 544
+          Height = 15
+          Top = 16
+          Width = 73
+          Caption = 'Data da conta'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 7
+          Height = 15
+          Top = 50
+          Width = 63
+          Caption = 'Documento'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 223
+          Height = 15
+          Top = 48
+          Width = 38
+          Caption = 'Parcela'
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 347
+          Height = 15
+          Top = 49
+          Width = 5
+          Caption = '/'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 7
+          Height = 15
+          Top = 82
+          Width = 51
+          Caption = 'Descrição'
+          ParentColor = False
+        end
+        object GroupBox1: TGroupBox
+          Left = 7
+          Height = 180
+          Top = 112
+          Width = 383
+          Caption = 'Vencimento'
+          ClientHeight = 160
+          ClientWidth = 379
+          TabOrder = 5
+          object DBEdit6: TDBEdit
+            Left = 232
+            Height = 23
+            Top = 41
+            Width = 125
+            DataField = 'valor_devido'
+            DataSource = dsCtaReceber
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object Label7: TLabel
+            Left = 7
+            Height = 15
+            Top = 48
+            Width = 65
+            Caption = 'Valor devido'
+            ParentColor = False
+          end
+          object Label8: TLabel
+            Left = 7
+            Height = 15
+            Top = 6
+            Width = 90
+            Caption = 'Data vencimento'
+            ParentColor = False
+          end
+          object Label13: TLabel
+            Left = 7
+            Height = 15
+            Top = 108
+            Width = 32
+            Caption = 'Conta'
+            ParentColor = False
+          end
+          object DBEdit10: TDBEdit
+            Left = 94
+            Height = 23
+            Top = 100
+            Width = 263
+            DataField = 'vdescricao_credito'
+            DataSource = dsCtaReceber
+            ReadOnly = True
+            Color = clSilver
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object SpeedButton1: TSpeedButton
+            Left = 357
+            Height = 22
+            Top = 100
+            Width = 23
+            Caption = '...'
+            OnClick = SpeedButton1Click
+          end
+          object DBDateEdit5: TRxDBDateEdit
+            Left = 232
+            Height = 23
+            Top = -2
+            Width = 125
+            ButtonWidth = 23
+            DialogTitle = 'Select a Date'
+            Enabled = False
+            Glyph.Data = {
+              76060000424D7606000000000000360000002800000014000000140000000100
+              2000000000004006000064000000640000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000000C9C2BB26C6C3BD55C6C3
+              BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3
+              BD55C6C3BD55C6C3BD55C7C0BA25000000000000000000000000000000000000
+              0000C5C1BD3AD4D0CBFCDDDAD5FFDEDBD6FFDEDBD6FFDEDBD6FFDEDBD6FFDEDB
+              D6FFDEDBD6FFDEDBD6FFDEDBD6FFDEDBD6FFDEDBD6FFDDDAD5FFD4D1CBFCC4C4
+              BB3900000000000000000000000000000000DBD8D3A5F1F0ECFFF1F0ECFFF1F0
+              ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+              ECFFF1F0ECFFF1F0ECFFF1F0ECFFDBD8D1A40000000000000000000000000000
+              0000E2E1DDBFF1F0ECFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0
+              CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFF1F0ECFFE2E1
+              DDBF00000000000000000000000000000000E3E0DBC0F1F0ECFFD4D0CBFFD4D0
+              CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4
+              DFFFD4D0CBFFD4D0CBFFF1F0ECFFE3E0DBC00000000000000000000000000000
+              0000E3E0DBC0F1F0ECFFE6E4DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4
+              DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4DFFFE6E4DFFFF1F0ECFFE3E0
+              DBC000000000000000000000000000000000E3E0DBC0F1F0ECFFCECBC5FFCECB
+              C5FFE3E1DCFFC7C3BDFFE3E1DCFFCECBC5FFCECBC5FFE3E1DCFFC7C3BDFFE3E1
+              DCFFCECBC5FFCECBC5FFF1F0ECFFE3E0DBC00000000000000000000000000000
+              0000E3E0DBC0F1F0ECFFE6E4DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4
+              DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4DFFFE6E4DFFFF1F0ECFFE3E0
+              DBC000000000000000000000000000000000E3E0DBC0F1F0ECFFD4D0CBFFD4D0
+              CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4
+              DFFFD4D0CBFFD4D0CBFFF1F0ECFFE3E0DBC00000000000000000000000000000
+              0000E3E0DBC0F1F0ECFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0
+              CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFF1F0ECFFE3E0
+              DBC000000000000000000000000000000000E3E0DBC0F1F0ECFFF1F0ECFFF1F0
+              ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+              ECFFF1F0ECFFF1F0ECFFF1F0ECFFE3E0DBC00000000000000000000000000000
+              0000ACAFDFD19099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099
+              E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FFACAF
+              DFD100000000000000000000000000000000828AE1E03C4CE7FF3C4CE7FF3C4C
+              E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+              E7FF3C4CE7FF3C4CE7FF3C4CE7FF828AE1E00000000000000000000000000000
+              0000828AE1E03B4CE6FF3040CDFF3040CDFF3B4CE6FF3C4CE7FF3C4CE7FF3C4C
+              E7FF3C4CE7FF3C4CE7FF3C4CE7FF3B4CE6FF3040CDFF3040CDFF3B4CE6FF828A
+              E1E000000000000000000000000000000000818AE3D73948DFFF8E90BEFF8D8F
+              BFFF3848E0FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3948
+              DFFF8C8FBEFF8B8FBEFF3848E0FF818AE4D60000000000000000000000000000
+              0000878EE8863C4BE7FFAEADC1FFAEADC1FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+              E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4BE7FFAEADC1FFAEADC1FF3C4CE7FF878E
+              E7840000000000000000000000000000000000000000878EE886BCBAC2F3BCBA
+              C2F37B85E9B67B85E9B67B85E9B67B85E9B67B85E9B67B85E9B67B85E9B67B85
+              E9B6BCBAC2F3BCBAC2F3858EE984000000000000000000000000000000000000
+              00000000000000000000C7C3BCBCC7C3BDBB0000000000000000000000000000
+              000000000000000000000000000000000000C6C3BCBDC7C3BCBC000000000000
+              0000000000000000000000000000000000000000000000000000C6C6C609BFBF
+              BF08000000000000000000000000000000000000000000000000000000000000
+              0000C6C6C609C6C6C60900000000000000000000000000000000
+            }
+            MaxLength = 10
+            PasswordChar = #0
+            PopupColor = clWindow
+            TabOrder = 2
+            Text = '  /  /    '
+            DataField = 'data_vencimento'
+            DataSource = dsCtaReceber
+          end
+        end
+        object GroupBox4: TGroupBox
+          Left = 394
+          Height = 182
+          Top = 112
+          Width = 391
+          Caption = 'Quitação'
+          ClientHeight = 162
+          ClientWidth = 387
+          TabOrder = 6
+          object DBEdit7: TDBEdit
+            Left = 260
+            Height = 23
+            Top = 70
+            Width = 97
+            DataField = 'juros'
+            DataSource = dsCtaReceber
+            ReadOnly = True
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object Label9: TLabel
+            Left = 7
+            Height = 15
+            Top = 77
+            Width = 27
+            Caption = 'Juros'
+            ParentColor = False
+          end
+          object Label10: TLabel
+            Left = 7
+            Height = 15
+            Top = 6
+            Width = 88
+            Caption = 'Data pagamento'
+            ParentColor = False
+          end
+          object Label11: TLabel
+            Left = 7
+            Height = 15
+            Top = 108
+            Width = 56
+            Caption = 'Valor pago'
+            ParentColor = False
+          end
+          object DBEdit8: TDBEdit
+            Left = 260
+            Height = 23
+            Top = 101
+            Width = 97
+            DataField = 'valor_pago'
+            DataSource = dsCtaReceber
+            ReadOnly = True
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object Label16: TLabel
+            Left = 7
+            Height = 15
+            Top = 48
+            Width = 50
+            Caption = 'Desconto'
+            ParentColor = False
+          end
+          object DBEdit9: TDBEdit
+            Left = 260
+            Height = 23
+            Top = 41
+            Width = 97
+            DataField = 'desconto'
+            DataSource = dsCtaReceber
+            ReadOnly = True
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object DBDateEdit6: TRxDBDateEdit
+            Left = 260
+            Height = 23
+            Top = -2
+            Width = 125
+            ButtonWidth = 23
+            DialogTitle = 'Select a Date'
+            Enabled = False
+            Glyph.Data = {
+              76060000424D7606000000000000360000002800000014000000140000000100
+              2000000000004006000064000000640000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000000C9C2BB26C6C3BD55C6C3
+              BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3
+              BD55C6C3BD55C6C3BD55C7C0BA25000000000000000000000000000000000000
+              0000C5C1BD3AD4D0CBFCDDDAD5FFDEDBD6FFDEDBD6FFDEDBD6FFDEDBD6FFDEDB
+              D6FFDEDBD6FFDEDBD6FFDEDBD6FFDEDBD6FFDEDBD6FFDDDAD5FFD4D1CBFCC4C4
+              BB3900000000000000000000000000000000DBD8D3A5F1F0ECFFF1F0ECFFF1F0
+              ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+              ECFFF1F0ECFFF1F0ECFFF1F0ECFFDBD8D1A40000000000000000000000000000
+              0000E2E1DDBFF1F0ECFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0
+              CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFF1F0ECFFE2E1
+              DDBF00000000000000000000000000000000E3E0DBC0F1F0ECFFD4D0CBFFD4D0
+              CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4
+              DFFFD4D0CBFFD4D0CBFFF1F0ECFFE3E0DBC00000000000000000000000000000
+              0000E3E0DBC0F1F0ECFFE6E4DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4
+              DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4DFFFE6E4DFFFF1F0ECFFE3E0
+              DBC000000000000000000000000000000000E3E0DBC0F1F0ECFFCECBC5FFCECB
+              C5FFE3E1DCFFC7C3BDFFE3E1DCFFCECBC5FFCECBC5FFE3E1DCFFC7C3BDFFE3E1
+              DCFFCECBC5FFCECBC5FFF1F0ECFFE3E0DBC00000000000000000000000000000
+              0000E3E0DBC0F1F0ECFFE6E4DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4
+              DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4DFFFE6E4DFFFF1F0ECFFE3E0
+              DBC000000000000000000000000000000000E3E0DBC0F1F0ECFFD4D0CBFFD4D0
+              CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4
+              DFFFD4D0CBFFD4D0CBFFF1F0ECFFE3E0DBC00000000000000000000000000000
+              0000E3E0DBC0F1F0ECFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0
+              CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFF1F0ECFFE3E0
+              DBC000000000000000000000000000000000E3E0DBC0F1F0ECFFF1F0ECFFF1F0
+              ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+              ECFFF1F0ECFFF1F0ECFFF1F0ECFFE3E0DBC00000000000000000000000000000
+              0000ACAFDFD19099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099
+              E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FFACAF
+              DFD100000000000000000000000000000000828AE1E03C4CE7FF3C4CE7FF3C4C
+              E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+              E7FF3C4CE7FF3C4CE7FF3C4CE7FF828AE1E00000000000000000000000000000
+              0000828AE1E03B4CE6FF3040CDFF3040CDFF3B4CE6FF3C4CE7FF3C4CE7FF3C4C
+              E7FF3C4CE7FF3C4CE7FF3C4CE7FF3B4CE6FF3040CDFF3040CDFF3B4CE6FF828A
+              E1E000000000000000000000000000000000818AE3D73948DFFF8E90BEFF8D8F
+              BFFF3848E0FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3948
+              DFFF8C8FBEFF8B8FBEFF3848E0FF818AE4D60000000000000000000000000000
+              0000878EE8863C4BE7FFAEADC1FFAEADC1FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+              E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4BE7FFAEADC1FFAEADC1FF3C4CE7FF878E
+              E7840000000000000000000000000000000000000000878EE886BCBAC2F3BCBA
+              C2F37B85E9B67B85E9B67B85E9B67B85E9B67B85E9B67B85E9B67B85E9B67B85
+              E9B6BCBAC2F3BCBAC2F3858EE984000000000000000000000000000000000000
+              00000000000000000000C7C3BCBCC7C3BDBB0000000000000000000000000000
+              000000000000000000000000000000000000C6C3BCBDC7C3BCBC000000000000
+              0000000000000000000000000000000000000000000000000000C6C6C609BFBF
+              BF08000000000000000000000000000000000000000000000000000000000000
+              0000C6C6C609C6C6C60900000000000000000000000000000000
+            }
+            MaxLength = 10
+            PasswordChar = #0
+            PopupColor = clWindow
+            TabOrder = 3
+            Text = '  /  /    '
+            DataField = 'dataconta'
+            DataSource = dsCtaReceber
+          end
+        end
+        object DBMemo1: TDBMemo
+          Left = 7
+          Height = 85
+          Top = 336
+          Width = 768
+          DataField = 'observacao'
+          DataSource = dsCtaReceber
+          TabOrder = 7
+        end
+        object Label15: TLabel
+          Left = 7
+          Height = 15
+          Top = 312
+          Width = 62
+          Caption = 'Observação'
+          ParentColor = False
+        end
+        object SpeedButton4: TSpeedButton
+          Left = 559
+          Height = 22
+          Hint = 'Selecionar fornecedor'
+          Top = 74
+          Width = 23
+          Caption = '...'
+          ShowHint = True
+          ParentShowHint = False
+          OnClick = SpeedButton4Click
+        end
+        object DBDateEdit4: TRxDBDateEdit
+          Left = 632
+          Height = 23
+          Top = 8
+          Width = 125
+          ButtonWidth = 23
+          DialogTitle = 'Select a Date'
+          Enabled = False
+          Glyph.Data = {
+            76060000424D7606000000000000360000002800000014000000140000000100
+            2000000000004006000064000000640000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            00000000000000000000000000000000000000000000C9C2BB26C6C3BD55C6C3
+            BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3BD55C6C3
+            BD55C6C3BD55C6C3BD55C7C0BA25000000000000000000000000000000000000
+            0000C5C1BD3AD4D0CBFCDDDAD5FFDEDBD6FFDEDBD6FFDEDBD6FFDEDBD6FFDEDB
+            D6FFDEDBD6FFDEDBD6FFDEDBD6FFDEDBD6FFDEDBD6FFDDDAD5FFD4D1CBFCC4C4
+            BB3900000000000000000000000000000000DBD8D3A5F1F0ECFFF1F0ECFFF1F0
+            ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+            ECFFF1F0ECFFF1F0ECFFF1F0ECFFDBD8D1A40000000000000000000000000000
+            0000E2E1DDBFF1F0ECFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0
+            CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFF1F0ECFFE2E1
+            DDBF00000000000000000000000000000000E3E0DBC0F1F0ECFFD4D0CBFFD4D0
+            CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4
+            DFFFD4D0CBFFD4D0CBFFF1F0ECFFE3E0DBC00000000000000000000000000000
+            0000E3E0DBC0F1F0ECFFE6E4DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4
+            DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4DFFFE6E4DFFFF1F0ECFFE3E0
+            DBC000000000000000000000000000000000E3E0DBC0F1F0ECFFCECBC5FFCECB
+            C5FFE3E1DCFFC7C3BDFFE3E1DCFFCECBC5FFCECBC5FFE3E1DCFFC7C3BDFFE3E1
+            DCFFCECBC5FFCECBC5FFF1F0ECFFE3E0DBC00000000000000000000000000000
+            0000E3E0DBC0F1F0ECFFE6E4DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4
+            DFFFE6E4DFFFEDEBE7FFE3E1DCFFEDEBE7FFE6E4DFFFE6E4DFFFF1F0ECFFE3E0
+            DBC000000000000000000000000000000000E3E0DBC0F1F0ECFFD4D0CBFFD4D0
+            CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4
+            DFFFD4D0CBFFD4D0CBFFF1F0ECFFE3E0DBC00000000000000000000000000000
+            0000E3E0DBC0F1F0ECFFD4D0CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0
+            CBFFD4D0CBFFE6E4DFFFCECBC5FFE6E4DFFFD4D0CBFFD4D0CBFFF1F0ECFFE3E0
+            DBC000000000000000000000000000000000E3E0DBC0F1F0ECFFF1F0ECFFF1F0
+            ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+            ECFFF1F0ECFFF1F0ECFFF1F0ECFFE3E0DBC00000000000000000000000000000
+            0000ACAFDFD19099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099
+            E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FF9099E9FFACAF
+            DFD100000000000000000000000000000000828AE1E03C4CE7FF3C4CE7FF3C4C
+            E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+            E7FF3C4CE7FF3C4CE7FF3C4CE7FF828AE1E00000000000000000000000000000
+            0000828AE1E03B4CE6FF3040CDFF3040CDFF3B4CE6FF3C4CE7FF3C4CE7FF3C4C
+            E7FF3C4CE7FF3C4CE7FF3C4CE7FF3B4CE6FF3040CDFF3040CDFF3B4CE6FF828A
+            E1E000000000000000000000000000000000818AE3D73948DFFF8E90BEFF8D8F
+            BFFF3848E0FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3948
+            DFFF8C8FBEFF8B8FBEFF3848E0FF818AE4D60000000000000000000000000000
+            0000878EE8863C4BE7FFAEADC1FFAEADC1FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+            E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4BE7FFAEADC1FFAEADC1FF3C4CE7FF878E
+            E7840000000000000000000000000000000000000000878EE886BCBAC2F3BCBA
+            C2F37B85E9B67B85E9B67B85E9B67B85E9B67B85E9B67B85E9B67B85E9B67B85
+            E9B6BCBAC2F3BCBAC2F3858EE984000000000000000000000000000000000000
+            00000000000000000000C7C3BCBCC7C3BDBB0000000000000000000000000000
+            000000000000000000000000000000000000C6C3BCBDC7C3BCBC000000000000
+            0000000000000000000000000000000000000000000000000000C6C6C609BFBF
+            BF08000000000000000000000000000000000000000000000000000000000000
+            0000C6C6C609C6C6C60900000000000000000000000000000000
+          }
+          MaxLength = 10
+          PasswordChar = #0
+          PopupColor = clWindow
+          TabOrder = 8
+          Text = '  /  /    '
+          DataField = 'dataconta'
+          DataSource = dsCtaReceber
+        end
+      end
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 1107
+    AutoSize = True
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBar1'
+    DisabledImages = dbConnect.ImageList1
+    Flat = False
+    HotImages = dbConnect.ImageList1
+    Images = dbConnect.ImageList1
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'ToolButton1'
+      ImageIndex = 8
+      OnClick = ToolButton1Click
+    end
+    object ToolButton2: TToolButton
+      Left = 49
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton2'
+      Style = tbsSeparator
+    end
+    object ToolButton5: TToolButton
+      Left = 57
+      Top = 2
+      Caption = 'ToolButton5'
+      ImageIndex = 0
+      OnClick = ToolButton5Click
+    end
+    object ToolButton6: TToolButton
+      Left = 105
+      Top = 2
+      Caption = 'ToolButton6'
+      ImageIndex = 1
+      OnClick = ToolButton6Click
+    end
+    object ToolButton8: TToolButton
+      Left = 353
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton8'
+      Style = tbsSeparator
+    end
+    object ToolButton9: TToolButton
+      Left = 611
+      Top = 2
+      Caption = 'ToolButton9'
+      ImageIndex = 5
+      OnClick = ToolButton9Click
+    end
+    object ToolButton10: TToolButton
+      Left = 606
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton10'
+      Style = tbsDivider
+    end
+    object ToolButton12: TToolButton
+      Left = 361
+      Top = 2
+      Caption = 'ToolButton12'
+      ImageIndex = 7
+      OnClick = ToolButton12Click
+    end
+    object ToolButton11: TToolButton
+      Left = 153
+      Hint = 'Post'
+      Top = 2
+      Caption = 'Gravar alteraçoes'
+      ImageIndex = 2
+      OnClick = ToolButton11Click
+    end
+    object ToolButton13: TToolButton
+      Left = 409
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton13'
+      Style = tbsDivider
+    end
+    object ToolButton3: TToolButton
+      Left = 209
+      Hint = 'Fazer uma copia da conta atual'
+      Top = 2
+      Caption = 'ToolButton3'
+      ImageIndex = 9
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = ToolButton3Click
+    end
+    object btJuntasContas: TSpeedButton
+      Left = 257
+      Height = 48
+      Hint = 'Agrupar contas selecionadas e gerar uma só'
+      Top = 2
+      Width = 48
+      Glyph.Data = {
+        36100000424D3610000000000000360000002800000020000000200000000100
+        2000000000000010000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000FF0000000000000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000FF0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000FF0000000000000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000FF0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000FF0000000000000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000FF0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000FF0000000000000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000FF0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000FF0000000000000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000FF0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000FF0000000000000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000FF0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF00000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000FF00000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000FF00000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000FF00000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000FF00000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000FF00000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000FF00000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000FF00000000000000000000000000000000000000000000
+        00000000000000000000000000FF000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000FF00000000000000000000000000000000000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000000000000000000000000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000FF0000
+        000000000000000000FF000000FF000000000000000000000000000000000000
+        000000000000000000FF000000000000000000000000000000FF000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000FF0000
+        000000000000000000FF000000FF000000000000000000000000000000000000
+        000000000000000000FF000000000000000000000000000000FF000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000FF0000
+        000000000000000000FF000000FF000000000000000000000000000000000000
+        000000000000000000FF000000000000000000000000000000FF000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000FF0000
+        000000000000000000FF000000FF000000000000000000000000000000000000
+        000000000000000000FF000000000000000000000000000000FF000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        0000000000000000000000000000000000000000000000000000000000FF0000
+        000000000000000000FF000000FF000000000000000000000000000000000000
+        000000000000000000FF000000000000000000000000000000FF000000000000
+        00000000000000000000000000000000000000000000000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000000000000000000000000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      ShowHint = True
+      ParentShowHint = False
+      OnClick = btJuntasContasClick
+    end
+    object ToolButton4: TToolButton
+      Left = 201
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton4'
+      Style = tbsSeparator
+    end
+    object SpeedButton5: TSpeedButton
+      Left = 414
+      Height = 48
+      Hint = 'Efetuar quitação da conta'
+      Top = 2
+      Width = 48
+      Glyph.Data = {
+        36100000424D3610000000000000360000002800000020000000200000000100
+        2000000000000010000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF006CB5
+        72006CB572006CB572006CB572006BB571006BB4710068B16E8D64AF6A3964AF
+        6A0068B16C006BB5711466B26C0064AF68005EAB63005EAB63005BA9600059A8
+        5F0053A3580055A55A004EA0540051A256004BA052004C9E51004FA25500459C
+        4A004B9E5100439A48004B9E5100469B4B004CA04F00FFFFFF00FFFFFF006BB4
+        72006BB472006BB472006BB472006BB4710069B26F226FB875FF76BB7AFF60AC
+        66C664AE687464AE69FF63B0696E62AE67005EAB63005EAB63005BA9600059A8
+        5F0053A3580055A55A004EA0540051A256004BA052004C9E51004FA25500459C
+        4A004B9E5100439A48004B9E5100469B4B004B9F5100FFFFFF00FFFFFF006EB7
+        73006EB773006EB773006EB773006CB6710061AE67B59CD4A0FFCEF2D3FF81C3
+        87FF66AF6BFFA6DAABFF6FB874FF5EAB63645CAA61005DAA62005BA9600059A8
+        5F0053A3580055A55A004EA0540051A256004BA052004C9E51004FA25500459C
+        4A004B9E5100439A48004B9E5100469B4B004B9F5100FFFFFF00FFFFFF006DB7
+        72006DB772006DB772006DB672006AB56F0C6FB774FFC1EBC6FF90D098FF68B2
+        6EFFABDDB0FFC0ECC6FFB6E3BAFF6AB26FFF57A75C815BA960005AA85F0059A8
+        5F0053A3580055A55A004EA0540051A256004BA052004C9E51004FA25500459C
+        4A004B9E5100439A48004B9E5100469B4B004B9F5100FFFFFF00FFFFFF0071B9
+        770071B9770071B9770070B8760066B16C979AD29FFFA4DBAAFF60AD66FFA9DA
+        AEFFB2E5B8FF81C789FFAEE3B6FFB7E3BAFF65AE6AFF55A45AFF57A65C8157A7
+        5D0051A2560054A559004DA0530051A256004BA052004C9E51004FA25500459C
+        4A004B9E5100439A48004B9E5100469B4B004B9F5100FFFFFF00FFFFFF0071B9
+        770071B9770070B976006FB8750075BC7BFF9AD4A0FF6AB270FFA7DAACFFB2E3
+        B8FF8FD297FF8FD297FF8FD297FFB0E3B7FFB4E1B8FF61AD65FF5AA85FFF60AC
+        65FF4B9F519951A255114B9E51004FA155004B9F52004C9E51004FA25500459C
+        4A004B9E5100439A48004B9E5100469B4B004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA79006FB7767B74BA7AFF70B876FFAADBAEFFB1E4B8FF95D8
+        9DFF97D89FFF98D8A0FF97D89FFF94D69DFFB0E5B9FFB2DFB8FF60AB65FF88C9
+        8EFF95CE9AFF59A75DFF449949B74A9E4F2B489D4E004A9D4F004EA15400459C
+        4A004B9E5100439A48004B9E5100469B4B004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790072B978006BB571FF6CB572FFACDDB1FFB2E4B9FF95D89EFF9AD9
+        A2FF9BDBA3FF99D9A1FF98D8A0FF97D89FFF94D69EFFB0E5B8FFAFDFB5FF57A6
+        5CFF95D09AFFC6EFCAFF95CF9AFF5DA862FF3F9845D1449949424B9F5100439B
+        48004A9E4F00439A48004B9E5100469B4B004B9F5100FFFFFF00FFFFFF0073BA
+        790070B876006CB672666EB674FFAEDEB4FFB1E4B9FF95D89DFF9AD9A3FF81C7
+        89FF77C27FFF97D8A0FF99D9A1FF98D8A0FF98D8A0FF96D89EFFB2E5B9FFAFDF
+        B5FF4C9F53FF75BE7BFFC2EFC8FFC3ECC7FF9CD3A1FF62AC67FF3D9642E73D97
+        425B469B4B00419846004A9E4F00459B4A004B9F5100FFFFFF00FFFFFF0072B9
+        78006FB6754472B977FFADDDB2FFB2E4B9FF8FD297FF97D89FFF9BDBA3FF77C2
+        7EFF6CB972FF96D79FFF9BDBA3FF9ADAA2FF94D69CFF8ED296FF8DD396FFB1E4
+        B8FFB1E1B7FF4B9E4FFF6AB871FFA8E2B1FFB6E7BCFFC1EAC6FFA4D9A9FF68B1
+        6CFF3D9442F93A943F75459B4A00449A49004B9F5100FFFFFF00FFFFFF0072B9
+        780B6AB470FFA5DAAAFFBFEBC5FF81C789FF8FD297FF97D89FFF99D8A1FF97D8
+        A0FF97D69DFF9BDBA4FF96D69EFF7FC786FF7CC484FF87C88CFF81C588FF79C3
+        81FFA4DBAAFFB1E0B8FF4B9E52FF6DB974FFA1DEAAFF9DDCA4FFADE3B6FFC2EB
+        C6FFADDDB0FF71B776FF409945FF3E964395499E4E1BFFFFFF00FFFFFF0072B9
+        78006FB775EA78BC7EFFB2E1B7FFABE2B4FF8FD297FF97D89FFF98D8A0FF9AD8
+        A2FF9BDAA3FF95D89EFF77C27EFF9ED4A3FFC6E9CBFFC8EBCEFFBCE6C2FFA5DB
+        ABFF7BC384FF9ED8A6FFB8E3BCFF4B9E51FF6CB973FFA3E0ACFF98DAA1FF98D9
+        A1FFA9E1B1FFC0ECC6FFBAE6BFFF70B875FF419746F2FFFFFF00FFFFFF0071B8
+        773F78BD7EFF85C58BFF72BA78FFB5E2B9FFADE2B4FF93D69DFF97D89FFF98D8
+        A0FF9ADAA2FF7CC583FFA3D6AAFFE5F7E9FFD6F1DAFFC2E6C7FFBEE6C5FFBFE8
+        C5FFADDFB5FF7AC381FFA6DDADFFB6E2BBFF499B4DFF6BB771FFA4E0AEFF9ADA
+        A2FF96D79EFF98D9A1FFCBF2CFFF6FB674FF3E97435DFFFFFF00FFFFFF0072BA
+        780772B9786C73BA79ED6AB571FF73B978FFB5E2B9FFADE2B4FF93D69DFF98D8
+        A0FF91D59AFF7EC484FFE4F6E8FFE5F7E8FFB8DDBAFFA2D1A4FFA5D3A9FFB8E1
+        BEFFC1EAC7FF97D29EFF7DC684FFB2E6BAFFB4E1B9FF469A4AFF6AB770FFA5E0
+        AEFF98DAA0FFACE2B4FFA9DBADFF3C9541FA469D4B00FFFFFF00FFFFFF0073BA
+        790073BA790072B9780071B977586AB470E172B978FFB8E2BBFFACE1B4FF95D8
+        9EFF8AD192FF8DCB94FFF8FFF9FFDDF1DEFFA1D0A5FFA7D3A8FFA4D2A7FFABD6
+        AEFFC7ECCCFFABDDB1FF7CC485FF97D89FFFB1E5B9FFB0DEB6FF409645FF6BB9
+        72FFA4E1AEFFC4EFCAFF70B775FF3A933F71489E4D00FFFFFF00FFFFFF0073BA
+        790073BA790073BA790072BA780072B9780067B26D6A71B877FFB7E3BCFFAEE3
+        B6FF88D191FF89CA90FFFFFFFFFFE7F6EAFFA4D2A6FFA2D0A4FFA1CFA2FFB2DB
+        B7FFD1EFD6FFAEDDB5FF7DC484FF98D9A1FF94D79DFFB1E5B9FFAFDEB5FF3C94
+        42FF78BF7EFFBDE8C2FF439947FF459B4A00499D4E00FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790073BA79006BB5710065AF6C656FB775FFB8E3
+        BCFFA9E0B0FF72C07BFFE7F5E8FFFFFFFFFFD8EDDAFFB1D8B2FFB8DDBBFFD5EF
+        D9FFDDF4DFFF95D09BFF83C98AFF9ADAA2FF97D89FFF94D79CFFB1E5B9FFAEDE
+        B2FF489B4CFF51A156FF40984574489C4D00499D4E00FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB6730069B2700063AF68666DB5
+        73FFB8E5BEFF98D69EFF88C990FFFDFEFEFFFFFFFFFFF8FEF9FFF2FCF5FFEFFC
+        F2FFBAE0BFFF77C07EFF96D69EFF99D9A1FF98D8A0FF97D89FFF94D79EFFB1E5
+        B9FFB2E0B7FF459B4AFF3D954263459B4A004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006BB4710068B16C0060AC
+        66656AB471FFB8E4BDFF91D299FF7FC387FFC6E4C8FFE2F2E4FFD4ECD7FFA1D4
+        A6FF78C07FFF8FD297FF9BDBA5FF9DDBA5FF9AD9A2FF98D8A0FF97D89FFF87CC
+        8FFFB1E6B9FFBAE6BFFF58A65DFF439A487E4B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB5720069B26E0064AF
+        6A005EAB646368B26EFFB7E5BDFFA1DBA7FF73C37CFF76C27EFF77C280FF7FCA
+        88FF95D69DFF9CDBA4FF95D69DFF83C989FF95D59DFF9AD9A2FF97D89FFF87CC
+        8FFFACE3B4FFC3ECC8FF5EAA63FF439A48984B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB572006AB46F0066B0
+        6C0062AE68005CA9616366B16BFFB8E5BDFFB0E5B9FF94D79EFF97D8A0FF9ADA
+        A2FF99D9A1FF9CDBA5FF85CA8CFF5FAE65FF85CA8DFF9CDCA4FF94D79DFFADE2
+        B5FFBDE7C1FF57A55CFF3D944282459B4A004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB572006AB46F0067B1
+        6D0064AF6A0060AC65005AA85F6264AE68FFB6E3BBFFAFE3B7FF96D79EFF97D8
+        9FFF98D8A0FF9AD8A2FF96D79EFF87CC8FFF96D79EFF97D79FFFADE3B5FFBDE6
+        C1FF56A55BFF3A943F7F42984700479C4C004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB572006AB46F0067B1
+        6D0065B06B0062AD67005EAB630056A65C6060AB66FFB6E1BAFFAFE3B7FF95D7
+        9EFF97D89FFF98D8A0FF9AD8A2FF9CDAA4FF97D79FFFADE3B5FFBDE6C1FF55A5
+        5AFF3A943F7D41984600449A4900489D4D004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB572006AB46F0067B1
+        6D0065B06B0063AE680060AC65005BA9610054A55A625FAC63FFB7E3BCFFAFE3
+        B7FF95D69EFF97D89FFF97D89FFF94D79CFFADE2B5FFBEE8C2FF57A65CFF3A94
+        3F8041984600439A4800459A4A00489D4D004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB572006AB46F0067B1
+        6D0065B06B0063AE680061AD66005DAA630059A85F0052A2576E5FAB64FFB9E3
+        BCFFAFE3B6FF87CC8FFF87CC8FFFABE2B2FFBFE9C3FF5BA860FF3D95428A4198
+        4600449A4900449B4900459A4A00489D4D004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB572006AB46F0067B1
+        6D0065B06B0063AE680061AD66005EAB64005BA9610057A65C004DA0546E5DAA
+        63FFB8E4BCFFAEE4B5FFAAE1B1FFBEE9C3FF5CAA63FF3D96428A43994800439A
+        4800459B4A00449B4900459A4A00489D4D004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB572006AB46F0067B1
+        6D0065B06B0063AE680061AD66005EAB64005CAA620059A75E0054A45A004B9F
+        516D5BA960FFBCE6C1FFC3ECC9FF5FAA64FF40974588449A4900469B4B00449B
+        4900459B4A00449B4900459A4A00489D4D004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB572006AB46F0067B1
+        6D0065B06B0063AE680061AD66005EAB64005CAA62005AA85F0056A55C0052A3
+        56004A9F516C62AD67FF65AE6AFF439A4A8A469B4B00479C4C00479C4C00449B
+        4900459B4A00449B4900459A4A00489D4D004B9F5100FFFFFF00FFFFFF0073BA
+        790073BA790073BA790073BA790074BA7A006DB773006CB572006AB46F0067B1
+        6D0065B06B0063AE680061AD66005EAB64005CAA62005AA85F0057A65D0054A4
+        590051A257004DA054844C9F529D499E4F00499D4E00479D4C00479C4C00449B
+        4900459B4A00449B4900459A4A00489D4D004B9F5100FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      ShowHint = True
+      ParentShowHint = False
+      OnClick = SpeedButton5Click
+    end
+    object btDividirConta: TSpeedButton
+      Left = 305
+      Height = 48
+      Hint = 'Agrupar contas selecionadas e gerar uma só'
+      Top = 2
+      Width = 48
+      Glyph.Data = {
+        36100000424D3610000000000000360000002800000020000000200000000100
+        2000000000000010000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000180000
+        001800000018000000180000001800000018000000180000001800000017FFFF
+        FF00FFFFFF000000000B00000018000000180000001800000018000000180000
+        001800000018000000180000000BFFFFFF00FFFFFF0000000017000000180000
+        0018000000180000001800000018000000180000001800000018000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000F8FFFF
+        FF00FFFFFF0000000078000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF00000078FFFFFF00FFFFFF00000000F8000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        006A000000300000003000000030000000300000003000000071000000F8FFFF
+        FF00FFFFFF0000000078000000D9000000300000003000000030000000300000
+        003000000030000000D900000078FFFFFF00FFFFFF00000000F8000000710000
+        0030000000300000003000000030000000300000006A000000FF000000FF0000
+        0048FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000050000000F8FFFF
+        FF00FFFFFF0000000078000000D0FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00000000D000000078FFFFFF00FFFFFF00000000F800000050FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000048000000FF000000FF0000
+        0048FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000050000000F8FFFF
+        FF00FFFFFF0000000078000000D0FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00000000D000000078FFFFFF00FFFFFF00000000F800000050FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000048000000FF000000FF0000
+        0048FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000050000000F8FFFF
+        FF00FFFFFF0000000078000000D0FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00000000D000000078FFFFFF00FFFFFF00000000F800000050FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000048000000FF000000FF0000
+        0048FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000050000000F8FFFF
+        FF00FFFFFF0000000078000000D0FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00000000D000000078FFFFFF00FFFFFF00000000F800000050FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000048000000FF000000FF0000
+        00C6000000B0000000B2000000DC000000B2000000B0000000C9000000F8FFFF
+        FF00FFFFFF0000000078000000F1000000B0000000B0000000C7000000C90000
+        00B0000000B0000000F100000078FFFFFF00FFFFFF00000000F8000000C90000
+        00B0000000B1000000DC000000B3000000B0000000C6000000FF000000980000
+        009800000098000000A8000000FF000000A5000000980000009800000093FFFF
+        FF00FFFFFF0000000047000000980000009800000098000000D9000000D90000
+        0098000000980000009800000047FFFFFF00FFFFFF0000000093000000980000
+        0098000000A5000000FF000000A8000000980000009800000098FFFFFF00FFFF
+        FF00FFFFFF0000000028000000FF00000020FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0000000020000000FF00000028FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0000000028000000FF00000020FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0000000020000000FF00000028FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0000000028000000FF00000020FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0000000020000000FF00000028FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0000000028000000FF00000020FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0000000020000000FF00000028FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0000000028000000FF00000020FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0000000020000000FF00000028FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0000000028000000FF00000020FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0000000020000000FF00000028FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0000000028000000FF000000740000006000000060000000600000
+        00600000006000000060000000600000006000000060000000C4000000C40000
+        0060000000600000006000000060000000600000006000000060000000600000
+        006000000074000000FF00000028FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0000000024000000E8000000E8000000E8000000E8000000E80000
+        00E8000000E8000000E8000000E8000000E8000000E8000000F6000000F60000
+        00E8000000E8000000E8000000E8000000E8000000E8000000E8000000E80000
+        00E8000000E8000000E800000024FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A0000000A0FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0000000084000000B0000000B0000000B0000000B0000000E2000000E10000
+        00B0000000B0000000B0000000B000000084FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000C0000000CF000000980000009800000098000000B3000000B10000
+        00980000009800000098000000CF000000C0FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000C000000088FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0000000088000000C0FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000C000000088FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0000000088000000C0FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000C000000088FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0000000088000000C0FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000C000000088FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0000000088000000C0FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000C0000000A900000048000000480000004800000048000000480000
+        00480000004800000048000000A9000000C0FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000C0000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000C0FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      ShowHint = True
+      ParentShowHint = False
+      OnClick = btDividirContaClick
+    end
+    object btBoleto: TSpeedButton
+      Left = 462
+      Height = 48
+      Hint = 'Gera e imprime boleto'
+      Top = 2
+      Width = 48
+      Glyph.Data = {
+        360F0000424D360F000000000000360000002800000028000000180000000100
+        200000000000000F000064000000640000000000000000000000EAEAEAFFD0D0
+        D1FFD7D7D8FFD6D6D6FFD3D3D3FFD2D2D2FFD3D3D3FFD3D3D3FFD2D2D2FFD2D2
+        D2FFD2D2D2FFD2D2D2FFD3D3D3FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2
+        D2FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2
+        D2FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2D2FFD2D2D2FFD3D3D3FFD2D2
+        D2FFD2D2D2FFD4D4D4FFDCDCDCFFDADADBFFD1D1D1FFEBEBEBFFCFCFD0FFF1F1
+        F1FFDCDCDDFFE3E3E3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFDFDFDFFB0B0B0FFCCCCCCFFECECECFFCECECFFFD4D4D5FFAAAA
+        AAFF6C6C6EFF868685FFFFFFFFFF777779FF5C5C5DFF626262FF9B9B9BFFFFFF
+        FFFFFFFFFFFFA3A3A3FF5F5F5FFF636364FFD8D8D8FFFFFFFFFFB8B8B8FF7070
+        71FF757576FF696968FFF4F4F5FF6C6C6CFF767676FF696969FFDDDDDDFFFFFF
+        FFFF9B9B9BFF979797FFF7F7F8FFFFFFFFFFDFDFE0FF646464FF5E5E5EFF9B9B
+        9CFFFFFFFFFFE8E8E7FF000000FF414143FFA1A1A3FFD2D2D3FFD6D6D6FFADAD
+        ADFF707072FF898989FFFFFFFFFF050507FF1A1A1CFF323234FF000000FFD3D3
+        D3FFD2D2D2FF000000FF171718FF000002FF090909FFFFFFFFFF787879FF0000
+        00FF030305FF000000FFE6E6E7FF000000FF0B0B0DFF000000FFC3C3C3FFFFFF
+        FFFF464646FF3F3F40FFF2F2F4FFFFFFFFFF0C0C0CFF000000FF171719FF0000
+        00FFBEBEBDFFF4F4F4FF000004FF565657FFACACADFFD4D4D5FFD6D6D6FFAEAE
+        AEFF717174FF8A8A8AFFFFFFFFFF101013FF545455FFFEFEFEFF161617FFA7A7
+        A8FF555555FF272728FFF7F7F7FFB3B3B3FF000000FFC7C7C8FF89898AFF3333
+        33FFE3E3E3FFFFFFFFFFB8B8B9FF0F0F0FFFD5D5D5FFFFFFFFFFFFFFFFFFFDFD
+        FDFF525252FF49494BFFFDFDFEFFCDCDCCFF000000FFA7A7A8FFFFFFFFFF2E2E
+        31FF323234FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF717174FF8A8A8AFFFFFFFFFF151518FF363638FF616164FF000000FFFFFF
+        FFFF0B0B0EFF484849FFFFFFFFFFF2F2F2FF000000FF8C8C8DFF939394FF2C2C
+        2DFFE8E8EAFFFFFFFFFFB6B6B7FF000000FF555556FF8C8C8DFFFBFBFCFFFDFD
+        FDFF525252FF49494AFFFFFFFFFF8F8F90FF000000FFE6E6E6FFFFFFFFFF4B4B
+        4CFF000000FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF717174FF8A8A8AFFFFFFFFFF19191CFF1D1D20FF1C1C1DFF4F4F52FFFFFF
+        FFFF07070AFF464647FFFFFFFFFFEEEEEEFF000000FF8F8F91FF939392FF2C2C
+        2DFFE6E6E7FFFFFFFFFFB8B8B9FF000000FF252526FF545455FFF7F7F8FFFFFF
+        FFFF545454FF4B4B4CFFFFFFFFFF949495FF000000FFE1E1E2FFFFFFFFFF4B4B
+        4DFF000000FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF717174FF8A8A8AFFFFFFFFFF101013FF606062FFAEAEAFFF000000FFFFFF
+        FFFF3F3F41FF242426FFFAFAFAFFB3B3B4FF000000FFCACACAFF898989FF2C2C
+        2EFFE6E6E7FFFFFFFFFFB4B4B5FF070708FFBCBCBDFFF2F2F2FFFFFFFFFFF4F4
+        F4FF535354FF4B4B4DFFF6F6F6FFD3D3D4FF000000FFA7A7A7FFFFFFFFFF2C2C
+        2DFF2F2F31FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF717174FF8A8A8AFFFFFFFFFF09090DFF171719FF222225FF000000FFF5F5
+        F5FFCDCDCEFF000000FF242425FF0D0D10FF000000FFFFFFFFFF737373FF2424
+        25FFE4E4E4FFFFFFFFFFB1B1B2FF000000FF222224FF171716FFBABABBFF1212
+        12FF0C0C0EFF0C0C0EFF0D0D0EFFFFFFFFFF000000FF09090BFF272728FF0000
+        00FFC4C4C5FFF3F3F3FF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF717174FF8A8A8AFFFFFFFFFF585859FF2E2E31FF454546FFD7D7D8FFFFFF
+        FFFFFFFFFFFFBEBEBFFF303032FF49494AFFF0F0F1FFFFFFFFFF9B9B9CFF6262
+        63FFF0F0F1FFFFFFFFFFD0D0D0FF4B4B4DFF5E5E60FF474749FFDCDCDCFF4646
+        48FF606062FF626264FF424243FFF5F5F5FFF6F6F7FF4E4E50FF2F2F31FFB7B7
+        B8FFFFFFFFFFEBEBEAFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF717174FF8E8E8DFFE9E9E9FFFFFFFFFFFFFFFFFFFFFFFFFFF6F6F6FFFDFD
+        FDFFEAEAEAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE9E9E9FFFFFFFFFFFFFF
+        FFFFF4F4F4FFFFFFFFFFF0F0F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFFFBFBFBFFFFFFFFFFFFFFFFFFFFFF
+        FFFFE8E8E9FFEEEEEDFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF707073FFA2A2A3FF787879FFE1E1E1FF78787AFFA5A5A5FF5C5C5DFFCECE
+        CFFF343434FFEDEDEDFF969696FFBDBDBDFFFFFFFFFF2C2C2DFFA3A3A4FFBBBB
+        BBFF747477FFFFFFFFFF272729FF939394FFE7E7E7FF909092FFFFFFFFFF5B5B
+        5EFFFFFFFFFF999999FF535355FFC3C3C5FF9F9FA0FFE4E4E5FF3E3E3FFFD6D6
+        D5FF2F2F33FFFFFFFEFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF707072FFABABACFF474748FFD8D8D8FF4C4C4DFF878787FF252526FFC0C0
+        C1FF000000FFE9E9E9FF717173FFA7A7A7FFFFFFFFFF000000FF858587FFA4A4
+        A5FF474749FFFFFFFFFF000000FF6E6E70FFDFDFE0FF6B6B6DFFFFFFFFFF2424
+        27FFFFFFFFFF777777FF19191BFFB0B0B2FF7F7F7FFFDDDDDDFF000000FFC5C5
+        C5FF0E0E10FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF707072FFAAAAABFF505051FFDCDCDDFF565657FF8B8B8AFF2E2E30FFC7C7
+        C8FF000000FFEDEDECFF78787AFFABABACFFFFFFFFFF000000FF8E8E8FFFAAAA
+        ABFF515152FFFFFFFFFF000000FF777778FFE1E1E2FF737375FFFFFFFFFF2F2F
+        32FFFFFFFFFF7B7B7AFF242425FFB6B6B7FF858586FFE0E0E0FF060608FFC8C8
+        C7FF171718FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF707072FFAAAAABFF505051FFDBDBDCFF555556FF8B8B8AFF2E2E2FFFC7C7
+        C8FF000000FFEDEDECFF78787AFFABABACFFFFFFFFFF000000FF8E8E8FFFAAAA
+        ABFF505052FFFFFFFFFF000000FF777778FFE1E1E2FF737375FFFFFFFFFF2F2F
+        31FFFFFFFFFF7B7B7AFF232324FFB6B6B7FF858586FFE0E0E0FF060607FFC8C8
+        C7FF171718FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF707072FFAAAAABFF505051FFDBDBDCFF555556FF8B8B8AFF2E2E2FFFC7C7
+        C8FF000000FFEDEDECFF78787AFFABABACFFFFFFFFFF000000FF8E8E8FFFAAAA
+        ABFF505052FFFFFFFFFF000000FF777778FFE1E1E2FF737375FFFFFFFFFF2F2F
+        31FFFFFFFFFF7B7B7AFF232324FFB6B6B7FF858586FFE0E0E0FF060607FFC8C8
+        C7FF171718FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF707072FFAAAAABFF505051FFDBDBDCFF555556FF8B8B8AFF2E2E2FFFC7C7
+        C8FF000000FFEDEDECFF78787AFFABABACFFFFFFFFFF000000FF8E8E8FFFAAAA
+        ABFF505052FFFFFFFFFF000000FF777778FFE1E1E2FF737375FFFFFFFFFF2F2F
+        31FFFFFFFFFF7B7B7AFF232324FFB6B6B7FF858586FFE0E0E0FF060607FFC8C8
+        C7FF171718FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF707072FFAAAAABFF505051FFDBDBDCFF555556FF8B8B8AFF2E2E2FFFC7C7
+        C8FF000000FFEDEDECFF78787AFFABABACFFFFFFFFFF000000FF8E8E8FFFAAAA
+        ABFF505052FFFFFFFFFF000000FF777778FFE1E1E2FF737375FFFFFFFFFF2F2F
+        31FFFFFFFFFF7B7B7AFF232324FFB6B6B7FF858586FFE0E0E0FF060607FFC8C8
+        C7FF171718FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF707072FFAAAAABFF505051FFDBDBDCFF555556FF8B8B8AFF2E2E2FFFC7C7
+        C8FF000000FFEDEDECFF78787AFFABABACFFFFFFFFFF000000FF8E8E8FFFAAAA
+        ABFF505052FFFFFFFFFF000000FF777778FFE1E1E2FF737375FFFFFFFFFF2F2F
+        31FFFFFFFFFF7B7B7AFF232324FFB6B6B7FF858586FFE0E0E0FF060607FFC8C8
+        C7FF171718FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFAEAE
+        AEFF707072FFAAAAABFF505051FFDBDBDCFF555556FF8B8B8AFF2E2E2FFFC7C7
+        C8FF000000FFEDEDECFF78787AFFABABACFFFFFFFFFF000000FF8E8E8FFFAAAA
+        ABFF505052FFFFFFFFFF000000FF777778FFE1E1E2FF737375FFFFFFFFFF2F2F
+        31FFFFFFFFFF7B7B7AFF232324FFB6B6B7FF858586FFE0E0E0FF060607FFC8C8
+        C7FF171718FFFFFFFFFF000004FF565657FFABABACFFD4D4D5FFD6D6D6FFADAD
+        ADFF6F6F71FFAAAAABFF505050FFDBDBDCFF545455FF8B8B8AFF2E2E2FFFC6C6
+        C7FF000000FFECECECFF777779FFABABACFFFFFFFFFF000000FF8D8D8EFFA9A9
+        AAFF4F4F51FFFFFFFFFF000000FF767677FFE1E1E2FF727274FFFFFFFFFF2E2E
+        30FFFFFFFFFF7B7B7AFF232324FFB5B5B7FF848485FFDFDFE0FF050507FFC8C8
+        C7FF151517FFFFFFFFFF000002FF555556FFABABACFFD3D3D4FFD5D5D5FFA7A7
+        A7FF666667FFA2A2A2FF454545FFD5D5D5FF49494BFF818181FF1F1F21FFBDBD
+        BEFF000000FFE8E8E7FF6F6F71FFA6A6A7FFFFFFFFFF000000FF828283FFA1A1
+        A2FF454546FFFFFFFFFF000000FF6B6B6EFFDEDEDEFF6A6A6BFFFFFFFFFF2222
+        25FFFFFFFFFF707071FF141416FFAEAEAFFF7D7D7EFFDBDBDBFF000000FFC1C1
+        C1FF07070AFFFFFFFFFF000000FF484849FFA4A4A5FFD2D2D3FFCFCFD0FFEFEF
+        EFFFD9D9D9FFEAEAEAFFCFCFCFFFF9F9F9FFD1D1D1FFE1E1E1FFC4C4C4FFF3F3
+        F3FFB2B2B3FFFFFFFFFFDBDBDCFFEBEBECFFFFFFFFFFAFAFB0FFE1E1E2FFEAEA
+        EAFFCFCFCFFFFFFFFFFFB1B1B2FFDBDBDBFFFCFCFCFFD9D9DAFFFFFFFFFFC4C4
+        C5FFFFFFFFFFDBDBDCFFC0C0C1FFEEEEEEFFDFDFE0FFFBFBFBFFB7B7B8FFF4F4
+        F4FFBEBEBEFFFFFFFFFFB7B7B7FFD1D1D1FFEEEEEFFFCECED0FFEAEAEAFFD0D0
+        D1FFD8D8D9FFD6D6D6FFD8D8D8FFD4D4D4FFD8D8D8FFD7D7D7FFDADADAFFD6D6
+        D6FFDBDBDBFFD4D4D4FFD7D7D7FFD5D5D5FFD3D3D3FFDCDCDCFFD7D7D7FFD6D6
+        D6FFD8D8D8FFD3D3D3FFDCDCDCFFD8D8D8FFD4D4D4FFD7D7D7FFD3D3D3FFD9D9
+        D9FFD3D3D3FFD7D7D7FFDADADAFFD6D6D6FFD7D7D6FFD4D4D4FFDBDBDBFFD5D5
+        D5FFDADADAFFD3D3D3FFDBDBDBFFD9D9DAFFD0D0D1FFEBEBEBFF
+      }
+      ShowHint = True
+      ParentShowHint = False
+      OnClick = btBoletoClick
+    end
+    object btRemessa: TSpeedButton
+      Left = 510
+      Height = 48
+      Hint = 'Gera arquivo de remessa para banco'
+      Top = 2
+      Width = 48
+      Glyph.Data = {
+        36100000424D3610000000000000360000002800000020000000200000000100
+        2000000000000010000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000009884
+        5B199D865C379F885F389F885F389F885F389F885F389F885F389F885F389F88
+        5F389F885F389F885F389F885F389F885F389F885F389F885F389F885F389F88
+        5F389F885F389F885F389F885F389F885F389F885F389F885F389F885F389F88
+        5F389F885F389F885F389F885F389D865C379F8A5F18000000009D875F669C86
+        5EFC9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFB9D885C639D885EEE9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C885EEC9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EF39D875E699F895C509F895C509D87
+        5C6B9E885CF59E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885E9FA08A5E2E9E875E9C9E875E9CA088
+        5E2B9E875DA49E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9D865C989F895C509E885EFF9E885EFF9D89
+        5D4C9E875E9C9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9D885CCC9E875E7A9C875F539D895D4C9D895D4C9D895D4C9D895D4C9D89
+        5D4C9D895D4C9D895D4C9D895D4C9E87602D9F895C509E885EFF9E885EFF9D89
+        5D4CA08A5E2E9D895D4C9D895D4C9D895D4C9D895D4C9D895D4C9D895D4C9D89
+        5D4C9D895D4C9C875F539D885D7B9E885ECE9E885EFF9E885EFF9C885EF19F87
+        5D55A5875A119C865D689D865C989D875EA09D875EA09D875EA09D875EA09D87
+        5EA09D875EA09D875EA09D875EA09E885D5F9F895C509E885EFF9E885EFF9D89
+        5D4C9E875D629D875EA09D875EA09D875EA09D875EA09D875EA09D875EA09D87
+        5EA09D875EA09D865C989D875F669988660F9D865E599E885EF39B885E369F89
+        5C509C875CEF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9D865C989F895C509E885EFF9E885EFF9D89
+        5D4C9E875E9C9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E865CED9D895D4C9E885C3A9E895B3D9C86
+        5EFC9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E865CB6998C59149F865F489F865F489B8D
+        63129E885EBB9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFB9F885F389D865DC79E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E875CBE9E875DA49E875DA49D88
+        5DBF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885CC19E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFB9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9D865CD49E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885ED09E87602D9E86
+        5EC39C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C88
+        5CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C88
+        5CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C88
+        5CE49C885CE49C885CE49C885CE49C885CE49E865EC39C855C2C000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000999966059F7F5F08FFFF0001000000000000000000000000000000000000
+        000000000000FFFF00019F7F5F08999966050000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00009C885EA89E885EFF9F8A5F30000000000000000000000000000000000000
+        0000000000009C895D349E885EFF9E875DA40000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00009E885E979E885EFF9E865DB49E875E9C9E875E9C9E875E9C9E875E9C9E87
+        5E9C9E875E9C9E865CB69E885EFF9D885E920000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000A1865D269E885EE89E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EE6A08A5E230000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000A28B5C0B9C865D399D885D3C9D885D3C9D885D3C9D885D3C9D88
+        5D3C9D885D3C9C865D39997F660A000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      ShowHint = True
+      ParentShowHint = False
+      OnClick = btRemessaClick
+    end
+    object btRemessaRetorno: TSpeedButton
+      Left = 558
+      Height = 48
+      Hint = 'Baixa contas a partir do arquivo de retorno do banco'
+      Top = 2
+      Width = 48
+      Glyph.Data = {
+        36100000424D3610000000000000360000002800000020000000200000000100
+        2000000000000010000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000A000000640000006200000009000000000000
+        00000000000000000000000000000000000A000000CA000000C5000000009884
+        5B199D865C379F885F389F885F389F885F389F885F389F885F389F885F389F88
+        5F389F885F389F885F389F885F389F885F389F885F389F885F389F885F389F88
+        5F389F885F387B6A4A44090705D3000000FF000000FF0E0B08C19F885F389F88
+        5F389F885F389F885F3899835B3A100D09B9000000FF000000FF9D875F669C86
+        5EFC9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF947F58FF211C13FF000000FF110F0AFF000000FF010100FF9E885EFF9E88
+        5EFF9E885EFF927D56FF322B1EFF000000FF000000FF010100FC9D885EEE9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF937E
+        57FF1F1B12FF000000FF13100BFF897651FF000000FF000000FF8C7853FF7262
+        43FF463C29FF090805FF000000FF000000FF000000FF110F0AFD9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF927E57FF1E1A
+        12FF000000FF14110CFF8A7752FF9E885EFF000000FF000000FF000000FF0000
+        00FF000000FF000000FF2A2419FF453B29FF000000FF322B1EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF917D56FF1D1911FF0000
+        00FF15120CFF8C7853FF9E885EFF9E885EFF000000FF010101FF0D0B08FF231E
+        15FF473D2AFF7D6B4AFF9C865DFF1B1810FF000000FF64563CFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF907C56FF1B1810FF000000FF1613
+        0DFF8C7953FF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF5D5037FF000000FF100D09FF99835BFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF1D1911FF000000FF17140EFF8D7A
+        54FF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF766646FF040302FF000000FF66583DFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF1B1810FF000000FF1A160FFF8F7B
+        55FF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C86
+        5DFF5F5238FF040302FF000000FF3F3625FF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF8F7B55FF1A160FFF000000FF1915
+        0FFF8E7A54FF9E885EFF9E885EFF9E885EFF9A855CFF85734FFF5D5037FF1D19
+        11FF000000FF000000FF3F3625FF9C865CFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EF39D875E697B6A475E090805E00000
+        00FF17130DFE8D7954FF9E885EFF9E885EFF000000FF000000FF000000FF0000
+        00FF0E0C08FF64563CFF9D875DFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885E9FA08A5E2E9E875E9C8A7652A40505
+        03D8000000FF16130DFF8C7853FF9E885EFF000000FF000000FF302A1DFF6254
+        3AFF98835AFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9D865C989F895C509E885EFF9E885EFF7B6B
+        495913100BEC000000FF15120CFF8A7752FF000000FF000000FF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9D885CCC9E875E7A9C875F539D895D4C9D895D4C9D895D4C9D895D4C9D89
+        5D4C9D895D4C9D895D4C9D895D4C9E87602D9F895C509E885EFF9E885EFF9D89
+        5D4C7061423D0A0906DB000000FF060503E9000000FF000000FE9D895D4C9D89
+        5D4C9D895D4C9C875F539D885D7B9E885ECE9E885EFF9E885EFF9C885EF19F87
+        5D55A5875A119C865D689D865C989D875EA09D875EA09D875EA09D875EA09D87
+        5EA09D875EA09D875EA09D875EA09E885D5F9F895C509E885EFF9E885EFF9D89
+        5D4C9E875D628D7954A616120DEB000000FF000000FF211C13E39D875EA09D87
+        5EA09D875EA09D865C989D875F669988660F9D865E599E885EF39B885E369F89
+        5C509C875CEF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9D865C989F895C509E885EFF9E885EFF9D89
+        5D4C9E875E9C9E885EFF968159FF5C4F36FF5C5037FF978259FF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E865CED9D895D4C9E885C3A9E895B3D9C86
+        5EFC9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E865CB6998C59149F865F489F865F489B8D
+        63129E885EBB9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFB9F885F389D865DC79E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E875CBE9E875DA49E875DA49D88
+        5DBF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885CC19E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFB9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9C865EFC9D865CD49E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E885ED09E87602D9E86
+        5EC39C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C88
+        5CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C88
+        5CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C885CE49C88
+        5CE49C885CE49C885CE49C885CE49C885CE49E865EC39C855C2C000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000999966059F7F5F08FFFF0001000000000000000000000000000000000000
+        000000000000FFFF00019F7F5F08999966050000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00009C885EA89E885EFF9F8A5F30000000000000000000000000000000000000
+        0000000000009C895D349E885EFF9E875DA40000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00009E885E979E885EFF9E865DB49E875E9C9E875E9C9E875E9C9E875E9C9E87
+        5E9C9E875E9C9E865CB69E885EFF9D885E920000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000A1865D269E885EE89E885EFF9E885EFF9E885EFF9E885EFF9E885EFF9E88
+        5EFF9E885EFF9E885EFF9E885EE6A08A5E230000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000A28B5C0B9C865D399D885D3C9D885D3C9D885D3C9D885D3C9D88
+        5D3C9D885D3C9C865D39997F660A000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      ShowHint = True
+      ParentShowHint = False
+      OnClick = btRemessaRetornoClick
+    end
+  end
+  object Label12: TLabel
+    Left = 7
+    Height = 15
+    Top = 82
+    Width = 51
+    Caption = 'Descrição'
+    ParentColor = False
+  end
+  object ActionList1: TActionList
+    Images = dbConnect.ImageList1
+    Left = 568
+    Top = 56
+    object acLocalizar: TAction
+      Caption = 'acLocalizar'
+      ImageIndex = 4
+    end
+    object Action1: TAction
+      Caption = 'Action1'
+      ImageIndex = 0
+    end
+    object Action3: TAction
+      Caption = 'Action3'
+      ImageIndex = 1
+    end
+    object Action4: TAction
+      Caption = 'Action4'
+      ImageIndex = 2
+    end
+    object DataSetPost1: TDataSetPost
+      Category = 'Database'
+      Caption = 'Gravar alteraçoes'
+      Hint = 'Post'
+      ImageIndex = 3
+      DataSource = dsCtaReceber
+    end
+  end
+  object qryCtaReceber: TZQuery
+    AfterOpen = qryCtaReceberAfterOpen
+    OnCalcFields = qryCtaReceberCalcFields
+    Connection = dbConnect.ZConnection1
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'SELECT (conta_credito||''-''||pc.descricao)::::varchar(80) as vdescricao_credito,'
+      '       pc.conta as vconta_credito,'
+      '       cr.id, id_nf, documento, cr.descricao, dataconta, cr.data_vencimento, '
+      '       data_pagamento, valor_devido, desconto, juros, valor_pago, observacao, '
+      '       conta_credito, conta_debito, banco_negociado, cr.parcela, total_parcelas, '
+      '       cliente,cr.conta, false as selecionado, b.id as boleto,b.nosso_numero,b.remessa,'
+      '       b.banco,cr.origem'
+      '  FROM contas_receber cr'
+      '  Left Join boleto_contas_receber bc ON bc.contas_receber=cr.id'
+      '  Left Join boleto                b  ON b.id=bc.boleto'
+      '  Left Join plano_contas pc ON cr.conta_credito=pc.id'
+      'Limit 0'
+    )
+    Params = <>
+    Left = 416
+    Top = 208
+    object qryCtaReceberatrazo: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'atrazo'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaRecebervconta_credito: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'vconta_credito'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryCtaReceberid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberid_nf: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_nf'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberdocumento: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'documento'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryCtaReceberdescricao: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object qryCtaReceberdataconta: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'dataconta'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberdata_vencimento: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_vencimento'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberdata_pagamento: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_pagamento'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaRecebervalor_devido: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor_devido'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      Precision = 720898
+    end
+    object qryCtaReceberdesconto: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'desconto'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      Precision = 720898
+    end
+    object qryCtaReceberjuros: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'juros'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      Precision = 720898
+    end
+    object qryCtaRecebervalor_pago: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor_pago'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      Precision = 720898
+    end
+    object qryCtaReceberobservacao: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'observacao'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryCtaReceberconta_credito: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'conta_credito'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberconta_debito: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'conta_debito'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberbanco_negociado: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'banco_negociado'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryCtaReceberparcela: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'parcela'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaRecebertotal_parcelas: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'total_parcelas'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaRecebercliente: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cliente'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaRecebervdescricao_credito: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'vdescricao_credito'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryCtaReceberconta: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'conta'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberselecionado: TBooleanField
+      FieldKind = fkData
+      FieldName = 'selecionado'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryCtaReceberboleto: TLongintField
+      FieldKind = fkData
+      FieldName = 'boleto'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaRecebernosso_numero: TStringField
+      FieldKind = fkData
+      FieldName = 'nosso_numero'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryCtaReceberremessa: TLongintField
+      FieldKind = fkData
+      FieldName = 'remessa'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberbanco: TLongintField
+      FieldKind = fkData
+      FieldName = 'banco'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberorigem: TStringField
+      FieldKind = fkData
+      FieldName = 'origem'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 28
+    end
+  end
+  object dsCtaReceber: TDataSource
+    DataSet = qryCtaReceber
+    OnStateChange = dsCtaReceberStateChange
+    Left = 416
+    Top = 264
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM contas_receber'
+      'WHERE'
+      '  contas_receber.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO contas_receber'
+      '  (id, id_nf, documento, descricao, dataconta, data_vencimento, data_pagamento, '
+      '   valor_devido, desconto, juros, valor_pago, observacao, conta_credito, '
+      '   conta_debito, banco_negociado, cliente, parcela, total_parcelas, conta, '
+      '   origem)'
+      'VALUES'
+      '  (:id, :id_nf, :documento, :descricao, :dataconta, :data_vencimento, :data_pagamento, '
+      '   :valor_devido, :desconto, :juros, :valor_pago, :observacao, :conta_credito, '
+      '   :conta_debito, :banco_negociado, :cliente, :parcela, :total_parcelas, '
+      '   :conta, :origem)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE contas_receber SET'
+      '  id = :id,'
+      '  id_nf = :id_nf,'
+      '  documento = :documento,'
+      '  descricao = :descricao,'
+      '  dataconta = :dataconta,'
+      '  data_vencimento = :data_vencimento,'
+      '  data_pagamento = :data_pagamento,'
+      '  valor_devido = :valor_devido,'
+      '  desconto = :desconto,'
+      '  juros = :juros,'
+      '  valor_pago = :valor_pago,'
+      '  observacao = :observacao,'
+      '  conta_credito = :conta_credito,'
+      '  conta_debito = :conta_debito,'
+      '  banco_negociado = :banco_negociado,'
+      '  cliente = :cliente,'
+      '  parcela = :parcela,'
+      '  total_parcelas = :total_parcelas,'
+      '  conta = :conta,'
+      '  origem = :origem'
+      'WHERE'
+      '  contas_receber.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 496
+    Top = 208
+    ParamData = <    
+      item
+        Name = 'id'
+      end    
+      item
+        Name = 'id_nf'
+      end    
+      item
+        Name = 'documento'
+      end    
+      item
+        Name = 'descricao'
+      end    
+      item
+        Name = 'dataconta'
+      end    
+      item
+        Name = 'data_vencimento'
+      end    
+      item
+        Name = 'data_pagamento'
+      end    
+      item
+        Name = 'valor_devido'
+      end    
+      item
+        Name = 'desconto'
+      end    
+      item
+        Name = 'juros'
+      end    
+      item
+        Name = 'valor_pago'
+      end    
+      item
+        Name = 'observacao'
+      end    
+      item
+        Name = 'conta_credito'
+      end    
+      item
+        Name = 'conta_debito'
+      end    
+      item
+        Name = 'banco_negociado'
+      end    
+      item
+        Name = 'cliente'
+      end    
+      item
+        Name = 'parcela'
+      end    
+      item
+        Name = 'total_parcelas'
+      end    
+      item
+        Name = 'conta'
+      end    
+      item
+        Name = 'origem'
+      end    
+      item
+        Name = 'OLD_id'
+      end>
+  end
+  object ZSequence1: TZSequence
+    Connection = dbConnect.ZConnection1
+    SequenceName = 'contas_receber_conta'
+    Left = 68
+    Top = 486
+  end
+  object ACBrBoleto1: TACBrBoleto
+    Banco.TamanhoMaximoNossoNum = 10
+    Banco.TipoCobranca = cobNenhum
+    Banco.LayoutVersaoArquivo = 0
+    Banco.LayoutVersaoLote = 0
+    Banco.CasasDecimaisMoraJuros = 2
+    Cedente.TipoInscricao = pJuridica
+    Cedente.PIX.TipoChavePIX = tchNenhuma
+    Cedente.IntegradoraBoleto = tibNenhum
+    NumeroArquivo = 0
+    Configuracoes.Arquivos.LogNivel = logNenhum
+    Configuracoes.WebService.SSLHttpLib = httpOpenSSL
+    Configuracoes.WebService.StoreName = 'My'
+    Configuracoes.WebService.Ambiente = tawsHomologacao
+    Configuracoes.WebService.Operacao = tpInclui
+    Configuracoes.WebService.VersaoDF = '1.2'
+    Left = 263
+    Top = 283
+  end
+end

@@ -1,0 +1,7 @@
+*.pas
+*.lfm
+*.dfm
+*.ico
+*.lpi
+*.lpr
+*.sh

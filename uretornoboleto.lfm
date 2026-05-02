@@ -1,0 +1,1887 @@
+object frmRetornoBoleto: TfrmRetornoBoleto
+  Left = 286
+  Height = 695
+  Top = 112
+  Width = 1266
+  BorderStyle = bsDialog
+  Caption = 'Processa arquivo de retorno do banco'
+  ClientHeight = 695
+  ClientWidth = 1266
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.3'
+  object Panel1: TPanel
+    Left = 0
+    Height = 74
+    Top = 0
+    Width = 1266
+    Align = alTop
+    ClientHeight = 74
+    ClientWidth = 1266
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 10
+      Height = 15
+      Top = 13
+      Width = 161
+      Caption = 'Selecione o arquivo de retorno'
+      ParentColor = False
+    end
+    object FileNameEdit1: TFileNameEdit
+      Left = 192
+      Height = 23
+      Top = 8
+      Width = 364
+      FilterIndex = 0
+      HideDirectories = False
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object btLeArquivo: TBitBtn
+      AnchorSideRight.Side = asrBottom
+      Left = 1155
+      Height = 30
+      Top = 5
+      Width = 99
+      Anchors = [akTop, akRight]
+      Caption = 'Ler arquivo'
+      OnClick = btLeArquivoClick
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Left = 10
+      Height = 15
+      Top = 33
+      Width = 53
+      Caption = 'Cedente.: '
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 392
+      Height = 15
+      Top = 33
+      Width = 51
+      Caption = 'Dt.Grava: '
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 582
+      Height = 15
+      Top = 33
+      Width = 51
+      Caption = 'Dt.Mov..: '
+      ParentColor = False
+    end
+    object cbxOcorrencia: TComboBox
+      AnchorSideRight.Side = asrBottom
+      Left = 664
+      Height = 23
+      Top = 6
+      Width = 481
+      Anchors = [akTop, akLeft, akRight]
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        '01-Liquidação Normal + Liquidação Em Cartório'
+        '02-Entrada Confirmada'
+        '03-Entrada Rejeitada'
+        '04-Alteração de Dados - Nova Entrada'
+        '05-Alteração de Dados - Baixa'
+        '06-Liquidação Normal'
+        '07-Liquidação Parcial - Cobrança Inteligente (B2b)'
+        '08-Liquidação Em Cartório'
+        '09-Baixa Simples'
+        '10-Baixa Por Ter Sido Liquidado'
+        '11-Em Ser'
+        '12-Abatimento Concedido'
+        '13-Abatimento Cancelado'
+        '14-Vencimento Alterado'
+        '15-Baixas Rejeitadas'
+        '16-Instruções Rejeitadas'
+        '17-Alteração de Dados Rejeitados'
+        '18-Cobrança Contratual - Instruções/Alterações Rejeitadas/Pendentes'
+        '19-Confirma Recebimento de Instrução de Protesto'
+        '20-Confirma Recebimento de Instrução de Sustação de Protesto /Tarifa'
+        '21-Confirma Recebimento de Instrução de Não Protestar'
+        '23-Título Enviado A Cartório/Tarifa'
+        '24-Instrução de Protesto Rejeitada / Sustada / Pendente'
+        '25-Alegações do Sacado'
+        '26-Tarifa de Aviso de Cobrança'
+        '27-Tarifa de Extrato Posição (B40x)'
+        '28-Tarifa de Relação das Liquidações'
+        '29-Tarifa de Manutenção de Títulos Vencidos'
+        '30-Débito Mensal de Tarifas (Para Entradas e Baixas)'
+        '32-Baixa por ter sido Protestado'
+        '33-Custas de Protesto'
+        '34-Custas de Sustação'
+        '35-Custas de Cartório Distribuidor'
+        '36-Custas de Edital'
+        '37-Tarifa de Emissão de Boleto/Tarifa de Envio de Duplicata'
+        '38-Tarifa de Instrução'
+        '39-Tarifa de Ocorrências'
+        '40-Tarifa Mensal de Emissão de Boleto/Tarifa Mensal de Envio De Duplicata'
+        '41-Débito Mensal de Tarifas - Extrato de Posição (B4ep/B4ox)'
+        '42-Débito Mensal de Tarifas - Outras Instruções'
+        '43-Débito Mensal de Tarifas - Manutenção de Títulos Vencidos'
+        '44-Débito Mensal de Tarifas - Outras Ocorrências'
+        '45-Débito Mensal de Tarifas - Protesto'
+        '46-Débito Mensal de Tarifas - Sustação de Protesto'
+        '47-Baixa com Transferência para Desconto'
+        '48-Custas de Sustação Judicial'
+        '51-Tarifa Mensal Ref a Entradas Bancos Correspondentes na Carteira'
+        '52-Tarifa Mensal Baixas na Carteira'
+        '53-Tarifa Mensal Baixas em Bancos Correspondentes na Carteira'
+        '54-Tarifa Mensal de Liquidações na Carteira'
+        '55-Tarifa Mensal de Liquidações em Bancos Correspondentes na Carteira'
+        '56-Custas de Irregularidade'
+        '57-Instrução Cancelada'
+        '59-Baixa por Crédito em C/C Através do Sispag'
+        '60-Entrada Rejeitada Carnê'
+        '61-Tarifa Emissão Aviso de Movimentação de Títulos (2154)'
+        '62-Débito Mensal de Tarifa - Aviso de Movimentação de Títulos (2154)'
+        '63-Título Sustado Judicialmente'
+        '64-Entrada Confirmada com Rateio de Crédito'
+        '69-Cheque Devolvido'
+        '71-Entrada Registrada, Aguardando Avaliação'
+        '72-Baixa por Crédito em C/C Através do Sispag sem Título Correspondente'
+        '73-Confirmação de Entrada na Cobrança Simples - Entrada não Aceita na Cobrança Contratual'
+        '76-Cheque Compensado'
+      )
+      TabOrder = 2
+      Text = '01-Liquidação Normal + Liquidação Em Cartório'
+    end
+    object Label10: TLabel
+      Left = 582
+      Height = 15
+      Top = 13
+      Width = 63
+      Caption = 'Ocorrências'
+      ParentColor = False
+    end
+    object CheckBox1: TCheckBox
+      Left = 10
+      Height = 19
+      Top = 51
+      Width = 93
+      Caption = 'Marcar Todos'
+      OnClick = CheckBox1Click
+      TabOrder = 3
+    end
+    object btBaixarSelecionados: TBitBtn
+      AnchorSideRight.Side = asrBottom
+      Left = 1096
+      Height = 30
+      Top = 40
+      Width = 158
+      Anchors = [akTop, akRight]
+      Caption = 'Baixar selecionados'
+      OnClick = btBaixarSelecionadosClick
+      TabOrder = 4
+    end
+    object lbBanco: TLabel
+      Left = 881
+      Height = 15
+      Top = 33
+      Width = 39
+      Caption = 'Banco.:'
+      ParentColor = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 78
+    Top = 617
+    Width = 1266
+    Align = alBottom
+    ClientHeight = 78
+    ClientWidth = 1266
+    TabOrder = 1
+    object ProgressBar1: TProgressBar
+      AnchorSideRight.Side = asrBottom
+      Left = 10
+      Height = 20
+      Top = 48
+      Width = 1247
+      Anchors = [akTop, akLeft, akRight]
+      Step = 5
+      TabOrder = 0
+      Visible = False
+    end
+    object edTotalTitulo: TCurrencyEdit
+      Left = 16
+      Height = 23
+      Top = 22
+      Width = 132
+      Alignment = taRightJustify
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 1
+      Value = 0
+    end
+    object edPgto: TCurrencyEdit
+      Left = 160
+      Height = 23
+      Top = 22
+      Width = 132
+      Alignment = taRightJustify
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 2
+      Value = 0
+    end
+    object edJuros: TCurrencyEdit
+      Left = 305
+      Height = 23
+      Top = 22
+      Width = 132
+      Alignment = taRightJustify
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 3
+      Value = 0
+    end
+    object Label5: TLabel
+      Left = 20
+      Height = 15
+      Top = 5
+      Width = 62
+      Caption = 'Total títulos'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 160
+      Height = 15
+      Top = 5
+      Width = 95
+      Caption = 'Total pagamentos'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 307
+      Height = 15
+      Top = 5
+      Width = 81
+      Caption = 'Juros recebidos'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 450
+      Height = 15
+      Top = 5
+      Width = 119
+      Caption = 'Descontos concedidos'
+      ParentColor = False
+    end
+    object edDesconto: TCurrencyEdit
+      Left = 448
+      Height = 23
+      Top = 22
+      Width = 132
+      Alignment = taRightJustify
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 4
+      Value = 0
+    end
+    object edDiferenca: TCurrencyEdit
+      Left = 592
+      Height = 23
+      Top = 22
+      Width = 132
+      Alignment = taRightJustify
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 5
+      Value = 0
+    end
+    object Label9: TLabel
+      Left = 594
+      Height = 15
+      Top = 5
+      Width = 50
+      Caption = 'Diferença'
+      ParentColor = False
+    end
+  end
+  object RxDBGrid1: TRxDBGrid
+    Left = 0
+    Height = 543
+    Top = 74
+    Width = 1266
+    ColumnDefValues.BlobText = '(blob)'
+    TitleButtons = True
+    AutoSort = True
+    OnGetCellProps = RxDBGrid1GetCellProps
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Sel.'
+        Width = 25
+        FieldName = 'baixar'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'St.'
+        Width = 48
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Nosso Número'
+        Width = 90
+        FieldName = 'boleto'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'N° Duplicata'
+        Width = 90
+        FieldName = 'duplicata'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Cliente'
+        Width = 280
+        FieldName = 'credor'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Dt. Pagamento'
+        Width = 80
+        FieldName = 'datapgto'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Dt. vencimento'
+        Width = 80
+        FieldName = 'dt_vencimento'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Vlr. Crédito'
+        FieldName = 'valor_credito'
+        DisplayFormat = '0.00'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Valor Título'
+        Width = 70
+        FieldName = 'valor'
+        DisplayFormat = '0.00'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Valor Pago'
+        Width = 70
+        FieldName = 'valor_pago'
+        DisplayFormat = '0.00'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Juros'
+        Width = 70
+        FieldName = 'juros'
+        DisplayFormat = '0.00'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Desconto'
+        Width = 70
+        FieldName = 'desconto'
+        DisplayFormat = '0.00'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Ocorrência'
+        Width = 150
+        FieldName = 'ocorrencia'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end>
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end>
+    FooterOptions.DrawFullLine = False
+    SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+    SearchOptions.FromStart = False
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    Align = alClient
+    AlternateColor = clMoneyGreen
+    Color = clWindow
+    DrawFullLine = False
+    FocusColor = clRed
+    SelectedColor = clHighlight
+    GridLineStyle = psSolid
+    DataSource = Datasource1
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgHeaderPushedLook]
+    TabOrder = 2
+    OnCellClick = RxDBGrid1CellClick
+    OnDrawColumnCell = RxDBGrid1DrawColumnCell
+  end
+  object RxMemoryData1: TRxMemoryData
+    FieldDefs = <    
+      item
+        Name = 'boleto'
+        DataType = ftString
+        Precision = -1
+        Size = 16
+      end    
+      item
+        Name = 'duplicata'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'credor'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'valor'
+        DataType = ftFloat
+        Precision = 2
+      end    
+      item
+        Name = 'valor_pago'
+        DataType = ftFloat
+        Precision = 2
+      end    
+      item
+        Name = 'datapgto'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'nossonumero'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'data'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'juros'
+        DataType = ftFloat
+        Precision = 15
+      end    
+      item
+        Name = 'desconto'
+        DataType = ftFloat
+        Precision = 15
+      end    
+      item
+        Name = 'valor_tit'
+        DataType = ftFloat
+        Precision = 15
+      end    
+      item
+        Name = 'multipla'
+        DataType = ftBoolean
+        Precision = -1
+      end    
+      item
+        Name = 'baixada'
+        DataType = ftBoolean
+        Precision = -1
+      end    
+      item
+        Name = 'dt_vencimento'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'baixar'
+        DataType = ftBoolean
+        Precision = -1
+      end    
+      item
+        Name = 'notafiscal'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'nroparcelas'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'parcela'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'id'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ocorrencia'
+        DataType = ftString
+        Precision = -1
+        Size = 80
+      end    
+      item
+        Name = 'carteira'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end    
+      item
+        Name = 'tipo_ocorrencia'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end>
+    PacketRecords = 0
+    left = 75
+    top = 216
+    object RxMemoryData1boleto: TStringField
+      DisplayWidth = 16
+      FieldKind = fkData
+      FieldName = 'boleto'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object RxMemoryData1duplicata: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'duplicata'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object RxMemoryData1credor: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'credor'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object RxMemoryData1valor: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object RxMemoryData1valor_pago: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor_pago'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object RxMemoryData1datapgto: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'datapgto'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object RxMemoryData1nossonumero: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'nossonumero'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object RxMemoryData1data: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object RxMemoryData1juros: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'juros'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+    object RxMemoryData1desconto: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'desconto'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+    object RxMemoryData1valor_tit: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor_tit'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+    object RxMemoryData1multipla: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'multipla'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object RxMemoryData1baixada: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'baixada'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object RxMemoryData1dt_vencimento: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'dt_vencimento'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object RxMemoryData1baixar: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'baixar'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object RxMemoryData1notafiscal: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'notafiscal'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object RxMemoryData1nroparcelas: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'nroparcelas'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object RxMemoryData1parcela: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'parcela'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object RxMemoryData1id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object RxMemoryData1ocorrencia: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'ocorrencia'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object RxMemoryData1carteira: TStringField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'carteira'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 5
+    end
+    object RxMemoryData1tipo_ocorrencia: TStringField
+      DisplayWidth = 2
+      FieldKind = fkData
+      FieldName = 'tipo_ocorrencia'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object RxMemoryData1valor_credito1: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor_credito'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+  end
+  object Datasource1: TDataSource
+    DataSet = RxMemoryData1
+    left = 75
+    top = 272
+  end
+  object ACBrBoleto1: TACBrBoleto
+    Banco.TamanhoMaximoNossoNum = 10
+    Banco.TipoCobranca = cobNenhum
+    Cedente.TipoDocumento = Tradicional
+    Cedente.TipoInscricao = pJuridica
+    NumeroArquivo = 0
+    DataArquivo = 0
+    DataCreditoLanc = 0
+    left = 168
+    top = 216
+  end
+  object qryContaReceber: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'SELECT ct.*,nf.codvend,c.cnpj,c.cidade,c.bairro,c.uf,c.cep,c.endereco,cl.nomevend,False as selecionado,(data_vencimento-CURRENT_DATE) as atraso,'
+      'nf.entradasaida,nf.numeroctlform'
+      'FROM contas_receber ct'
+      'LEFT JOIN nfsaida nf ON nf.seqnf=ct.nfsaida'
+      'LEFT JOIN cliente c ON c.codcliente=ct.cliente'
+      'LEFT JOIN colaboradores cl ON cl.codvend=nf.codvend'
+      'Limit 1'
+    )
+    Params = <>
+    WhereMode = wmWhereAll
+    left = 54
+    top = 468
+    object qryContaReceberid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberparcela: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'parcela'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaRecebernro_parcelas: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'nro_parcelas'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaRecebernfsaida: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'nfsaida'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberdocumento: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'documento'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryContaRecebercliente: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cliente'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberdescricao: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryContaReceberdata_conta: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_conta'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberdata_vencimento: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_vencimento'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberdata_pagamento: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_pagamento'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaRecebervalor: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 720898
+    end
+    object qryContaRecebertotal: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'total'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 720898
+    end
+    object qryContaRecebercobranca: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'cobranca'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryContaReceberconta: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'conta'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object qryContaReceberpgto_juros: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'pgto_juros'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 720898
+    end
+    object qryContaReceberpgto_desconto: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'pgto_desconto'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 720898
+    end
+    object qryContaReceberbordero: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'bordero'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberpgto_obs: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'pgto_obs'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryContaReceberpgto_tipo: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'pgto_tipo'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberobservacao: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'observacao'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryContaRecebercomissao: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'comissao'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryContaRecebercomissao13: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'comissao13'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryContaRecebernegociacao: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'negociacao'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberboleto: TStringField
+      DisplayWidth = 16
+      FieldKind = fkData
+      FieldName = 'boleto'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object qryContaReceberenviado_boleto: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'enviado_boleto'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryContaReceberusuario_baixa: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'usuario_baixa'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberbordero_comissao: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'bordero_comissao'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberdata_envio_perda_prejuizo: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_envio_perda_prejuizo'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaReceberdt_baixa_sistema: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'dt_baixa_sistema'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaRecebercodvend: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'codvend'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContaRecebercnpj: TStringField
+      DisplayWidth = 18
+      FieldKind = fkData
+      FieldName = 'cnpj'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 18
+    end
+    object qryContaRecebercidade: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryContaReceberbairro: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryContaReceberuf: TStringField
+      DisplayWidth = 2
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryContaRecebercep: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryContaReceberendereco: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryContaRecebernomevend: TStringField
+      DisplayWidth = 35
+      FieldKind = fkData
+      FieldName = 'nomevend'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 35
+    end
+    object qryContaReceberselecionado: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'selecionado'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryContaRecebercalc_juros: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'calc_juros'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+    object qryContaReceberatraso: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'atraso'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object qryContaReceberentradasaida: TStringField
+      DisplayWidth = 1
+      FieldKind = fkData
+      FieldName = 'entradasaida'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryContaRecebernumeroctlform: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'numeroctlform'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qryCtaReceber: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select c.*,(data_vencimento-CURRENT_DATE) as atraso,nf.*,'
+      'v.nomevend'
+      'From contas_receber c '
+      'Left Join nfsaida nf ON nf.seqnf=c.nfsaida'
+      'Left Join vendedor v ON v.codvend=nf.codvend'
+      'Where substr(boleto,1,8) = :boleto and length(boleto) = 10'
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'boleto'
+        ParamType = ptUnknown
+      end>
+    left = 408
+    top = 224
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'boleto'
+        ParamType = ptUnknown
+      end>
+  end
+  object RxMemoryData2: TRxMemoryData
+    FieldDefs = <>
+    PacketRecords = 0
+    left = 266
+    top = 225
+    object RxMemoryData2ids: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ids'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object RxMemoryData2boleto: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'boleto'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object RxMemoryData2sacado: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'sacado'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object RxMemoryData2valor: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+    end
+    object RxMemoryData2valor_recebido: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor_recebido'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+    end
+    object RxMemoryData2documento: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'documento'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ACBrValidador1: TACBrValidador
+    IgnorarChar = './-'
+    left = 944
+    top = 40
+  end
+  object ImageList1: TImageList
+    ShareImages = True
+    left = 512
+    top = 224
+    Bitmap = {
+      4C69050000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000004B44
+      F3007F7EF5000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000005E59F4A66D6DF5CE000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000605CF000000000004F49
+      F136868AF8FAB6CDFCFF777FF6CC00000000000000004C45EF00000000000000
+      00000000000000000000000000000000000000000000000000004D45ED86AAB9
+      FAF98099FAFF6173F5EE473EEE1A6B6BF2567274F34C3524EA11000000000000
+      00000000000000000000000000005C59EC0000000000615BEE599EABF8FF7086
+      F8FF6173F5FD4539E94C000000006668F2F693A4F9FF8F97F6E33E34EA155D57
+      EC01000000000000000000000000000000004943E88699A7F9FF647AF8FF5E72
+      F6FF504BEB4A000000004E4AED005147E81D505CF4FD798AFAFF7778F1FF4336
+      E215000000000703D100000000004742E442A0A9F9F85E6FF8FE5C6CF8FF4A42
+      E38700000000000000000000000000000000554BE576545CF6FF787FFAFF9695
+      F4E7190ED40B000000000000C559484CF1FC1E23F2FF161BF1FF2122DF950000
+      00000000E8000000000000000000574CE500000000004A45E7DE3C40F4FF2123
+      F4FF2826E1E51D19D8694142F0FF1415F2FE0F0FF1FE0E0EE9E70702B40E0000
+      C90000000000000000000000000000000000000000001310CF2C0B08EDF70A0A
+      F0FE2120F3FF2C28F1FF1110F2FF0B0BF0FE0E0DF4FF0602BC5C000000000000
+      00000000000000000000000000000000000000000000000000000805D2BE0D09
+      F5FF0B08F0FF0906F1FF0F0BF1FF0F0AF2FF0806CDED000000000703BB000000
+      000000000000000000000000000000000000000000000000000000007E110B07
+      E8FF0E0AF2FE130DF2FF150FF2FF120CEEFF0703C04000000000000000000000
+      000000000000000000000000000000000000000000000502AF00000000000706
+      C1BC1A1AF4FF2F2EF4FF2B2AF8FE100CD8DA0000620700000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000604
+      B73F2930EDFF4B53F7FE363DF7FF0000965B0000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00031A25D7C8354AF1FF0F13B7C1000000000100970000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000007D180E14C7350100A7050807AC000000000000000000000000000000
+      0000000000000000000000000000000000000000000003D65C000000000000E5
+      6C0200D85E2C00D9617301DA639F02DB63A600DA617800D9603601DC65060000
+      000003D55C00000000000000000000000000000000000000000003DA5F1701D4
+      5BD10EDD66FD14E06BFF13DE6AFF14E06BFF13E16BFF0FE169FF01D45ADC03D6
+      5D3300000000000000000000000003CA4E000000000002CF552504D157F511D9
+      62FF18DB67FE16D765FF12D661FF12D661FF17D865FF18DD68FE16E068FE05D2
+      58FD02CE54370000000003C84E00000000000000000004C950EA14D65EFF18D5
+      60FE16D35FFF2ED76FFFC6F4D8FFC6F4D8FF2ED66FFF16D35FFF17D661FF17DA
+      61FF05CB51FA03CC5310000000000000000002C045900ACA4DFF18D459FE17D0
+      57FF17D057FF47DA7AFFFFFFFFFFFFFFFFFF47DA7AFF17D057FF17D158FF18D4
+      59FF0FCF52FF02BF44B50000000004C2400A02BB3CDC1AD254FE18CE52FF0ACA
+      47FF07C944FF39D46AFFFFFFFFFFFFFFFFFF39D46AFF07C944FF0ACA46FF18CF
+      52FF1AD354FE02BB3CE703B63B1503B0321F06B937F119CC4AFF0BC73FFFEBFA
+      F0FFFFFFFFFFFFFFFFFFFEFEFEFFFEFEFEFFFFFFFFFFFFFFFFFFEBFAF0FF0BC8
+      3FFF18CC4AFF0DBF3EFA02AF322903AF2C260AB733F719C743FF08C736FFFFFF
+      FFFFFEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFFFFFFFFFF09CA
+      37FF19C642FF10BC39FF03B02B2E04AD252106AF27F21AC33AFF12D239FFAAF7
+      B8FFD2FAD9FFDAF7DFFFFFFFFFFFFFFFFFFFDAFBE0FFD2FCDAFFAAF5B8FF11CF
+      37FF19C13AFF0DB72EFB03B3262A0481170F04B51EE21BBF34FE1AC333FF16C6
+      31FF15C630FF45D15AFFFFFFFFFFFFFFFFFF46DC5DFF15C731FF16C531FF1AC1
+      33FF1BBF33FE05B31EEC059F1C1B0000000005AD169D0FBA20FF1ABB2BFE19BD
+      2BFF19BC2BFF47D456FFFFFFFFFFFFFFFFFF47D657FF19BC2BFF19BC2BFF1ABB
+      2BFE14BB26FF05B618BC00000001000000000000001107B613EF19BE24FF1AB7
+      24FF1AB824FF24D32EFF4BE754FF4AE454FF23CC2DFF1AB724FF1AB724FF19BC
+      24FF08BB13FF013706290000000000000000000000000453054505B70AF01AC4
+      1FFF1CBA1FFF1BB51FFF1AB31EFF1AB31EFF1BB61FFF1CBA20FE1AC11EFF07BA
+      0BF70468065E000000000EFF230000000000044E0600000000000346034507A6
+      06CC0BBE0AFF15C514FF1FCD1DFF1FCD1EFF18C716FF0BBE0AFF08AE06DC0352
+      0354000000030000000000000000000000000000000000000000000000000000
+      001704610061059D00B105A900D805A900D9059F00B80471016F0000001E0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000020000000700000009000000090000000700000002000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000220000000400000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0022000000F30000000A00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000100000
+      00FF000000090000000000000000000000000000000000000000000000000000
+      0043000000DC000000FF000000FF000000CF000000230000000A000000FF0000
+      0032000000000000000000000000000000000000000000000005000000EC0000
+      00FF000000A60000004600000043000000BC000000CC000000E7000000AD0000
+      00000000000000000000000000000000000000000000000000EB000000F60000
+      001000000000000000000000000000000000000000A3000000EF000000AA0000
+      00000000000000000000000000000000000000000057000000F6000000020000
+      000000000000000000000000000000000057000000FF00000041000000FF0000
+      002300000000000000000000000000000000000000E800000095000000000000
+      0000000000010000000000000011000000FF000000BF00000000000000BC0000
+      00CF00000000000000000000000000000000000000FF00000026000000000000
+      00E9000000E300000000000000D1000000FF0000000300000000000000430000
+      00FF00000000000000000000000000000000000000FF000000280000002D0000
+      00FF000000FE000000FF000000FF0000008A0000000000000000000000460000
+      00FF00000000000000000000000000000000000000F300000082000000000000
+      0000000000DC000000FF000000FF000000000000000000000000000000A60000
+      00DD0000000000000000000000000000000000000067000000EE000000000000
+      000000000000000000750000007E000000000000000000000010000000FF0000
+      00340000000000000000000000000000000000000003000000FF000000E00000
+      00000000000000000000000000000000000000000002000000F6000000EC0000
+      0000000000000000000000000000000000000000000000000015000000FF0000
+      00EE00000082000000280000002600000095000000F6000000EB000000050000
+      0000000000000000000000000000000000000000000000000000000000030000
+      0067000000F3000000FF000000FF000000E80000005700000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000009E000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF00000000000000000000000000000000000000000000
+      0000000000000000000000000093000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF00000000000000000000000000000000000000000000
+      000000000000000000000000008D000000F5000000F5000000F5000000F50000
+      00FE000000FF000000FF00000000000000000000000000000000000000000000
+      00EC000000F5000000F5000000F5000000F5000000F5000000F5000000EB0000
+      00F5000000FF000000FF00000000000000000000000000000000000000000000
+      00F5000000FF000000FF000000FF000000FF000000FF000000FF000000F50000
+      00F5000000FF000000FF00000000000000000000000000000000000000000000
+      00FF000000FF000000FF000000FF000000FF000000FD000000FF000000F50000
+      00F5000000FF000000FF00000000000000000000009E00000093000000930000
+      008600000085000000850000008500000038000000FF000000FF000000F50000
+      00F5000000FF000000FF0000000000000000000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF00000085000000FF000000FF000000F50000
+      008D000000930000009E0000000000000000000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF00000085000000FF000000FF000000F50000
+      000000000000000000000000000000000000000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF00000085000000FF000000FF000000F50000
+      000000000000000000000000000000000000000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF00000086000000FF000000F5000000EC0000
+      000000000000000000000000000000000000000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000930000000000000000000000000000
+      000000000000000000000000000000000000000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000930000000000000000000000000000
+      000000000000000000000000000000000000000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF0000009E0000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00003333338E333333E033333375000000000000000000000000000000000000
+      00000000000033333300000000003333330333333381333333EC333333F63333
+      33C9333333D333333301333333E0000000000000000000000000000000000000
+      0000333333000000000033333376333333FC333333FF333333C1333333C93333
+      33FF333333FF333333D43333338E000000000000000000000000000000000000
+      000033333302333333BD333333FF333333FC3333336833333395333333FF3333
+      33FF333333FF333333BA00000000333333000000000000000000333333413333
+      33A2333333EC333333FF333333FF33333336333333E2333333FF333333FE3333
+      33FF333333FE333333F6000000000000000033333373333333FF333333FF3333
+      33FF333333FF333333F23333332D333333C6333333FF333333FF333333FF3333
+      33FF333333FF333333EB0000000000000000333333F6333333FF333333FC3333
+      33FB333333A300000000333333B8333333FF333333FE333333FF333333FF3333
+      33FF333333FF333333920000000000000000333333CE333333FF3333336E3333
+      330B000000003333339F333333FF333333FE333333FF333333FF333333FF3333
+      33FF333333FF3333330C000000000000000033333337333333FF333333FA3333
+      3383333333E8333333FF333333FE333333FF333333FF333333FF333333FE3333
+      33FF3333339300000000000000003333330000000000333333BE333333FE3333
+      33FF333333FF333333FF333333FF333333FF333333FF333333FF333333FF3333
+      33DA00000000333333000000000000000000333333003333331C333333FD3333
+      33FF333333FF333333FF333333FF333333FF333333FF333333FE333333F13333
+      330D3333330000000000000000000000000000000000000000003333331C3333
+      33F5333333FF333333FF333333FF333333FF333333FF333333FF333333A20000
+      0000000000000000000000000000000000000000000033333300000000003333
+      3317333333FA333333FE333333FF333333FF333333FF333333FF333333350000
+      0000000000000000000000000000000000000000000000000000000000003333
+      335933333395333333B8333333FF333333FF333333FE333333FF000000000000
+      0000000000000000000000000000000000000000000000000000000000003333
+      33DB333333FF333333DE33333350333333B8333333F63333335D000000000000
+      0000000000000000000000000000000000000000000000000000000000003333
+      3341333333EF333333CC33333312000000000000000000000000333333000000
+      0000000000000000000000000000
+    }
+  end
+  object PopupMenu1: TPopupMenu
+    left = 272
+    top = 160
+    object MenuItem1: TMenuItem
+      Caption = 'Selecionar tudo'
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Desselecionar tudo'
+    end
+    object MenuItem3: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Selecionar não quitados'
+    end
+  end
+  object qryInsertComissao: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'INSERT INTO comvend (codvend,numnfsaida,'
+      '                                  dtnfsaida,dtvencimento,'
+      '                                  valornf,valorcom,'
+      '                                  saldo,historico,conta_receber) '
+      'Values(:codvend,:numnfsaida,'
+      '           :dtnfsaida,:dtvencimento,'
+      '           :valornf,:valorcom,'
+      '           :saldo,:historico,:conta_receber);'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'codvend'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftInteger
+        Name = 'numnfsaida'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftDateTime
+        Name = 'dtnfsaida'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftDateTime
+        Name = 'dtvencimento'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'valornf'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'valorcom'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'saldo'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftString
+        Name = 'historico'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'conta_receber'
+        ParamType = ptUnknown
+      end>
+    left = 216
+    top = 468
+    ParamData = <    
+      item
+        DataType = ftInteger
+        Name = 'codvend'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftInteger
+        Name = 'numnfsaida'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftDateTime
+        Name = 'dtnfsaida'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftDateTime
+        Name = 'dtvencimento'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'valornf'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'valorcom'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'saldo'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftString
+        Name = 'historico'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'conta_receber'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryInsertComissao13: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'INSERT INTO comissao_13 '
+      '(vendedor,notafiscal,data,historico,valor)'
+      'Values(:vendedor,:notafiscal,:data,:historico,:valor)'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'vendedor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftInteger
+        Name = 'notafiscal'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftDateTime
+        Name = 'data'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'historico'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftCurrency
+        Name = 'valor'
+        ParamType = ptUnknown
+      end>
+    left = 336
+    top = 468
+    ParamData = <    
+      item
+        DataType = ftInteger
+        Name = 'vendedor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftInteger
+        Name = 'notafiscal'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftDateTime
+        Name = 'data'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'historico'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftCurrency
+        Name = 'valor'
+        ParamType = ptUnknown
+      end>
+  end
+end

@@ -1,0 +1,2443 @@
+object frmCadEmpregados: TfrmCadEmpregados
+  Left = 187
+  Height = 574
+  Top = 59
+  Width = 1024
+  Caption = 'Cadastro de empregados'
+  ClientHeight = 574
+  ClientWidth = 1024
+  OnCreate = FormCreate
+  OnResize = FormResize
+  LCLVersion = '1.6.0.4'
+  object ExtendedNotebook1: TExtendedNotebook
+    Left = 0
+    Height = 524
+    Top = 50
+    Width = 1024
+    ActivePage = TabSheet1
+    Align = alClient
+    MultiLine = True
+    TabIndex = 0
+    TabOrder = 0
+    OnChange = ExtendedNotebook1Change
+    Options = [nboShowCloseButtons, nboMultiLine]
+    object TabSheet1: TTabSheet
+      Caption = 'Cadastro'
+      ClientHeight = 496
+      ClientWidth = 1016
+      object GroupBox2: TGroupBox
+        Left = 12
+        Height = 484
+        Top = 14
+        Width = 992
+        ClientHeight = 464
+        ClientWidth = 988
+        TabOrder = 0
+        object GroupBox1: TGroupBox
+          Left = 6
+          Height = 100
+          Top = 0
+          Width = 968
+          Caption = 'Identificação'
+          ClientHeight = 80
+          ClientWidth = 964
+          TabOrder = 0
+          object Label1: TLabel
+            Left = 5
+            Height = 15
+            Top = 5
+            Width = 39
+            Caption = 'Código'
+            ParentColor = False
+          end
+          object DBEdit1: TDBEdit
+            Left = 86
+            Height = 23
+            Top = 0
+            Width = 90
+            DataField = 'id'
+            DataSource = dsEmpregados
+            ReadOnly = True
+            CharCase = ecNormal
+            Color = clSilver
+            MaxLength = 0
+            TabOrder = 0
+            TabStop = False
+          end
+          object DBDateEdit1: TRxDBDateEdit
+            Left = 824
+            Height = 23
+            Top = 0
+            Width = 135
+            ButtonWidth = 23
+            DialogTitle = 'Select a Date'
+            Enabled = False
+            Glyph.Data = {
+              36010000424D360100000000000076000000280000001C0000000C0000000100
+              040000000000C000000000000000000000000000000000000000000000000000
+              8000008000000080800080000000800080008080000080808000C0C0C0000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+              77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+              47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+              47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+              47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+              47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+              47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+            }
+            MaxLength = 10
+            NumGlyphs = 2
+            PasswordChar = #0
+            PopupColor = clWindow
+            TabOrder = 1
+            Text = '  /  /    '
+            DataField = 'dataadmissao'
+            DataSource = dsEmpregados
+          end
+          object DBEdit2: TDBEdit
+            Left = 86
+            Height = 23
+            Top = 30
+            Width = 505
+            DataField = 'nome'
+            DataSource = dsEmpregados
+            CharCase = ecUppercase
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object Label2: TLabel
+            Left = 5
+            Height = 15
+            Top = 37
+            Width = 33
+            Caption = 'Nome'
+            ParentColor = False
+          end
+          object Label3: TLabel
+            Left = 728
+            Height = 15
+            Top = 8
+            Width = 77
+            Caption = 'Data admissão'
+            ParentColor = False
+          end
+          object Label11: TLabel
+            Left = 5
+            Height = 15
+            Top = 64
+            Width = 39
+            Caption = 'Função'
+            ParentColor = False
+          end
+          object RxDBComboBox1: TRxDBComboBox
+            Left = 87
+            Height = 23
+            Top = 57
+            Width = 200
+            Style = csDropDownList
+            DataField = 'funcao'
+            DataSource = dsEmpregados
+            EnableValues = False
+            ItemHeight = 15
+            Items.Strings = (
+              'REPRESENTANTE'
+              'SUPERVISOR'
+            )
+            MaxLength = 0
+            TabOrder = 3
+            Values.Strings = (
+              'REPRESENTANTE'
+              'SUPERVISOR'
+            )
+          end
+          object Label27: TLabel
+            Left = 304
+            Height = 15
+            Top = 5
+            Width = 64
+            Caption = 'Nome curto'
+            ParentColor = False
+          end
+          object DBEdit3: TDBEdit
+            Left = 424
+            Height = 23
+            Top = -3
+            Width = 167
+            DataField = 'nome_curto'
+            DataSource = dsEmpregados
+            CharCase = ecUppercase
+            MaxLength = 0
+            TabOrder = 4
+          end
+        end
+        object GroupBox5: TGroupBox
+          Left = 6
+          Height = 78
+          Top = 248
+          Width = 417
+          Caption = 'Documentos'
+          ClientHeight = 58
+          ClientWidth = 413
+          TabOrder = 1
+          object Label12: TLabel
+            Left = 6
+            Height = 15
+            Top = 7
+            Width = 54
+            Caption = 'CNPJ/CPF'
+            ParentColor = False
+          end
+          object DBEdit12: TDBEdit
+            Left = 85
+            Height = 23
+            Top = 0
+            Width = 113
+            DataField = 'cpf'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object DBEdit13: TDBEdit
+            Left = 286
+            Height = 23
+            Top = 0
+            Width = 113
+            DataField = 'rg'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object Label13: TLabel
+            Left = 230
+            Height = 15
+            Top = 7
+            Width = 35
+            Caption = 'N° R.G'
+            ParentColor = False
+          end
+          object Label14: TLabel
+            Left = 6
+            Height = 15
+            Top = 38
+            Width = 29
+            Caption = 'Email'
+            ParentColor = False
+          end
+          object DBEdit14: TDBEdit
+            Left = 85
+            Height = 23
+            Top = 31
+            Width = 314
+            DataField = 'email'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 2
+          end
+        end
+        object GroupBox6: TGroupBox
+          Left = 6
+          Height = 128
+          Top = 331
+          Width = 968
+          ClientHeight = 108
+          ClientWidth = 964
+          TabOrder = 2
+          object DBMemo1: TDBMemo
+            Left = 6
+            Height = 91
+            Top = 13
+            Width = 944
+            DataField = 'observacao'
+            DataSource = dsEmpregados
+            TabOrder = 0
+          end
+          object Label17: TLabel
+            Left = 5
+            Height = 15
+            Top = -3
+            Width = 67
+            Caption = 'Observações'
+            ParentColor = False
+          end
+        end
+        object GroupBox4: TGroupBox
+          Left = 6
+          Height = 136
+          Top = 104
+          Width = 968
+          Caption = 'Endereço'
+          ClientHeight = 116
+          ClientWidth = 964
+          TabOrder = 3
+          object Label5: TLabel
+            Left = 6
+            Height = 15
+            Top = 37
+            Width = 49
+            Caption = 'Endereço'
+            ParentColor = False
+          end
+          object DBEdit4: TDBEdit
+            Left = 86
+            Height = 23
+            Top = 30
+            Width = 368
+            DataField = 'endereco'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object Label6: TLabel
+            Left = 6
+            Height = 15
+            Top = 8
+            Width = 27
+            Caption = 'C.E.P'
+            ParentColor = False
+          end
+          object DBEdit5: TDBEdit
+            Left = 86
+            Height = 23
+            Top = 1
+            Width = 72
+            DataField = 'cep'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object SpeedButton2: TSpeedButton
+            Left = 710
+            Height = 22
+            Top = 0
+            Width = 23
+            Caption = '...'
+            OnClick = SpeedButton2Click
+          end
+          object Label7: TLabel
+            Left = 462
+            Height = 15
+            Top = 8
+            Width = 37
+            Caption = 'Cidade'
+            ParentColor = False
+          end
+          object DBEdit6: TDBEdit
+            Left = 502
+            Height = 23
+            Top = 1
+            Width = 207
+            DataField = 'cidade'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object Label8: TLabel
+            Left = 462
+            Height = 15
+            Top = 36
+            Width = 31
+            Caption = 'Bairro'
+            ParentColor = False
+          end
+          object DBEdit7: TDBEdit
+            Left = 502
+            Height = 23
+            Top = 29
+            Width = 231
+            DataField = 'bairro'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 3
+          end
+          object Label9: TLabel
+            Left = 190
+            Height = 15
+            Top = 8
+            Width = 17
+            Caption = 'U.F'
+            ParentColor = False
+          end
+          object DBEdit8: TDBEdit
+            Left = 221
+            Height = 23
+            Top = 1
+            Width = 137
+            DataField = 'uf'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 4
+          end
+          object Label10: TLabel
+            Left = 6
+            Height = 15
+            Top = 97
+            Width = 51
+            Caption = 'Telefones'
+            ParentColor = False
+          end
+          object DBEdit9: TDBEdit
+            Left = 86
+            Height = 23
+            Top = 90
+            Width = 106
+            DataField = 'telefone1'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 5
+          end
+          object DBEdit10: TDBEdit
+            Left = 214
+            Height = 23
+            Top = 90
+            Width = 113
+            DataField = 'telefone2'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 6
+          end
+          object Label18: TLabel
+            Left = 6
+            Height = 15
+            Top = 69
+            Width = 77
+            Caption = 'Complemento'
+            ParentColor = False
+          end
+          object DBEdit17: TDBEdit
+            Left = 86
+            Height = 23
+            Top = 61
+            Width = 305
+            DataField = 'complemento'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 7
+          end
+          object SpeedButton4: TSpeedButton
+            Left = 360
+            Height = 22
+            Top = 0
+            Width = 23
+            Caption = '...'
+            OnClick = SpeedButton4Click
+          end
+          object btCep: TSpeedButton
+            Left = 158
+            Height = 22
+            Top = 0
+            Width = 23
+            Caption = '...'
+            OnClick = btCepClick
+          end
+        end
+        object GroupBox3: TGroupBox
+          Left = 430
+          Height = 78
+          Top = 248
+          Width = 544
+          Caption = 'Senha'
+          ClientHeight = 58
+          ClientWidth = 540
+          TabOrder = 4
+          object Label15: TLabel
+            Left = 9
+            Height = 15
+            Top = 7
+            Width = 151
+            Caption = 'Senha única de identificação'
+            ParentColor = False
+          end
+          object DBEdit15: TDBEdit
+            Left = 198
+            Height = 23
+            Hint = 'Senha de identificação com até 8 digitos'
+            Top = 0
+            Width = 81
+            DataField = 'senha_id'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            ParentShowHint = False
+            PasswordChar = '*'
+            ShowHint = True
+            TabOrder = 0
+          end
+          object Label26: TLabel
+            Left = 9
+            Height = 15
+            Top = 37
+            Width = 100
+            Caption = 'Usuario do sistema'
+            ParentColor = False
+          end
+          object DBEdit18: TDBEdit
+            Left = 198
+            Height = 23
+            Hint = 'Senha de identificação com até 8 digitos'
+            Top = 30
+            Width = 56
+            DataField = 'sys_usuario'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 1
+          end
+          object SpeedButton1: TSpeedButton
+            Left = 256
+            Height = 22
+            Top = 31
+            Width = 23
+            Caption = '...'
+            OnClick = SpeedButton1Click
+          end
+          object DBText3: TDBText
+            Left = 282
+            Height = 15
+            Top = 36
+            Width = 253
+            AutoSize = False
+            DataField = 'apelido'
+            DataSource = dsEmpregados
+            ParentColor = False
+          end
+        end
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Conta corrente'
+      ClientHeight = 496
+      ClientWidth = 1016
+      object GroupBox9: TGroupBox
+        Left = 16
+        Height = 481
+        Top = 16
+        Width = 985
+        TabOrder = 0
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Consignação'
+      ClientHeight = 496
+      ClientWidth = 1016
+      object GroupBox7: TGroupBox
+        Left = 7
+        Height = 481
+        Top = 10
+        Width = 997
+        ClientHeight = 461
+        ClientWidth = 993
+        TabOrder = 0
+        object GroupBox8: TGroupBox
+          Left = 3
+          Height = 423
+          Top = 30
+          Width = 984
+          Caption = 'Produtos consignados'
+          ClientHeight = 403
+          ClientWidth = 980
+          TabOrder = 0
+          object RxDBGrid1: TRxDBGrid
+            Left = 1
+            Height = 294
+            Top = 75
+            Width = 977
+            TitleButtons = True
+            AutoSort = True
+            Columns = <            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Sel.'
+                Width = 0
+                Visible = False
+                FieldName = 'selecionado'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Data'
+                Width = 90
+                FieldName = 'data_consignacao'
+                DisplayFormat = 'dd/mm/yyyy'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Código'
+                Width = 55
+                FieldName = 'produto'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Cód. Barras'
+                Width = 90
+                FieldName = 'codigo_barras'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Descrição/Nome do produto'
+                Width = 340
+                FieldName = 'descricao'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'lote'
+                Width = 75
+                FieldName = 'slote'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end            
+              item
+                ReadOnly = True
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Q.Consig.'
+                Width = 60
+                FieldName = 'quant_consignada'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Quant.'
+                Width = 50
+                FieldName = 'quant_devolvida'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Preço Unit.'
+                Width = 70
+                FieldName = 'preco'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Total'
+                Width = 70
+                FieldName = 'total_posse'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+              end>
+            KeyStrokes = <            
+              item
+                Command = rxgcShowFindDlg
+                ShortCut = 16454
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowColumnsDlg
+                ShortCut = 16471
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowFilterDlg
+                ShortCut = 16468
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowSortDlg
+                ShortCut = 16467
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowQuickFilter
+                ShortCut = 16465
+                Enabled = True
+              end            
+              item
+                Command = rxgcHideQuickFilter
+                ShortCut = 16456
+                Enabled = True
+              end>
+            OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+            AlternateColor = 16777109
+            Color = clWindow
+            DrawFullLine = False
+            FocusColor = clRed
+            SelectedColor = clHighlight
+            GridLineStyle = psSolid
+            DataSource = dsProdutosConsig
+            Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgHeaderPushedLook]
+            ParentColor = False
+            TabOrder = 0
+            OnTitleClick = RxDBGrid1TitleClick
+          end
+          object btAddConsignado: TSpeedButton
+            Left = 910
+            Height = 32
+            Top = 6
+            Width = 32
+            Glyph.Data = {
+              C6070000424DC607000000000000360000002800000016000000160000000100
+              2000000000009007000064000000640000000000000000000000FFFFFF00FFFF
+              FF0004743AE804733AFF04733AFF04733AFF04733AFF04733AFF04733AFF0473
+              3AFF04733AFF04733AFF04733AFF04733AFF04733AFF04733AFF04733AFF0473
+              3AFF04733AFF04743AE8FFFFFF00FFFFFF00FFFFFF000000000204733AFF7ECA
+              A3FF7ECAA3FF7ECAA3FF7ECAA3FF7ECCA4FF7FCEA5FF7FD0A7FF7FD1A7FF80D2
+              A8FF80D2A8FF80D1A8FF7FD1A7FF7FD0A7FF7FCEA5FF7ECCA4FF7ECAA3FF0473
+              3AFF00000005FFFFFF00FFFFFF000000000404733AFF7ECAA3FF069A4EFF069A
+              4EFF079F51FF08A454FF0AA857FF0BAC5AFF0CAF5BFF0CB05DFF0CB15DFF0CB0
+              5DFF0CAF5BFF0BAC5AFF0AA857FF08A454FF7ECDA4FF04733AFF000000090000
+              0003FFFFFF00FFFFFF0004733AFF7DC9A2FF7DC9A2FF7ECBA4FF7ECEA5FF7FD1
+              A8FF80D4A9FF81D6ABFF82D9ACFF82DAADFF82D9ADFF81D8ACFF81D7ABFF81D6
+              AAFF80D4A9FF7FD1A8FF7ECEA5FF04733AFF00000003FFFFFF00FFFFFF00FFFF
+              FF0004743AE104733AFB04733AFB04733AFB04733AFB04733AFB04733AFC0474
+              3AFD57CD91FF57CF92FF04743AFD04733AFC04733AFB04733AFB04733AFB0473
+              3AFB04733AFB04743BE1FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004763CAF3EA772F86BD9A1FF6CDC
+              A3FF3EAA73F804773CAFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF0004753B7926915AF575D8A6FF1EC771FF1FCD75FF78E2ADFF2893
+              5CF504753B79FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004733A471580
+              49F576D2A3FF29C375FF11C369FF13C86CFF2BCF7CFF78DAA9FF16824AF50473
+              3A47FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF0004733A240A783FF170C89CFF39C17CFF0EB9
+              62FF10BD65FF11C167FF11C268FF3CCC83FF6DCD9DFF0A793FF104733A24FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF0004733A0D04753BE167BB91FE70CD9DFF12B15FFF0DB35EFF0EB761FF0EB9
+              62FF0FBA63FF0EB962FF4FCA8BFF5ABC89FE04763BE104733A0DFFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004733A0104753BBC52A9
+              7CFA88D1ACFF42B97DFF34B774FF0FAD5DFF0CAF5CFF0CB15DFF0CB25EFF0CB1
+              5DFF0CAF5CFF62C994FF44A774F904753BBC04733A01FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF0004743A883A9868F796D4B4FF52B883FF46B6
+              7DFF3FB679FF33B472FF18AD60FF0AA958FF0AAA58FF0AA958FF0AA857FF11A8
+              5BFF6EC899FF2C915EF604743A88FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF0004733A53278956F6A3D8BDFFA8DBC1FFA4DABEFFA0D8BBFF41B279FF3AB2
+              74FF31B06FFF22AA65FF09A254FF08A153FF7ECDA5FF7ECCA4FF7ECBA3FF77C6
+              9EFF1B824DF504733A53FFFFFF00FFFFFF00FFFFFF00FFFFFF0004753BC00473
+              3AFF04733AFF04733AFF04763BF7A2D9BDFF45B37BFF3CB074FF32AC6DFF2AA8
+              67FF1AA25CFF069A4EFF7ECAA3FF04763BF704733AFF04733AFF04733AFF0475
+              3BC0FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF0004733AFFA4DABEFF47B47CFF3EB076FF34AD6FFF2CA969FF23A562FF119E
+              56FF7ECAA3FF04733AFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004733AFFA5DA
+              BFFF49B57DFF40B177FF36AD70FF2DA969FF24A663FF18A15BFF7ECAA3FF0473
+              3AFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004733AFFA6DABFFF4AB57EFF40B1
+              77FF36AD70FF2EAA6AFF25A664FF1AA25CFF7FCBA4FF04733AFFFFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF0004733AFFA6DABFFF4AB57EFF40B177FF36AD70FF2EAA
+              6AFF24A663FF1AA25CFF7FCBA4FF04733AFFFFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF0004733AFFA5DABFFFA0D8BBFF9CD6B8FF96D4B4FF92D2B1FF8DD0AEFF88CE
+              AAFF80CBA4FF04733AFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004743AE80473
+              3AFF04733AFF04733AFF04733AFF04733AFF04733AFF04733AFF04733AFF0474
+              3AE8FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00
+            }
+            OnClick = btAddConsignadoClick
+          end
+          object btDelConsignado: TSpeedButton
+            Left = 910
+            Height = 32
+            Hint = 'Devolver para o estoque'
+            Top = 42
+            Width = 32
+            Glyph.Data = {
+              C6070000424DC607000000000000360000002800000016000000160000000100
+              2000000000009007000064000000640000000000000000000000FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF0004743AE804733AFF04733AFF04733AFF04733AFF04733AFF04733AFF0473
+              3AFF04733AFF04743AE8FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004733AFF80CB
+              A4FF88CEAAFF8DD0AEFF92D2B1FF96D4B4FF9CD6B8FFA0D8BBFFA5DABFFF0473
+              3AFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004733AFF7FCBA4FF1AA25CFF24A6
+              63FF2EAA6AFF36AD70FF40B177FF4AB57EFFA6DABFFF04733AFFFFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF0004733AFF7FCBA4FF1AA25CFF25A664FF2EAA6AFF36AD
+              70FF40B177FF4AB57EFFA6DABFFF04733AFFFFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF0004733AFF7ECAA3FF18A15BFF24A663FF2DA969FF36AD70FF40B177FF49B5
+              7DFFA5DABFFF04733AFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004733AFF7ECA
+              A3FF119E56FF23A562FF2CA969FF34AD6FFF3EB076FF47B47CFFA4DABEFF0473
+              3AFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF0004753BC004733AFF04733AFF04733AFF04763BF77ECAA3FF069A4EFF1AA2
+              5CFF2AA867FF32AC6DFF3CB074FF45B37BFFA2D9BDFF04763BF704733AFF0473
+              3AFF04733AFF04753BC0FFFFFF00FFFFFF00FFFFFF00FFFFFF0004733A531B82
+              4DF577C69EFF7ECBA3FF7ECCA4FF7ECDA5FF08A153FF09A254FF22AA65FF31B0
+              6FFF3AB274FF41B279FFA0D8BBFFA4DABEFFA8DBC1FFA3D8BDFF278956F60473
+              3A53FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004743A882C915EF66EC8
+              99FF11A85BFF0AA857FF0AA958FF0AAA58FF0AA958FF18AD60FF33B472FF3FB6
+              79FF46B67DFF52B883FF96D4B4FF3A9868F704743A88FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF0004733A0104753BBC44A774F962C994FF0CAF
+              5CFF0CB15DFF0CB25EFF0CB15DFF0CAF5CFF0FAD5DFF34B774FF42B97DFF88D1
+              ACFF52A97CFA04753BBC04733A01FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF0004733A0D04763BE15ABC89FE4FCA8BFF0EB962FF0FBA
+              63FF0EB962FF0EB761FF0DB35EFF12B15FFF70CD9DFF67BB91FE04753BE10473
+              3A0DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF0004733A240A793FF16DCD9DFF3CCC83FF11C268FF11C167FF10BD
+              65FF0EB962FF39C17CFF70C89CFF0A783FF104733A24FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF0004733A4716824AF578DAA9FF2BCF7CFF13C86CFF11C369FF29C375FF76D2
+              A3FF158049F504733A47FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000475
+              3B7928935CF578E2ADFF1FCD75FF1EC771FF75D8A6FF26915AF504753B79FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004773CAF3EAA
+              73F86CDCA3FF6BD9A1FF3EA772F804763CAFFFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0004743BE10473
+              3AFB04733AFB04733AFB04733AFB04733AFB04733AFC04743AFD57CF92FF57CD
+              91FF04743AFD04733AFC04733AFB04733AFB04733AFB04733AFB04733AFB0474
+              3AE1FFFFFF00FFFFFF00FFFFFF000000000304733AFF7ECEA5FF7FD1A8FF80D4
+              A9FF81D6AAFF81D7ABFF81D8ACFF82D9ADFF82DAADFF82D9ACFF81D6ABFF80D4
+              A9FF7FD1A8FF7ECEA5FF7ECBA4FF7DC9A2FF7DC9A2FF04733AFFFFFFFF00FFFF
+              FF00000000030000000904733AFF7ECDA4FF08A454FF0AA857FF0BAC5AFF0CAF
+              5BFF0CB05DFF0CB15DFF0CB05DFF0CAF5BFF0BAC5AFF0AA857FF08A454FF079F
+              51FF069A4EFF069A4EFF7ECAA3FF04733AFF00000004FFFFFF00FFFFFF000000
+              000504733AFF7ECAA3FF7ECCA4FF7FCEA5FF7FD0A7FF7FD1A7FF80D1A8FF80D2
+              A8FF80D2A8FF7FD1A7FF7FD0A7FF7FCEA5FF7ECCA4FF7ECAA3FF7ECAA3FF7ECA
+              A3FF7ECAA3FF04733AFF00000002FFFFFF00FFFFFF00FFFFFF0004743AE80473
+              3AFF04733AFF04733AFF04733AFF04733AFF04733AFF04733AFF04733AFF0473
+              3AFF04733AFF04733AFF04733AFF04733AFF04733AFF04733AFF04733AFF0474
+              3AE8FFFFFF00FFFFFF00
+            }
+            OnClick = btDelConsignadoClick
+            ShowHint = True
+            ParentShowHint = False
+          end
+          object edCodBarras: TEditButton
+            Left = 6
+            Height = 23
+            Top = 11
+            Width = 116
+            ButtonCaption = '...'
+            ButtonWidth = 23
+            MaxLength = 0
+            NumGlyphs = 1
+            OnButtonClick = edCodBarrasButtonClick
+            OnKeyDown = edCodBarrasKeyDown
+            PasswordChar = #0
+            TabOrder = 1
+          end
+          object edDescricao: TEditButton
+            Left = 219
+            Height = 23
+            Top = 11
+            Width = 449
+            ButtonCaption = '...'
+            ButtonWidth = 23
+            DirectInput = False
+            MaxLength = 0
+            NumGlyphs = 1
+            OnButtonClick = edDescricaoButtonClick
+            PasswordChar = #0
+            TabOrder = 2
+          end
+          object Label19: TLabel
+            Left = 6
+            Height = 15
+            Top = -4
+            Width = 57
+            Caption = 'Cód.barras'
+            ParentColor = False
+          end
+          object Label20: TLabel
+            Left = 219
+            Height = 15
+            Top = -4
+            Width = 51
+            Caption = 'Descrição'
+            ParentColor = False
+          end
+          object Label21: TLabel
+            Left = 822
+            Height = 15
+            Top = -4
+            Width = 62
+            Caption = 'Quantidade'
+            ParentColor = False
+          end
+          object edLote: TEditButton
+            Left = 680
+            Height = 23
+            Top = 11
+            Width = 119
+            ButtonCaption = '...'
+            ButtonWidth = 23
+            DirectInput = False
+            MaxLength = 0
+            NumGlyphs = 1
+            OnButtonClick = edLoteButtonClick
+            OnEnter = edLoteEnter
+            OnKeyDown = edLoteKeyDown
+            PasswordChar = #0
+            TabOrder = 3
+          end
+          object Label22: TLabel
+            Left = 680
+            Height = 15
+            Top = -4
+            Width = 23
+            Caption = 'Lote'
+            ParentColor = False
+          end
+          object edQuantidade: TFloatSpinEdit
+            Left = 822
+            Height = 23
+            Top = 11
+            Width = 82
+            DecimalPlaces = 3
+            Increment = 1
+            MaxValue = 100
+            MinValue = 1
+            TabOrder = 4
+            Value = 1
+          end
+          object Label23: TLabel
+            Left = 135
+            Height = 15
+            Top = -4
+            Width = 39
+            Caption = 'Código'
+            ParentColor = False
+          end
+          object edCodigo: TEditButton
+            Left = 135
+            Height = 23
+            Top = 11
+            Width = 74
+            ButtonCaption = '...'
+            ButtonWidth = 23
+            MaxLength = 0
+            NumGlyphs = 1
+            OnButtonClick = edCodigoButtonClick
+            OnKeyDown = edCodigoKeyDown
+            PasswordChar = #0
+            TabOrder = 5
+          end
+          object edTotal: TCurrencyEdit
+            Left = 790
+            Height = 23
+            Top = 374
+            Width = 120
+            Alignment = taRightJustify
+            MaxValue = 0
+            MinValue = 0
+            TabOrder = 6
+            Value = 0
+          end
+          object Label24: TLabel
+            Left = 667
+            Height = 15
+            Top = 368
+            Width = 60
+            Caption = 'Totalização'
+            ParentColor = False
+          end
+          object RLReport1: TRLReport
+            Left = 22
+            Height = 1123
+            Top = 376
+            Width = 794
+            DataSource = dsProdutosConsig
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'Arial'
+            RealBounds.Left = 0
+            RealBounds.Top = 0
+            RealBounds.Width = 0
+            RealBounds.Height = 0
+            Title = 'Lista de produtos consignados'
+            Visible = False
+            object RLBand4: TRLBand
+              Left = 38
+              Height = 98
+              Top = 38
+              Width = 718
+              BandType = btHeader
+              RealBounds.Left = 0
+              RealBounds.Top = 0
+              RealBounds.Width = 0
+              RealBounds.Height = 0
+              object RLSystemInfo4: TRLSystemInfo
+                Left = 639
+                Height = 16
+                Top = 0
+                Width = 79
+                Align = faRightTop
+                Alignment = taRightJustify
+                Info = itTitle
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+                Text = '#-REL04'
+              end
+              object RLLabel2: TRLLabel
+                Left = 0
+                Height = 17
+                Top = 0
+                Width = 66
+                Align = faLeftTop
+                Font.Color = clBlack
+                Font.Height = -15
+                Font.Name = 'Arial'
+                ParentFont = False
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLDraw3: TRLDraw
+                Left = 34
+                Height = 7
+                Top = 71
+                Width = 650
+                Angle = 0
+                DrawKind = dkLine
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLLabel4: TRLLabel
+                Left = 3
+                Height = 16
+                Top = 47
+                Width = 58
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLLabel5: TRLLabel
+                Left = 0
+                Height = 15
+                Top = 82
+                Width = 29
+                Caption = 'Cód.'
+                Font.Color = clBlack
+                Font.Height = -12
+                Font.Name = 'Arial'
+                ParentFont = False
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLLabel6: TRLLabel
+                Left = 50
+                Height = 15
+                Top = 83
+                Width = 66
+                Caption = 'Cód.Barras'
+                Font.Color = clBlack
+                Font.Height = -12
+                Font.Name = 'Arial'
+                ParentFont = False
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLLabel7: TRLLabel
+                Left = 138
+                Height = 15
+                Top = 83
+                Width = 59
+                Caption = 'Descrição'
+                Font.Color = clBlack
+                Font.Height = -12
+                Font.Name = 'Arial'
+                ParentFont = False
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLLabel8: TRLLabel
+                Left = 562
+                Height = 15
+                Top = 83
+                Width = 39
+                Alignment = taRightJustify
+                Caption = 'Quant.'
+                Font.Color = clBlack
+                Font.Height = -12
+                Font.Name = 'Arial'
+                ParentFont = False
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLLabel10: TRLLabel
+                Left = 686
+                Height = 15
+                Top = 83
+                Width = 30
+                Alignment = taRightJustify
+                Caption = 'Total'
+                Font.Color = clBlack
+                Font.Height = -12
+                Font.Name = 'Arial'
+                ParentFont = False
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+            end
+            object RLBand5: TRLBand
+              Left = 38
+              Height = 21
+              Top = 136
+              Width = 718
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'Arial'
+              ParentFont = False
+              RealBounds.Left = 0
+              RealBounds.Top = 0
+              RealBounds.Width = 0
+              RealBounds.Height = 0
+              object RLDBText1: TRLDBText
+                Left = 0
+                Height = 14
+                Top = 2
+                Width = 40
+                DataField = 'produto'
+                DataSource = dsProdutosConsig
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLDBText2: TRLDBText
+                Left = 50
+                Height = 14
+                Top = 2
+                Width = 73
+                DataField = 'codigo_barras'
+                DataSource = dsProdutosConsig
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLDBText3: TRLDBText
+                Left = 138
+                Height = 15
+                Top = 2
+                Width = 424
+                AutoSize = False
+                DataField = 'descricao'
+                DataSource = dsProdutosConsig
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLDBText4: TRLDBText
+                Left = 581
+                Height = 15
+                Top = 2
+                Width = 20
+                Alignment = taRightJustify
+                AutoSize = False
+                DataField = 'quant_consignada'
+                DataSource = dsProdutosConsig
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLDBText6: TRLDBText
+                Left = 658
+                Height = 15
+                Top = 2
+                Width = 57
+                Alignment = taRightJustify
+                AutoSize = False
+                DataField = 'total_posse'
+                DataSource = dsProdutosConsig
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+            end
+            object RLBand6: TRLBand
+              Left = 38
+              Height = 40
+              Top = 184
+              Width = 718
+              BandType = btFooter
+              RealBounds.Left = 0
+              RealBounds.Top = 0
+              RealBounds.Width = 0
+              RealBounds.Height = 0
+              object RLSystemInfo5: TRLSystemInfo
+                Left = 0
+                Height = 14
+                Top = 6
+                Width = 123
+                Align = faLeftOnly
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Pitch = fpVariable
+                Font.Quality = fqDraft
+                Font.Style = [fsItalic]
+                Info = itFullDate
+                ParentFont = False
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+                Text = 'Impresso em  '
+              end
+              object RLSystemInfo6: TRLSystemInfo
+                Left = 508
+                Height = 14
+                Top = 6
+                Width = 210
+                Align = faRightOnly
+                Alignment = taRightJustify
+                Font.Color = clBlack
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Style = [fsItalic]
+                Info = itPagePreview
+                ParentFont = False
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+                Text = 'Página #/#'
+              end
+              object RLDraw4: TRLDraw
+                Left = 34
+                Height = 7
+                Top = 0
+                Width = 650
+                Angle = 0
+                DrawKind = dkLine
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+            end
+            object RLBand1: TRLBand
+              Left = 38
+              Height = 27
+              Top = 157
+              Width = 718
+              BandType = btSummary
+              RealBounds.Left = 0
+              RealBounds.Top = 0
+              RealBounds.Width = 0
+              RealBounds.Height = 0
+              object RLDBResult1: TRLDBResult
+                Left = 604
+                Height = 16
+                Top = 7
+                Width = 110
+                Alignment = taRightJustify
+                DataField = 'total_posse'
+                DataSource = dsProdutosConsig
+                Info = riSum
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+              object RLLabel1: TRLLabel
+                Left = 511
+                Height = 16
+                Top = 9
+                Width = 70
+                Caption = 'Totalizacao'
+                RealBounds.Left = 0
+                RealBounds.Top = 0
+                RealBounds.Width = 0
+                RealBounds.Height = 0
+              end
+            end
+          end
+          object edFilterData: TEdit
+            Left = 15
+            Height = 23
+            Top = 49
+            Width = 84
+            OnChange = edFilterDataChange
+            TabOrder = 8
+          end
+          object Label25: TLabel
+            Left = 6
+            Height = 15
+            Top = 35
+            Width = 32
+            Caption = 'Filtros'
+            ParentColor = False
+          end
+          object edFilterData1: TEdit
+            Left = 106
+            Height = 23
+            Top = 49
+            Width = 52
+            OnChange = edFilterData1Change
+            TabOrder = 9
+          end
+          object edFilterData2: TEdit
+            Left = 162
+            Height = 23
+            Top = 49
+            Width = 86
+            OnChange = edFilterData2Change
+            TabOrder = 10
+          end
+          object edFilterData3: TEdit
+            Left = 252
+            Height = 23
+            Top = 49
+            Width = 333
+            OnChange = edFilterData3Change
+            TabOrder = 11
+          end
+          object edFilterData4: TEdit
+            Left = 593
+            Height = 23
+            Top = 49
+            Width = 70
+            OnChange = edFilterData4Change
+            TabOrder = 12
+          end
+          object btDelVenda: TSpeedButton
+            Left = 946
+            Height = 32
+            Hint = 'Faturar como venda'
+            Top = 42
+            Width = 32
+            Glyph.Data = {
+              36090000424D3609000000000000360000002800000018000000180000000100
+              2000000000000009000064000000640000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000000000000004E4F4F0A5355
+              54245260594951675B5E51655A5C525A5641545454204F4F4F08000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000000000535353115474646C539E78C850BA
+              83F64DBF83FE4ABD81FE48BC7EFF45BA7BFE45A973EB4A8766B4515D57535353
+              530D000000000000000000000000000000000000000000000000000000000000
+              000000000000000000004545450256665E445BAC84D65AC58FFF58C48DFF55C2
+              8AFF52C188FF4FC085FF4CBE82FF4ABD80FF47BC7DFF44BA7BFF42B577FB4A84
+              64B25355542C4444440100000000000000000000000000000000000000000000
+              000000000000454646025976686164C496F662C996FF5FC794FE5CC691FE5AC5
+              8FFF57C38CFE66C694FE5AC38CFF4EBF84FE4CBE82FF49BC7FFE46BB7DFE43BA
+              7AFF469C6EDA5358553D44444401000000000000000000000000000000000000
+              0000000000005A7267516CCA9EF969CC9EFE67CB9BFF64CA98FE61C896FE5EC7
+              93FF5CC691FECDE0D5FE8FD0AEFF53C289FE50C086FF4EBF84FE4BBD81FE48BC
+              7EFF45BB7CFE489D6FDA5355542C000000000000000000000000000000000000
+              0000565E5B1C71C49EE971D0A5FF6ECFA2FF6CCD9FFF69CC9DFF66CB9AFF74CD
+              A2FFA6D9BFFFE0E6E2FFC2DECFFF84CEA8FF56C38BFF53C188FF50C086FF4DBF
+              83FF4ABD80FF47BC7EFF4D8567B25353530D000000000000000000000000393B
+              3A01699A859679D3ABFF76D2A9FE73D1A6FE70D0A4FF6ECEA1FE8AD5B1FEE7EB
+              E9FFECECEBFEEBEAEAFEEAE9E8FFE8E8E7FEBEDDCCFF5BC48FFE55C28AFE52C1
+              87FF4FBF85FE4CBE82FE4AB97EFB525E5853000000000000000000000000545B
+              58137CCEABF27CD5AFFF7AD4ADFE78D3ABFE75D2A8FF73D1A6FEDEECE5FEF0EF
+              EFFFD7E8DFFEDFE9E4FEB6DECAFFD5E5DCFEE9E9E8FF9BD5B7FE59C48FFE57C3
+              8CFF54C289FE51C087FE4EBF84FE508A6BB45151510800000000000000006481
+              755882D7B4FF80D6B2FF7ED5B0FF7CD5AEFF7AD4ACFF8DD9B7FFF2F2F2FFF1F1
+              F0FF81D4AEFFD8E9E0FF9EDABDFF8FD5B3FFECEBEAFFC8E1D4FF5EC793FF5BC5
+              90FF59C48EFF56C38BFF53C189FF51AE7EEB545454200000000000000000719E
+              8C8D86D8B7FE84D8B5FF81D7B3FE7FD6B1FE7DD5AFFF7BD4AEFE7DD5AEFE86D6
+              B2FF74D1A7FEDAEBE3FEA2DCC1FFA0DBBFFEEEEDEDFFD0E5DAFE63C997FE60C8
+              95FF5DC692FE5BC590FE58C48DFE55C28AFE545A5741000000000000000078AD
+              98AA89DABAFE87D9B8FF85D8B6FE83D7B4FE81D7B3FF7FD6B1FE7DD5AFFE7BD4
+              ADFF7DD5AEFEE1EEE8FEDAECE3FFEEF0EEFEF0F0EFFFB7E0CCFE68CB9CFE65CA
+              99FF62C997FE5FC794FE5DC692FE5AC58FFF54675D5C00000000000000007CB1
+              9DAE8DDBBDFF8BDABBFF89D9B9FF87D9B7FF85D8B6FF82D7B4FF80D6B2FFB3E4
+              CFFFEFF4F1FFF5F5F5FFF4F4F4FFF3F3F2FFDDECE5FF7BD2AAFF6DCEA0FF6ACC
+              9EFF67CB9BFF64CA99FF62C896FF5FC794FF55695F5E00000000000000007CAC
+              9A9B91DCC0FE8FDBBEFF8CDBBCFE8ADABAFE88D9B9FF86D8B7FEB3E5D0FEF9F9
+              F9FFF8F8F8FEF7F7F7FEDEEFE7FFA9E0C8FE7AD4ACFF74D1A8FE71D0A5FE6FCF
+              A2FF6CCDA0FE69CC9DFE66CB9BFE64C998FF55625C490000000000000000759A
+              8D6F94DEC3FF92DDC1FF90DCBFFF8EDBBEFF8CDBBCFF8ADABAFFE7F5EFFFFBFA
+              FAFFD1EEE2FFE8F4EEFFAFE3CDFF7DD5AFFF7BD4AEFF79D4ACFF76D2A9FF73D1
+              A7FF71D0A4FF6ECEA2FF6BCD9FFF67C598F65455542400000000000000006577
+              712A98DFC6FE96DEC4FF94DDC2FE92DDC1FE90DCBFFF8DDBBDFEF5FAF8FEFCFC
+              FCFF9ADEC3FEE5F4EEFEB2E5D0FF9BDEC2FE98DDBFFF83D7B3FE7AD4ADFE78D3
+              ABFF76D2A9FE73D1A6FE70CFA4FE65A788C85252520A0000000000000000464D
+              4B018CC2AFC399DFC7FF97DFC5FE95DEC4FE93DDC2FF91DCC0FEE6F6F0FEFDFD
+              FDFFC8ECDEFEE8F6F0FEC6EBDCFFF1F7F5FEF9F9F9FFA7E1C8FE7ED5B0FE7CD5
+              AEFF7AD4ADFE78D3ABFE75D2A8FE5C786C6C0000000000000000000000000000
+              0000718C83429DE1CAFE9BE0C8FF99DFC7FF97DFC5FF95DEC3FFB1E6D3FFFCFD
+              FDFFFDFDFDFFFDFDFDFFFCFCFCFFFBFBFBFFE3F3ECFF86D8B6FF82D7B3FF80D6
+              B2FF7ED5B0FF7BD5AEFF71B798D6545555110000000000000000000000000000
+              00000000000086B1A3959FE1CCFE9DE1CAFE9AE0C8FF98DFC6FE96DEC5FEADE5
+              D1FFDBF3EAFEFAFCFBFEEDF8F4FFC6ECDDFE90DCBEFF87D9B8FE85D8B6FE83D7
+              B5FF81D7B3FE7DCFACF65A696344000000000000000000000000000000000000
+              0000000000005B6864078FBFB0B4A0E2CDFE9EE1CBFF9CE0C9FE9AE0C8FE98DF
+              C6FF96DEC4FECAEEE1FEADE5D0FF8FDCBFFE8DDBBDFF8BDABBFE89D9B9FE87D9
+              B8FF83D4B3F9617A70614B4D4C02000000000000000000000000000000000000
+              000000000000000000005B68640788B2A595A2E2CEFEA0E2CCFE9EE1CBFE9BE0
+              C9FF99DFC7FE97DFC5FE95DEC4FF93DDC2FE91DCC0FF8FDCBEFE8DDBBCFE85CC
+              B0E961766D514C4E4D0200000000000000000000000000000000000000000000
+              000000000000000000000000000000000000758F874292C4B5C3A1E2CEFE9FE2
+              CCFF9DE1CAFF9BE0C8FF99DFC7FF97DEC5FF95DEC3FF8FD5BBF2759F8F965A62
+              5F1C000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000000000000000004C5451016A7C772A7EA0
+              956F85B1A39B87B5A6AE84B2A2AA7CA4968D6D877E585A615E13434645010000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000
+            }
+            OnClick = btDelVendaClick
+            ShowHint = True
+            ParentShowHint = False
+          end
+        end
+        object Panel1: TPanel
+          Left = 0
+          Height = 29
+          Top = 0
+          Width = 993
+          Align = alTop
+          ClientHeight = 29
+          ClientWidth = 993
+          TabOrder = 1
+          object Label16: TLabel
+            Left = 787
+            Height = 15
+            Top = 7
+            Width = 92
+            Caption = 'Comissão padrão'
+            ParentColor = False
+          end
+          object DBEdit16: TDBEdit
+            Left = 911
+            Height = 23
+            Top = 2
+            Width = 65
+            DataField = 'comissao'
+            DataSource = dsEmpregados
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object DBText1: TDBText
+            Left = 91
+            Height = 16
+            Top = 5
+            Width = 664
+            AutoSize = False
+            DataField = 'nome'
+            DataSource = dsEmpregados
+            ParentColor = False
+          end
+          object DBText2: TDBText
+            Left = 12
+            Height = 16
+            Top = 5
+            Width = 71
+            Alignment = taRightJustify
+            AutoSize = False
+            DataField = 'id'
+            DataSource = dsEmpregados
+            ParentColor = False
+          end
+        end
+      end
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 1024
+    AutoSize = True
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBar1'
+    Flat = False
+    Images = dbConnect.ImageList1
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'ToolButton1'
+      ImageIndex = 8
+      OnClick = ToolButton1Click
+    end
+    object ToolButton2: TToolButton
+      Left = 49
+      Height = 48
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton2'
+      Style = tbsSeparator
+    end
+    object ToolButton3: TToolButton
+      Left = 59
+      Top = 2
+      Caption = 'ToolButton3'
+      ImageIndex = 6
+      Style = tbsDropDown
+    end
+    object ToolButton4: TToolButton
+      Left = 119
+      Height = 48
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton4'
+      Style = tbsSeparator
+    end
+    object ToolButton8: TToolButton
+      Left = 369
+      Height = 48
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton8'
+      Style = tbsSeparator
+    end
+    object ToolButton9: TToolButton
+      Left = 379
+      Top = 2
+      Caption = 'ToolButton9'
+      ImageIndex = 5
+      OnClick = ToolButton9Click
+    end
+    object ToolButton10: TToolButton
+      Left = 427
+      Height = 48
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton10'
+      Style = tbsSeparator
+    end
+    object WAGDBNavigator1: TWAGDBNavigator
+      Left = 437
+      Height = 48
+      Top = 2
+      Width = 359
+      Caption = 'Ordem'
+      OrdersDisplay.Strings = (
+        'Codigo'
+        'Nome'
+      )
+      OrdersFields.Strings = (
+        'id'
+        'nome'
+      )
+      TableName = 'empregados'
+      KeyField = 'id'
+      Where = '0=0'
+      Connection = dbConnect.ZConnection1
+      OnAfterScroll = WAGDBNavigator1AfterScroll
+      ButtonsWidth = 48
+    end
+    object ToolButton11: TToolButton
+      Left = 796
+      Height = 48
+      Top = 2
+      Width = 40
+      Caption = 'ToolButton11'
+      Style = tbsDivider
+    end
+    object ToolButton12: TToolButton
+      Left = 836
+      Top = 2
+      Caption = 'ToolButton12'
+      ImageIndex = 7
+      OnClick = ToolButton12Click
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 129
+      Height = 48
+      Top = 2
+      Width = 240
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 48
+      ClientWidth = 240
+      DataSource = dsEmpregados
+      OnClick = DBNavigator1Click
+      Options = []
+      TabOrder = 1
+      VisibleButtons = [nbInsert, nbEdit, nbPost, nbCancel, nbRefresh]
+    end
+  end
+  object Label4: TLabel
+    Left = 5
+    Height = 15
+    Top = 32
+    Width = 33
+    Caption = 'Nome'
+    ParentColor = False
+  end
+  object ActionList1: TActionList
+    Images = dbConnect.ImageList1
+    left = 208
+    top = 40
+    object acLocalizar: TAction
+      Caption = 'acLocalizar'
+      ImageIndex = 4
+    end
+    object Action1: TAction
+      Caption = 'Action1'
+      ImageIndex = 0
+    end
+    object Action2: TAction
+      Caption = 'Action2'
+      ImageIndex = 3
+    end
+    object Action3: TAction
+      Caption = 'Action3'
+      ImageIndex = 1
+    end
+    object Action4: TAction
+      Caption = 'Action4'
+      ImageIndex = 2
+    end
+    object Action5: TAction
+      Caption = 'Action5'
+      ImageIndex = 5
+    end
+  end
+  object qryEmpregados: TZQuery
+    Connection = dbConnect.ZConnection1
+    UpdateObject = ZUpdateSQL1
+    AfterPost = qryEmpregadosAfterPost
+    SQL.Strings = (
+      'Select e.*,su.apelido'
+      'from empregados e'
+      'left join sys_usuarios su on su.id=e.sys_usuario'
+      'Where e.id =:id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    UpdateMode = umUpdateAll
+    left = 536
+    top = 464
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryEmpregadosid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryEmpregadosnome: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryEmpregadosendereco: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryEmpregadoscidade: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryEmpregadosbairro: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryEmpregadoscep: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryEmpregadoscomplemento: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'complemento'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryEmpregadosuf: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryEmpregadosemail: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryEmpregadostelefone1: TStringField
+      DisplayWidth = 64
+      FieldKind = fkData
+      FieldName = 'telefone1'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryEmpregadostelefone2: TStringField
+      DisplayWidth = 64
+      FieldKind = fkData
+      FieldName = 'telefone2'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 64
+    end
+    object qryEmpregadoscpf: TStringField
+      DisplayWidth = 72
+      FieldKind = fkData
+      FieldName = 'cpf'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object qryEmpregadosrg: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'rg'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryEmpregadosfuncao: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'funcao'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryEmpregadosobservacao: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'observacao'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryEmpregadosdataadmissao: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'dataadmissao'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryEmpregadosplano_contas: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'plano_contas'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryEmpregadossenha_id: TStringField
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'senha_id'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryEmpregadoscomissao: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'comissao'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 327682
+    end
+    object qryEmpregadosassinatura_email: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'assinatura_email'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryEmpregadosnome_curto: TStringField
+      FieldKind = fkData
+      FieldName = 'nome_curto'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryEmpregadossys_usuario: TLongintField
+      FieldKind = fkData
+      FieldName = 'sys_usuario'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryEmpregadosapelido: TStringField
+      FieldKind = fkData
+      FieldName = 'apelido'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM empregados'
+      'WHERE'
+      '  empregados.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO empregados'
+      '  (id, nome, endereco, cidade, bairro, cep, complemento, uf, email, telefone1, '
+      '   telefone2, cpf, rg, funcao, observacao, dataadmissao, plano_contas, '
+      '   senha_id, assinatura_email, nome_curto, comissao, sys_usuario)'
+      'VALUES'
+      '  (:id, :nome, :endereco, :cidade, :bairro, :cep, :complemento, :uf, :email, '
+      '   :telefone1, :telefone2, :cpf, :rg, :funcao, :observacao, :dataadmissao, '
+      '   :plano_contas, :senha_id, :assinatura_email, :nome_curto, :comissao, '
+      '   :sys_usuario)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE empregados SET'
+      '  id = :id,'
+      '  nome = :nome,'
+      '  endereco = :endereco,'
+      '  cidade = :cidade,'
+      '  bairro = :bairro,'
+      '  cep = :cep,'
+      '  complemento = :complemento,'
+      '  uf = :uf,'
+      '  email = :email,'
+      '  telefone1 = :telefone1,'
+      '  telefone2 = :telefone2,'
+      '  cpf = :cpf,'
+      '  rg = :rg,'
+      '  funcao = :funcao,'
+      '  observacao = :observacao,'
+      '  dataadmissao = :dataadmissao,'
+      '  plano_contas = :plano_contas,'
+      '  senha_id = :senha_id,'
+      '  assinatura_email = :assinatura_email,'
+      '  nome_curto = :nome_curto,'
+      '  comissao = :comissao,'
+      '  sys_usuario = :sys_usuario'
+      'WHERE'
+      '  empregados.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 616
+    top = 488
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nome'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'endereco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'bairro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cep'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'complemento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'uf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'email'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telefone1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telefone2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'rg'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'funcao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'observacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dataadmissao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'plano_contas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'senha_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'assinatura_email'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nome_curto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'comissao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'sys_usuario'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsEmpregados: TDataSource
+    DataSet = qryEmpregados
+    left = 536
+    top = 512
+  end
+  object PopupMenu1: TPopupMenu
+    left = 248
+    top = 40
+    object MenuItem1: TMenuItem
+      Caption = 'Localizar por código'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Localizar por nome'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Localizar por CNPJ/CPF'
+      OnClick = MenuItem3Click
+    end
+  end
+  object ACBrValidador1: TACBrValidador
+    IgnorarChar = './-'
+    left = 728
+    top = 464
+  end
+  object qryProdutosConsig: TZQuery
+    Connection = dbConnect.ZConnection1
+    AfterOpen = qryProdutosConsigAfterOpen
+    OnCalcFields = qryProdutosConsigCalcFields
+    UpdateObject = ZUpdateSQL2
+    SQL.Strings = (
+      'Select false as selecionado,ep.*,p.descricao,p.codigo_barras,l.lote as slote'
+      'From empregados_produtos ep'
+      'Left Join produtos p ON p.id=ep.produto'
+      'Left Join produtos_estoque l ON l.id=ep.lote'
+      'Where empregado=:id and ( quant_vendida <> quant_consignada)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    DataSource = dsEmpregados
+    left = 520
+    top = 152
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryProdutosConsigid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = false
+    end
+    object qryProdutosConsigempregado: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'empregado'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = false
+    end
+    object qryProdutosConsigproduto: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = false
+    end
+    object qryProdutosConsigquant_consignada: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'quant_consignada'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655363
+    end
+    object qryProdutosConsigquant_vendida: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'quant_vendida'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655363
+    end
+    object qryProdutosConsigquant_devolvida: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'quant_devolvida'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655363
+    end
+    object qryProdutosConsigdata_consignacao: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_consignacao'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object qryProdutosConsigdescricao: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 320
+    end
+    object qryProdutosConsigcodigo_barras: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'codigo_barras'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 80
+    end
+    object qryProdutosConsigtotal_posse: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'total_posse'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+    object qryProdutosConsigselecionado: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'selecionado'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qryProdutosConsiglote: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'lote'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object qryProdutosConsigempresa: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'empresa'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object qryProdutosConsigslote: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'slote'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryProdutosConsigpreco: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'preco'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+  end
+  object dsProdutosConsig: TDataSource
+    DataSet = qryProdutosConsig
+    left = 520
+    top = 272
+  end
+  object ZUpdateSQL2: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM empregados_produtos'
+      'WHERE'
+      '  empregados_produtos.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO empregados_produtos'
+      '  (empregado, produto, quant_consignada, quant_vendida, quant_devolvida, '
+      '   data_consignacao, lote, empresa, preco)'
+      'VALUES'
+      '  (:empregado, :produto, :quant_consignada, :quant_vendida, :quant_devolvida, '
+      '   :data_consignacao, :lote, :empresa, :preco)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE empregados_produtos SET'
+      '  empregado = :empregado,'
+      '  produto = :produto,'
+      '  quant_consignada = :quant_consignada,'
+      '  quant_vendida = :quant_vendida,'
+      '  quant_devolvida = :quant_devolvida,'
+      '  data_consignacao = :data_consignacao,'
+      '  lote = :lote,'
+      '  empresa = :empresa,'
+      '  preco = :preco'
+      'WHERE'
+      '  empregados_produtos.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 619
+    top = 222
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'empregado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quant_consignada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quant_vendida'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quant_devolvida'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_consignacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'lote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'empresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'preco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object ACBrCEP1: TACBrCEP
+    ProxyPort = '8080'
+    WebService = wsRepublicaVirtual
+    PesquisarIBGE = True
+    left = 728
+    top = 512
+  end
+end

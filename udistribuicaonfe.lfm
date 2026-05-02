@@ -1,0 +1,712 @@
+object frmDistribuicaoNFe: TfrmDistribuicaoNFe
+  Left = 301
+  Height = 456
+  Top = 183
+  Width = 1287
+  BorderStyle = bsDialog
+  Caption = 'Distribuição de NF-e'
+  ClientHeight = 456
+  ClientWidth = 1287
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 8
+    Width = 83
+    Caption = 'Buscar notas'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object RxDBGrid1: TRxDBGrid
+    Left = 10
+    Height = 382
+    Top = 64
+    Width = 1267
+    ColumnDefValues.BlobText = '(blob)'
+    TitleButtons = False
+    AutoSort = True
+    Columns = <    
+      item
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Baix.'
+        Width = 30
+        FieldName = 'baixado'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'NSU'
+        Width = 40
+        FieldName = 'nsu'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        PickList.Strings = (
+          'Não Manifestada'
+          'Confirmação da Operação'
+          'Ciência da Emissão'
+          'Desconhecimento da Operação'
+          'Operação não Realizada'
+        )
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Manifesto'
+        Width = 100
+        FieldName = 'evento_registrado'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+        KeyList.Strings = (
+          ''
+          '210200'
+          '210210'
+          '210220'
+          '210240'
+        )
+      end    
+      item
+        PickList.Strings = (
+          'Autorizado'
+          'Denegado'
+          'Cancelado'
+          'Encerrado'
+        )
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Status/Evento'
+        Width = 80
+        FieldName = 'ssitdfe'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+        KeyList.Strings = (
+          '1'
+          '2'
+          '3'
+          '4'
+        )
+      end    
+      item
+        PickList.Strings = (
+          'snAutorizado'
+          'snDenegado'
+          'snCancelado'
+          'snEncerrado'
+        )
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Data/Hora'
+        Width = 100
+        FieldName = 'data_hora'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+        KeyList.Strings = (
+          '1'
+          '2'
+          '3'
+          '4'
+        )
+      end    
+      item
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Chave NF-e'
+        Width = 280
+        FieldName = 'chave_nfe'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'N° NF-e'
+        Width = 80
+        FieldName = 'nnfe'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'vnf'
+        Width = 80
+        FieldName = 'vnf'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'CNPJ'
+        Width = 100
+        FieldName = 'cnpj'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Emitente'
+        Width = 320
+        FieldName = 'xnome'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end>
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end    
+      item
+        Command = rxgcSelectAll
+        ShortCut = 16449
+        Enabled = True
+      end    
+      item
+        Command = rxgcDeSelectAll
+        ShortCut = 16429
+        Enabled = True
+      end    
+      item
+        Command = rxgcInvertSelection
+        ShortCut = 16426
+        Enabled = True
+      end    
+      item
+        Command = rxgcOptimizeColumnsWidth
+        ShortCut = 16427
+        Enabled = True
+      end    
+      item
+        Command = rxgcCopyCellValue
+        ShortCut = 16451
+        Enabled = True
+      end>
+    FooterOptions.DrawFullLine = False
+    SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+    SearchOptions.FromStart = False
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter, rdgAllowFilterForm, rdgAllowToolMenu]
+    Align = alBottom
+    AlternateColor = clMoneyGreen
+    BorderSpacing.Left = 10
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    Color = clWindow
+    DrawFullLine = False
+    FocusColor = clRed
+    SelectedColor = clHighlight
+    GridLineStyle = psSolid
+    DataSource = DataSource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgRowHighlight]
+    TabOrder = 1
+    OnCellClick = RxDBGrid1CellClick
+  end
+  object btDownloadNFe: TButton
+    Left = 647
+    Height = 25
+    Top = 8
+    Width = 128
+    Caption = 'Download XML'
+    OnClick = btDownloadNFeClick
+    TabOrder = 2
+  end
+  object edNSU: TEdit
+    Left = 511
+    Height = 23
+    Top = 38
+    Width = 368
+    TabOrder = 3
+    Visible = False
+  end
+  object btManifestar: TButton
+    Left = 511
+    Height = 25
+    Top = 8
+    Width = 123
+    Caption = 'Manifestar'
+    OnClick = btManifestarClick
+    TabOrder = 4
+  end
+  object btVerXML: TButton
+    Left = 799
+    Height = 25
+    Top = 8
+    Width = 131
+    Caption = 'Visualizar XML'
+    Enabled = False
+    OnClick = btVerXMLClick
+    TabOrder = 5
+  end
+  object btVerDANFE: TButton
+    Left = 951
+    Height = 25
+    Top = 8
+    Width = 131
+    Caption = 'Visualizar DANFE'
+    Enabled = False
+    OnClick = btVerDANFEClick
+    TabOrder = 6
+  end
+  object Label1: TLabel
+    Left = 98
+    Height = 15
+    Top = 16
+    Width = 62
+    Caption = 'Ultimo NSU'
+    ParentColor = False
+  end
+  object cbxLimite: TComboBox
+    Left = 1128
+    Height = 23
+    Top = 8
+    Width = 144
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Mostrar últimas 50'
+      'Mostrar últimas 100'
+      'Mostrar Todas'
+    )
+    OnChange = cbxLimiteChange
+    Style = csDropDownList
+    TabOrder = 7
+    Text = 'Mostrar últimas 50'
+  end
+  object Label2: TLabel
+    Left = 98
+    Height = 15
+    Top = 39
+    Width = 184
+    Caption = '* Ainda tem mais notas pra baixar'
+    Font.Color = clRed
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object ACBrNFe1: TACBrNFe
+    Configuracoes.Geral.SSLLib = libOpenSSL
+    Configuracoes.Geral.SSLCryptLib = cryOpenSSL
+    Configuracoes.Geral.SSLHttpLib = httpOpenSSL
+    Configuracoes.Geral.SSLXmlSignLib = xsLibXml2
+    Configuracoes.Geral.FormatoAlerta = 'TAG:%TAGNIVEL% ID:%ID%/%TAG%(%DESCRICAO%) - %MSG%.'
+    Configuracoes.Geral.VersaoQRCode = veqr000
+    Configuracoes.Arquivos.OrdenacaoPath = <>
+    Configuracoes.WebServices.UF = 'SP'
+    Configuracoes.WebServices.AguardarConsultaRet = 0
+    Configuracoes.WebServices.QuebradeLinha = '|'
+    Configuracoes.RespTec.IdCSRT = 0
+    DANFE = ACBrNFeDANFeRL1
+    left = 944
+    top = 8
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    left = 1096
+    top = 8
+  end
+  object ImageList1: TImageList
+    left = 672
+    top = 8
+    Bitmap = {
+      4C69010000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000007030F003D1F7D073A25891F3A25892640258E1530186101000000000000
+      000000000000000000000000000000000000000000001B1241024C32B4304C32
+      B3115034BB74603DE0C2613FE4D7613FE5D9633FE6CF5D3AD69E5136B33C4E34
+      B65B4C3298040000000000000000000000001B12430E5D3DE36A603FE4CE5F40
+      E4CE613FE5D2613FE4F36140E4FF6140E4FF6140E4FB613FE5E4613EE5CD613E
+      E5CE603FE3B85538BC27000000000906160638248451603FE4D0603FE37D6140
+      E3B75F3FE422603EE383613FE4E96140E4F86241E3C06340E24F5F3CE4665E3B
+      E52C613FE3CE573ACFB21E144A13170F371C613FE49F6140E4F5613FE3B36140
+      E4D7603EE2645F3FE013603FE2626241E39A6543DF385D3EE12F5E3EE4A45C3D
+      E380613FE4E86140E4E94D33B859170F372C603EE4CE6140E4FF6140E4F96140
+      E4FE613FE4E5603EE37F5035BD0B241859155A3CE2335F3FE4B86140E4F86140
+      E4F36140E4FF6140E4F44C33B790170F372C603FE4CD6140E4FF6140E4F96140
+      E4FE6140E4E56342E17D573ABA0B251958155F3FE0326140E3B76140E4F76140
+      E4F36140E4FF6140E4F44D33B790170F371C6040E39E613FE4F56340E3B1613F
+      E4D66542E0626140DE135B3CE3636040E39C5F3FE0395F3FE02E603FE3A3603F
+      E27F6040E4E86140E4E94E32B8580906160638248450613EE4CF6241E17E613F
+      E3B86343DF235C3DE3856140E4E96140E4F9603FE4C1613EE251603FE267613F
+      E12D5F40E4CE583ACFB01F144912000000001E14420E6341E1686040E4CD6140
+      E4CB5F40E4D46140E4F46140E4FF6140E4FF6140E4FB603FE4E5603FE3CD603F
+      E4CF613EE4B55232C6250000000000000000000000001F143F025336B22E5639
+      AF105035BD6E654AE8C06040E4D66040E4D86243E5CD5D42D69A4F2EAE394D31
+      B45647238E030000000000000000000000000000000000000000000000000000
+      000009091300494696053826871C392688233E328C1230306100000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000
+    }
+  end
+  object ACBrNFeDANFeRL1: TACBrNFeDANFeRL
+    Sistema = 'Projeto ACBr - www.projetoacbr.com.br'
+    Site = 'www.walg.com.br'
+    MargemInferior = 0.7
+    MargemSuperior = 0.7
+    MargemEsquerda = 0.7
+    MargemDireita = 0.7
+    ExpandeLogoMarcaConfig.Altura = 0
+    ExpandeLogoMarcaConfig.Esquerda = 0
+    ExpandeLogoMarcaConfig.Topo = 0
+    ExpandeLogoMarcaConfig.Largura = 0
+    ExpandeLogoMarcaConfig.Dimensionar = False
+    ExpandeLogoMarcaConfig.Esticar = True
+    CasasDecimais.Formato = tdetInteger
+    CasasDecimais.qCom = 2
+    CasasDecimais.vUnCom = 2
+    CasasDecimais.MaskqCom = ',0.00'
+    CasasDecimais.MaskvUnCom = ',0.00'
+    ACBrNFe = ACBrNFe1
+    QuebraLinhaEmDetalhamentos = False
+    ImprimeDetalhamentoEspecifico = False
+    ExibeCampoFatura = False
+    DetMedicamentos = [dm_nLote, dm_dFab, dm_dVal, dm_vPMC]
+    TributosPercentualPersonalizado = 0
+    LarguraCodProd = 44
+    left = 944
+    top = 64
+  end
+  object ZQuery1: TZQuery
+    Connection = dbConnect.ZConnection1
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'SELECT false as selecionado,(coalesce(oid_xml,0) > 0) as baixado, nsu,tipo_evento , '
+      'data_hora , chave_nfe ,'
+      'substr(chave_nfe,7,14)::::varchar(14) AS cnpj, '
+      'substr(chave_nfe,26,9)::::varchar(9) AS nnfe  ,'
+      'vnf,xnome,ssitdfe, oid_xml,evento_registrado'
+      'FROM nfentrada_md nm '
+      'WHERE tipo_evento = ''resNFe'''
+      'Order by nsu desc'
+      'Limit :limite'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'limite'
+        ParamType = ptUnknown
+      end>
+    left = 1096
+    top = 56
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'limite'
+        ParamType = ptUnknown
+      end>
+    object ZQuery1selecionado: TBooleanField
+      FieldKind = fkData
+      FieldName = 'selecionado'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object ZQuery1baixado: TBooleanField
+      FieldKind = fkData
+      FieldName = 'baixado'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object ZQuery1nsu: TLongintField
+      FieldKind = fkData
+      FieldName = 'nsu'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object ZQuery1tipo_evento: TStringField
+      FieldKind = fkData
+      FieldName = 'tipo_evento'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+      Size = 60
+    end
+    object ZQuery1data_hora: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'data_hora'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object ZQuery1chave_nfe: TStringField
+      FieldKind = fkData
+      FieldName = 'chave_nfe'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 176
+    end
+    object ZQuery1cnpj: TStringField
+      FieldKind = fkData
+      FieldName = 'cnpj'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 56
+    end
+    object ZQuery1nnfe: TStringField
+      FieldKind = fkData
+      FieldName = 'nnfe'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 36
+    end
+    object ZQuery1vnf: TFloatField
+      FieldKind = fkData
+      FieldName = 'vnf'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = ',0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 8
+    end
+    object ZQuery1xnome: TStringField
+      FieldKind = fkData
+      FieldName = 'xnome'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 240
+    end
+    object ZQuery1ssitdfe: TStringField
+      FieldKind = fkData
+      FieldName = 'ssitdfe'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 60
+    end
+    object ZQuery1oid_xml: TLongintField
+      FieldKind = fkData
+      FieldName = 'oid_xml'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object ZQuery1evento_registrado: TStringField
+      FieldKind = fkData
+      FieldName = 'evento_registrado'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 24
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM nfentrada_md'
+      'WHERE'
+      '  nfentrada_md.nsu = :OLD_nsu'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO nfentrada_md'
+      '  (nsu, tipo_evento, data_hora, chave_nfe, vnf, xnome, ssitdfe, oid_xml, '
+      '   evento_registrado)'
+      'VALUES'
+      '  (:nsu, :tipo_evento, :data_hora, :chave_nfe, :vnf, :xnome, :ssitdfe, '
+      '   :oid_xml, :evento_registrado)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE nfentrada_md SET'
+      '  nsu = :nsu,'
+      '  tipo_evento = :tipo_evento,'
+      '  data_hora = :data_hora,'
+      '  chave_nfe = :chave_nfe,'
+      '  vnf = :vnf,'
+      '  xnome = :xnome,'
+      '  ssitdfe = :ssitdfe,'
+      '  oid_xml = :oid_xml,'
+      '  evento_registrado = :evento_registrado'
+      'WHERE'
+      '  nfentrada_md.nsu = :OLD_nsu'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 1158
+    top = 49
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'nsu'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tipo_evento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_hora'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'chave_nfe'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vnf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'xnome'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ssitdfe'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'oid_xml'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'evento_registrado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nsu'
+        ParamType = ptUnknown
+      end>
+  end
+end

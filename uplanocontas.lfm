@@ -1,0 +1,218 @@
+object frmPlanoContas: TfrmPlanoContas
+  Left = 308
+  Height = 620
+  Top = 157
+  Width = 571
+  BorderStyle = bsDialog
+  Caption = 'Plano de contas'
+  ClientHeight = 620
+  ClientWidth = 571
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '0.9.31'
+  object RxDBGrid1: TRxDBGrid
+    Left = 0
+    Height = 568
+    Top = 52
+    Width = 571
+    TitleButtons = False
+    AutoSort = True
+    Columns = <    
+      item
+        Title.Alignment = taLeftJustify
+        Title.Caption = 'Conta'
+        Title.Orientation = toHorizontal
+        FieldName = 'conta'
+        Filter.Font.Style = [fsItalic]
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end    
+      item
+        Title.Alignment = taLeftJustify
+        Title.Caption = 'Descrição'
+        Title.Orientation = toHorizontal
+        Width = 350
+        FieldName = 'descricao'
+        Filter.Font.Style = [fsItalic]
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end    
+      item
+        Title.Alignment = taLeftJustify
+        Title.Caption = 'Sld Inicial'
+        Title.Orientation = toHorizontal
+        Width = 110
+        FieldName = 'saldo_inicial'
+        Filter.Font.Style = [fsItalic]
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end>
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end>
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    FooterColor = clYellow
+    Align = alClient
+    AlternateColor = 11206485
+    Color = clWindow
+    FocusColor = clRed
+    SelectedColor = clHighlight
+    GridLineStyle = psSolid
+    DataSource = dsPlanoContas
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentColor = False
+    TabOrder = 0
+    TitleStyle = tsNative
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 52
+    Top = 0
+    Width = 571
+    AutoSize = True
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBar1'
+    EdgeBorders = [ebTop, ebBottom]
+    EdgeOuter = esRaised
+    Flat = False
+    Images = dbConnect.ImageList1
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton1'
+      Style = tbsSeparator
+    end
+    object ToolButton2: TToolButton
+      Left = 11
+      Top = 2
+      Caption = 'ToolButton2'
+      ImageIndex = 8
+      OnClick = ToolButton2Click
+    end
+    object ToolButton3: TToolButton
+      Left = 59
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton3'
+      Style = tbsSeparator
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 69
+      Height = 48
+      Top = 2
+      Width = 395
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 48
+      ClientWidth = 395
+      DataSource = dsPlanoContas
+      Options = []
+      TabOrder = 0
+    end
+  end
+  object qryPlanoContas: TZQuery
+    Connection = dbConnect.ZConnection1
+    BeforeDelete = qryPlanoContasBeforeDelete
+    SQL.Strings = (
+      'Select *'
+      'from plano_contas'
+      'Order by conta'
+    )
+    Params = <>
+    left = 177
+    top = 165
+    object qryPlanoContasid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryPlanoContasconta: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'conta'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object qryPlanoContasdescricao: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryPlanoContassaldo_inicial: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'saldo_inicial'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+  end
+  object dsPlanoContas: TDatasource
+    DataSet = qryPlanoContas
+    left = 180
+    top = 223
+  end
+end

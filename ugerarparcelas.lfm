@@ -1,0 +1,184 @@
+object frmGerarParcelas: TfrmGerarParcelas
+  Left = 440
+  Height = 316
+  Top = 168
+  Width = 354
+  Caption = 'Gerar contas a receber'
+  ClientHeight = 316
+  ClientWidth = 354
+  Position = poScreenCenter
+  LCLVersion = '1.0.14.0'
+  object Label1: TLabel
+    Left = 9
+    Height = 14
+    Top = 23
+    Width = 50
+    Caption = 'Valor total'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 9
+    Height = 14
+    Top = 55
+    Width = 66
+    Caption = 'Parcelamento'
+    ParentColor = False
+  end
+  object Edit2: TEdit
+    Left = 192
+    Height = 21
+    Hint = 'Utilize a seguinte sintaxe:'#13#10'30/60/90'
+    Top = 48
+    Width = 152
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+  end
+  object CurrencyEdit1: TCurrencyEdit
+    Left = 240
+    Height = 21
+    Top = 16
+    Width = 104
+    Alignment = taRightJustify
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 1
+    Value = 0
+  end
+  object RxDBGrid1: TRxDBGrid
+    Left = 9
+    Height = 144
+    Top = 128
+    Width = 335
+    TitleButtons = False
+    AutoSort = True
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'vencimento'
+        Title.Orientation = toHorizontal
+        Width = 150
+        FieldName = 'vencimento'
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'valor'
+        Title.Orientation = toHorizontal
+        Width = 130
+        FieldName = 'valor'
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end>
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end>
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    Color = clWindow
+    DrawFullLine = False
+    FocusColor = clRed
+    SelectedColor = clHighlight
+    GridLineStyle = psSolid
+    DataSource = Datasource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentColor = False
+    TabOrder = 2
+  end
+  object BitBtn1: TBitBtn
+    Left = 9
+    Height = 30
+    Top = 87
+    Width = 131
+    Caption = 'Gerar parcelamento'
+    OnClick = BitBtn1Click
+    TabOrder = 3
+  end
+  object BitBtn3: TBitBtn
+    Left = 256
+    Height = 30
+    Top = 280
+    Width = 88
+    Cancel = True
+    DefaultCaption = True
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 4
+  end
+  object BitBtn4: TBitBtn
+    Left = 9
+    Height = 30
+    Top = 280
+    Width = 88
+    Default = True
+    DefaultCaption = True
+    Kind = bkOK
+    ModalResult = 1
+    TabOrder = 5
+  end
+  object Datasource1: TDatasource
+    DataSet = RxMemoryData1
+    left = 224
+    top = 224
+  end
+  object RxMemoryData1: TRxMemoryData
+    FieldDefs = <>
+    left = 224
+    top = 176
+    object RxMemoryData1vencimento: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'vencimento'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object RxMemoryData1valor: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+  end
+end

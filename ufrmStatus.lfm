@@ -1,0 +1,66 @@
+object frmStatus: TfrmStatus
+  Left = 504
+  Height = 45
+  Top = 259
+  Width = 481
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'frmStatus'
+  ClientHeight = 45
+  ClientWidth = 481
+  Color = clWhite
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  FormStyle = fsStayOnTop
+  Position = poMainFormCenter
+  LCLVersion = '1.6.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 45
+    Top = 0
+    Width = 481
+    Align = alClient
+    BevelOuter = bvNone
+    BorderWidth = 3
+    ClientHeight = 45
+    ClientWidth = 481
+    Color = clBlack
+    ParentColor = False
+    TabOrder = 0
+    object lbl1: TLabel
+      Left = 3
+      Height = 17
+      Top = 3
+      Width = 475
+      Align = alTop
+      AutoSize = False
+      Caption = 'Status de validação e transmição da NF-e'
+      Color = clSilver
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object lblStatus: TLabel
+      Left = 3
+      Height = 22
+      Top = 20
+      Width = 475
+      Align = alClient
+      Color = clGray
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+  end
+end

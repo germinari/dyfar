@@ -1,0 +1,462 @@
+object frmCtaReceberMultBaixa: TfrmCtaReceberMultBaixa
+  Left = 443
+  Height = 419
+  Top = 163
+  Width = 1019
+  BorderStyle = bsDialog
+  Caption = 'Baixa de várias contas'
+  ClientHeight = 419
+  ClientWidth = 1019
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object RxDBGrid1: TRxDBGrid
+    Left = 0
+    Height = 375
+    Top = 0
+    Width = 1019
+    TitleButtons = False
+    AutoSort = True
+    Columns = <    
+      item
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Nº conta'
+        Width = 60
+        FieldName = 'id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end    
+      item
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Descrição da conta'
+        Width = 450
+        FieldName = 'descricao'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end    
+      item
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Valor da Conta'
+        Width = 90
+        FieldName = 'valor_devido'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end    
+      item
+        Color = clMoneyGreen
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Desconto'
+        Width = 90
+        FieldName = 'desconto'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end    
+      item
+        Color = clMoneyGreen
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Juros'
+        Width = 90
+        FieldName = 'juros'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end    
+      item
+        Color = clMoneyGreen
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Valor Pago'
+        Width = 90
+        FieldName = 'valor_pago'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end    
+      item
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Valor a Receber'
+        Width = 90
+        FieldName = 'valor_pagar'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end>
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end    
+      item
+        Command = rxgcSelectAll
+        ShortCut = 16449
+        Enabled = True
+      end    
+      item
+        Command = rxgcDeSelectAll
+        ShortCut = 16429
+        Enabled = True
+      end    
+      item
+        Command = rxgcInvertSelection
+        ShortCut = 16426
+        Enabled = True
+      end    
+      item
+        Command = rxgcOptimizeColumnsWidth
+        ShortCut = 16427
+        Enabled = True
+      end    
+      item
+        Command = rxgcCopyCellValue
+        ShortCut = 16451
+        Enabled = True
+      end>
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    Align = alClient
+    AlternateColor = clMoneyGreen
+    Color = clWindow
+    DrawFullLine = False
+    FocusColor = clRed
+    SelectedColor = clHighlight
+    GridLineStyle = psSolid
+    DataSource = dsCtaReceber
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentColor = False
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 44
+    Top = 375
+    Width = 1019
+    Align = alBottom
+    ClientHeight = 44
+    ClientWidth = 1019
+    TabOrder = 1
+    object BitBtn1: TBitBtn
+      Left = 8
+      Height = 30
+      Top = 8
+      Width = 232
+      Caption = '&OK, Receber todas as contas'
+      Kind = bkOK
+      OnClick = BitBtn1Click
+      TabOrder = 0
+    end
+    object BitBtn2: TBitBtn
+      Left = 896
+      Height = 30
+      Top = 8
+      Width = 99
+      Cancel = True
+      DefaultCaption = True
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 1
+    end
+    object DateEdit1: TDateEdit
+      Left = 376
+      Height = 23
+      Top = 9
+      Width = 127
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DefaultToday = True
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object Label1: TLabel
+      Left = 259
+      Height = 15
+      Top = 17
+      Width = 70
+      Caption = 'Data da baixa'
+      ParentColor = False
+    end
+  end
+  object qryCtaReceber: TZQuery
+    Connection = dbConnect.ZConnection1
+    OnCalcFields = qryCtaReceberCalcFields
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'Select *'
+      'from contas_receber'
+      'Limit 1'
+    )
+    Params = <>
+    left = 239
+    top = 72
+    object qryCtaReceberid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryCtaReceberdescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object qryCtaRecebervalor_devido: TFloatField
+      FieldKind = fkData
+      FieldName = 'valor_devido'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 720898
+    end
+    object qryCtaReceberdesconto: TFloatField
+      FieldKind = fkData
+      FieldName = 'desconto'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 720898
+    end
+    object qryCtaReceberjuros: TFloatField
+      FieldKind = fkData
+      FieldName = 'juros'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 720898
+    end
+    object qryCtaRecebervalor_pago: TFloatField
+      FieldKind = fkData
+      FieldName = 'valor_pago'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 720898
+    end
+    object qryCtaRecebervalor_pagar: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'valor_pagar'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+    object qryCtaReceberid_nf: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_nf'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberdocumento: TStringField
+      FieldKind = fkData
+      FieldName = 'documento'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryCtaReceberdataconta: TDateField
+      FieldKind = fkData
+      FieldName = 'dataconta'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberdata_vencimento: TDateField
+      FieldKind = fkData
+      FieldName = 'data_vencimento'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberdata_pagamento: TDateField
+      FieldKind = fkData
+      FieldName = 'data_pagamento'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberobservacao: TMemoField
+      FieldKind = fkData
+      FieldName = 'observacao'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryCtaReceberconta_credito: TLongintField
+      FieldKind = fkData
+      FieldName = 'conta_credito'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberconta_debito: TLongintField
+      FieldKind = fkData
+      FieldName = 'conta_debito'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberbanco_negociado: TStringField
+      FieldKind = fkData
+      FieldName = 'banco_negociado'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryCtaRecebercliente: TLongintField
+      FieldKind = fkData
+      FieldName = 'cliente'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberparcela: TLongintField
+      FieldKind = fkData
+      FieldName = 'parcela'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaRecebertotal_parcelas: TLongintField
+      FieldKind = fkData
+      FieldName = 'total_parcelas'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryCtaReceberconta: TLongintField
+      FieldKind = fkData
+      FieldName = 'conta'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsCtaReceber: TDataSource
+    DataSet = qryCtaReceber
+    left = 239
+    top = 144
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    left = 330
+    top = 96
+  end
+end

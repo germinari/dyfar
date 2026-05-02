@@ -1,0 +1,181 @@
+object frmRecebFim: TfrmRecebFim
+  Left = 392
+  Height = 430
+  Top = 156
+  Width = 496
+  BorderStyle = bsDialog
+  Caption = 'Confirmação de recebimento'
+  ClientHeight = 430
+  ClientWidth = 496
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  Position = poScreenCenter
+  LCLVersion = '1.0.14.0'
+  object Shape1: TShape
+    Left = 3
+    Height = 63
+    Top = 288
+    Width = 487
+    Brush.Color = 3355647
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 26
+    Top = 72
+    Width = 227
+    Caption = 'Pagamento em Dinheiro'
+    Font.Height = -21
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 26
+    Top = 128
+    Width = 311
+    Caption = 'Pagamento em Cartão de crédito'
+    Font.Height = -21
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 26
+    Top = 192
+    Width = 305
+    Caption = 'Pagamento em Cartão de débito'
+    Font.Height = -21
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 26
+    Top = 11
+    Width = 163
+    Caption = 'Total do pedido'
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotal: TLabel
+    Left = 336
+    Height = 26
+    Top = 11
+    Width = 144
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = '0,00'
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 8
+    Height = 26
+    Top = 307
+    Width = 75
+    Caption = 'TROCO'
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotal1: TLabel
+    Left = 336
+    Height = 26
+    Top = 192
+    Width = 144
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = '0,00'
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotal2: TLabel
+    Left = 336
+    Height = 26
+    Top = 132
+    Width = 144
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = '0,00'
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotal3: TLabel
+    Left = 336
+    Height = 26
+    Top = 76
+    Width = 144
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = '0,00'
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotal4: TLabel
+    Left = 336
+    Height = 26
+    Top = 307
+    Width = 144
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = '0,00'
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 8
+    Height = 64
+    Top = 360
+    Width = 194
+    Caption = 'Registrar recebimento'
+    Font.Height = -16
+    NumGlyphs = 0
+    OnClick = SpeedButton1Click
+    ParentFont = False
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 384
+    Height = 32
+    Top = 392
+    Width = 106
+    Caption = 'Cancelar'
+    NumGlyphs = 0
+    OnClick = SpeedButton2Click
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 26
+    Top = 248
+    Width = 308
+    Caption = 'Pagamento em Contas a receber'
+    Font.Height = -21
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotal5: TLabel
+    Left = 336
+    Height = 26
+    Top = 248
+    Width = 144
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = '0,00'
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+end

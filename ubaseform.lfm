@@ -1,0 +1,27 @@
+object frmBaseForm: TfrmBaseForm
+  Left = 275
+  Height = 599
+  Top = 135
+  Width = 911
+  Caption = 'Vendas ao consumidor'
+  ClientHeight = 599
+  ClientWidth = 911
+  Color = 14737632
+  OnCreate = FormCreate
+  OnResize = FormResize
+  LCLVersion = '1.8.0.6'
+  object Image1: TImage
+    Left = 176
+    Height = 182
+    Top = 184
+    Width = 564
+    Center = True
+    Proportional = True
+    Stretch = True
+  end
+  object ZQuery1: TZQuery
+    Params = <>
+    left = 323
+    top = 105
+  end
+end

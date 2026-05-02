@@ -1,0 +1,25 @@
+object frmAgenda: TfrmAgenda
+  Left = 476
+  Height = 443
+  Top = 275
+  Width = 732
+  Caption = 'Agenda'
+  ClientHeight = 443
+  ClientWidth = 732
+  LCLVersion = '2.0.2.0'
+  object RxDBVerticalGrid1: TRxDBVerticalGrid
+    Left = 72
+    Height = 241
+    Top = 111
+    Width = 387
+    Color = clWindow
+    SelectedColor = clHighlight
+    GridDefValues.BlobText = '(blob)'
+    DataCoumn.Title.Caption = 'Title'
+    FocusColor = clRed
+    LabelCoumn.ReadOnly = True
+    LabelCoumn.Title.Caption = 'Title'
+    Options = []
+    Rows = <>
+  end
+end

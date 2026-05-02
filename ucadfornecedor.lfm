@@ -1,0 +1,1620 @@
+object frmCadFornecedor: TfrmCadFornecedor
+  Left = 366
+  Height = 605
+  Top = 132
+  Width = 960
+  Caption = 'Cadastro de fornecedores'
+  ClientHeight = 605
+  ClientWidth = 960
+  OnCreate = FormCreate
+  OnResize = FormResize
+  LCLVersion = '3.0.0.3'
+  object ExtendedNotebook1: TExtendedNotebook
+    Left = 0
+    Height = 555
+    Top = 50
+    Width = 960
+    ActivePage = TabSheet2
+    Align = alClient
+    MultiLine = True
+    TabIndex = 0
+    TabOrder = 0
+    OnChange = ExtendedNotebook1Change
+    OnResize = ExtendedNotebook1Resize
+    Options = [nboShowCloseButtons, nboMultiLine]
+    object TabSheet2: TTabSheet
+      Caption = 'Listagem de fornecedores'
+      ClientHeight = 527
+      ClientWidth = 952
+      object GroupBox7: TGroupBox
+        Left = 4
+        Height = 513
+        Top = 8
+        Width = 932
+        ClientHeight = 493
+        ClientWidth = 928
+        TabOrder = 0
+        object DBGrid2: TDBGrid
+          Left = 6
+          Height = 488
+          Top = 0
+          Width = 914
+          AlternateColor = 16777079
+          Color = clWindow
+          Columns = <          
+            item
+              Title.Caption = 'Código'
+              Width = 90
+              FieldName = 'id'
+            end          
+            item
+              Title.Caption = 'Nome/Razão social'
+              Width = 300
+              FieldName = 'nome'
+            end          
+            item
+              Title.Caption = 'Nome fantasia'
+              Width = 300
+              FieldName = 'fantasia'
+            end>
+          DataSource = dsFornecedorLista
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          TabOrder = 0
+          OnDblClick = DBGrid2DblClick
+          OnTitleClick = DBGrid2TitleClick
+        end
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'Cadastro'
+      ClientHeight = 527
+      ClientWidth = 952
+      object ScrollBox1: TScrollBox
+        Left = 0
+        Height = 527
+        Top = 0
+        Width = 952
+        HorzScrollBar.Page = 948
+        VertScrollBar.Page = 523
+        Align = alClient
+        ClientHeight = 523
+        ClientWidth = 948
+        TabOrder = 0
+        object GroupBox2: TGroupBox
+          Left = 24
+          Height = 504
+          Top = 19
+          Width = 924
+          ClientHeight = 484
+          ClientWidth = 920
+          TabOrder = 0
+          object GroupBox1: TGroupBox
+            Left = 0
+            Height = 100
+            Top = 0
+            Width = 913
+            Caption = 'Identificação'
+            ClientHeight = 80
+            ClientWidth = 909
+            TabOrder = 0
+            object Label1: TLabel
+              Left = 5
+              Height = 15
+              Top = 5
+              Width = 39
+              Caption = 'Código'
+              ParentColor = False
+            end
+            object DBEdit1: TDBEdit
+              Left = 86
+              Height = 23
+              Top = 0
+              Width = 64
+              DataField = 'id'
+              DataSource = dsFornecedor
+              ReadOnly = True
+              Color = clSilver
+              MaxLength = 0
+              TabOrder = 0
+              TabStop = False
+            end
+            object DBDateEdit1: TRxDBDateEdit
+              Left = 656
+              Height = 23
+              Top = 0
+              Width = 108
+              ButtonWidth = 23
+              DialogTitle = 'Select a Date'
+              Enabled = False
+              Glyph.Data = {
+                36090000424D3609000000000000360000002800000018000000180000000100
+                2000000000000009000064000000640000000000000000000000000000000000
+                0000000000000000000000000000000000000000000000000000000000000000
+                0000000000000000000000000000000000000000000000000000000000000000
+                0000000000000000000000000000000000000000000000000000000000000000
+                0000000000000000000000000000000000000000000000000000000000000000
+                0000000000000000000000000000000000000000000000000000000000000000
+                0000000000000000000000000000000000000000000000000000000000000000
+                000000000000C7C3BC49C6C3BCE3C7C3BDFFC7C3BDFFC7C3BDFFC7C3BDFFC7C3
+                BDFFC7C3BDFFC7C3BDFFC7C3BDFFC7C3BDFFC7C3BDFFC7C3BDFFC7C3BDFFC7C3
+                BDFFC7C3BDFFC6C3BDE2C6C2BB48000000000000000000000000000000000000
+                000000000000D3D1CCEBEDEBE7FFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFEDEBE6FFD3D1CCEA000000000000000000000000000000000000
+                000000000000EDEBE7FFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFEDEBE6FF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3
+                BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3
+                BDFFC7C3BDFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3
+                BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3
+                BDFFC7C3BDFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3
+                BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3
+                BDFFC7C3BDFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3
+                BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3
+                BDFFC7C3BDFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3
+                BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3
+                BDFFC7C3BDFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3
+                BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3BDFFC7C3BDFFF1F0ECFFC7C3
+                BDFFC7C3BDFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                000000000000F1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0ECFFF1F0
+                ECFFF1F0ECFFF1F0ECFFF1F0ECFF000000000000000000000000000000000000
+                0000000000003C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+                E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+                E7FF3C4CE7FF3C4CE7FF3C4CE7FF000000000000000000000000000000000000
+                0000000000003C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+                E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4C
+                E7FF3C4CE7FF3C4CE7FF3C4CE7FF000000000000000000000000000000000000
+                0000000000003C4CE7FF3A49E1FF2D3CC6FF2E3CC6FF3A4AE1FF3C4CE7FF3C4C
+                E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3A49E1FF2D3C
+                C6FF2E3CC6FF3A4AE1FF3C4CE7FF000000000000000000000000000000000000
+                0000000000003C4CE7FF3444D6FFA2A2BEFFA1A2BEFF3443D6FF3C4CE7FF3C4C
+                E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3444D6FF9D9D
+                BEFF9C9DBEFF3443D6FF3C4CE7FF000000000000000000000000000000000000
+                0000000000004D5CE7FD3A49E1FFC7C3BDFFC7C3BDFF3A49E1FF3C4CE7FF3C4C
+                E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3A49E1FFC7C3
+                BDFFC7C3BDFF3A49E1FF4E5CE6FD000000000000000000000000000000000000
+                000000000000878FE9804D5CE7FCC7C3BDFFC7C3BDFF3C4CE7FF3C4CE7FF3C4C
+                E7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FF3C4CE7FFC7C3
+                BDFFC7C3BDFF4D5CE7FC8690EA7D000000000000000000000000000000000000
+                0000000000000000000000000000C7C3BDFFC7C3BDFF00000000000000000000
+                000000000000000000000000000000000000000000000000000000000000C7C3
+                BDFFC7C3BDFF0000000000000000000000000000000000000000000000000000
+                0000000000000000000000000000C7C3BCC5C6C2BDC300000000000000000000
+                000000000000000000000000000000000000000000000000000000000000C7C3
+                BCC0C6C2BDBE0000000000000000000000000000000000000000000000000000
+                0000000000000000000000000000000000000000000000000000000000000000
+                0000000000000000000000000000000000000000000000000000000000000000
+                0000000000000000000000000000000000000000000000000000
+              }
+              MaxLength = 10
+              PasswordChar = #0
+              PopupColor = clWindow
+              TabOrder = 1
+              Text = '  /  /    '
+              DataField = 'datacadastro'
+              DataSource = dsFornecedor
+            end
+            object DBEdit2: TDBEdit
+              Left = 86
+              Height = 23
+              Top = 30
+              Width = 505
+              DataField = 'fantasia'
+              DataSource = dsFornecedor
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 2
+            end
+            object Label2: TLabel
+              Left = 5
+              Height = 15
+              Top = 33
+              Width = 77
+              Caption = 'Nome fantasia'
+              ParentColor = False
+            end
+            object Label3: TLabel
+              Left = 568
+              Height = 15
+              Top = 5
+              Width = 72
+              Caption = 'Data cadastro'
+              ParentColor = False
+            end
+            object DBEdit3: TDBEdit
+              Left = 279
+              Height = 23
+              Top = 1
+              Width = 136
+              DataField = 'status'
+              DataSource = dsFornecedor
+              ReadOnly = True
+              MaxLength = 0
+              TabOrder = 3
+            end
+            object Label4: TLabel
+              Left = 230
+              Height = 15
+              Top = 5
+              Width = 32
+              Caption = 'Status'
+              ParentColor = False
+            end
+            object SpeedButton1: TSpeedButton
+              Left = 416
+              Height = 22
+              Top = 0
+              Width = 23
+              OnClick = SpeedButton1Click
+            end
+            object Label19: TLabel
+              Left = 5
+              Height = 15
+              Top = 61
+              Width = 64
+              Caption = 'Razão social'
+              ParentColor = False
+            end
+            object DBEdit18: TDBEdit
+              Left = 85
+              Height = 23
+              Top = 57
+              Width = 505
+              DataField = 'nome'
+              DataSource = dsFornecedor
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 4
+            end
+          end
+          object GroupBox5: TGroupBox
+            Left = 0
+            Height = 97
+            Top = 248
+            Width = 456
+            Caption = 'Documentos'
+            ClientHeight = 77
+            ClientWidth = 452
+            TabOrder = 2
+            object Label12: TLabel
+              Left = 6
+              Height = 15
+              Top = 7
+              Width = 53
+              Caption = 'CNPJ/CPF'
+              ParentColor = False
+            end
+            object DBEdit12: TDBEdit
+              Left = 75
+              Height = 23
+              Top = 0
+              Width = 125
+              DataField = 'cnpj'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 0
+            end
+            object DBEdit13: TDBEdit
+              Left = 275
+              Height = 23
+              Top = 0
+              Width = 113
+              DataField = 'inscestadual'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 1
+            end
+            object Label13: TLabel
+              Left = 230
+              Height = 15
+              Top = 7
+              Width = 12
+              Caption = 'I.E'
+              ParentColor = False
+            end
+            object Label14: TLabel
+              Left = 6
+              Height = 15
+              Top = 31
+              Width = 29
+              Caption = 'Email'
+              ParentColor = False
+            end
+            object DBEdit14: TDBEdit
+              Left = 75
+              Height = 23
+              Top = 24
+              Width = 313
+              DataField = 'email'
+              DataSource = dsFornecedor
+              CharCase = ecLowerCase
+              MaxLength = 0
+              TabOrder = 2
+            end
+            object Label15: TLabel
+              Left = 6
+              Height = 15
+              Top = 60
+              Width = 46
+              Caption = 'Web Site'
+              ParentColor = False
+            end
+            object DBEdit15: TDBEdit
+              Left = 75
+              Height = 23
+              Top = 53
+              Width = 313
+              DataField = 'webpage'
+              DataSource = dsFornecedor
+              CharCase = ecLowerCase
+              MaxLength = 0
+              TabOrder = 3
+            end
+            object SpeedButton5: TSpeedButton
+              Left = 389
+              Height = 29
+              Top = 48
+              Width = 28
+              Glyph.Data = {
+                36040000424D3604000000000000360000002800000010000000100000000100
+                2000000000000004000064000000640000000000000000000000FFFFFF00B053
+                28FFB05328FFB05328FF8F3917FFAB4F25FFB05328FFB05328FFB05328FFB053
+                28FFB05328FFB05328FFB05328FFB05328FFB05328FFFFFFFF00B15A2DFFEFA4
+                54FFEFA454FFEFA454FFC1652CFFB65623FFEFA454FFEFA454FFEFA454FFEFA4
+                54FFEFA454FFE09246FFEAA050FFEFA454FFEFA454FFB1572AFFB15A2DFFF0AB
+                5DFFEB8F4AFFEB8F4AFFB75E2CFF822D0DFFAA5224FFEB8F4AFFEB8F4AFFEB8F
+                4AFFEB8F4AFFAA5224FF8F3915FFE58946FFF0AB5DFFB15A2DFFB36133FFF1B2
+                67FFEC9852FFEC9852FFAE5929FF883310FF883310FFCD793EFFEC9852FFEC98
+                52FFEC9852FFA14C21FF883310FFC06C35FFE3A458FFB25E30FFB36536FFF2B9
+                6FFFEEA159FFD68748FF8E3913FF8E3913FF8E3913FFB2602DFFEEA159FFEEA1
+                59FFEEA159FF8E3913FF8E3913FFAC5A29FFF2B96FFFB36133FFB36536FFF3C0
+                79FFEFAB61FFD9904EFF943E15FF9A451AFFD8904EFFEFAB61FFEFAB61FFEFAB
+                61FFC77C40FF943E15FF943E15FF943E15FFEFBC74FFB36536FFB06738FFF5C7
+                82FFECAD63FFDC9854FFD08A4AFFE6A65EFFF1B468FFF1B468FFE19F59FFB060
+                2CFF9A4418FF9A4418FF9A4418FFA55222FFE5B269FFB46939FFB46D3CFFD39C
+                50FFD3924FFFEDB66AFFF2BD6FFFF2BD6FFFF2BD6FFFF2BD6FFFD39250FFA04A
+                1BFFA04A1BFFA04A1BFFA04A1BFFB0602BFFBF6E30FFB06738FFA75C30FFBC64
+                26FFC88445FFD19350FFF3C677FFF3C677FFF3C677FFF3C677FFF3C677FFB05F
+                29FFAB5724FFC37C3FFFB96D34FFAB5724FFC47733FF96411CFF9B451EFFC16A
+                29FFAC5521FFAC5521FFDEA961FFF5CF7EFFF5CF7EFFF5CF7EFFF5CF7EFFBA6C
+                33FFF1C879FFD19350FFD19350FFB5642DFFC16A29FF98431DFF9D481FFFC672
+                2DFFB35B24FFB35B24FFB35B24FFE6BA6EFFF3D180FFF7D986FFF7D986FFE2B2
+                68FFB35B24FFB7632AFFB35B24FFBC6B30FFC6722DFF9B451EFFA04A20FFCA79
+                30FFBC692CFFDCAA60FFB86126FFD8A25AFFF8E28DFFF8E28DFFF8E28DFFE4BA
+                6DFFE4BA6DFFDCAA60FFBC692CFFB86126FFCA7930FF9D481FFFA04A20FFCF81
+                33FFD8A057FFEED07EFFF2D885FFF5E08BFFF5E08BFFEED07FFFF6E08CFFEED0
+                7FFFD8A057FFDCA85EFFCA7F3DFFC67736FFCF8133FFA04A20FFA65529FFF8E9
+                A9FFDCA259FFE3B366FFD5934CFFF6E08CFFD99B52FFC87432FFE2B266FFF9E8
+                92FFF6E08CFFE2B265FFE2B265FFEFD17FFFF3DD9FFFAE6838FFB37542FFF8E9
+                A9FFF0D290FFEECD88FFF8E9A9FFE5B669FFD88F3BFFD88F3BFFD88F3BFFF6E3
+                A4FFFBEEADFFFBEEADFFFBEEADFFFBEEADFFF8E9A9FFB67B48FFFFFFFF00B77E
+                4AFFB37542FFAB6031FFAE6636FFAB6031FFA65125FFA65125FFAA5D2FFFB578
+                45FFB77E4AFFB77E4AFFB77E4AFFB77E4AFFB77E4AFFFFFFFF00
+              }
+              OnClick = SpeedButton5Click
+            end
+          end
+          object GroupBox6: TGroupBox
+            Left = 0
+            Height = 136
+            Top = 345
+            Width = 456
+            ClientHeight = 116
+            ClientWidth = 452
+            TabOrder = 3
+            object Label16: TLabel
+              Left = 6
+              Height = 15
+              Top = 5
+              Width = 84
+              Caption = 'Plano de contas'
+              ParentColor = False
+            end
+            object DBEdit16: TDBEdit
+              Left = 111
+              Height = 23
+              Top = -2
+              Width = 296
+              DataField = 'vplano_contas'
+              DataSource = dsFornecedor
+              ReadOnly = True
+              MaxLength = 0
+              TabOrder = 0
+            end
+            object SpeedButton3: TSpeedButton
+              Left = 416
+              Height = 22
+              Top = -2
+              Width = 23
+              Caption = '...'
+              OnClick = SpeedButton3Click
+            end
+            object DBMemo1: TDBMemo
+              Left = 7
+              Height = 72
+              Top = 44
+              Width = 400
+              DataField = 'observacao'
+              DataSource = dsFornecedor
+              TabOrder = 1
+            end
+            object Label17: TLabel
+              Left = 6
+              Height = 15
+              Top = 28
+              Width = 67
+              Caption = 'Observações'
+              ParentColor = False
+            end
+          end
+          object GroupBox4: TGroupBox
+            Left = 0
+            Height = 136
+            Top = 104
+            Width = 912
+            Caption = 'Endereço'
+            ClientHeight = 116
+            ClientWidth = 908
+            TabOrder = 1
+            object Label5: TLabel
+              Left = 6
+              Height = 15
+              Top = 37
+              Width = 49
+              Caption = 'Endereço'
+              ParentColor = False
+            end
+            object DBEdit4: TDBEdit
+              Left = 86
+              Height = 23
+              Top = 30
+              Width = 368
+              DataField = 'endereco'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 0
+            end
+            object Label6: TLabel
+              Left = 6
+              Height = 15
+              Top = 8
+              Width = 27
+              Caption = 'C.E.P'
+              ParentColor = False
+            end
+            object DBEdit5: TDBEdit
+              Left = 88
+              Height = 23
+              Top = 1
+              Width = 72
+              DataField = 'cep'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 1
+              OnKeyDown = DBEdit5KeyDown
+            end
+            object SpeedButton2: TSpeedButton
+              Left = 757
+              Height = 22
+              Top = 0
+              Width = 23
+              Caption = '...'
+              OnClick = SpeedButton2Click
+            end
+            object Label7: TLabel
+              Left = 462
+              Height = 15
+              Top = 8
+              Width = 37
+              Caption = 'Cidade'
+              ParentColor = False
+            end
+            object DBEdit6: TDBEdit
+              Left = 549
+              Height = 23
+              Top = 1
+              Width = 207
+              DataField = 'cidade'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 2
+            end
+            object Label8: TLabel
+              Left = 462
+              Height = 15
+              Top = 36
+              Width = 31
+              Caption = 'Bairro'
+              ParentColor = False
+            end
+            object DBEdit7: TDBEdit
+              Left = 549
+              Height = 23
+              Top = 29
+              Width = 231
+              DataField = 'bairro'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 3
+            end
+            object Label9: TLabel
+              Left = 190
+              Height = 15
+              Top = 8
+              Width = 17
+              Caption = 'U.F'
+              ParentColor = False
+            end
+            object DBEdit8: TDBEdit
+              Left = 221
+              Height = 23
+              Top = 1
+              Width = 137
+              DataField = 'uf_nome'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 4
+            end
+            object Label10: TLabel
+              Left = 6
+              Height = 15
+              Top = 97
+              Width = 49
+              Caption = 'Telefones'
+              ParentColor = False
+            end
+            object DBEdit9: TDBEdit
+              Left = 86
+              Height = 23
+              Top = 89
+              Width = 106
+              DataField = 'telefone1'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 5
+            end
+            object DBEdit10: TDBEdit
+              Left = 204
+              Height = 23
+              Top = 90
+              Width = 113
+              DataField = 'telefone2'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 6
+            end
+            object DBEdit11: TDBEdit
+              Left = 356
+              Height = 23
+              Top = 88
+              Width = 97
+              DataField = 'fax'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 7
+            end
+            object Label11: TLabel
+              Left = 324
+              Height = 15
+              Top = 97
+              Width = 20
+              Caption = 'FAX'
+              ParentColor = False
+            end
+            object Label18: TLabel
+              Left = 6
+              Height = 15
+              Top = 69
+              Width = 77
+              Caption = 'Complemento'
+              ParentColor = False
+            end
+            object DBEdit17: TDBEdit
+              Left = 86
+              Height = 23
+              Top = 61
+              Width = 305
+              DataField = 'complemento'
+              DataSource = dsFornecedor
+              MaxLength = 0
+              TabOrder = 8
+            end
+            object SpeedButton4: TSpeedButton
+              Left = 360
+              Height = 22
+              Top = 0
+              Width = 23
+              Caption = '...'
+              OnClick = SpeedButton4Click
+            end
+            object btCep: TSpeedButton
+              Left = 158
+              Height = 22
+              Top = 0
+              Width = 23
+              Caption = '...'
+              OnClick = btCepClick
+            end
+          end
+          object GroupBox3: TGroupBox
+            Left = 464
+            Height = 232
+            Top = 248
+            Width = 448
+            Caption = 'Contatos'
+            ClientHeight = 212
+            ClientWidth = 444
+            TabOrder = 4
+            object DBGrid1: TDBGrid
+              Left = 0
+              Height = 173
+              Top = 31
+              Width = 440
+              Color = clWindow
+              Columns = <              
+                item
+                  Title.Caption = 'nome'
+                  Width = 90
+                  FieldName = 'nome'
+                end              
+                item
+                  Title.Caption = 'telefones'
+                  Width = 90
+                  FieldName = 'telefones'
+                end              
+                item
+                  Title.Caption = 'email'
+                  Width = 200
+                  FieldName = 'email'
+                end>
+              DataSource = dsContatos
+              TabOrder = 0
+            end
+            object DBNavigator2: TDBNavigator
+              Left = 0
+              Height = 25
+              Top = 1
+              Width = 174
+              BevelOuter = bvNone
+              ChildSizing.EnlargeHorizontal = crsScaleChilds
+              ChildSizing.EnlargeVertical = crsScaleChilds
+              ChildSizing.ShrinkHorizontal = crsScaleChilds
+              ChildSizing.ShrinkVertical = crsScaleChilds
+              ChildSizing.Layout = cclLeftToRightThenTopToBottom
+              ChildSizing.ControlsPerLine = 100
+              ClientHeight = 25
+              ClientWidth = 174
+              DataSource = dsContatos
+              Options = []
+              TabOrder = 1
+              VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
+            end
+          end
+        end
+      end
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 960
+    AutoSize = True
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBar1'
+    Flat = False
+    Images = dbConnect.ImageList1
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'ToolButton1'
+      ImageIndex = 8
+      OnClick = ToolButton1Click
+    end
+    object ToolButton2: TToolButton
+      Left = 49
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton2'
+      Style = tbsSeparator
+    end
+    object ToolButton3: TToolButton
+      Left = 57
+      Top = 2
+      Caption = 'ToolButton3'
+      DropdownMenu = PopupMenu1
+      ImageIndex = 6
+      Style = tbsDropDown
+    end
+    object ToolButton4: TToolButton
+      Left = 117
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton4'
+      Style = tbsSeparator
+    end
+    object ToolButton8: TToolButton
+      Left = 365
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton8'
+      Style = tbsSeparator
+    end
+    object ToolButton9: TToolButton
+      Left = 373
+      Top = 2
+      Caption = 'ToolButton9'
+      ImageIndex = 5
+      OnClick = ToolButton9Click
+    end
+    object ToolButton10: TToolButton
+      Left = 421
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton10'
+      Style = tbsSeparator
+    end
+    object WAGDBNavigator1: TWAGDBNavigator
+      Left = 429
+      Height = 48
+      Top = 2
+      Width = 355
+      Caption = 'Ordem'
+      OrdersDisplay.Strings = (
+        'Codigo'
+        'Razão social'
+        'Nome fantasia'
+      )
+      OrdersFields.Strings = (
+        'id'
+        'nome'
+        'fantasia'
+      )
+      TableName = 'fornecedores'
+      KeyField = 'id'
+      Where = 'status ilike ''ATIVO'''
+      Connection = dbConnect.ZConnection1
+      OnAfterScroll = WAGDBNavigator1AfterScroll
+      ButtonsWidth = 48
+    end
+    object ToolButton11: TToolButton
+      Left = 784
+      Height = 48
+      Top = 2
+      Caption = 'ToolButton11'
+      Style = tbsSeparator
+    end
+    object ToolButton12: TToolButton
+      Left = 792
+      Top = 2
+      Caption = 'ToolButton12'
+      ImageIndex = 7
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 125
+      Height = 48
+      Top = 2
+      Width = 240
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 48
+      ClientWidth = 240
+      DataSource = dsFornecedor
+      Options = []
+      TabOrder = 1
+      VisibleButtons = [nbInsert, nbEdit, nbPost, nbCancel, nbRefresh]
+    end
+    object SpeedButton6: TSpeedButton
+      Left = 840
+      Height = 48
+      Top = 2
+      Width = 48
+      Glyph.Data = {
+        36100000424D3610000000000000360000002800000020000000200000000100
+        2000000000000010000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000000000005F6C6E031F2222280000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000003D4445117DAEB2D7A8CBD0FF6F73
+        74AD141415230000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000001C1F213269C8CAEEA4C7CDFFC1C1C6FFCAD0
+        D4FFCAD1D3FF6366679822232312000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000061E1F205EBBC1C9FDA2BDBBFF79B1BAFF80B2B9FFBEC8
+        CCFFC9CACDFFC6CBCEFFC3CACFF72A2C2C460000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000002
+        02040F0E0E41636467A7ABC4C1FF7AB099FF7EB399FF93BAA7FFA1BDB7FF7BB4
+        B6FF8ECFD1FFB6C6CDFFCBD0D3FFDFE2E5FF4745467904080804000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000000000003E3E3F0F696A6C77A4B3
+        B8D9AADAE0FFCBD8D6FFAAD6BEFF9DC5B2FF82AE9AFF80AD98FF91B8A6FFA8B7
+        B5FF80D7DCFF75BFC4FF85B8C0FF9BC7CDFFBEE3E6FF74797AAC0000001A0000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000091213237CB3B7E69AC6CBFFB1D0
+        D4FFB6CBCEFFA5D7DBFFA0CEC0FFA3C4B2FFA5CDBAFFA7CEBBFF83B69EFF9BAB
+        B3FFCBCCCEFFB7BEC6FFBEC1C5FFC7C9CCFFD7D7D9FFECEDEEFF9A9C9EDA2C2E
+        2F6E0000000D0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000007080939B7BCBFF0B9BEC1FFC9CCCEFFCBCC
+        CFFFC5CBCEFFCFCED3FFA0D4D0FFA7DCD8FFBFE1D9FFD8E3E1FFD0E3DCFFC2CA
+        D0FFC5CBCDFFB3BEC6FFBFCBCFFFCAD0D3FFCED5D9FFADB5BAFFB5BDC2FFCED2
+        D4FFC3C4C4F16162628B191A1908000000000000000000000000000000000000
+        0000000000000000000A08080755A2AAB0F6B6C3C8FFB0B8BDFFB1B5B9FFBFC6
+        C9FFBBBEBFFFB2BDC3FFA0AFADFFB5D7C6FFB2DCD4FFA9D9D7FFBAE3E6FFC4EE
+        F1FFCFD5D9FFAAB4BAFFB0B4B8FFB2BEC4FF9DAAB1FFA7AEB2FFB5BFC5FFC7CA
+        CAFFCFD0D0FFDBDEDFFF9FA3A5D7000100270000000000000000000000003537
+        380D31333467777A7BBBC5CCD0FAB9C2C8FF9EA6AAFFB5BBBFFFBCC5C9FFBBBD
+        C0FFABB6BBFFA5ACB4FF95B8ADFF86BAA0FFB2CEC1FFDBDCDFFFE2E5E6FFC3E2
+        E5FFACEAEDFFCCCED2FFAFB9C0FF89969EFF9CA5ABFFAFB9BEFFB0BAC0FFD1D3
+        D4FFD5D7D7FFD0D3D4FFD2D5D7FFB1B6B8EE040505500202020800000000BEC4
+        C757DBE2E5B8D1D6D9FFD6DCE0FFCCD1D4FFD6DCDFFFBCC4C8FFC2C9CDFFC2CA
+        CEFFB1BEC6FFCACFD4FF91BAABFF84BAA0FFB7BDBDFFC6D1D6FF8487A8FFC2C7
+        C7FFC3D2D6FF90DBDFFFAEDFE2FFC3D4D8FFB9C4C9FFB7C1C6FFD7D9DAFFDCDC
+        DCFFD4D6D6FFCFD2D3FFCED2D3FFD0D7D8FFA3A7AAD600000008000000000000
+        00000000000000000000CAD1D547C3CACFB3C6D2D8FFD1DADFFFD7DBDEFFD0D7
+        DBFFBCC5CAFFC1C8CDFFAFBEC7FFA9BEB7FFB9C0C2FF626397FF271D7FFF8AA2
+        9DFF7D9394FF9DA1A6FFB4B3B7FF92C0C6FFA6C8CDFFD1D6DAFFD4DBDEFFD7DA
+        DCFFCBD0D2FFC5CBCFFFD9DFE2FF787B7C8D0000000000000000000000000000
+        000000000000000000000000000000000000CFDBE140C5CCD1E6D8DEE1FFD8DC
+        DFFFDFE3E5FFD1D5D9FFAFBCC4FFB6BFC4FFA8B5B6FF413C8FFF22168DFFA1AE
+        B8FFA7ABADFF889194FF94999AFF9F9FA1FF89999EFF809BA0FFABAFB0FFB2B7
+        BCFFC4CBCEFFAEB4B8E612141540000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000D5DCE17FDFE4
+        E7FFE9EBECFFE3E7E9FFD7DBDDFFAAB6BCFFB5BEBDFF1A1083FF312699FF605D
+        9FFFCAD3D1FFB5B8BAFF8D9497FF8B9498FF9A9FA2FF889194E2617377C75E5F
+        60AA3F4142890000002D0000001D0000000C0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000D0D5D823B3B8BA5CADB3B49ACDD8D7FF969DBEFF22168DFF2F2593FF2D23
+        95FFAAB3C1FFA2AAAEFFA1A6A9FF7D8588E00B0B0C4800000032000000370000
+        003600000030000000280000001B0000000C0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000ACB3C41D5049A0E7322798FF322797FF392C
+        9EFF2D3693FFC2E0DBFF94A2A59A00000000040304020000000E000000190000
+        001D0000001A000000140000000B000000030000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000004235A301302497FE3D30A2FF372D9DFF3328
+        97FF3F33A6FF433D8BB100000000000000000000000000000000000000000000
+        0001000000010000000100000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000382A9E694134A7FF4135A6FF3C30A1FF392D
+        9FFF362B9AFF4236A7FF2D228957000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000004135A4E14A3CAEFF4639ACFF4235A7FF4033
+        A3FF3B2F9FFF3B2E9FFF4037A2FF322890190000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000004E3FAC445345B2FF5547B6FF5041B5FF4A3CB3FF4436
+        AAFF4235A6FF3C30A0FF483CADFF322790950000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000594BB2C86556BFFF6757C9FF5A4DACFF504976FF6150
+        B5FF4638ABFF4235A7FF463BACFF3A2E99D50000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000006B5CBC33705FC2FF7B6AD2FF584D90FF25271FFF2C2D2BFF3F3C
+        4FFF5546C1FF473BADFF4C3DB0FF3B2F9BEA0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000007463BEA98674D1FF8B79D9FF181917FF272529FF28292BFF3534
+        45FF6050C6FF4F43B3FF5445B8FF3C309DD90000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000007F70C4F89584DBFF7D6EB0FF0E100CFF212123FF1C1E18FF5248
+        84FF6A59C8FF584AB8FF594CBDFF3C2F9E9A0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000897BCD0B8879C9FF9D8CDBFFA28FDBFF0C0D0CFF070902FF453E62FF8774
+        DBFF6D5EC3FF6858C7FF5547B7FF4436A22B0000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00009284D5079082D5FF9D8DD9FFA695DFFFA693DEFF9987D3FF9986E0FF8272
+        CFFF7566CAFF7867DFFF4B3FA6A6000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000009F90E6E69B8CDEFF9D8DD8FFA191DBFF9C8AD9FF8E7FD2FF8677
+        D4FF927FF2FF5C4FB8D400000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000A698DD59C8B6F5FFA595E8FF9889DEFF998AE2FFAD9AEFFFA894
+        EEFF6E5FC0B20000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000B4A9D954C4BADFD4C6BAE6FFBEAFE0FB9E8CD1B88373
+        C841000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      OnClick = SpeedButton6Click
+    end
+  end
+  object ActionList1: TActionList
+    Images = dbConnect.ImageList1
+    Left = 203
+    Top = 101
+    object acLocalizar: TAction
+      Caption = 'acLocalizar'
+      ImageIndex = 4
+    end
+    object Action1: TAction
+      Caption = 'Action1'
+      ImageIndex = 0
+    end
+    object Action2: TAction
+      Caption = 'Action2'
+      ImageIndex = 3
+    end
+    object Action3: TAction
+      Caption = 'Action3'
+      ImageIndex = 1
+    end
+    object Action4: TAction
+      Caption = 'Action4'
+      ImageIndex = 2
+    end
+    object Action5: TAction
+      Caption = 'Action5'
+      ImageIndex = 5
+    end
+  end
+  object qryFornecedor: TZQuery
+    Connection = dbConnect.ZConnection1
+    UpdateObject = updFornecedor
+    AfterPost = qryFornecedorAfterPost
+    OnNewRecord = qryFornecedorNewRecord
+    SQL.Strings = (
+      'Select f.*,p.conta||''-''||p.descricao as vplano_contas,'
+      '          u.nome as uf_nome'
+      'from fornecedores f'
+      'Left Join plano_contas p ON p.id=f.plano_contas'
+      'Left Join unidade_federacao u ON u.sigla=f.uf'
+      'Where f.id =:id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    Left = 544
+    Top = 24
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryFornecedorid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFornecedornome: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryFornecedorfantasia: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'fantasia'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryFornecedorendereco: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryFornecedorcidade: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryFornecedorbairro: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryFornecedorcep: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object qryFornecedorcomplemento: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'complemento'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryFornecedoruf: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryFornecedoremail: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryFornecedortelefone1: TStringField
+      DisplayWidth = 16
+      FieldKind = fkData
+      FieldName = 'telefone1'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object qryFornecedortelefone2: TStringField
+      DisplayWidth = 16
+      FieldKind = fkData
+      FieldName = 'telefone2'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object qryFornecedorfax: TStringField
+      DisplayWidth = 16
+      FieldKind = fkData
+      FieldName = 'fax'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object qryFornecedorcontato: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'contato'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryFornecedorcnpj: TStringField
+      DisplayWidth = 18
+      FieldKind = fkData
+      FieldName = 'cnpj'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnValidate = qryFornecedorcnpjValidate
+      Size = 18
+    end
+    object qryFornecedorinscestadual: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'inscestadual'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnValidate = qryFornecedorinscestadualValidate
+      Size = 15
+    end
+    object qryFornecedorobservacao: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'observacao'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qryFornecedorstatus: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'status'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryFornecedordatacadastro: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'datacadastro'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFornecedorplano_contas: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'plano_contas'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFornecedorvplano_contas: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'vplano_contas'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryFornecedoruf_nome: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'uf_nome'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryFornecedorwebpage: TStringField
+      DisplayWidth = 800
+      FieldKind = fkData
+      FieldName = 'webpage'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+  end
+  object updFornecedor: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM fornecedores'
+      'WHERE'
+      '  fornecedores.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO fornecedores'
+      '  (id, nome, fantasia, endereco, cidade, bairro, cep, complemento, uf, '
+      '   email, telefone1, telefone2, fax, contato, cnpj, inscestadual, observacao, '
+      '   status, datacadastro, plano_contas, webpage)'
+      'VALUES'
+      '  (:id, :nome, :fantasia, :endereco, :cidade, :bairro, :cep, :complemento, '
+      '   :uf, :email, :telefone1, :telefone2, :fax, :contato, :cnpj, :inscestadual, '
+      '   :observacao, :status, :datacadastro, :plano_contas, :webpage)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE fornecedores SET'
+      '  id = :id,'
+      '  nome = :nome,'
+      '  fantasia = :fantasia,'
+      '  endereco = :endereco,'
+      '  cidade = :cidade,'
+      '  bairro = :bairro,'
+      '  cep = :cep,'
+      '  complemento = :complemento,'
+      '  uf = :uf,'
+      '  email = :email,'
+      '  telefone1 = :telefone1,'
+      '  telefone2 = :telefone2,'
+      '  fax = :fax,'
+      '  contato = :contato,'
+      '  cnpj = :cnpj,'
+      '  inscestadual = :inscestadual,'
+      '  observacao = :observacao,'
+      '  status = :status,'
+      '  datacadastro = :datacadastro,'
+      '  plano_contas = :plano_contas,'
+      '  webpage = :webpage'
+      'WHERE'
+      '  fornecedores.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 592
+    Top = 24
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nome'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fantasia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'endereco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'bairro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cep'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'complemento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'uf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'email'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telefone1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telefone2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fax'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cnpj'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'inscestadual'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'observacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'status'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datacadastro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'plano_contas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'webpage'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsFornecedor: TDataSource
+    DataSet = qryFornecedor
+    Left = 544
+    Top = 72
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 152
+    Top = 80
+    object MenuItem1: TMenuItem
+      Caption = 'Localizar por código'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Localizar por nome'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Localizar por CNPJ/CPF'
+      OnClick = MenuItem3Click
+    end
+    object MenuItem4: TMenuItem
+      Caption = '-'
+    end
+    object mnSomenteAtivos: TMenuItem
+      AutoCheck = True
+      Caption = 'Mostrar fornecedores Ativos'
+      Checked = True
+      GroupIndex = 1
+      RadioItem = True
+      OnClick = mnSomenteAtivosClick
+    end
+    object mnSomenteInativos: TMenuItem
+      AutoCheck = True
+      Caption = 'Mostrar fornecedores Inativos'
+      GroupIndex = 1
+      RadioItem = True
+      OnClick = mnSomenteAtivosClick
+    end
+  end
+  object ACBrValidador1: TACBrValidador
+    IgnorarChar = './-'
+    Left = 550
+    Top = 290
+  end
+  object qryContatos: TZQuery
+    Connection = dbConnect.ZConnection1
+    OnNewRecord = qryContatosNewRecord
+    SQL.Strings = (
+      'SELECT id, fornecedor, nome, email, telefones'
+      '  FROM fornecedor_contato'
+      'Where fornecedor=:id'
+      'Order by id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    DataSource = dsFornecedor
+    Left = 674
+    Top = 32
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryContatosid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContatosfornecedor: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'fornecedor'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryContatosnome: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qryContatosemail: TStringField
+      DisplayWidth = 800
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+    object qryContatostelefones: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'telefones'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+  end
+  object dsContatos: TDataSource
+    DataSet = qryContatos
+    Left = 728
+    Top = 56
+  end
+  object qryFornecedorLista: TZReadOnlyQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select id,nome,fantasia'
+      'From fornecedores'
+      'Where status ilike ''ATIVO'''
+      'Order by id'
+    )
+    Params = <>
+    Left = 544
+    Top = 152
+    object qryFornecedorListaid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryFornecedorListanome: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryFornecedorListafantasia: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'fantasia'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+  end
+  object dsFornecedorLista: TDataSource
+    DataSet = qryFornecedorLista
+    Left = 547
+    Top = 204
+  end
+  object ACBrCEP1: TACBrCEP
+    ProxyPort = '8080'
+    WebService = wsRepublicaVirtual
+    PesquisarIBGE = True
+    Left = 74
+    Top = 243
+  end
+end

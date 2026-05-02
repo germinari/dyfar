@@ -1,0 +1,455 @@
+object frmCadIPI: TfrmCadIPI
+  Left = 459
+  Height = 470
+  Top = 153
+  Width = 555
+  Caption = 'Tabela de IPI'
+  ClientHeight = 470
+  ClientWidth = 555
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 555
+    AutoSize = True
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBar1'
+    Flat = False
+    Images = dbConnect.ImageList1
+    Indent = 5
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 5
+      Top = 2
+      Caption = 'ToolButton1'
+      ImageIndex = 8
+      OnClick = ToolButton1Click
+    end
+    object ToolButton2: TToolButton
+      Left = 53
+      Height = 48
+      Top = 2
+      Width = 19
+      Caption = 'ToolButton2'
+      Style = tbsSeparator
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 72
+      Height = 48
+      Top = 2
+      Width = 288
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 48
+      ClientWidth = 288
+      DataSource = dsIPI
+      Options = []
+      TabOrder = 0
+      VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel, nbRefresh]
+    end
+  end
+  object RxDBGrid1: TRxDBGrid
+    Left = 0
+    Height = 228
+    Top = 50
+    Width = 555
+    TitleButtons = False
+    AutoSort = True
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Nome'
+        Width = 500
+        FieldName = 'nome'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+      end>
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end    
+      item
+        Command = rxgcSelectAll
+        ShortCut = 16449
+        Enabled = True
+      end    
+      item
+        Command = rxgcDeSelectAll
+        ShortCut = 16429
+        Enabled = True
+      end    
+      item
+        Command = rxgcInvertSelection
+        ShortCut = 16426
+        Enabled = True
+      end    
+      item
+        Command = rxgcOptimizeColumnsWidth
+        ShortCut = 16427
+        Enabled = True
+      end    
+      item
+        Command = rxgcCopyCellValue
+        ShortCut = 16451
+        Enabled = True
+      end>
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    Align = alTop
+    Color = clWindow
+    DrawFullLine = False
+    FocusColor = clRed
+    SelectedColor = clHighlight
+    GridLineStyle = psSolid
+    DataSource = dsIPI
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentColor = False
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 297
+    Width = 11
+    Caption = 'ID'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 152
+    Height = 15
+    Top = 297
+    Width = 33
+    Caption = 'Nome'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 15
+    Top = 323
+    Width = 137
+    Caption = 'Classe de enquadramento'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 40
+    Height = 23
+    Top = 289
+    Width = 80
+    DataField = 'id'
+    DataSource = dsIPI
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object DBEdit2: TDBEdit
+    Left = 208
+    Height = 23
+    Top = 289
+    Width = 336
+    DataField = 'nome'
+    DataSource = dsIPI
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 208
+    Height = 23
+    Top = 316
+    Width = 80
+    DataField = 'cl_enq'
+    DataSource = dsIPI
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 4
+  end
+  object DBEdit4: TDBEdit
+    Left = 464
+    Height = 23
+    Top = 316
+    Width = 80
+    DataField = 'c_selo'
+    DataSource = dsIPI
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object DBEdit5: TDBEdit
+    Left = 208
+    Height = 23
+    Top = 345
+    Width = 80
+    DataField = 'c_enq'
+    DataSource = dsIPI
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 6
+  end
+  object DBEdit6: TDBEdit
+    Left = 464
+    Height = 23
+    Top = 345
+    Width = 80
+    DataField = 'cst'
+    DataSource = dsIPI
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 7
+  end
+  object DBEdit7: TDBEdit
+    Left = 208
+    Height = 23
+    Top = 375
+    Width = 80
+    DataField = 'p_ipi'
+    DataSource = dsIPI
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 8
+  end
+  object DBEdit8: TDBEdit
+    Left = 208
+    Height = 23
+    Top = 406
+    Width = 288
+    DataField = 'cnpj_prod'
+    DataSource = dsIPI
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 9
+  end
+  object Label4: TLabel
+    Left = 296
+    Height = 15
+    Top = 323
+    Width = 149
+    Caption = 'Código do Selo de Controle '
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 16
+    Height = 15
+    Top = 353
+    Width = 174
+    Caption = 'Código de Enquadramento Legal'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 296
+    Height = 15
+    Top = 353
+    Width = 157
+    Caption = 'Código de Situação Tributária'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 16
+    Height = 15
+    Top = 383
+    Width = 137
+    Caption = 'Alíquota percentual do IPI'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 16
+    Height = 15
+    Top = 414
+    Width = 95
+    Caption = 'CNPJ do produtor'
+    ParentColor = False
+  end
+  object Label9: TLabel
+    Left = 16
+    Height = 15
+    Top = 445
+    Width = 40
+    Caption = 'Calculo'
+    ParentColor = False
+  end
+  object RxDBComboBox1: TRxDBComboBox
+    Left = 208
+    Height = 23
+    Top = 437
+    Width = 171
+    Style = csDropDownList
+    DataField = 'calculo'
+    DataSource = dsIPI
+    EnableValues = True
+    ItemHeight = 15
+    Items.Strings = (
+      'Alíquota ad valorem'
+      'Alíquota específica'
+    )
+    MaxLength = 0
+    TabOrder = 10
+    Values.Strings = (
+      'ad valorem'
+      'especifica'
+    )
+  end
+  object qryIPI: TZQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'SELECT id, cl_enq, cnpj_prod, c_selo, q_selo, c_enq, cst, p_ipi, q_unid, '
+      '       calculo, nome'
+      '  FROM produto_ipi_template'
+    )
+    Params = <>
+    left = 142
+    top = 117
+    object qryIPIid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryIPIcl_enq: TStringField
+      FieldKind = fkData
+      FieldName = 'cl_enq'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryIPIcnpj_prod: TStringField
+      FieldKind = fkData
+      FieldName = 'cnpj_prod'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 56
+    end
+    object qryIPIc_selo: TStringField
+      FieldKind = fkData
+      FieldName = 'c_selo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object qryIPIq_selo: TLongintField
+      FieldKind = fkData
+      FieldName = 'q_selo'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryIPIc_enq: TStringField
+      FieldKind = fkData
+      FieldName = 'c_enq'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object qryIPIcst: TLongintField
+      FieldKind = fkData
+      FieldName = 'cst'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryIPIp_ipi: TFloatField
+      FieldKind = fkData
+      FieldName = 'p_ipi'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655362
+    end
+    object qryIPIq_unid: TFloatField
+      FieldKind = fkData
+      FieldName = 'q_unid'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 1048580
+    end
+    object qryIPIcalculo: TStringField
+      FieldKind = fkData
+      FieldName = 'calculo'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryIPInome: TStringField
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+  end
+  object dsIPI: TDataSource
+    DataSet = qryIPI
+    left = 144
+    top = 188
+  end
+end

@@ -1,0 +1,520 @@
+object frmEdicaoLote: TfrmEdicaoLote
+  Left = 495
+  Height = 336
+  Top = 171
+  Width = 511
+  ActiveControl = edLote
+  BorderStyle = bsDialog
+  Caption = 'frmEdicaoLote'
+  ClientHeight = 336
+  ClientWidth = 511
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object BitBtn1: TBitBtn
+    Left = 8
+    Height = 30
+    Top = 288
+    Width = 75
+    Default = True
+    DefaultCaption = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = BitBtn1Click
+    TabOrder = 9
+  end
+  object BitBtn2: TBitBtn
+    Left = 420
+    Height = 30
+    Top = 288
+    Width = 75
+    DefaultCaption = True
+    Kind = bkClose
+    ModalResult = 11
+    TabOrder = 10
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 31
+    Width = 43
+    Caption = 'Produto'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 95
+    Width = 61
+    Caption = 'Localização'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 63
+    Width = 22
+    Caption = 'Loja'
+    ParentColor = False
+  end
+  object btEmpresa: TSpeedButton
+    Left = 481
+    Height = 22
+    Top = 55
+    Width = 23
+    Caption = '...'
+    OnClick = btEmpresaClick
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 15
+    Top = 127
+    Width = 40
+    Caption = 'N° Lote'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 15
+    Top = 159
+    Width = 62
+    Caption = 'Quantidade'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 15
+    Top = 191
+    Width = 67
+    Caption = 'Data entrada'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 8
+    Height = 15
+    Top = 223
+    Width = 82
+    Caption = 'Data fabricação'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 8
+    Height = 15
+    Top = 255
+    Width = 90
+    Caption = 'Data vencimento'
+    ParentColor = False
+  end
+  object edNome: TEdit
+    Left = 96
+    Height = 23
+    Top = 24
+    Width = 408
+    Color = clSilver
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 0
+  end
+  object edEmpresa: TEdit
+    Left = 97
+    Height = 23
+    Top = 56
+    Width = 381
+    Color = clSilver
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 1
+  end
+  object edLocalizacao: TEdit
+    Left = 161
+    Height = 23
+    Top = 87
+    Width = 125
+    CharCase = ecUppercase
+    TabOrder = 2
+  end
+  object edLote: TEdit
+    Left = 161
+    Height = 23
+    Top = 120
+    Width = 125
+    CharCase = ecUppercase
+    TabOrder = 3
+  end
+  object edQuantidade: TCurrencyEdit
+    Left = 161
+    Height = 23
+    Top = 153
+    Width = 80
+    Alignment = taRightJustify
+    DecimalPlaces = 3
+    DisplayFormat = ',0.###'
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 4
+    Value = 0
+  end
+  object RxDateEdit1: TRxDateEdit
+    Left = 160
+    Height = 23
+    Top = 185
+    Width = 104
+    ButtonWidth = 23
+    DialogTitle = 'Select a Date'
+    Glyph.Data = {
+      36010000424D360100000000000076000000280000001C0000000C0000000100
+      040000000000C000000000000000000000000000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+      77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+      47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+      47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+      47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+      47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+      47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+    }
+    MaxLength = 10
+    NumGlyphs = 2
+    PasswordChar = #0
+    PopupColor = clWindow
+    TabOrder = 6
+    Text = '  /  /    '
+  end
+  object RxDateEdit2: TRxDateEdit
+    Left = 160
+    Height = 23
+    Top = 216
+    Width = 104
+    ButtonWidth = 23
+    DialogTitle = 'Select a Date'
+    Glyph.Data = {
+      36010000424D360100000000000076000000280000001C0000000C0000000100
+      040000000000C000000000000000000000000000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+      77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+      47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+      47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+      47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+      47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+      47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+    }
+    MaxLength = 10
+    NumGlyphs = 2
+    PasswordChar = #0
+    PopupColor = clWindow
+    TabOrder = 7
+    Text = '  /  /    '
+    OnExit = RxDateEdit2Exit
+  end
+  object RxDateEdit3: TRxDateEdit
+    Left = 160
+    Height = 23
+    Top = 248
+    Width = 104
+    ButtonWidth = 23
+    DialogTitle = 'Select a Date'
+    Glyph.Data = {
+      36010000424D360100000000000076000000280000001C0000000C0000000100
+      040000000000C000000000000000000000000000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDD777777777
+      77DDFFFFFFFFFFFF0000DD004044040047D777777777777F0000DDFFFFFFFFFF
+      47D7FDFFFDFFFD7F0000DDF000F0008F47D7F777D777DF7F0000DDFF0FF8F80F
+      47D7FD7FDDDD7F7F0000DDFF0FFFFF0F47D7FD7FDDFF7D7F0000DDFF0FF0008F
+      47D7FD7FD777DD7F0000DDF00FF0FFFF47D7F77FD7FFFF7F0000DDFF0FF0000F
+      47D7FD7DD7777D7F0000DDFFFFFFFFFF47D7FDDDDDDDDD7F0000DDF88888888F
+      47D7FFFFFFFFFF7F0000DD0000000000DDD777777777777D0000
+    }
+    MaxLength = 10
+    NumGlyphs = 2
+    PasswordChar = #0
+    PopupColor = clWindow
+    TabOrder = 8
+    Text = '  /  /    '
+  end
+  object edQuantidade1: TCurrencyEdit
+    Left = 352
+    Height = 23
+    Top = 153
+    Width = 80
+    Alignment = taRightJustify
+    DecimalPlaces = 3
+    DisplayFormat = ',0.###'
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 5
+    Value = 0
+    Visible = False
+  end
+  object Label9: TLabel
+    Left = 256
+    Height = 15
+    Top = 159
+    Width = 91
+    Caption = 'Nova quantidade'
+    ParentColor = False
+    Visible = False
+  end
+  object dsEstoqueLotes: TDataSource
+    DataSet = qryEstoqueLotes
+    left = 408
+    top = 248
+  end
+  object qryEstoqueLotes: TZQuery
+    Connection = dbConnect.ZConnection1
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'SELECT pe.id, pe.produto, pe.localizacao, pe.lote, pe.quantidade, pe.data_entrada, pe.data_validade, '
+      '       pe.data_fabricacao,pe.empresa,p.descricao,(e.id||''-''||e.nome)::::varchar(80) as nomeemp,p.prazo_validade'
+      '  FROM produtos_estoque pe'
+      ' Left Join produtos p ON p.id=pe.produto'
+      ' Left Join empresa e ON e.id=pe.empresa'
+      '  Where pe.id = :id'
+      '  Order by pe.data_validade'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    left = 440
+    top = 80
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object qryEstoqueLotesid: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryEstoqueLotesproduto: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryEstoqueLoteslote: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'lote'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryEstoqueLotesquantidade: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'quantidade'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983043
+    end
+    object qryEstoqueLotesdata_entrada: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_entrada'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryEstoqueLotesdata_validade: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_validade'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryEstoqueLotesdata_fabricacao: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data_fabricacao'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryEstoqueLotesempresa: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'empresa'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+    object qryEstoqueLoteslocalizacao: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'localizacao'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryEstoqueLotesdescricao: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryEstoqueLotesnomeemp: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'nomeemp'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object qryEstoqueLotesprazo_validade: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'prazo_validade'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = false
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM produtos_estoque'
+      'WHERE'
+      '  produtos_estoque.id = :OLD_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO produtos_estoque'
+      '  (produto, lote, quantidade, data_entrada, data_validade, data_fabricacao, '
+      '   empresa, localizacao)'
+      'VALUES'
+      '  (:produto, :lote, :quantidade, :data_entrada, :data_validade, :data_fabricacao, '
+      '   :empresa, :localizacao)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE produtos_estoque SET'
+      '  produto = :produto,'
+      '  lote = :lote,'
+      '  quantidade = :quantidade,'
+      '  data_entrada = :data_entrada,'
+      '  data_validade = :data_validade,'
+      '  data_fabricacao = :data_fabricacao,'
+      '  empresa = :empresa,'
+      '  localizacao = :localizacao'
+      'WHERE'
+      '  produtos_estoque.id = :OLD_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 456
+    top = 152
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'lote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_entrada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_validade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_fabricacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'empresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'localizacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryProduto: TZReadOnlyQuery
+    Connection = dbConnect.ZConnection1
+    SQL.Strings = (
+      'Select *'
+      'from produtos'
+      'Where id = :id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    left = 456
+    top = 224
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+  end
+end

@@ -1,0 +1,28 @@
+object frmNovoPedido: TfrmNovoPedido
+  Left = 420
+  Height = 355
+  Top = 144
+  Width = 320
+  BorderStyle = bsDialog
+  Caption = 'Novo pedido'
+  ClientHeight = 355
+  ClientWidth = 320
+  Position = poScreenCenter
+  LCLVersion = '0.9.31'
+  object BitBtn1: TBitBtn
+    Left = 8
+    Height = 30
+    Top = 16
+    Width = 308
+    Caption = 'Novo pedido'
+    TabOrder = 0
+  end
+  object BitBtn2: TBitBtn
+    Left = 8
+    Height = 30
+    Top = 56
+    Width = 308
+    Caption = 'Novo orçamento'
+    TabOrder = 1
+  end
+end
