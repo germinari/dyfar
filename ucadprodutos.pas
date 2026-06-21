@@ -325,7 +325,7 @@ type
     qryProdutoscodigo_barras: TStringField;
     qryProdutoscomissao: TFloatField;
     qryProdutoscst_cofins: TLongintField;
-    qryProdutoscst_ibs_cbs: TZRawStringField;
+    qryProdutoscst_ibs_cbs: TStringField;
     qryProdutoscst_pis: TLongintField;
     qryProdutosc_class_trib: TStringField;
     qryProdutosdata_cadastro: TDateField;

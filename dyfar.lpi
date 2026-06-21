@@ -21,9 +21,9 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
       <MinorVersionNr Value="1"/>
-      <BuildNr Value="268"/>
+      <BuildNr Value="269"/>
       <Language Value="0416"/>
-      <StringTable CompanyName="WALG Software" ProductVersion="1.0.0.92"/>
+      <StringTable CompanyName="WALG Software" ProductVersion="1.1.0"/>
     </VersionInfo>
     <BuildModes Count="4" Active="Debug 64-bit">
       <Item1 Name="Debug" Default="True"/>
@@ -96,7 +96,7 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="$(LazarusDir)componentes_laz\user"/>
+            <OtherUnitFiles Value="$(HOME)\Componentes_laz\user"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Linking>
@@ -123,106 +123,103 @@
         <Mode0 Name="default"/>
       </Modes>
     </RunParams>
-    <RequiredPackages Count="30">
+    <RequiredPackages Count="29">
       <Item1>
-        <PackageName Value="zcomponentdesign"/>
+        <PackageName Value="LazControlDsgn"/>
       </Item1>
       <Item2>
-        <PackageName Value="LazControlDsgn"/>
+        <PackageName Value="DateTimeCtrlsDsgn"/>
       </Item2>
       <Item3>
-        <PackageName Value="DateTimeCtrlsDsgn"/>
+        <PackageName Value="rxdbgrid_export_spreadsheet"/>
       </Item3>
       <Item4>
-        <PackageName Value="rxdbgrid_export_spreadsheet"/>
+        <PackageName Value="lazreportpdfexport"/>
       </Item4>
       <Item5>
-        <PackageName Value="lazreportpdfexport"/>
+        <PackageName Value="rx_sort_zeos"/>
       </Item5>
       <Item6>
-        <PackageName Value="rx_sort_zeos"/>
+        <PackageName Value="ACBr_BoletoFC_Fortes"/>
       </Item6>
       <Item7>
-        <PackageName Value="ACBr_BoletoFC_Fortes"/>
+        <PackageName Value="ACBr_Boleto"/>
       </Item7>
       <Item8>
-        <PackageName Value="ACBr_Boleto"/>
+        <PackageName Value="pascalscript"/>
       </Item8>
       <Item9>
-        <PackageName Value="pascalscript"/>
+        <PackageName Value="SDFLaz"/>
       </Item9>
       <Item10>
-        <PackageName Value="SDFLaz"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item10>
       <Item11>
-        <PackageName Value="DateTimeCtrls"/>
+        <PackageName Value="rxdbgrid_print"/>
       </Item11>
       <Item12>
-        <PackageName Value="rxdbgrid_print"/>
+        <PackageName Value="frce"/>
       </Item12>
       <Item13>
-        <PackageName Value="frce"/>
+        <PackageName Value="ACBr_NFe_DanfeRL"/>
       </Item13>
       <Item14>
-        <PackageName Value="ACBr_NFe_DanfeRL"/>
+        <PackageName Value="PCNComum"/>
       </Item14>
       <Item15>
-        <PackageName Value="PCNComum"/>
+        <PackageName Value="ACBr_NFe"/>
       </Item15>
       <Item16>
-        <PackageName Value="ACBr_NFe"/>
+        <PackageName Value="lazreport"/>
       </Item16>
       <Item17>
-        <PackageName Value="lazreport"/>
+        <PackageName Value="ACBrSerial"/>
       </Item17>
       <Item18>
-        <PackageName Value="ACBrSerial"/>
+        <PackageName Value="laz_synapse"/>
       </Item18>
       <Item19>
-        <PackageName Value="laz_synapse"/>
+        <PackageName Value="MemDSLaz"/>
       </Item19>
       <Item20>
-        <PackageName Value="MemDSLaz"/>
+        <PackageName Value="ACBrTCP"/>
       </Item20>
       <Item21>
-        <PackageName Value="ACBrTCP"/>
+        <PackageName Value="ACBrDiversos"/>
       </Item21>
       <Item22>
-        <PackageName Value="ACBrDiversos"/>
-      </Item22>
-      <Item23>
         <PackageName Value="RunTimeTypeInfoControls"/>
         <MinVersion Minor="1" Valid="True"/>
-      </Item23>
-      <Item24>
+      </Item22>
+      <Item23>
         <PackageName Value="FCL"/>
         <MinVersion Major="1" Valid="True"/>
-      </Item24>
-      <Item25>
+      </Item23>
+      <Item24>
         <PackageName Value="zcomponent"/>
         <MinVersion Major="6" Minor="6" Release="6" Valid="True"/>
-      </Item25>
-      <Item26>
+      </Item24>
+      <Item25>
         <PackageName Value="rxnew"/>
         <MinVersion Major="2" Minor="1" Release="2" Build="105" Valid="True"/>
-      </Item26>
-      <Item27>
+      </Item25>
+      <Item26>
         <PackageName Value="user"/>
         <MinVersion Valid="True"/>
-      </Item27>
-      <Item28>
+      </Item26>
+      <Item27>
         <PackageName Value="LazTDI"/>
         <MinVersion Minor="1" Release="1" Build="160" Valid="True"/>
-      </Item28>
-      <Item29>
+      </Item27>
+      <Item28>
         <PackageName Value="LazControls"/>
         <MinVersion Valid="True"/>
-      </Item29>
-      <Item30>
+      </Item28>
+      <Item29>
         <PackageName Value="LCL"/>
-      </Item30>
+      </Item29>
     </RequiredPackages>
-    <Units Count="88">
+    <Units Count="89">
       <Unit0>
         <Filename Value="dyfar.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -237,9 +234,9 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="481"/>
-        <CursorPos X="26" Y="493"/>
+        <CursorPos X="12" Y="493"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
@@ -257,10 +254,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uCadProdutos"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1390"/>
-        <CursorPos X="34" Y="1391"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="317"/>
+        <CursorPos X="36" Y="320"/>
         <UsageCount Value="221"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="ucaixa.pas"/>
@@ -281,9 +279,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="udbConnect"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="111"/>
-        <CursorPos Y="124"/>
+        <TopLine Value="53"/>
+        <CursorPos X="6" Y="66"/>
         <UsageCount Value="262"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -431,10 +428,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uImportarNFe"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="3"/>
-        <CursorPos X="68" Y="10"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="359"/>
+        <CursorPos Y="370"/>
         <UsageCount Value="209"/>
+        <Loaded Value="True"/>
       </Unit17>
       <Unit18>
         <Filename Value="uedititemnfsaida.pas"/>
@@ -1110,9 +1109,9 @@
       <Unit78>
         <Filename Value="udbconnect.lfm"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="728"/>
-        <CursorPos Y="742"/>
-        <UsageCount Value="2"/>
+        <TopLine Value="718"/>
+        <CursorPos Y="741"/>
+        <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit78>
       <Unit79>
@@ -1149,12 +1148,11 @@
         <UsageCount Value="2"/>
       </Unit82>
       <Unit83>
-        <Filename Value="..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcPostgreSql.pas"/>
+        <Filename Value="D:\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcPostgreSql.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="658"/>
         <CursorPos Y="670"/>
         <UsageCount Value="5"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit83>
       <Unit84>
         <Filename Value="..\newbotanica\sistema_config.pas"/>
@@ -1164,12 +1162,11 @@
         <UsageCount Value="6"/>
       </Unit84>
       <Unit85>
-        <Filename Value="..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractDataset.pas"/>
+        <Filename Value="D:\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractDataset.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="455"/>
         <CursorPos Y="468"/>
         <UsageCount Value="6"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit85>
       <Unit86>
         <Filename Value="ugerarparcelas.pas"/>
@@ -1189,8 +1186,16 @@
         <CursorPos Y="726"/>
         <UsageCount Value="5"/>
       </Unit87>
+      <Unit88>
+        <Filename Value="ucadprodutos.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4939"/>
+        <CursorPos X="48" Y="4952"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit88>
     </Units>
-    <JumpHistory Count="9" HistoryIndex="8">
+    <JumpHistory Count="17" HistoryIndex="16">
       <Position1>
         <Filename Value="umain.pas"/>
         <Caret Line="650" Column="24" TopLine="645"/>
@@ -1227,6 +1232,37 @@
         <Filename Value="umain.pas"/>
         <Caret Line="180" Column="31" TopLine="165"/>
       </Position9>
+      <Position10>
+        <Filename Value="udbconnect.pas"/>
+        <Caret Line="119" Column="27" TopLine="69"/>
+      </Position10>
+      <Position11>
+        <Filename Value="udbconnect.pas"/>
+        <Caret Line="66" Column="6" TopLine="53"/>
+      </Position11>
+      <Position12>
+        <Filename Value="ucadprodutos.pas"/>
+        <Caret Line="328" Column="45" TopLine="317"/>
+      </Position12>
+      <Position13>
+        <Filename Value="umain.pas"/>
+        <Caret Line="493" Column="12" TopLine="481"/>
+      </Position13>
+      <Position14>
+        <Filename Value="uimportarnfe.pas"/>
+        <Caret Line="285" Column="43" TopLine="270"/>
+      </Position14>
+      <Position15>
+        <Filename Value="uimportarnfe.pas"/>
+      </Position15>
+      <Position16>
+        <Filename Value="uimportarnfe.pas"/>
+        <Caret Line="598" Column="47" TopLine="580"/>
+      </Position16>
+      <Position17>
+        <Filename Value="uimportarnfe.pas"/>
+        <Caret Line="373" Column="6" TopLine="359"/>
+      </Position17>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

@@ -7,8 +7,8 @@ interface
 uses
   Classes, SysUtils, db, FileUtil, LResources, Forms, Controls, Graphics,
   Dialogs, StdCtrls, ExtCtrls, ComCtrls, IniPropStorage, Buttons, EditBtn,
-  uTipoNF, ZConnection, ZDataset, ZSqlUpdate, Math, ACBrNFe.Classes, pcnNFeR, pcnNFeW,
-  rxtooledit;
+  uTipoNF, ZConnection, ZDataset, ZSqlUpdate, Math, ACBrNFe.Classes,
+  rxtooledit, ACBrNFe.XmlReader;
 
 type
 
@@ -228,9 +228,6 @@ type
 //    procedure RelancarNota(filename : String);
   public
     { public declarations }
-    nfe : TNFeR;
-    nfew: TNFeW;
-    nfeX : TNFe;
   end;
 
 function ImportarNFe:Integer;
@@ -273,27 +270,31 @@ procedure TfrmImportarNFe.FileNameEdit1AcceptFileName(Sender: TObject;
 Var cnpjdest, cnpjemit, cnpjlocal, cod, cod_forn, barras : String;
     i : Integer;
     lista : TStringList;
+    nfe: TNFe;
+    nfeR: TNFeXmlReader;
 begin
   FileNameEdit1.Text    := Value;
   lbErro.Visible        := False;
   btImportar.Enabled    := False;
-  nfeX := TNFe.Create;
-  nfe  := TNFeR.Create(nfeX);
-  nfe.Leitor.CarregarArquivo(Value);
-  nfe.LerXml;
-  lbNumero.Caption      := Format('%.9d',[nfe.NFe.Ide.nNF]);
-  lbSerie.Caption       := Format('%.3d',[nfe.NFe.Ide.serie]);
-  lbNatureza.Caption    := nfe.NFe.Ide.natOp;
-  lbEmitente.Caption    := nfe.NFe.Emit.xNome;
-  lbDestinatario.Caption:= nfe.NFe.Dest.xNome;
-  lbVlrTotal.Caption    := FormatMoney(nfe.NFe.Total.ICMSTot.vNF);
-  lbDataEmissao.Caption := DateToStr(nfe.NFe.Ide.dEmi);
-  lbQuantItens.Caption  := Format('%.3d',[nfe.NFe.Det.Count]);
-  lbChavenfe.Caption    := OnlyNumber(nfe.NFe.infNFe.ID);
+
+  nfe  := TNFe.Create;
+  nfeR := TNFeXmlReader.Create(nfe);
+  nfeR.CarregarArquivo(Value);
+  nfeR.LerXml;
+
+  lbNumero.Caption      := Format('%.9d',[NFe.Ide.nNF]);
+  lbSerie.Caption       := Format('%.3d',[NFe.Ide.serie]);
+  lbNatureza.Caption    := NFe.Ide.natOp;
+  lbEmitente.Caption    := NFe.Emit.xNome;
+  lbDestinatario.Caption:= NFe.Dest.xNome;
+  lbVlrTotal.Caption    := FormatMoney(NFe.Total.ICMSTot.vNF);
+  lbDataEmissao.Caption := DateToStr(NFe.Ide.dEmi);
+  lbQuantItens.Caption  := Format('%.3d',[NFe.Det.Count]);
+  lbChavenfe.Caption    := OnlyNumber(NFe.infNFe.ID);
   RxDateEdit1.Date      := date;
 
-  cnpjdest := nfe.NFe.Dest.CNPJCPF;
-  cnpjemit := nfe.NFe.Emit.CNPJCPF;
+  cnpjdest := NFe.Dest.CNPJCPF;
+  cnpjemit := NFe.Emit.CNPJCPF;
 
   cnpjlocal  := ExecSql(dbConnect.ZConnection1,'Select limpa_cnpj(cnpj) from empresa where id=%s',[getEmpresaPadrao(meCodigo)]);
   if cnpjdest <> cnpjlocal then begin
@@ -305,9 +306,9 @@ begin
 
   cod := ExecSql(dbConnect.ZConnection1,'Select chave_nfe from nfentrada where chave_nfe=''%s''',[lbChavenfe.Caption]);
   i := StrToIntdef(ExecSql(dbConnect.ZConnection1,'Select count(*) From nfentrada Where numeronf=%d and limpa_cnpj(cnpjcpf)=''%s'' and serie=%d',
-                   [nfe.NFe.Ide.nNF,
-                    nfe.NFe.Emit.CNPJCPF,
-                    nfe.NFe.Ide.serie]),0);
+                   [NFe.Ide.nNF,
+                    NFe.Emit.CNPJCPF,
+                    NFe.Ide.serie]),0);
 
   if (i > 0) or (length(cod) > 0 ) then begin
     lbErro.Caption    := 'Erro: NF já existe no sistema';
@@ -320,12 +321,12 @@ begin
   cod_forn:= ExecSql(dbConnect.ZConnection1,'Select id from fornecedores where limpa_cnpj(cnpj)=limpa_cnpj(''%s'')',[cnpjemit]);
   if StrToIntDef(cod_forn,0) = 0  then
      lista.Add('Fornecedor não cadastrado');
-  for i := 0 to nfe.NFe.Det.Count-1 do begin
-      cod   := nfe.NFe.Det.Items[i].Prod.cProd;
-      barras:= nfe.NFe.Det.Items[i].Prod.cEAN;
+  for i := 0 to NFe.Det.Count-1 do begin
+      cod   := NFe.Det.Items[i].Prod.cProd;
+      barras:= NFe.Det.Items[i].Prod.cEAN;
       if (LocalizaPeloCodForn(cod,cod_forn) <= 0) then
         if (LocalizaPeloEAN(barras) <= 0) then
-            lista.Add(Format('Item %d não localizado %s, EAN = %s',[i + 1,nfe.NFe.Det.Items[i].Prod.xProd,nfe.NFe.Det.Items[i].Prod.cEAN]));
+            lista.Add(Format('Item %d não localizado %s, EAN = %s',[i + 1,NFe.Det.Items[i].Prod.xProd,NFe.Det.Items[i].Prod.cEAN]));
   end;
 
   if lista.Count > 0 then
@@ -361,15 +362,17 @@ var cnpjdest, cnpjemit, where, s1,s2,pastaDest,cod: String;
     cnpjLocal , xml: String;
     c : Char;
     dtv,dtf : TDateTime;
+    nfe: TNFe;
+    nfeR: TNFeXmlReader;
 begin
   ProgressBar1.Position:= 0;
   ProgressBar1.Max     := 20;
 
   ProgressBar1.Position:= 2;
-  nfeX := TNFe.Create;
-  nfe  := TNFeR.Create(nfeX);
-  nfe.Leitor.CarregarArquivo(FileName);
-  nfe.LerXml;
+  nfe  := TNFe.Create;
+  nfeR := TNFeXmlReader.Create(nfe);
+  nfeR.CarregarArquivo(FileName);
+  nfeR.LerXml;
   ProgressBar1.Position:= 5;
   StartWait;
   try
@@ -379,72 +382,72 @@ begin
     OpenTable( qryNfEntrada );
     qryNfEntrada.Append;
     qryNfEntradafinalidade_nf.ASInteger:= 2;
-    qryNfEntradanumeronf.ASInteger     := nfe.NFe.Ide.nNF;
-    qryNFEntradanatop.AsString         := LeftStr(nfe.NFe.Ide.natOp,40);
-    qryNfEntradadataemissao.AsDateTime := nfe.NFe.Ide.dEmi;
+    qryNfEntradanumeronf.ASInteger     := NFe.Ide.nNF;
+    qryNFEntradanatop.AsString         := LeftStr(NFe.Ide.natOp,40);
+    qryNfEntradadataemissao.AsDateTime := NFe.Ide.dEmi;
     qryNfEntradadataentrada.AsDateTime := Date;
-    qryNfEntradaserie.AsInteger        := nfe.NFe.Ide.serie;
-    qryNfEntradachave_nfe.AsString     := OnlyNumber(nfe.NFe.infNFe.ID);
+    qryNfEntradaserie.AsInteger        := NFe.Ide.serie;
+    qryNfEntradachave_nfe.AsString     := OnlyNumber(NFe.infNFe.ID);
     ProgressBar1.Position:= 7;
-    cod := ExecSql(dbConnect.ZConnection1,'Select id from fornecedores where limpa_cnpj(cnpj)=''%s''',[nfe.NFe.Emit.CNPJCPF]);
+    cod := ExecSql(dbConnect.ZConnection1,'Select id from fornecedores where limpa_cnpj(cnpj)=''%s''',[NFe.Emit.CNPJCPF]);
     qryNfEntradacliente_forn.AsString := cod;
-    if not SetFornecedor( nfe.NFe.Emit.CNPJCPF ) then begin
+    if not SetFornecedor( NFe.Emit.CNPJCPF ) then begin
        Raise Exception.Create('Não localizado o fornecedor. Não é possível importar nota.');
 {
-        qryNfEntradafornecedor.AsString := nfe.NFe.Emit.xNome;
-        qryNfEntradaendereco.AsString   := nfe.NFe.Emit.EnderEmit.xLgr+', '+nfe.NFe.Emit.EnderEmit.nro;
-        qryNfEntradacidade.AsString     := nfe.NFe.Emit.EnderEmit.xMun;
-        qryNfEntradabairro.AsString     := nfe.NFe.Emit.EnderEmit.xBairro;
-        qryNfEntradacep.AsString        := IntToStr(nfe.NFe.Emit.EnderEmit.CEP);
-        qryNfEntradacomplemento.AsString:= nfe.NFe.Emit.EnderEmit.xCpl;
-        qryNfEntradauf.AsString         := nfe.NFe.Emit.EnderEmit.UF;
-        qryNfEntradatelefone1.AsString  := nfe.NFe.Emit.EnderEmit.fone;
-        qryNfEntradainscrestadual.AsString:= nfe.NFe.Emit.IE;
+        qryNfEntradafornecedor.AsString := NFe.Emit.xNome;
+        qryNfEntradaendereco.AsString   := NFe.Emit.EnderEmit.xLgr+', '+NFe.Emit.EnderEmit.nro;
+        qryNfEntradacidade.AsString     := NFe.Emit.EnderEmit.xMun;
+        qryNfEntradabairro.AsString     := NFe.Emit.EnderEmit.xBairro;
+        qryNfEntradacep.AsString        := IntToStr(NFe.Emit.EnderEmit.CEP);
+        qryNfEntradacomplemento.AsString:= NFe.Emit.EnderEmit.xCpl;
+        qryNfEntradauf.AsString         := NFe.Emit.EnderEmit.UF;
+        qryNfEntradatelefone1.AsString  := NFe.Emit.EnderEmit.fone;
+        qryNfEntradainscrestadual.AsString:= NFe.Emit.IE;
         }
     end;
-    qryNFEntradacrt.AsString            := CRTToStr(nfe.NFe.Emit.CRT);
-    qryNfEntradainscrestsubtrib.AsString:= nfe.NFe.Emit.IEST;
+    qryNFEntradacrt.AsString            := CRTToStr(NFe.Emit.CRT);
+    qryNfEntradainscrestsubtrib.AsString:= NFe.Emit.IEST;
     ProgressBar1.Position:= 8;
-    qryNfEntradabaseicms.AsCurrency     := nfe.NFe.Total.ICMSTot.vBC;
-    qryNfEntradavaloricms.AsCurrency    := nfe.NFe.Total.ICMSTot.vICMS;
-    qryNfEntradabaseicmssub.AsCurrency  := nfe.NFe.Total.ICMSTot.vBCST;
-    qryNfEntradavaloricmssub.AsCurrency := nfe.NFe.Total.ICMSTot.vST;
-    qryNfEntradavalortotalprodutos.AsCurrency := nfe.NFe.Total.ICMSTot.vProd;
-    qryNfEntradavalorfrete.AsCurrency   := nfe.NFe.Total.ICMSTot.vFrete;
-    qryNfEntradavalorseguro.AsCurrency  := nfe.NFe.Total.ICMSTot.vSeg;
-    qryNfEntradavaloroutradesp.AsCurrency := nfe.NFe.Total.ICMSTot.vOutro;
-    qryNfEntradavaloripi.AsCurrency       := nfe.NFe.Total.ICMSTot.vIPI;
-    qryNFEntradavalorpis.AsCurrency       := nfe.NFe.Total.ICMSTot.vPIS;
-    qryNFEntradavalorcofins.AsCurrency    := nfe.NFe.Total.ICMSTot.vCOFINS;
-    qryNfEntradavalortotalnota.AsCurrency := nfe.NFe.Total.ICMSTot.vNF;
+    qryNfEntradabaseicms.AsCurrency     := NFe.Total.ICMSTot.vBC;
+    qryNfEntradavaloricms.AsCurrency    := NFe.Total.ICMSTot.vICMS;
+    qryNfEntradabaseicmssub.AsCurrency  := NFe.Total.ICMSTot.vBCST;
+    qryNfEntradavaloricmssub.AsCurrency := NFe.Total.ICMSTot.vST;
+    qryNfEntradavalortotalprodutos.AsCurrency := NFe.Total.ICMSTot.vProd;
+    qryNfEntradavalorfrete.AsCurrency   := NFe.Total.ICMSTot.vFrete;
+    qryNfEntradavalorseguro.AsCurrency  := NFe.Total.ICMSTot.vSeg;
+    qryNfEntradavaloroutradesp.AsCurrency := NFe.Total.ICMSTot.vOutro;
+    qryNfEntradavaloripi.AsCurrency       := NFe.Total.ICMSTot.vIPI;
+    qryNFEntradavalorpis.AsCurrency       := NFe.Total.ICMSTot.vPIS;
+    qryNFEntradavalorcofins.AsCurrency    := NFe.Total.ICMSTot.vCOFINS;
+    qryNfEntradavalortotalnota.AsCurrency := NFe.Total.ICMSTot.vNF;
 
     ProgressBar1.Position:= 9;
-    if not SetTransportadora(nfe.NFe.Transp.Transporta.CNPJCPF) then begin
+    if not SetTransportadora(NFe.Transp.Transporta.CNPJCPF) then begin
        qryNfEntradacodtransp.ASInteger  := 0;
-       qryNfEntradanometransp.AsString  := LeftStr(nfe.NFe.Transp.Transporta.xNome,80);
-       qryNfEntradacnpjtransp.AsString  := nfe.NFe.Transp.Transporta.CNPJCPF;
-       qryNfEntradaendtransp.AsString   := nfe.NFe.Transp.Transporta.xEnder;
-       qryNfEntradacidadetransp.AsString:= Copy(nfe.NFe.Transp.Transporta.xMun,1,40);
-       qryNfEntradauftransp.AsString    := nfe.NFe.Transp.Transporta.UF;
-       qryNFEntradaietransp.AsString    := nfe.NFe.Transp.Transporta.IE;
+       qryNfEntradanometransp.AsString  := LeftStr(NFe.Transp.Transporta.xNome,80);
+       qryNfEntradacnpjtransp.AsString  := NFe.Transp.Transporta.CNPJCPF;
+       qryNfEntradaendtransp.AsString   := NFe.Transp.Transporta.xEnder;
+       qryNfEntradacidadetransp.AsString:= Copy(NFe.Transp.Transporta.xMun,1,40);
+       qryNfEntradauftransp.AsString    := NFe.Transp.Transporta.UF;
+       qryNFEntradaietransp.AsString    := NFe.Transp.Transporta.IE;
     end;
     ProgressBar1.Position:= 10;
-    qryNfEntradafreteconta.AsString   := modFreteToStr(nfe.NFe.Transp.modFrete);
-    qryNfEntradaplacaveiculo.AsString := nfe.NFe.Transp.veicTransp.placa;
-    qryNfEntradaufveiculo.AsString    := nfe.NFe.Transp.veicTransp.UF;
+    qryNfEntradafreteconta.AsString   := modFreteToStr(NFe.Transp.modFrete);
+    qryNfEntradaplacaveiculo.AsString := NFe.Transp.veicTransp.placa;
+    qryNfEntradaufveiculo.AsString    := NFe.Transp.veicTransp.UF;
 
-    if nfe.NFe.Transp.Vol.Count > 0 then begin
-      qryNfEntradaquantvolumes.ASInteger   := nfe.NFe.Transp.Vol.Items[0].qVol;//nfe.NFe.Transp.Vol.Count;
-      qryNfEntradaespecievol.AsString      := nfe.NFe.Transp.Vol.Items[0].esp;
-      qryNfEntradamarcavol.AsString        := nfe.NFe.Transp.Vol.Items[0].marca;
-      qryNfEntradanumerovol.AsString       := nfe.NFe.Transp.Vol.Items[0].nVol;
-      qryNfEntradapesobrutovol.AsCurrency  := nfe.NFe.Transp.Vol.Items[0].pesoB;
-      qryNfEntradapesoliquidovol.AsCurrency:= nfe.NFe.Transp.Vol.Items[0].pesoL;
+    if NFe.Transp.Vol.Count > 0 then begin
+      qryNfEntradaquantvolumes.ASInteger   := NFe.Transp.Vol.Items[0].qVol;//NFe.Transp.Vol.Count;
+      qryNfEntradaespecievol.AsString      := NFe.Transp.Vol.Items[0].esp;
+      qryNfEntradamarcavol.AsString        := NFe.Transp.Vol.Items[0].marca;
+      qryNfEntradanumerovol.AsString       := NFe.Transp.Vol.Items[0].nVol;
+      qryNfEntradapesobrutovol.AsCurrency  := NFe.Transp.Vol.Items[0].pesoB;
+      qryNfEntradapesoliquidovol.AsCurrency:= NFe.Transp.Vol.Items[0].pesoL;
     end;
     ProgressBar1.Position:= 11;
 
-    qryNfEntradadadosadicionais.AsString:= nfe.NFe.InfAdic.infCpl;
-    qryNfEntradareservadofisco.AsString := nfe.NFe.InfAdic.infAdFisco;
+    qryNfEntradadadosadicionais.AsString:= NFe.InfAdic.infCpl;
+    qryNfEntradareservadofisco.AsString := NFe.InfAdic.infAdFisco;
     qryNfEntradalancada.AsBoolean       := False;
     qryNfEntradadesconto.AsCurrency     := 0;
 
@@ -453,15 +456,15 @@ begin
     tbItensEntrada.Close;
     OpenTable( tbItensEntrada );
 
-    for nItens := 0 to nfe.NFe.Det.Count-1 do begin
-        cod_item := LocalizaPeloEAN(nfe.NFe.Det.Items[nItens].Prod.cEAN);
+    for nItens := 0 to NFe.Det.Count-1 do begin
+        cod_item := LocalizaPeloEAN(NFe.Det.Items[nItens].Prod.cEAN);
         if cod_item = 0 then
-         cod_item := LocalizaPeloCodForn(nfe.NFe.Det.Items[nItens].Prod.cProd,qryNfEntradacliente_forn.AsString);
+         cod_item := LocalizaPeloCodForn(NFe.Det.Items[nItens].Prod.cProd,qryNfEntradacliente_forn.AsString);
         if cod_item = 0 then begin
-           ShowMessageFmt('Produto "%s" não foi encontrado no cadastro. Necessário entrada manual.',[nfe.NFe.Det.Items[nItens].Prod.xProd]);
-           Titulo := nfe.NFe.Det.Items[nItens].Prod.xProd;
+           ShowMessageFmt('Produto "%s" não foi encontrado no cadastro. Necessário entrada manual.',[NFe.Det.Items[nItens].Prod.xProd]);
+           Titulo := NFe.Det.Items[nItens].Prod.xProd;
            res := ShowSearchWindowModalValue(dbConnect.ZConnection1,'produtos','codigo_barras,id,descricao',
-                                            'id','descricao',nfe.NFe.Det.Items[nItens].Prod.xProd,'0=0','0=0',False);
+                                            'id','descricao',NFe.Det.Items[nItens].Prod.xProd,'0=0','0=0',False);
            if VarIsNull(Res) then Begin
               if MessageDlg('Você não definiu um item da nota. Você quer continuar a importação desta Nota ?',mtConfirmation,[mbNo,mbYes],0) = mrYes then
                begin
@@ -479,88 +482,88 @@ begin
 
         tbItensEntrada.Append;
         tbItensEntradanfentrada.AsInteger     := qryNfEntradaid.ASInteger;
-        tbItensEntradacodificacao_fornecedor.ASstring := nfe.NFe.Det.Items[nItens].Prod.cProd;
-        tbItensEntradacodigo_barras.ASstring  := nfe.NFe.Det.Items[nItens].Prod.cEAN;
+        tbItensEntradacodificacao_fornecedor.ASstring := NFe.Det.Items[nItens].Prod.cProd;
+        tbItensEntradacodigo_barras.ASstring  := NFe.Det.Items[nItens].Prod.cEAN;
         tbItensEntradaproduto.AsInteger       := QueProduto.FieldByName('id').AsInteger;
         tbItensEntradadescricao.AsString      := QueProduto.FieldByName('descricao').AsString;
-        tbItensEntradadescricao_xml.AsString  := nfe.NFe.Det.Items[nItens].Prod.xProd;
+        tbItensEntradadescricao_xml.AsString  := NFe.Det.Items[nItens].Prod.xProd;
         tbItensEntradaestoque_destino.AsString:= 'N';
-        tbItensEntradainfadprod.AsString      := nfe.NFe.Det.Items[nItens].Prod.xProd +
-                                                 nfe.NFe.Det.Items[nItens].infAdProd;
+        tbItensEntradainfadprod.AsString      := NFe.Det.Items[nItens].Prod.xProd +
+                                                 NFe.Det.Items[nItens].infAdProd;
 
-        tbItensEntradaquantidade.AsCurrency   := nfe.NFe.Det.Items[nItens].Prod.qCom;
+        tbItensEntradaquantidade.AsCurrency   := NFe.Det.Items[nItens].Prod.qCom;
         qEmb := GetFatorFornecedorToEstoque(QueProduto.FieldByName('id').AsInteger, fator, operacao );
         if operacao = '*' then
            tbItensEntradaquant_estoque.AsCurrency := (tbItensEntradaquantidade.AsCurrency * qEmb);
         if operacao = '/' then
            tbItensEntradaquant_estoque.AsCurrency := (tbItensEntradaquantidade.AsCurrency / qEmb);
 
-        tbItensEntradaunidade.AsString        := nfe.NFe.Det.Items[nItens].Prod.uCom;
-        tbItensEntradancm.AsString            := nfe.NFe.Det.Items[nItens].Prod.NCM;
-        tbItensEntradacest.AsString            := nfe.NFe.Det.Items[nItens].Prod.CEST;
-        tbItensEntradavdesconto.AsCurrency    := nfe.NFe.Det.Items[nItens].Prod.vDesc;
-        pDesc := nfe.NFe.Det.Items[nItens].Prod.vDesc * 100 / (nfe.NFe.Det.Items[nItens].Prod.vProd);
-        tbItensEntradavdesconto.AsCurrency       := nfe.NFe.Det.Items[nItens].Prod.vDesc;//SimpleRoundTo(pDesc);
-        tbItensEntradavalortotal.AsCurrency      := nfe.NFe.Det.Items[nItens].Prod.vProd;
-        tbItensEntradavalorunitario.AsCurrency   := nfe.NFe.Det.Items[nItens].Prod.vUnCom;
-        tbItensEntradavlr_unit_estoque.AsCurrency:= nfe.NFe.Det.Items[nItens].Prod.vProd/tbItensEntradaquant_estoque.AsCurrency;
-        tbItensEntradacfop.AsString              := nfe.NFe.Det.Items[nItens].Prod.CFOP;
-        tbItensEntradanfci_opc.AsString          := nfe.NFe.Det.Items[nItens].Prod.nFCI;
+        tbItensEntradaunidade.AsString        := NFe.Det.Items[nItens].Prod.uCom;
+        tbItensEntradancm.AsString            := NFe.Det.Items[nItens].Prod.NCM;
+        tbItensEntradacest.AsString            := NFe.Det.Items[nItens].Prod.CEST;
+        tbItensEntradavdesconto.AsCurrency    := NFe.Det.Items[nItens].Prod.vDesc;
+        pDesc := NFe.Det.Items[nItens].Prod.vDesc * 100 / (NFe.Det.Items[nItens].Prod.vProd);
+        tbItensEntradavdesconto.AsCurrency       := NFe.Det.Items[nItens].Prod.vDesc;//SimpleRoundTo(pDesc);
+        tbItensEntradavalortotal.AsCurrency      := NFe.Det.Items[nItens].Prod.vProd;
+        tbItensEntradavalorunitario.AsCurrency   := NFe.Det.Items[nItens].Prod.vUnCom;
+        tbItensEntradavlr_unit_estoque.AsCurrency:= NFe.Det.Items[nItens].Prod.vProd/tbItensEntradaquant_estoque.AsCurrency;
+        tbItensEntradacfop.AsString              := NFe.Det.Items[nItens].Prod.CFOP;
+        tbItensEntradanfci_opc.AsString          := NFe.Det.Items[nItens].Prod.nFCI;
         {ICMS}
-        if nfe.NFe.Emit.CRT = crtSimplesNacional then begin//, crtSimplesExcessoReceita, crtRegimeNormal
-           tbItensEntradaorig.AsString           := OrigToStr(nfe.NFe.Det.Items[nItens].Imposto.ICMS.orig);
-           tbItensEntradacst_csosn.AsString      := CSOSNIcmsToStr(nfe.NFe.Det.Items[nItens].Imposto.ICMS.CSOSN);
-           tbItensEntradap_icms.AsCurrency       := nfe.NFe.Det.Items[nItens].Imposto.ICMS.pCredSN;
-           tbItensEntradavlr_icms.AsCurrency     := nfe.NFe.Det.Items[nItens].Imposto.ICMS.vCredICMSSN/tbItensEntradaquant_estoque.AsInteger;
+        if NFe.Emit.CRT = crtSimplesNacional then begin//, crtSimplesExcessoReceita, crtRegimeNormal
+           tbItensEntradaorig.AsString           := OrigToStr(NFe.Det.Items[nItens].Imposto.ICMS.orig);
+           tbItensEntradacst_csosn.AsString      := CSOSNIcmsToStr(NFe.Det.Items[nItens].Imposto.ICMS.CSOSN);
+           tbItensEntradap_icms.AsCurrency       := NFe.Det.Items[nItens].Imposto.ICMS.pCredSN;
+           tbItensEntradavlr_icms.AsCurrency     := NFe.Det.Items[nItens].Imposto.ICMS.vCredICMSSN/tbItensEntradaquant_estoque.AsInteger;
         end else begin
-           tbItensEntradaorig.AsString           := OrigToStr(nfe.NFe.Det.Items[nItens].Imposto.ICMS.orig);
-           tbItensEntradacst_csosn.AsString      := CSTICMSToStr(nfe.NFe.Det.Items[nItens].Imposto.ICMS.CST);
-           tbItensEntradap_icms.AsCurrency       := nfe.NFe.Det.Items[nItens].Imposto.ICMS.pICMS;
-           tbItensEntradavlr_icms.AsCurrency     := nfe.NFe.Det.Items[nItens].Imposto.ICMS.vICMS/tbItensEntradaquant_estoque.AsInteger;
+           tbItensEntradaorig.AsString           := OrigToStr(NFe.Det.Items[nItens].Imposto.ICMS.orig);
+           tbItensEntradacst_csosn.AsString      := CSTICMSToStr(NFe.Det.Items[nItens].Imposto.ICMS.CST);
+           tbItensEntradap_icms.AsCurrency       := NFe.Det.Items[nItens].Imposto.ICMS.pICMS;
+           tbItensEntradavlr_icms.AsCurrency     := NFe.Det.Items[nItens].Imposto.ICMS.vICMS/tbItensEntradaquant_estoque.AsInteger;
        end;
-       tbItensEntradavbcicms.AsCurrency          := nfe.NFe.Det.Items[nItens].Imposto.ICMS.vBC;
-       tbItensEntradapredbc.AsCurrency           := nfe.NFe.Det.Items[nItens].Imposto.ICMS.pRedBC;
-       tbItensEntradamodbc.AsString              := modBCToStr(nfe.NFe.Det.Items[nItens].Imposto.ICMS.modBC);
+       tbItensEntradavbcicms.AsCurrency          := NFe.Det.Items[nItens].Imposto.ICMS.vBC;
+       tbItensEntradapredbc.AsCurrency           := NFe.Det.Items[nItens].Imposto.ICMS.pRedBC;
+       tbItensEntradamodbc.AsString              := modBCToStr(NFe.Det.Items[nItens].Imposto.ICMS.modBC);
        {ST}
-       tbItensEntradavbcst.AsCurrency            := nfe.NFe.Det.Items[nItens].Imposto.ICMS.vBCST;
-       tbItensEntradamodbcst.AsString            := modBCSTToStr(nfe.NFe.Det.Items[nItens].Imposto.ICMS.modBCST);
-       tbItensEntradapicmsst.AsCurrency          := nfe.NFe.Det.Items[nItens].Imposto.ICMS.pICMSST;
-       tbItensEntradapmvast.AsCurrency           := nfe.NFe.Det.Items[nItens].Imposto.ICMS.pMVAST;
-       tbItensEntradapredbcst.AsCurrency         := nfe.NFe.Det.Items[nItens].Imposto.ICMS.pRedBCST;
-       tbItensEntradavicmsst.AsCurrency          := nfe.NFe.Det.Items[nItens].Imposto.ICMS.vICMSST;
+       tbItensEntradavbcst.AsCurrency            := NFe.Det.Items[nItens].Imposto.ICMS.vBCST;
+       tbItensEntradamodbcst.AsString            := modBCSTToStr(NFe.Det.Items[nItens].Imposto.ICMS.modBCST);
+       tbItensEntradapicmsst.AsCurrency          := NFe.Det.Items[nItens].Imposto.ICMS.pICMSST;
+       tbItensEntradapmvast.AsCurrency           := NFe.Det.Items[nItens].Imposto.ICMS.pMVAST;
+       tbItensEntradapredbcst.AsCurrency         := NFe.Det.Items[nItens].Imposto.ICMS.pRedBCST;
+       tbItensEntradavicmsst.AsCurrency          := NFe.Det.Items[nItens].Imposto.ICMS.vICMSST;
 
        {IPI}
-       tbItensEntradacst_ipi.AsString            := CSTIPIToStr(nfe.NFe.Det.Items[nItens].Imposto.IPI.CST);
-       tbItensEntradavbcipi.AsCurrency           := nfe.NFe.Det.Items[nItens].Imposto.IPI.vBC;
-       tbItensEntradapipi.AsCurrency             := nfe.NFe.Det.Items[nItens].Imposto.IPI.pIPI;
-       tbItensEntradavipi.AsCurrency             := nfe.NFe.Det.Items[nItens].Imposto.IPI.vIPI;
+       tbItensEntradacst_ipi.AsString            := CSTIPIToStr(NFe.Det.Items[nItens].Imposto.IPI.CST);
+       tbItensEntradavbcipi.AsCurrency           := NFe.Det.Items[nItens].Imposto.IPI.vBC;
+       tbItensEntradapipi.AsCurrency             := NFe.Det.Items[nItens].Imposto.IPI.pIPI;
+       tbItensEntradavipi.AsCurrency             := NFe.Det.Items[nItens].Imposto.IPI.vIPI;
        {Cofins}
-       tbItensEntradacst_cofins.AsString         := CSTCOFINSToStr(nfe.NFe.Det.Items[nItens].Imposto.COFINS.CST);
-       tbItensEntradavbc_cofins.AsCurrency       := nfe.NFe.Det.Items[nItens].Imposto.COFINS.vBC;
-       tbItensEntradapcofins.AsCurrency          := nfe.NFe.Det.Items[nItens].Imposto.COFINS.pCOFINS;
-       tbItensEntradavcofins.AsCurrency          := nfe.NFe.Det.Items[nItens].Imposto.COFINS.vCOFINS;
+       tbItensEntradacst_cofins.AsString         := CSTCOFINSToStr(NFe.Det.Items[nItens].Imposto.COFINS.CST);
+       tbItensEntradavbc_cofins.AsCurrency       := NFe.Det.Items[nItens].Imposto.COFINS.vBC;
+       tbItensEntradapcofins.AsCurrency          := NFe.Det.Items[nItens].Imposto.COFINS.pCOFINS;
+       tbItensEntradavcofins.AsCurrency          := NFe.Det.Items[nItens].Imposto.COFINS.vCOFINS;
        {PIS}
-       tbItensEntradacst_pis.AsString            := CSTPISToStr(nfe.NFe.Det.Items[nItens].Imposto.PIS.CST);
-       tbItensEntradavbc_pis.AsCurrency          := nfe.NFe.Det.Items[nItens].Imposto.PIS.vBC;
-       tbItensEntradappis.AsCurrency             := nfe.NFe.Det.Items[nItens].Imposto.PIS.pPIS;
-       tbItensEntradavpis.AsCurrency             := nfe.NFe.Det.Items[nItens].Imposto.PIS.vPIS;
+       tbItensEntradacst_pis.AsString            := CSTPISToStr(NFe.Det.Items[nItens].Imposto.PIS.CST);
+       tbItensEntradavbc_pis.AsCurrency          := NFe.Det.Items[nItens].Imposto.PIS.vBC;
+       tbItensEntradappis.AsCurrency             := NFe.Det.Items[nItens].Imposto.PIS.pPIS;
+       tbItensEntradavpis.AsCurrency             := NFe.Det.Items[nItens].Imposto.PIS.vPIS;
        PostTable(tbItensEntrada);
        SetDecimalSeparator('.');
        try
-           if nfe.NFe.Det.Items[nItens].Prod.med.Count = 0 then begin
+           if NFe.Det.Items[nItens].Prod.med.Count = 0 then begin
               ExecSql(dbConnect.ZConnection1,'INSERT INTO nfentrada_itens_lotes(nfentrada_itens,'+
                                              'quantidade,quantidade_estoque) '+
                                              'VALUES (%d, %f, %f)',
                                    [LastInsertID(dbConnect.ZConnection1,'nfentrada_itens_id_seq'),
-                                    nfe.NFe.Det.Items[nItens].Prod.qCom,
+                                    NFe.Det.Items[nItens].Prod.qCom,
                                     tbItensEntradaquant_estoque.AsCurrency]);
            end;
            {INSERT INTO nfentrada_itens_lotes(
             id, nfentrada_itens, numerolote, quantidade, quantidade_estoque,
             pmc, data_frabricacao, data_vencimento, lote)}
-           for i := 0 to nfe.NFe.Det.Items[nItens].Prod.med.Count -1 do begin
-               dtv := nfe.NFe.Det.Items[nItens].Prod.med.Items[i].dVal;
-               dtf := nfe.NFe.Det.Items[nItens].Prod.med.Items[i].dFab;
+           for i := 0 to NFe.Det.Items[nItens].Prod.med.Count -1 do begin
+               dtv := NFe.Det.Items[nItens].Prod.med.Items[i].dVal;
+               dtf := NFe.Det.Items[nItens].Prod.med.Items[i].dFab;
                if (dtf = 0) and (dtv <> 0) then
                    dtf := IncMonth(dtv, QueProduto.FieldByName('prazo_validade').AsInteger * -1)
                else if (dtf <> 0) and (dtv = 0) then
@@ -570,10 +573,10 @@ begin
                                               'quantidade, quantidade_estoque, pmc,data_vencimento,data_frabricacao) '+
                                      'VALUES (%d, ''%s'', %f, %f, ''%.2f'', ''%s'', ''%s'')',
                                      [LastInsertID(dbConnect.ZConnection1,'nfentrada_itens_id_seq'),
-                                      nfe.NFe.Det.Items[nItens].Prod.med.Items[i].nLote,
-                                      nfe.NFe.Det.Items[nItens].Prod.med.Items[i].qLote,
-                                      nfe.NFe.Det.Items[nItens].Prod.med.Items[i].qLote * qEmb,
-                                      nfe.NFe.Det.Items[nItens].Prod.med.Items[i].vPMC,
+                                      NFe.Det.Items[nItens].Prod.med.Items[i].nLote,
+                                      NFe.Det.Items[nItens].Prod.med.Items[i].qLote,
+                                      NFe.Det.Items[nItens].Prod.med.Items[i].qLote * qEmb,
+                                      NFe.Det.Items[nItens].Prod.med.Items[i].vPMC,
                                       DateToStr(dtv),
                                       DateToStr(dtf)
                                       ]);
@@ -583,20 +586,20 @@ begin
        end;
     end;
     ProgressBar1.Position:= 15;
-    //nfe.NFe.Cobr.Fat.
+    //NFe.Cobr.Fat.
     qryPreCtaPagar.Close;
     qryPreCtaPagar.ParamByName('id').AsInteger := qryNfEntradaid.ASInteger;
     OpenTable( qryPreCtaPagar );
     //Lançamento de contas a pagar
-    for i := 0 to nfe.NFe.Cobr.Dup.Count -1 do begin
+    for i := 0 to NFe.Cobr.Dup.Count -1 do begin
         qryPreCtaPagar.Append;
         qryPreCtaPagarid_nf.AsInteger           := qryNfEntradaid.AsInteger;
         qryPreCtaPagarfornecedor.AsInteger      := qryNfEntradacliente_forn.AsInteger;
         qryPreCtaPagardescricao.AsString        := qryNfEntradafornecedor.AsString;
-        qryPreCtaPagardocumento.AsString        := nfe.NFe.Cobr.Dup.Items[i].nDup;
+        qryPreCtaPagardocumento.AsString        := NFe.Cobr.Dup.Items[i].nDup;
         qryPreCtaPagardataconta.AsDateTime      := Date;
-        qryPreCtaPagardata_vencimento.AsDateTime:= nfe.NFe.Cobr.Dup.Items[i].dVenc;
-        qryPreCtaPagarvalor_devido.AsCurrency   := nfe.NFe.Cobr.Dup.Items[i].vDup;
+        qryPreCtaPagardata_vencimento.AsDateTime:= NFe.Cobr.Dup.Items[i].dVenc;
+        qryPreCtaPagarvalor_devido.AsCurrency   := NFe.Cobr.Dup.Items[i].vDup;
         qryPreCtaPagar.Post;
     end;
     ProgressBar1.Position:= 20;

@@ -4949,7 +4949,7 @@ object frmCadProdutos: TfrmCadProdutos
       Required = False
       Size = 6
     end
-    object qryProdutoscst_ibs_cbs: TZRawStringField
+    object qryProdutoscst_ibs_cbs: TStringField
       FieldKind = fkData
       FieldName = 'cst_ibs_cbs'
       Index = 58
