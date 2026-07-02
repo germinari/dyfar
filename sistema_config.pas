@@ -723,7 +723,7 @@ begin
    //nNcm := StrToint(NCM);
    //ExecSql(dbConnect.ZConnection1,'Select aliqnac from ibptax Where ncm=%d',[nNcm]);
    result := StrToFloatDef(ExecSql(dbConnect.ZConnection1,'Select %f * (ib.aliqnac/100) from ibptax ib '+
-                                                        'Where ib.ncm=%s::int4',[vProd,NCM]),0);
+                                                        'Where ib.ncm=%s::::int4',[vProd,NCM]),0);
 
 end;
 
@@ -1105,8 +1105,8 @@ begin
             'mod_bc, mod_bc_st, p_cred_sn, p_cred_sn_valid_until, p_icms,'+
             'p_icms_st, p_mva_st, p_red_bc, p_red_bc_st, fcp, p_red_mvs_sn,'+
             'preco_max_consumidor,'+
-            '(((1+ p_mva_st/100) * (1 - p_icms/100) / (1- p_icms_st/100) -1 )*100)::numeric(10,2) as pmvast_aj,'+
-            '(((1+ (p_mva_st - (p_mva_st * p_red_mvs_sn/100))/100) * (1 - p_icms/100)/(1-p_icms_st/100) -1 )*100)::numeric(10,2) as pmvast_ajsn '+
+            '(((1+ p_mva_st/100) * (1 - p_icms/100) / (1- p_icms_st/100) -1 )*100)::::numeric(10,2) as pmvast_aj,'+
+            '(((1+ (p_mva_st - (p_mva_st * p_red_mvs_sn/100))/100) * (1 - p_icms/100)/(1-p_icms_st/100) -1 )*100)::::numeric(10,2) as pmvast_ajsn '+
             'FROM produto_icms_template '+
             'Where produto=%s and Upper(uf_destino)=''%s'' ';
 

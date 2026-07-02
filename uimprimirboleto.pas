@@ -257,7 +257,7 @@ begin
   qryBol.FieldByName('remessa').AsInteger          := 0;
   qryBol.FieldByName('data_documento').AsDateTime  := edtDataDoc.Date;
 
-  qryBol.FieldByName('nosso_numero').AsInteger     := StrToIntDef(ExecSql(dbConnect.ZConnection1,'Select coalesce(max(nosso_numero::integer),0) +1 From boleto Where banco=%d',[qryBolCfg.FieldByName('banco').AsInteger]),1);
+  qryBol.FieldByName('nosso_numero').AsInteger     := StrToIntDef(ExecSql(dbConnect.ZConnection1,'Select coalesce(max(nosso_numero::::integer),0) +1 From boleto Where banco=%d',[qryBolCfg.FieldByName('banco').AsInteger]),1);
   qryBol.FieldByName('valor_desconto').AsCurrency  := 0.00;//qryBolCfg.FieldByName('valor_desconto').AsCurrency;
   qryBol.FieldByName('valor_abatimento').AsCurrency:= 0.00;//qryBolCfg.FieldByName('valor_abatimento').AsCurrency;
   qryBol.FieldByName('multa_porcento').AsCurrency  := 0.00;//.FieldByName('multa_mora').AsCurrency;

@@ -346,7 +346,7 @@ begin
 
   qryCtaPagar.close;
   qryCtaPagar.Sql.clear;
-  qryCtaPagar.Sql.Add('SELECT (pc.conta||''-''||pc.descricao)::varchar(80) as vdescricao_credito,');
+  qryCtaPagar.Sql.Add('SELECT (pc.conta||''-''||pc.descricao)::::varchar(80) as vdescricao_credito,');
   qryCtaPagar.Sql.Add('pc.conta as vconta_credito,');
   qryCtaPagar.Sql.Add('cp.id, id_nf, documento, cp.descricao, dataconta, data_vencimento,');
   qryCtaPagar.Sql.Add('data_pagamento, valor_devido, desconto, juros, valor_pago, observacao,');

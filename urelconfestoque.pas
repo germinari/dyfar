@@ -226,7 +226,7 @@ begin
   ZReadOnlyQuery1.Close;
   ZReadOnlyQuery1.Sql.Clear;
   ZReadOnlyQuery1.Sql.Add('Select p.id as produto,p.codigo_barras,p.descricao,p.local_estoque,');
-  ZReadOnlyQuery1.Sql.Add('sum(pe.quantidade)::numeric(10,0) as quantidade ');
+  ZReadOnlyQuery1.Sql.Add('sum(pe.quantidade)::::numeric(10,0) as quantidade ');
   ZReadOnlyQuery1.Sql.Add('from produtos p');
   ZReadOnlyQuery1.Sql.Add('Left Join produtos_estoque pe ON pe.produto=p.id');
   ZReadOnlyQuery1.Sql.Add(where);

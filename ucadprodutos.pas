@@ -847,7 +847,7 @@ procedure TfrmCadProdutos.SpeedButton12Click(Sender: TObject);
 var ret : Variant;
     sql : String;
 begin
-  sql := 'Select codigo,ncm_list,descricao::varchar(300) as descricao From cest Order by ncm_list';
+  sql := 'Select codigo,ncm_list,descricao::::varchar(300) as descricao From cest Order by ncm_list';
   ret := ShowSearchModalSQL(dbConnect.ZConnection1,sql,'codigo,ncm_list,descricao','codigo','ncm_list',true);
   if VarIsBlank(ret) then begin
      exit;
@@ -1107,8 +1107,8 @@ begin
     sql += 'Where pe.produto = :id and pe.quantidade > 0) ';
     sql += 'Union ';
     sql += '(SELECT id, produto,''Consignado'',(select lote From produtos_estoque Where id=ep.lote), ';
-    sql += 'quant_consignada, data_consignacao::date, null, null, empresa, ';
-    sql += '(Select nome_curto From empregados Where id=ep.empregado)::varchar(20) ';
+    sql += 'quant_consignada, data_consignacao::::date, null, null, empresa, ';
+    sql += '(Select nome_curto From empregados Where id=ep.empregado)::::varchar(20) ';
     sql += 'FROM empregados_produtos ep ';
     sql += 'Where ep.produto= :id) ';
     sql += 'Order by data_validade,id';
@@ -1530,7 +1530,7 @@ end;
 procedure TfrmCadProdutos.OpenProduto(KeyValue: Integer);
 Var empLocal : Integer;
 begin
-  //upper(obtemnometipoproduto(tipo_produto::Integer)) as vtipo_produto,
+  //upper(obtemnometipoproduto(tipo_produto::::Integer)) as vtipo_produto,
   StartWaitSql;
   Try
       empLocal := StrToIntDef(getEmpresaPadrao(meCodigo),0);

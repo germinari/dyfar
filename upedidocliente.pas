@@ -576,7 +576,7 @@ begin
       3 : sTabPreco := 'margem_lucro_consignado';
    end;
 
-sql := Format('Select id,descricao, (preco_compra + (preco_compra * %s /100))::numeric(10,2) ,unidade, '+
+sql := Format('Select id,descricao, (preco_compra + (preco_compra * %s /100))::::numeric(10,2) ,unidade, '+
               '(SELECT sum(quantidade) FROM produtos_estoque Where quantidade > 0 and produto=p.id) as quantidade '+
               'From produtos p '+
               'Where id=%s and ativo=true',

@@ -121,7 +121,7 @@ begin
   MemDataset1.Clear(False);
   OpenTable( MemDataset1 );
   saldo :=  StrToCurrDef(ExecSql(dbConnect.ZConnection1,'Select sum(credito-debito) From conta_corrente_flex '+
-                                 'Where representante=%d and dh_movimento::date < ''%s'' ',
+                                 'Where representante=%d and dh_movimento::::date < ''%s'' ',
                                  [qryListaRepid.asInteger,
                                   DateEdit1.Text]),0.00);
 

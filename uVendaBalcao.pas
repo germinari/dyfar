@@ -216,10 +216,10 @@ procedure TfrmVendaBalcao.VendasdeHojeClick(Sender: TObject);
 Var res : Variant;
     sql : String;
 begin
-  sql := 'Select id,to_char(data,''dd/mm/yyyy HH24:MM'')::varchar(20) as data, ';
-  sql += '(Select sum((quantidade * preco) - ((quantidade * preco)*desconto/100)) From balcao_venda_itens bvi Where balcao_venda=bv.id)::numeric(10,2) as total ';
+  sql := 'Select id,to_char(data,''dd/mm/yyyy HH24:MM'')::::varchar(20) as data, ';
+  sql += '(Select sum((quantidade * preco) - ((quantidade * preco)*desconto/100)) From balcao_venda_itens bvi Where balcao_venda=bv.id)::::numeric(10,2) as total ';
   sql += 'From balcao_venda bv ';
-  sql += 'Where data::date = CURRENT_DATE ';
+  sql += 'Where data::::date = CURRENT_DATE ';
   sql += 'Order by id desc';
   res  := ShowSearchModalSQL(dbConnect.ZConnection1,sql,'id,data,total','id', 'id',true);
   if VarIsBlank(res) then exit;
@@ -233,10 +233,10 @@ Var data : TDateTime;
     sql : String;
 begin
      if not InputDate('Selecione uma data',data) then exit;
-     sql := 'Select id,to_char(data,''dd/mm/yyyy HH24:MM'')::varchar(20) as data, ';
-     sql += '(Select sum((quantidade * preco) - ((quantidade * preco)*desconto/100)) From balcao_venda_itens bvi Where balcao_venda=bv.id)::numeric(10,2) as total ';
+     sql := 'Select id,to_char(data,''dd/mm/yyyy HH24:MM'')::::varchar(20) as data, ';
+     sql += '(Select sum((quantidade * preco) - ((quantidade * preco)*desconto/100)) From balcao_venda_itens bvi Where balcao_venda=bv.id)::::numeric(10,2) as total ';
      sql += 'From balcao_venda bv ';
-     sql += Format('Where data::date=''%s'' ',[DateTostr(data)]);
+     sql += Format('Where data::::date=''%s'' ',[DateTostr(data)]);
      sql += 'Order by id desc';
      res  := ShowSearchModalSQL(dbConnect.ZConnection1,sql,'id,data,total','id', 'id',true);
      if VarIsBlank(res) then exit;

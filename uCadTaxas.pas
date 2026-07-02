@@ -161,7 +161,7 @@ procedure TfrmCadTaxas.ToolButton4Click(Sender: TObject);
 var ret : Variant;
     Sql,s : String;
 begin
-  Sql := 'Select 1 as id,''Imposto de ICMS''::varchar(20) as nome '+
+  Sql := 'Select 1 as id,''Imposto de ICMS''::::varchar(20) as nome '+
          'Union '+
          'Select 2,''Imposto de IPI'' '+
 {         'Union '+

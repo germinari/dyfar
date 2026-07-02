@@ -680,7 +680,7 @@ begin
 
     qryCtaReceber.close;
     qryCtaReceber.Sql.clear;
-    qryCtaReceber.Sql.Add('SELECT (conta_credito||''-''||pc.descricao)::varchar(80) as vdescricao_credito,');
+    qryCtaReceber.Sql.Add('SELECT (conta_credito||''-''||pc.descricao)::::varchar(80) as vdescricao_credito,');
     qryCtaReceber.Sql.Add('       pc.conta as vconta_credito,cr.origem,');
     qryCtaReceber.Sql.Add('       cr.id, id_nf, documento, cr.descricao, dataconta, cr.data_vencimento,');
     qryCtaReceber.Sql.Add('       data_pagamento, valor_devido, desconto, juros, valor_pago, observacao,');

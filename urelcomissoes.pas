@@ -172,19 +172,19 @@ begin
   ZReadOnlyQuery1.Sql.Add('Select pv.representante,e.nome,pv.id,pv.data,c.nome as destinatario,');
   ZReadOnlyQuery1.Sql.Add('(select sum((preco_unitario*abs(desconto/100 - 1))*quantidade)');
   ZReadOnlyQuery1.Sql.Add(' from pedido_venda_itens');
-  ZReadOnlyQuery1.Sql.Add(' Where pedido_venda=pv.id)::numeric(15,2) as vlr_pedido ,');
+  ZReadOnlyQuery1.Sql.Add(' Where pedido_venda=pv.id)::::numeric(15,2) as vlr_pedido ,');
   ZReadOnlyQuery1.Sql.Add('(select valortotalprodutos from nfsaida where nfsaida.numero_pedio_online=pv.id and status_nfe in (4,5,8)) as vlr_nota,');
 
   ZReadOnlyQuery1.Sql.Add('(Select sum( ((preco_unitario*abs(desconto/100 - 1))*quantidade) * pvi.comissao/100 )');
   ZReadOnlyQuery1.Sql.Add('From pedido_venda_itens  pvi');
   ZReadOnlyQuery1.Sql.Add('Left join produtos p on p.id=pvi.produto');
-  ZReadOnlyQuery1.Sql.Add('Where pvi.pedido_venda=pv.id)::numeric(15,2) as vlr_comissao,');
+  ZReadOnlyQuery1.Sql.Add('Where pvi.pedido_venda=pv.id)::::numeric(15,2) as vlr_comissao,');
   ZReadOnlyQuery1.Sql.Add('(Select');
   ZReadOnlyQuery1.Sql.Add('       (sum( ((preco_unitario*abs(desconto/100 - 1))*quantidade) * pvi.comissao/100 )/');
   ZReadOnlyQuery1.Sql.Add('       sum( ((preco_unitario*abs(desconto/100 - 1))*quantidade))) * 100');
   ZReadOnlyQuery1.Sql.Add('From pedido_venda_itens  pvi');
   ZReadOnlyQuery1.Sql.Add('Left join produtos p on p.id=pvi.produto');
-  ZReadOnlyQuery1.Sql.Add('Where pvi.pedido_venda=pv.id)::numeric(15,2) as perc_comissao,');
+  ZReadOnlyQuery1.Sql.Add('Where pvi.pedido_venda=pv.id)::::numeric(15,2) as perc_comissao,');
   ZReadOnlyQuery1.Sql.Add('0.00 as vlr_faturar,');
 
   ZReadOnlyQuery1.Sql.Add('(Case');

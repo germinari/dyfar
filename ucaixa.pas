@@ -200,7 +200,7 @@ begin
   if Length(edEmpresa.Text) > 0 then
      Where  := Where + Format(' and (loja=%s)',[ExtractWord(1,edEmpresa.Text,['-'])]);
 
-  Where := Where + ' and '+Format('(data::date = ''%s'')',[DateEdit1.Text]);
+  Where := Where + ' and '+Format('(data::::date = ''%s'')',[DateEdit1.Text]);
 
   qryCaixa.close;
   qryCaixa.Sql.clear;

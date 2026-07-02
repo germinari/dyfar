@@ -405,8 +405,8 @@ begin
   ZQuery1.Sql.Clear;
   ZQuery1.Sql.Add('SELECT false as selecionado,(coalesce(oid_xml,0) > 0) as baixado, nsu,tipo_evento ,');
   ZQuery1.Sql.Add('data_hora , chave_nfe ,');
-  ZQuery1.Sql.Add('substr(chave_nfe,7,14)::varchar(14) AS cnpj,');
-  ZQuery1.Sql.Add('substr(chave_nfe,26,9)::varchar(9) AS nnfe ,');
+  ZQuery1.Sql.Add('substr(chave_nfe,7,14)::::varchar(14) AS cnpj,');
+  ZQuery1.Sql.Add('substr(chave_nfe,26,9)::::varchar(9) AS nnfe ,');
   ZQuery1.Sql.Add('vnf,xnome,ssitdfe, oid_xml, evento_registrado');
   ZQuery1.Sql.Add('FROM nfentrada_md nm');
   ZQuery1.Sql.Add('WHERE tipo_evento = ''resNFe''');

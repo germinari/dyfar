@@ -741,7 +741,7 @@ procedure TfrmNFSaida.mnCartaCorrecaoClick(Sender: TObject);
 Var qry : TZQuery;
     xmlCarta,xmlNFe : String;
 begin
-  qry := ExecSqlQuery( dbConnect.ZConnection1, 'Select nfsaida, sequencia, datahora, xml_str::Text from nfsaida_carta_correcao '+
+  qry := ExecSqlQuery( dbConnect.ZConnection1, 'Select nfsaida, sequencia, datahora, xml_str::::Text from nfsaida_carta_correcao '+
                                                'Where nfsaida=%d and '+
                                                'sequencia=(select max(sequencia) from nfsaida_carta_correcao where nfsaida=%d)',
                                                [qryNotaid.AsInteger,
@@ -763,7 +763,7 @@ end;
 //Var qry : TZQuery;
 //    xml : String;
 //begin
-//  qry := ExecSqlQuery( dbConnect.ZConnection1, 'Select nfsaida, sequencia, datahora, xml_str::Text from nfsaida_carta_correcao '+
+//  qry := ExecSqlQuery( dbConnect.ZConnection1, 'Select nfsaida, sequencia, datahora, xml_str::::Text from nfsaida_carta_correcao '+
 //                                               'Where nfsaida=%d and '+
 //                                               'sequencia=(select max(sequencia) from nfsaida_carta_correcao where nfsaida=%d)',
 //                                               [qryNotaid.AsInteger,
@@ -1160,7 +1160,7 @@ var res : Variant;
     id  : Integer;
     sql , count: String;
 begin
-  sql := 'Select p.id,p.data,c.cnpj::varchar(18),c.nome::varchar(80),p.status '+
+  sql := 'Select p.id,p.data,c.cnpj::::varchar(18),c.nome::::varchar(80),p.status '+
          'from pedido_venda p '+
          'left join clientes c on c.id=p.cliente ';
 
@@ -1195,7 +1195,7 @@ var res : Variant;
     id  : Integer;
     sql , count: String;
 begin
-  sql := 'SELECT p.id,p.data,c.cnpj::varchar(18),c.nome::varchar(80),p.status '+
+  sql := 'SELECT p.id,p.data,c.cnpj::::varchar(18),c.nome::::varchar(80),p.status '+
          'FROM pedido_venda p '+
          'LEFT JOIN clientes c on c.id=p.cliente ';
 
@@ -1548,10 +1548,10 @@ begin
             'p_icms_st, p_mva_st, p_red_bc, p_red_bc_st, fcp, p_red_mvs_sn,'+
             'preco_max_consumidor,'+
             '(Case When %d <> 1 then '+
-            '(((1+ p_mva_st/100) * (1 - p_icms/100) / (1- p_icms_st/100) -1 )*100) '+ // ::numeric(10,2) as pmvast_aj,'+
+            '(((1+ p_mva_st/100) * (1 - p_icms/100) / (1- p_icms_st/100) -1 )*100) '+ // ::::numeric(10,2) as pmvast_aj,'+
             'else '+
-            '(((1+ (p_mva_st - (p_mva_st * p_red_mvs_sn/100))/100) * (1 - p_icms/100)/(1-p_icms_st/100) -1 )*100) '+//::numeric(10,2) as pmvast_ajsn '+
-            'end)::numeric(10,2) as pmvast_ajsn '+
+            '(((1+ (p_mva_st - (p_mva_st * p_red_mvs_sn/100))/100) * (1 - p_icms/100)/(1-p_icms_st/100) -1 )*100) '+//::::numeric(10,2) as pmvast_ajsn '+
+            'end)::::numeric(10,2) as pmvast_ajsn '+
             'FROM produto_icms_template '+
             'Where produto=%d and Upper(uf_destino)=''%s'' ';
 
@@ -2905,7 +2905,7 @@ begin
   if nSeqEvento > 1 then
   begin
      qryCCe:= ExecSqlQuery(dbConnect.ZConnection1,'SELECT nfsaida, sequencia, datahora, '+
-'UNNEST(xpath(''//a:infEvento/a:detEvento/a:xCorrecao/text()'', xml_str,''{{a,http://www.portalfiscal.inf.br/nfe}}''))::Text As xml_str '+
+'UNNEST(xpath(''//a:infEvento/a:detEvento/a:xCorrecao/text()'', xml_str,''{{a,http://www.portalfiscal.inf.br/nfe}}''))::::Text As xml_str '+
                                                   'FROM nfsaida_carta_correcao '+
                                                   'Where nfsaida=%s and sequencia=%d',
                                                   [id, nSeqEvento-1]);
@@ -3143,9 +3143,9 @@ procedure TfrmNFSaida.AdicionarreferenciaobservaoClick(Sender: TObject);
 Var qry : TZQuery;
 begin
    if qryNFReferencia.FieldByName('nfsaida').AsInteger > 0 then
-      qry := ExecSqlQuery(dbConnect.ZConnection1,'Select dataemissao::date,numeroctlform as numero From nfsaida where id=%d',[qryNFReferencia.FieldByName('nfsaida').AsInteger]);
+      qry := ExecSqlQuery(dbConnect.ZConnection1,'Select dataemissao::::date,numeroctlform as numero From nfsaida where id=%d',[qryNFReferencia.FieldByName('nfsaida').AsInteger]);
    if qryNFReferencia.FieldByName('nfentrada').AsInteger > 0 then
-      qry := ExecSqlQuery(dbConnect.ZConnection1,'Select dataemissao::date,numeronf as numero From nfentrada where id=%d',[qryNFReferencia.FieldByName('nfentrada').AsInteger]);
+      qry := ExecSqlQuery(dbConnect.ZConnection1,'Select dataemissao::::date,numeronf as numero From nfentrada where id=%d',[qryNFReferencia.FieldByName('nfentrada').AsInteger]);
 
    EditTable(qryNota);
    qryNotadadosadicionais.ASString := qryNotadadosadicionais.ASString + ' ' +
